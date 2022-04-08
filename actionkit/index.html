@@ -1,0 +1,1229 @@
+<!-- go to unforswearing.com/writing/samples/actionkit to view the rendered page -->
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Set Up Templates In ActionKit</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        white-space: normal;
+        /*white-space: pre-wrap;*/
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        text-indent: -1.7em;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK JP";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .highlight-gray {
+        color: rgb(155, 154, 151);
+      }
+      .highlight-brown {
+        color: rgb(100, 71, 58);
+      }
+      .highlight-orange {
+        color: rgb(217, 115, 13);
+      }
+      .highlight-yellow {
+        color: rgb(223, 171, 1);
+      }
+      .highlight-teal {
+        color: rgb(15, 123, 108);
+      }
+      .highlight-blue {
+        color: rgb(11, 110, 153);
+      }
+      .highlight-purple {
+        color: rgb(105, 64, 165);
+      }
+      .highlight-pink {
+        color: rgb(173, 26, 114);
+      }
+      .highlight-red {
+        color: rgb(224, 62, 62);
+      }
+      .highlight-gray_background {
+        background: rgb(235, 236, 237);
+      }
+      .highlight-brown_background {
+        background: rgb(233, 229, 227);
+      }
+      .highlight-orange_background {
+        background: rgb(250, 235, 221);
+      }
+      .highlight-yellow_background {
+        background: rgb(251, 243, 219);
+      }
+      .highlight-teal_background {
+        background: rgb(221, 237, 234);
+      }
+      .highlight-blue_background {
+        background: rgb(221, 235, 241);
+      }
+      .highlight-purple_background {
+        background: rgb(234, 228, 242);
+      }
+      .highlight-pink_background {
+        background: rgb(244, 223, 235);
+      }
+      .highlight-red_background {
+        background: rgb(251, 228, 228);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(55, 53, 47, 0.6);
+        fill: rgba(55, 53, 47, 0.6);
+      }
+      .block-color-brown {
+        color: rgb(100, 71, 58);
+        fill: rgb(100, 71, 58);
+      }
+      .block-color-orange {
+        color: rgb(217, 115, 13);
+        fill: rgb(217, 115, 13);
+      }
+      .block-color-yellow {
+        color: rgb(223, 171, 1);
+        fill: rgb(223, 171, 1);
+      }
+      .block-color-teal {
+        color: rgb(15, 123, 108);
+        fill: rgb(15, 123, 108);
+      }
+      .block-color-blue {
+        color: rgb(11, 110, 153);
+        fill: rgb(11, 110, 153);
+      }
+      .block-color-purple {
+        color: rgb(105, 64, 165);
+        fill: rgb(105, 64, 165);
+      }
+      .block-color-pink {
+        color: rgb(173, 26, 114);
+        fill: rgb(173, 26, 114);
+      }
+      .block-color-red {
+        color: rgb(224, 62, 62);
+        fill: rgb(224, 62, 62);
+      }
+      .block-color-gray_background {
+        background: rgb(235, 236, 237);
+      }
+      .block-color-brown_background {
+        background: rgb(233, 229, 227);
+      }
+      .block-color-orange_background {
+        background: rgb(250, 235, 221);
+      }
+      .block-color-yellow_background {
+        background: rgb(251, 243, 219);
+      }
+      .block-color-teal_background {
+        background: rgb(221, 237, 234);
+      }
+      .block-color-blue_background {
+        background: rgb(221, 235, 241);
+      }
+      .block-color-purple_background {
+        background: rgb(234, 228, 242);
+      }
+      .block-color-pink_background {
+        background: rgb(244, 223, 235);
+      }
+      .block-color-red_background {
+        background: rgb(251, 228, 228);
+      }
+      .select-value-color-default {
+        background-color: rgba(206, 205, 202, 0.5);
+      }
+      .select-value-color-gray {
+        background-color: rgba(155, 154, 151, 0.4);
+      }
+      .select-value-color-brown {
+        background-color: rgba(140, 46, 0, 0.2);
+      }
+      .select-value-color-orange {
+        background-color: rgba(245, 93, 0, 0.2);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(233, 168, 0, 0.2);
+      }
+      .select-value-color-green {
+        background-color: rgba(0, 135, 107, 0.2);
+      }
+      .select-value-color-blue {
+        background-color: rgba(0, 120, 223, 0.2);
+      }
+      .select-value-color-purple {
+        background-color: rgba(103, 36, 222, 0.2);
+      }
+      .select-value-color-pink {
+        background-color: rgba(221, 0, 129, 0.2);
+      }
+      .select-value-color-red {
+        background-color: rgba(255, 0, 26, 0.2);
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body style="padding: 20px">
+    <article class="page sans">
+      <header>
+        <h1 class="page-title">Setting Up ActionKit</h1>
+      </header>
+
+        <hr />
+        <br />
+        <p>
+          <strong
+            >This guide will explain how to upload and modify templates on
+            ActionKit.
+          </strong>
+        </p>
+        <h2>Table of Contents</h2>
+        <ul>
+          <li>
+            <strong
+              ><a href="#setup_and_resources">Setup and Resources</a></strong
+            >
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            <strong
+              >
+                <a href="#downloading_the_templateset">Downloading the Templateset ZIP File
+              </a></strong
+            >
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            <strong
+              ><a href="#copying_the_templateset">
+                Copying the default Templateset</strong
+           ></a>
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            <strong
+              ><a href="#renaming_the_copied_templateset">
+                Renaming the Copied Templateset</strong
+           ></a>
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            <strong
+              ><a href="#adding_the_templateset_to_actionkit">
+                Adding the Templateset ZIP File to ActionKit
+              </strong
+            ></a>
+          </li>
+        </ul>
+        <p></p>
+        <hr />
+        <br />
+        <h3><a id="setup_and_resources">Setup and Resources</a></h3>
+        <p>
+          Before moving to the steps below be sure you or staff have access to
+          the following resources:
+        </p>
+        <ul class="bulleted-list">
+          <li>
+            <strong>ActionKit Pages.</strong> Be sure any staff working on the
+            Templateset has access to the
+            <mark class="highlight-teal_background"
+              ><strong>Pages</strong></mark
+            >
+            section of ActionKit. They will need this permission to copy, add,
+            and update templates as described later in this guide.
+            <br /><figure class="image">
+              <a href="./img/actionkit_pages.png"
+                ><img
+                  style="width: 1062px"
+                  src="./img/actionkit_pages.png"
+              /></a>
+            <br /></figure>
+            <p></p>
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            <strong>ActionKit Default Templateset.</strong> Make sure you and
+            staff have access to the ActionKit default templateset located at
+
+              <a href="https://example.com/actionkit-template"
+              >https://example.com/actionkit-template/
+              </a>.
+            <ul class="bulleted-list">
+              <li>
+                See
+
+                  <a href="#downloading_the_templateset"
+                    ><stong>Downloading the Templateset ZIP File</strong></a
+                > below for download instructions.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+        <p></p>
+        <hr />
+        <br />
+        <h3><a id="downloading_the_templateset">Downloading the Templateset ZIP File</a></h3>
+        <p>
+          <a href="https://example.com"
+            >
+              <strong
+                >Grab the laelease of the templateset files here</strong
+             ></a
+          >.
+          <br />
+        </p>
+        <br />
+        <p></p>
+          <div style="padding-top: 10px; padding-bottom:10px;text-align: center; background-color: #DDEBF1;">
+            <strong>Remember where this file was downloaded. You will
+            need to upload this ZIP file into ActionKit in a later step.
+            </strong>
+          </div>
+          <br />
+        <p></p>
+        <hr />
+        <br />
+        <br />
+        <h3><a id="copying_the_templateset">Copy the default templateset</a></h3>
+        <p>
+          The only way to add new templatesets to ActionKit is to copy an
+          existing templateset. Once copied, new templates can be added to
+          replace these default files. Instructions for completing this process
+          are located below.
+        </p>
+        <p></p>
+        <br />
+        <div style="padding-top: 10px; padding-bottom:10px;text-align: center; background-color:#FBE4E4;">
+            <strong
+              >Remember: Staff must have access to the Pages section of
+              ActionKit to work with templates.</strong
+            >
+          </div>
+          <br />
+        <p></p>
+        <p>
+          <strong>How to make a copy of the default Templateset</strong>
+        </p>
+        <ul class="bulleted-list">
+          <li>
+            Open ActionKit and select
+            <mark class="highlight-teal_background"
+              ><strong>Pages</strong></mark
+            >
+            from the menu at the top of the page
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            From the options on the right side of the screen choose
+            <mark class="highlight-teal_background"
+              ><strong>Appearance</strong></mark
+            >. A menu will appear below.
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            From the menu, select
+            <mark class="highlight-teal_background"
+              ><strong>Templatesets</strong></mark
+            >
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a
+            href="./img/action_kit_navigate_to_templates.gif"
+            ><img
+              style="width: 1280px"
+              src="./img/action_kit_navigate_to_templates.gif"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <ul class="bulleted-list">
+          <li>
+            In the &quot;Templatesets&quot; page locate the default Templateset
+          </li>
+        </ul>
+        <br /><br />
+          <div style="padding-top: 10px; padding-bottom:10px;text-align: center; background-color: #DDEBF1;"><strong>
+            The default templateset will be marked as default in the column
+            labeled Default in the templateset page in ActionKit
+            </strong>
+          </div>
+          <br /><br />
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/copy_tempalte.png"
+            ><img
+              style="width: 1009px"
+              src="./img/copy_tempalte.png"
+          /></a>
+        <br /></figure>
+        <ul class="bulleted-list">
+          <li>
+            When you find the default templateset click the link labeled
+            <strong>Copy</strong></mark
+            ><strong>,</strong> located on the right side of the table.
+            <ul class="bulleted-list">
+              <li>
+                Clicking this link will create a new copy of the default
+                Templateset which will be modified in the following steps.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            A popup window will appear asking &quot;<em
+              >Are you sure you want to copy this record</em
+            >?&quot;
+            <p></p>
+          </li>
+        </ul>
+        <br /><figure class="image">
+          <a
+            href="./img/Screen_Shot_2021-02-16_at_1.45.12_PM.png"
+            ><img
+              style="width: 514px"
+              src="./img/Screen_Shot_2021-02-16_at_1.45.12_PM.png"
+          /></a>
+        <br /></figure>
+        <ul class="bulleted-list">
+          <li>
+            Click the blue button labeled &quot;<em>Yes, copy it</em>&quot; to
+            copy the files.
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            After selecting &quot;<em>Yes, copy it</em>&quot; a copy of the
+            default templates will be created alongside other templates in
+            ActionKit
+            <p></p>
+          </li>
+        </ul>
+        <hr />
+        <br />
+        <h3><a id="renaming_the_copied_templateset">Renaming the copied templateset</a></h3>
+        <p>
+          You will need to rename the templateset after copying so it can be
+          easily identified among other templatesets in ActionKit.
+        </p>
+        <ul class="bulleted-list">
+          <li>
+            If you have not already copied the default templateset, please see
+            <strong><a href="#copying_the_templateset">Copy the default templateset</a> section above for instrcutions.</strong>
+          </li>
+        </ul>
+        <p></p>
+        <p>
+          <strong>To rename the Templateset</strong>
+        </p>
+        <ul class="bulleted-list">
+          <li>
+            Locate and click the
+            <strong
+              >Settings</strong
+            >
+            link for your copied version of the default Templateset
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/rename_template_2.gif"
+            ><img
+              style="width: 672px"
+              src="./img/rename_template_2.gif"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <ul class="bulleted-list">
+          <li>
+            After clicking
+            <mark class="highlight-teal_background"
+              ><strong>Settings</strong></mark
+            >
+            you will navigate to the settings page for the copied templateset
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/template_settings.png"
+            ><img
+              style="width: 995px"
+              src="./img/template_settings.png"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <p></p>
+        <ul class="bulleted-list">
+          <li>
+            Add a new name for the Templateset in the
+            <strong>Name</strong>
+            field located near the top of the page.
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            Update the description in the
+            <mark class="highlight-teal_background"
+              ><strong>Description</strong></mark
+            >
+            field, if necessary.
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            Update the language in the
+            <mark class="highlight-teal_background"
+              ><strong>Language</strong></mark
+            >
+            drop down menu, if necessary
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            After updating the information for your templateset, scroll to the
+            bottom and click the blue button labeled
+            <strong>Save</strong>
+            <ul class="bulleted-list">
+              <li>
+                You will be working with this templateset in the steps below
+              </li>
+            </ul>
+            <br /><figure class="image">
+              <a
+                href="./img/Screen_Shot_2021-03-01_at_5.03.47_PM.png"
+                ><img
+                  style="width: 937px"
+                  src="./img/Screen_Shot_2021-03-01_at_5.03.47_PM.png"
+              /></a>
+            <br /></figure>
+          </li>
+        </ul>
+        <p></p>
+        <hr />
+        <br />
+        <h3><a id="adding_the_templateset_to_actionkit">Adding the Templateset ZIP File to ActionKit</a></h3>
+        <ul class="bulleted-list">
+          <li>
+            After you have saved your renamed templateset , click on that new
+            name to upload the ZIP file containing the new default tempateset.
+            <ul class="bulleted-list">
+              <li>
+                For example: if you renamed your templateset to &quot;New
+                Default&quot; you will click &quot;New Default&quot; to access
+                details about the templateset.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/click_templateset_name.gif"
+            ><img
+              style="width: 1006px"
+              src="./img/click_templateset_name.gif"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <ul class="bulleted-list">
+          <li>
+            In the Templates page, locate the section titled
+            <mark class="highlight-teal_background"
+              ><strong>Edit Locally</strong></mark
+            >
+            and click the button labeled
+            <mark class="highlight-teal_background"
+              ><strong>Upload Template Files</strong></mark
+            >.
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/upload_templateset_zip.png"
+            ><img
+              style="width: 1015px"
+              src="./img/upload_templateset_zip.png"
+          /></a>
+        <br /></figure>
+        <ul class="bulleted-list">
+          <li>
+            A popup window named
+            <mark class="highlight-teal_background"
+              ><strong>Upload Files</strong></mark
+            >
+            will appear.
+            <ul class="bulleted-list">
+              <li>
+                You will be able to upload the Templateset ZIP file from this
+                window.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/choose_files.png"
+            ><img
+              style="width: 624px"
+              src="./img/choose_files.png"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <ul class="bulleted-list">
+          <li>
+            <strong>To upload the Templateset to ActionKit</strong>
+            <ul class="bulleted-list">
+              <li>
+                First, click the checkbox labeled
+                <em
+                  >&quot;Automatically add new custom templates in this upload
+                  to the Templateset.&quot;</em
+                >
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li>
+                Next, click the button labeled
+                <mark class="highlight-teal_background"
+                  ><strong>Choose Files</strong></mark
+                >. Your computers File Explorer / Finder window will appear.
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li>
+                Locate the ZIP file you downloaded in the <strong><a href="#downloading_the_templateset">Downloading the Templateset File</a></strong>
+                section of this guide.
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li>
+                Select the ZIP file and click
+                <mark class="highlight-teal_background"
+                  ><strong>Open</strong></mark
+                >
+              </li>
+            </ul>
+            <p></p>
+            <br /><figure class="image">
+              <a href="./img/upload_files_a.gif"
+                ><img
+                  style="width: 984px"
+                  src="./img/upload_files_a.gif"
+              /></a>
+            <br /></figure>
+            <p></p>
+            <ul class="bulleted-list">
+              <li>
+                After selecting your ZIP file you will return to the
+                <mark class="highlight-teal_background"
+                  ><strong>Upload Files</strong></mark
+                >
+                window.
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li>
+                Be sure the checkbox you selected in the first step is still
+                checked.
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li>
+                Choose the blue button labeled
+                <mark class="highlight-teal_background"
+                  ><strong>Upload</strong></mark
+                >
+                to add the ZIP file to ActionKit.
+              </li>
+            </ul>
+            <p></p>
+            <br />
+            <div style="padding-top: 10px; padding-bottom:10px;text-align: center; background-color: #FBE4E4;">
+                <strong>
+                  ActionKit will encounter errors with unrecognized file types.
+                  Click "Upload" to skip these files; the templateset should
+                  upload without issue.
+                </strong>
+              </div>
+              <br />
+            <p></p>
+            <br /><figure class="image">
+              <a
+                href="./img/Screen_Shot_2021-03-08_at_11.28.38_AM.png"
+                ><img
+                  style="width: 1502px"
+                  src="./img/Screen_Shot_2021-03-08_at_11.28.38_AM.png"
+              /></a>
+              <figcaption>
+                Errors encountered during upload will be shown in red text.
+                These files will be skipped and will not appear in ActionKit.
+              </figcaption>
+            <br /></figure>
+            <p></p>
+            <br /><figure class="image">
+              <a href="./img/upload_files_bb.gif"
+                ><img
+                  style="width: 984px"
+                  src="./img/upload_files_bb.gif"
+              /></a>
+            <br /></figure>
+            <p></p>
+            <p></p>
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            After clicking
+            <mark class="highlight-teal_background"
+              ><strong>Upload</strong></mark
+            >
+            you will return to the Templates page in ActionKit
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            In the Templates page, locate the section titled
+            <mark class="highlight-teal_background"
+              ><strong>Templates</strong></mark
+            >.
+          </li>
+        </ul>
+        <ul class="bulleted-list">
+          <li>
+            Click on the
+            <mark class="highlight-teal_background"
+              ><strong>Templates</strong></mark
+            >
+            section title to view and verify the uploaded template files.
+          </li>
+        </ul>
+        <p></p>
+        <br /><figure class="image">
+          <a href="./img/verify_upload.png"
+            ><img
+              style="width: 987px"
+              src="./img/verify_upload.png"
+          /></a>
+        <br /></figure>
+        <p></p>
+        <p>
+          Finally, for your uploaded files to work on live pages, you must click
+          the blue <strong>Publish Changes</strong> button at the tope of the
+          page.
+        </p>
+        <hr />
+        <br />
+        <h1>Next Steps</h1>
+        <p>
+          Now that you&#x27;ve uploaded this zip file, go to Pages &gt;
+          Appearance &gt; Templateset fields in ActionKit to add custom
+          templateset fields.
+        </p>
+        <br /><br />
+      </div>
+    </article>
+  </body>
+</html>
