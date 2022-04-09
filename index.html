@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
       const details = document.querySelectorAll("details");
-      const button = document.getElementByClassName("open");
+      const button = document.getElementById("open");
       const openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
