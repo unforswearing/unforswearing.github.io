@@ -4,7 +4,9 @@
     <script>
       function toggleDetails() {
         let details = document.querySelectorAll("details");
+        let button = document.querySelector("button");
         details.forEach(item => item.open = true)
+        button.style.display = none;
       }
     </script>
     <style>
@@ -37,7 +39,7 @@
         border-radius:4px;
         background-color:#6495ed;
         color:inherit;
-        height:50px;
+        height:30px;
         width:150px;
         font-family:monospace;
         font-size:0.85em;
