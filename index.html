@@ -25,6 +25,13 @@
         font-weight: 200;
         float:right;
       }
+      button {
+        border:none;
+        color:#6495ed;
+        height:40px;
+        width:80px;
+        padding: 20px;
+      }
       hr {
         border: 3px dotted grey;
       }
@@ -37,6 +44,8 @@
     Alvin Charity is a  writer (technical / UX / fiction / poetry), musician, sound artist, audio / video editor, and self-taught Javascript programmer based in Washington, DC.
     <br />
     <hr>
+    <br />
+    <button>toggle all</button>
     <br />
     <details open>
       <summary>github</summary>
@@ -58,8 +67,9 @@
           <summary>creative</summary>
           &nbsp&nbsp;fiction: <a href="//unforswearing.com/brick.pdf" class="np">brick</a><br />
           &nbsp;&nbsp;poetry:<br />
-          &nbsp;&nbsp;<a href="https://evergreenreview.com/read/allowing-pass/">allowing pass</a> <sub>(evergreenreview.com)</sub><br />
           &nbsp;&nbsp;<a href="the_past_is_itself.pdf">the past is itself</a><br />
+          &nbsp;&nbsp;<a href="https://evergreenreview.com/read/allowing-pass/">allowing pass</a> <sub>(evergreenreview.com)</sub><br />
+
         </details>
     <br />
     <details open>
@@ -88,4 +98,14 @@
     <sup><a href="cv.pdf" class="np" target="_top">artist cv</a></sup><br />
     <sup>contact: alvin at unforswearing.com</sup><br />
   </body>
+  <script>
+    let details = document.querySelectorAll("details");
+    details.forEach((item) => {
+      if (item.open) {
+        item.open = false;
+      } else {
+        item.open = true;
+      }
+    })
+  </script>
 </HTML>
