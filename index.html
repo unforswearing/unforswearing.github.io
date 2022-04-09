@@ -66,7 +66,7 @@
       }
     </style>
   </head>
-  <body onLoad="(() => if (localStorage.getItem('open')) toggleDetails(); setTimeout(resetDetails, 300 * 100))">
+  <body onLoad="(let open=localStorage.getItem('open');if(open){toggleDetails();setTimeout(resetDetails, 300 * 100))}">
     Alvin Charity is a  writer (technical / UX / fiction / poetry), musician, sound artist, audio / video editor, and self-taught Javascript programmer based in Washington, DC.
     <br />
     <hr>
