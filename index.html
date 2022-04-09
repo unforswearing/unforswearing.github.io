@@ -26,13 +26,14 @@
       }
       button {
         border:none;
-        color:#6495ed;
+        background-color:#6495ed;
+        color:inherit;
         height:40px;
-        width:80px;
+        width:120px;
         padding: 20px;
       }
       hr {
-        border: 3px dotted grey;
+        border: 2px dotted grey;
       }
       .np {
         padding-left:0px;
@@ -44,7 +45,7 @@
     <br />
     <hr>
     <br />
-    <button>toggle all</button>
+    <button onclick="toggleDetails">toggle all</button>
     <br />
     <details open>
       <summary>github</summary>
@@ -98,13 +99,15 @@
     <sup>contact: alvin at unforswearing.com</sup><br />
   </body>
   <script>
+    function toggleDetails() {
     let details = document.querySelectorAll("details");
-    details.forEach((item) => {
-      if (item.open) {
-        item.open = false;
-      } else {
-        item.open = true;
-      }
-    })
+      details.forEach((item) => {
+       if (item.open) {
+         item.open = false;
+        } else {
+         item.open = true;
+        }
+     })
+    }
   </script>
 </HTML>
