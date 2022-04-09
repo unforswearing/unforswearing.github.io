@@ -86,14 +86,14 @@
         background-color:#f4f4f4;
         color:#2a2f33;
       }
-      /*details:hover {
-        background-color:#6495ed;
-        transition:background-color 1s;
-        transition:color 1s;
-      }*/
-      hr {
+      .lr {
         border: 2pt grey;
         background: linear-gradient(to right, #f4f4f4, #2a2f33);
+        height: 2px;
+      }
+      .rl {
+        border: 2pt grey;
+        background: linear-gradient(to left, #f4f4f4, #2a2f33);
         height: 2px;
       }
       .np {
@@ -106,7 +106,7 @@
     musician, sound artist, audio / video editor, and self-taught Javascript
     programmer based in Washington, DC.
     <br />
-    <hr>
+    <hr class="lr">
     <br />
     <button class="open" onclick="toggle()">Open All</button>
     <br />
@@ -151,7 +151,7 @@
     </details>
     <br />
     <br />
-    <hr>
+    <hr class="lr">
     <sup><a href="resume.pdf" class="np" target="_top">Resume</a></sup><br />
     <sup><a href="cv.pdf" class="np" target="_top">Artist CV</a></sup><br />
     <sup><a href="https://github.com/unforswearing" class="np" target="_top">Github</a></sup><br />
