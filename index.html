@@ -2,13 +2,17 @@
   <head>
     <title>Alvin Charity</title>
     <script>
+      const details = document.querySelectorAll("details");
+      const button = document.getElementsByTagName("button");
       function toggleDetails() {
-        let details = document.querySelectorAll("details");
-        let button = document.getElementsByTagName("button")[0];
-
         details.forEach(item => item.open = true)
         localStorage.setItem("open", true);
-        button.style.display = none;
+        button.style.display = "none";
+      }
+      function resetDetails() {
+        details.forEach(item => item.open = false)
+        localStorage.setItem("open", false)
+        button.forEach(item => item.style.display = "block")
       }
     </script>
     <style>
@@ -63,7 +67,7 @@
       }
     </style>
   </head>
-  <body onLoad="if (localStorage.getItem('open')) toggleDetails();">
+  <body onLoad="(() => if (localStorage.getItem('open')) toggleDetails(); setTimeout())">
     Alvin Charity is a  writer (technical / UX / fiction / poetry), musician, sound artist, audio / video editor, and self-taught Javascript programmer based in Washington, DC.
     <br />
     <hr>
