@@ -8,12 +8,12 @@
       const openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
-        button.forEach(item => item.style.display = "none");
+        button.style.display = "none";
       }
       const closeDetails = () => {
         details.forEach(item => item.open = false);
         localStorage.setItem("open", false);
-        button.forEach(item => item.style.display = "block");
+        button.style.display = "block";
       }
       function resetDetails() {
         let open = localStorage.getItem('open');
