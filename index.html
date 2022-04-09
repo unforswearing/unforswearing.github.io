@@ -4,7 +4,7 @@
     <title>Alvin Charity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      let details = document.querySelectorAll("details");
+      var details = document.querySelectorAll("details");
       var openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
@@ -14,7 +14,7 @@
         localStorage.setItem("open", false);
       }
       var resetDetails = () => {
-        let open = localStorage.getItem('open');
+        var open = localStorage.getItem('open');
         if (open) {
           openDetails();
           setTimeout(closeDetails, 300 * 100);
