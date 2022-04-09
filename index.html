@@ -4,16 +4,16 @@
     <title>Alvin Charity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      const details = document.querySelectorAll("details");
-      const openDetails = () => {
+      let details = document.querySelectorAll("details");
+      var openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
       }
-      const closeDetails = () => {
+      var closeDetails = () => {
         details.forEach(item => item.open = false);
         localStorage.setItem("open", false);
       }
-      function resetDetails() {
+      var resetDetails = () => {
         let open = localStorage.getItem('open');
         if (open) {
           openDetails();
