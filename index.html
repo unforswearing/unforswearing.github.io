@@ -5,10 +5,10 @@
     <script>
       const details = document.querySelectorAll("details");
       const button = document.getElementsByTagName("button");
-      function toggleDetails() {
-        details.forEach(item => item.open = true)
+      const toggleDetails = () => {
+        details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
-        button.forEach(item => item.style.display = "block")
+        button.forEach(item => item.style.display = "block");
       }
       function resetDetails() {
         let open = localStorage.getItem('open');
