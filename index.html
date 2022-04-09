@@ -4,14 +4,7 @@
     <script>
       function toggleDetails() {
         let details = document.querySelectorAll("details");
-        details.forEach((item, i) => {
-          if (item.open) {
-            item.open = false;
-            return
-           }
-          item.open = true;
-        })
-      }
+        item.open ? item.open = false : item.open = true;
     </script>
     <style>
       a {
@@ -68,6 +61,7 @@
     Alvin Charity is a  writer (technical / UX / fiction / poetry), musician, sound artist, audio / video editor, and self-taught Javascript programmer based in Washington, DC.
     <br />
     <hr>
+    <br />
     <button onclick="toggleDetails()">Toggle All</button>
     <br />
     <br />
