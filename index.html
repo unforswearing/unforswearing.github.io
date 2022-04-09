@@ -4,12 +4,12 @@
     <script>
       function toggleDetails() {
         let details = document.querySelectorAll("details");
-        details.forEach((item) => {
+        details.forEach((item, i) => {
           if (item.open) {
             item.open = false;
-           } else {
-            item.open = true;
+            return
            }
+          item.open = true;
         })
       }
     </script>
