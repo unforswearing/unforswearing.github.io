@@ -2,9 +2,12 @@
   <head>
     <title>Alvin Charity</title>
     <script>
+      let tBool = false;
       function toggleDetails() {
         let details = document.querySelectorAll("details");
-        details.forEach(item => item.open ? item.open = false : item.open = true);
+        details.forEach(item => item.open = true; tBool = true);
+        if (tBool) details.forEach(item =>item.open = false);
+
     </script>
     <style>
       a {
