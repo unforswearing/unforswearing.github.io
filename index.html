@@ -4,8 +4,10 @@
     <script>
       function toggleDetails() {
         let details = document.querySelectorAll("details");
-        let button = document.querySelector("button");
+        let button = document.getElementsByTagName("button")[0];
+
         details.forEach(item => item.open = true)
+        localStorage.setItem("open", true);
         button.style.display = none;
       }
     </script>
@@ -61,7 +63,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onLoad="if (localStorage.getItem('open')) toggleDetails();">
     Alvin Charity is a  writer (technical / UX / fiction / poetry), musician, sound artist, audio / video editor, and self-taught Javascript programmer based in Washington, DC.
     <br />
     <hr>
