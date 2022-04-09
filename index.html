@@ -8,16 +8,10 @@
       const openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
-        let button = document.getElementById("open");
-        let disp = button.style.display;
-        if (disp === "block") button.style.display = "none"
       }
       const closeDetails = () => {
         details.forEach(item => item.open = false);
         localStorage.setItem("open", false);
-        let button = document.getElementById("open");
-        let disp = button.style.display;
-        if (disp === "block") button.style.display = "none"
       }
       function resetDetails() {
         let open = localStorage.getItem('open');
