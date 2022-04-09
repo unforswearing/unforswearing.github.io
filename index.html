@@ -5,20 +5,23 @@
     <script>
       const details = document.querySelectorAll("details");
       const button = document.getElementsByTagName("button");
-      const toggleDetails = () => {
+      const openDetails = () => {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
+        button.forEach(item => item.style.display = "none");
+      }
+      const closeDetails = () => {
+        details.forEach(item => item.open = false);
+        localStorage.setItem("open", false);
         button.forEach(item => item.style.display = "block");
       }
       function resetDetails() {
         let open = localStorage.getItem('open');
         if (open) {
-          toggleDetails();
-          setTimeout(resetDetails, 300 * 100));
+          openDetails();
+          setTimeout(closeDetails, 300 * 100);
           return
         }
-        details.forEach(item => item.open = false)
-        localStorage.setItem("open", false)
       }
     </script>
     <style>
