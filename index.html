@@ -99,6 +99,38 @@
       .np {
         padding-left:0px;
       }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 220px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        transition:visibility 0.5s;
+        transition-timing-function:ease;
+      }
+      .tooltip:hover {
+        color:#6495ed;
+        transition:color 0.5s;
+        transition-timing-function:ease;
+      }
     </style>
   </head>
   <body onload="check()">
@@ -155,6 +187,7 @@
     <sup><a href="resume.pdf" class="np" target="_top">Resume</a></sup><br />
     <sup><a href="cv.pdf" class="np" target="_top">Artist CV</a></sup><br />
     <sup><a href="https://github.com/unforswearing" class="np" target="_top">Github</a></sup><br />
-    <sup><strong>Contact:</strong> alvin at unforswearing.com</sup><br />
+    <sup><a href="https://linkedin.com/in/alvin-charity" class="np" target="_top">LinkedIn</a></sup><br />
+    <sup class="tooltip">Contact<span class="tooltiptext">alvin@unforswearing.com</span></sup><br />
   </body>
 </html>
