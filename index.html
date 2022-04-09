@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
       const details = document.querySelectorAll("details");
-      function openDetails {
+      function openDetails() {
         details.forEach(item => item.open = true);
         localStorage.setItem("open", true);
         setTimeout(closeDetails, 300 * 100);
