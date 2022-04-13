@@ -6,6 +6,7 @@
     <script>
       function setFalse() { localStorage.setItem("open", false) };
       function setTrue() { localStorage.setItem("open", true) };
+
       function openDetails() {
         var details = document.querySelectorAll("details");
         details.forEach(item => item.open = true);
@@ -21,25 +22,29 @@
         setFalse()
       }
       function toggle() {
+        var state = localStorage.getItem("open")
         var b = document.getElementsByClassName("open")[0];
-        if (b.innerHTML === "Close All") {
+        if (state) {
           closeDetails();
-          setFalse();
-        } else if ((b.innerHTML === "Open All")) {
+        } else if ((b.innerHTML === "Close All")) {
           openDetails();
-          setTrue();
         }
       }
       function check() {
-        if (localStorage.getItem("open") === true) {
-          openDetails();
-        } else {
+        var state = localStorage.getItem("open")
+        if (!state) {
           closeDetails();
-          setFalse();
+          return;
         }
+        openDetails();
+        setTimeout(closeDetails, 300000);
       }
     </script>
     <style>
+      html {
+        color:#2A2F33;
+        background-color:#2A2F33;
+      }
       a {
         padding-left:18px;
         color:#6495ed;
@@ -87,7 +92,12 @@
         color:#2a2f33;
       }
       img {
+        float:left;
+        margin-left:10px;
+        margin-right:30px;
+        margin-top:25px;
         border-radius:50%;
+
       }
       .lr {
         border: 2pt grey;
@@ -138,14 +148,16 @@
   </head>
   <body onload="check()">
     <img src="me.jpeg"></img><br />
-    <sub>
-    Alvin Charity is a  writer (technical / UX / fiction / poetry),
-    musician, sound artist, audio / video editor, and self-taught Javascript
-    programmer based in Washington, DC.<br /><br />
+    <div style="padding-bottom:0px">
+      <sub>
+        Alvin Charity is a  writer (technical / UX / fiction / poetry),
+        musician, sound artist, audio / video editor, and self-taught Javascript
+        programmer based in Washington, DC.<br /><br />
 
-    This site attemps to collect my current and previous work,
-    additional work to be added as I remember.
-    </sub>
+        This site attemps to collect my current and previous work,
+        additional work to be added as I remember.
+      </sub>
+    </div>
     <br />
     <hr class="lr">
     <br />
