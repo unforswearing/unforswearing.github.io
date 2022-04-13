@@ -4,40 +4,26 @@
     <title>Alvin Charity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      function setFalse() { localStorage.setItem("open", false) };
-      function setTrue() { localStorage.setItem("open", true) };
-
       function openDetails() {
-        var details = document.querySelectorAll("details");
+        let details = document.querySelectorAll("details");
         details.forEach(item => item.open = true);
-        var b = document.getElementsByClassName("open")[0]
+        let b = document.getElementsByClassName("open")[0]
         b.innerHTML = "Close All"
-        setTrue()
       }
       function closeDetails() {
-        var details = document.querySelectorAll("details");
+        let details = document.querySelectorAll("details");
         details.forEach(item => item.open = false);
-        var b = document.getElementsByClassName("open")[0]
+        let b = document.getElementsByClassName("open")[0]
         b.innerHTML = "Open All"
-        setFalse()
       }
-      function toggle() {
-        var state = localStorage.getItem("open")
-        var b = document.getElementsByClassName("open")[0];
-        if (state) {
-          closeDetails();
-        } else if ((b.innerHTML === "Close All")) {
-          openDetails();
+
+      function toggleDetails() {
+        let b = document.getElementsByClassName("open")[0]
+        if (b.innerHTML === "Open All") {
+          setTimeout(openDetails, 100)
+        } else if (b.innerHTML === "Close All") {
+          setTimeout(closeDetails, 100)
         }
-      }
-      function check() {
-        var state = localStorage.getItem("open")
-        if (!state) {
-          closeDetails();
-          return;
-        }
-        openDetails();
-        setTimeout(closeDetails, 300000);
       }
     </script>
     <style>
@@ -146,7 +132,7 @@
       }
     </style>
   </head>
-  <body onload="check()">
+  <body>
     <img src="me.jpeg"></img><br />
     <div style="padding-bottom:0px">
       <sub>
@@ -161,7 +147,7 @@
     <br />
     <hr class="lr">
     <br />
-    <button class="open" onclick="toggle()">Open All</button>
+    <button class="open" onclick="toggleDetails()">Open All</button>
     <br />
     <br />
     <details>
