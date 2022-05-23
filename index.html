@@ -16,13 +16,12 @@
         let b = document.getElementsByClassName("open")[0]
         b.innerHTML = "Open All"
       }
-
       function toggleDetails() {
         let b = document.getElementsByClassName("open")[0]
         if (b.innerHTML === "Open All") {
           setTimeout(openDetails, 100)
         } else if (b.innerHTML === "Close All") {
-          setTimeout(closeDetails, 100)
+          setTimeout(closeDetails, 100)       
         }
       }
     </script>
@@ -30,6 +29,7 @@
       html {
         color:#2A2F33;
         background-color:#2A2F33;
+        line-height:1.25;
       }
       a {
         padding-left:18px;
@@ -48,14 +48,18 @@
       body {
         width:60%;
         padding:100px;
-        padding-top:60px;
-        padding-bottom:60px;
+        padding-top:30px;
+        padding-bottom:0px;
         padding-right:0px;
         background-color:#2A2F33;
         color:#f4f4f4;
-        font-family:monospace;
-        font-size:1.25em;
+        font-family:sans-serif;
+        font-size:1em;
         font-weight:lighter;
+      }
+      summary {
+        font-weight:bold;
+        padding-bottom:10px;
       }
       .open {
         display:block;
@@ -65,8 +69,6 @@
         color:inherit;
         height:30px;
         width:150px;
-        font-family:monospace;
-        font-size:0.85em;
         font-weight:bold;
         transition:display 0.5s;
         transition:background-color 0.5s;
@@ -83,7 +85,6 @@
         margin-right:30px;
         margin-top:25px;
         border-radius:50%;
-
       }
       .lr {
         border: 2pt grey;
@@ -119,7 +120,6 @@
         top: -5px;
         left: 105%;
       }
-
       .tooltip:hover .tooltiptext {
         visibility: visible;
         transition:visibility 0.5s;
@@ -132,29 +132,24 @@
       }
     </style>
   </head>
-  <body>
-    <img src="me.jpeg"></img><br />
-    <div style="padding-bottom:0px">
-      <sub>
-        Alvin Charity is a  writer (technical / UX / fiction / poetry),
-        musician, sound artist, audio / video editor, and self-taught Javascript
-        programmer based in Washington, DC.<br /><br />
-
-        This site attemps to collect my current and previous work,
-        additional work to be added as I remember.
-      </sub>
+  <body onload="openDetails()">
+    <!-- <img src="me.jpeg"></img><br /> -->
+    <div style="padding-bottom:0px;">
+        Alvin Charity is a  writer musician, sound artist, 
+        audio / video editor, and self-taught Javascript
+        programmer based in Washington, DC. This site attemps 
+        to collect my current and previous work.
+    <br />
     </div>
     <br />
     <hr class="lr">
     <br />
-    <button class="open" onclick="toggleDetails()">Open All</button>
-    <br />
-    <br />
+    <!-- <button class="open" onclick="toggleDetails()">Open All</button> -->
     <details>
       <summary>Technical Writing</summary>
-      <a href="./actionkit/index.html">Setting up ActionKit</a> <sub>(audience: non-technical staff)</sub><br />
+      <a href="./actionkit/index.html">Setting up ActionKit</a><br />
       <a href="outline_for_solving_it_incidents">Outline for solving IT incidents</a><br />
-      <a href="time_off_request_form_how_to.pdf">Time Off Request Form - How To</a> <sub>(audience: retail)</sub><br />
+      <a href="time_off_request_form_how_to.pdf">Time Off Request Form - How To</a><br />
     </details>
     <br />
 <!--    <details>
@@ -165,8 +160,8 @@
 -->
     <details>
       <summary>Creative Writing</summary>
-      &nbsp&nbsp;Fiction: <a href="https://docs.google.com/document/d/e/2PACX-1vTjGgPnN9P_gLbeulAbY3gO6qiyvPkyHmrj18pQphTBnDpHhgP8eenh1BkFGc9CelpIdQHW6Mbv1QJW/pub" class="np">Brick</a><br />
-      &nbsp;&nbsp;Poetry:<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Fiction: <a href="https://docs.google.com/document/d/e/2PACX-1vTjGgPnN9P_gLbeulAbY3gO6qiyvPkyHmrj18pQphTBnDpHhgP8eenh1BkFGc9CelpIdQHW6Mbv1QJW/pub" class="np">Brick</a><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Poetry:<br />
       &nbsp;&nbsp;<a href="the_past_is_itself.pdf">The Past Is Itself</a><br />
       &nbsp;&nbsp;<a href="https://evergreenreview.com/read/allowing-pass/">Allowing Pass</a> <sub>(evergreenreview.com)</sub><br />
     </details>
@@ -203,12 +198,11 @@
         <a href="https://www.youtube.com/watch?v=l9iYue8o2dk" target="_top">;; (2)</a><br />
     </details>
     <br />
-    <br />
     <hr class="lr">
-    <sup><a href="resume.pdf" class="np" target="_top">Resume</a></sup><br />
-    <sup><a href="cv.pdf" class="np" target="_top">Artist CV</a></sup><br />
+    <br />
+    <!-- <sup><a href="resume.pdf" class="np" target="_top">Resume</a></sup><br />  -->
     <sup><a href="https://github.com/unforswearing" class="np" target="_top">Github</a></sup><br />
     <sup><a href="https://linkedin.com/in/alvin-charity" class="np" target="_top">LinkedIn</a></sup><br />
-    <sup class="tooltip">Contact<span class="tooltiptext">alvin@unforswearing.com</span></sup><br />
+    <sup>alvin @ unforswearing.com</sup><br />
   </body>
 </html>
