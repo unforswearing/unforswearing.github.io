@@ -3,28 +3,6 @@
   <head>
     <title>Alvin Charity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      function openDetails() {
-        let details = document.querySelectorAll("details");
-        details.forEach(item => item.open = true);
-        let b = document.getElementsByClassName("open")[0]
-        b.innerHTML = "Close All"
-      }
-      function closeDetails() {
-        let details = document.querySelectorAll("details");
-        details.forEach(item => item.open = false);
-        let b = document.getElementsByClassName("open")[0]
-        b.innerHTML = "Open All"
-      }
-      function toggleDetails() {
-        let b = document.getElementsByClassName("open")[0]
-        if (b.innerHTML === "Open All") {
-          setTimeout(openDetails, 100)
-        } else if (b.innerHTML === "Close All") {
-          setTimeout(closeDetails, 100)       
-        }
-      }
-    </script>
     <style>
       html {
         color:#2A2F33;
@@ -154,13 +132,14 @@
       <span style="color:#b7410e;font-size:85%;padding-left:18px;display:block;"><em>I am available for freelance technical writing. Get in touch: technical-writing@unforswearing.com</em></span><br />
       <a href="./actionkit/index.html">Setting up ActionKit</a><br />
       <a href="time_off_request_form_how_to.pdf">Time Off Request Form - How To</a><br />
-      <a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation">Building a Better Runbook Through Documentation and Automation</a><br />
-      <a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers">12 Useful Python Scripts for Developers</a><br />
+      <a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation">Building a Better Runbook Through Documentation and Automation</a> <sub>(airplane.dev)</sub><br />
+      <a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers">12 Useful Python Scripts for Developers</a> <sub>(airplane.dev)</sub><br />
+      <a href="https://reflect.run/articles/deno-networking-and-file-permissions-model/">Deno's Networking and File Permissions Model</a> <sub>(reflect.run)</sub><br />
     </details>
     <br />
     <details>
       <summary>Copywriting</summary>
-      <a href="./copper_app_faq/index.html">Copper App FAQ</a> <sub>(getcopper.com)</sub><br />
+      <a href="./copper_app_faq/index.html">Copper App FAQ</a> <sub>(for getcopper.com)</sub><br />
     </details>
     <br />
     <details>
