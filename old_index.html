@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Alvin Charity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html {
+        color:#2A2F33;
+        background-color:#2A2F33;
+        line-height:1.5;
+      }
+      a {
+        padding-left:18px;
+        color:#6495ed;
+        cursor:pointer;
+        text-decoration:none;
+      }
+      a:hover, a:visited:hover {
+        color:#f4f4f4;
+        transition:color 0.5s;
+        transition-timing-function:ease;
+      }
+      a:visited {
+        color:#8c8c9c;
+      }
+      body {
+        width:80%;
+        padding:30px;
+        padding-right:0px;
+        background-color:#2A2F33;
+        color:#f4f4f4;
+        font-family:sans-serif;
+        font-size:1em;
+        font-weight:lighter;
+      }
+      summary {
+        font-weight:bold;
+        padding-bottom:10px;
+      }
+      sup {
+        float:left;
+      }
+      .open {
+        display:block;
+        border:none;
+        border-radius:4px;
+        background-color:#6495ed;
+        color:inherit;
+        height:30px;
+        width:150px;
+        font-weight:bold;
+        transition:display 0.5s;
+        transition:background-color 0.5s;
+        transition:color 1s;
+        transition-timing-function:ease;
+      }
+      button:hover {
+        background-color:#f4f4f4;
+        color:#2a2f33;
+      }
+      img {
+        float:left;
+        margin-left:10px;
+        margin-right:30px;
+        margin-top:25px;
+        border-radius:50%;
+      }
+      .lr {
+        border: 2pt grey;
+        background: linear-gradient(to right, #f4f4f4, #2a2f33);
+        height: 2px;
+      }
+      .rl {
+        border: 2pt grey;
+        background: linear-gradient(to left, #f4f4f4, #2a2f33);
+        height: 2px;
+      }
+      .np {
+        padding-left:0px;
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 220px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        transition:visibility 0.5s;
+        transition-timing-function:ease;
+      }
+      .tooltip:hover {
+        color:#6495ed;
+        transition:color 0.5s;
+        transition-timing-function:ease;
+      }
+      .footer {
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  <body onload="openDetails()">
+    <div style="padding-bottom:0px;">
+        Alvin Charity (hello) is a  writer, musician, sound artist, 
+        audio / video editor, and self-taught Javascript
+        programmer based in Washington, DC. This site attemps 
+        to collect current and previous work.
+    <br />
+    </div>
+    <br />
+    <hr class="lr">
+    <br />
+    <details>
+      <summary>Technical Writing</summary>
+      <span style="color:#b7410e;font-size:90%;padding-left:18px;display:block;"><em>I am available for freelance technical writing. Get in touch: technical-writing@unforswearing.com</em></span><br />
+      <a href="./actionkit/index.html">Setting up ActionKit</a><br />
+      <a href="time_off_request_form_how_to.pdf">Time Off Request Form - How To</a><br />
+      <a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation">Building a Better Runbook Through Documentation and Automation</a> <sub>(airplane.dev)</sub><br />
+      <a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers">12 Useful Python Scripts for Developers</a> <sub>(airplane.dev)</sub><br />
+      <a href="https://reflect.run/articles/deno-networking-and-file-permissions-model/">Deno's Networking and File Permissions Model</a> <sub>(reflect.run)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Copywriting</summary>
+      <a href="./copper_app_faq/index.html">Copper App FAQ</a> <sub>(for getcopper.com)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Creative Writing</summary>
+      &nbsp;&nbsp;&nbsp;&nbsp;Fiction: <a href="https://docs.google.com/document/d/e/2PACX-1vTjGgPnN9P_gLbeulAbY3gO6qiyvPkyHmrj18pQphTBnDpHhgP8eenh1BkFGc9CelpIdQHW6Mbv1QJW/pub" class="np">Brick</a><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;Poetry:<br />
+      &nbsp;&nbsp;<a href="the_past_is_itself.pdf">The Past Is Itself</a><br />
+      &nbsp;&nbsp;<a href="https://evergreenreview.com/read/allowing-pass/">Allowing Pass</a> <sub>(evergreenreview.com)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Music Reviews</summary>
+      <a href="stylus_the_wolves_review.pdf">The Wolves - Art, Culture, Work</a><br />
+      <a href="stylus_bats_and_mice_review.pdf">Bats and Mice - Believe It Mammals</a></br />
+    </details>
+    <br />
+    <details>
+      <summary>Sound Art</summary>
+        <a href="https://papertether.bandcamp.com">Paper Tether</a><br />
+      	<a href="https://exgod.bandcamp.com">Ex God</a><br />
+    </details>
+    <br />
+    <details>
+      <summary>Film Score</summary>
+      <a href="https://vimeo.com/262454642">Landscaper</a> <sub>(Jason Lobe, 2016)</sub><br />
+      <a href="https://bakerartist.org/portfolios/amy-42519">Seeing Women</a> <sub>(Amy Oden, 2021)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Audio Editing</summary>
+    	<a href="https://nationalcenterformobilitymanagement.org/mobility-lines-podcast/" target="_top">NCMM Mobility Lines podcast</a> <sub>(episodes 3 - 7)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Photography</summary>
+      <a href="https://therightcolor.tumblr.com/tagged/i%20did%20this">The Right Color</a> <sub>(tumblr)</sub>
+    </details>
+    <br />
+    <details>
+      <summary>Video Work</summary>
+        <a href="https://www.youtube.com/watch?v=BBL7Nbg2DVk" target="_top">Believe It Don't You</a><br />
+        <a href="https://www.youtube.com/watch?v=II5xs0CXIkI" target="_top">If You're In The Sky</a><br />
+        <a href="https://www.youtube.com/watch?v=Zofn5KUskJg" target="_top">No Light</a><br />
+        <a href="https://www.youtube.com/watch?v=kL3wd4OW3bE" target="_top">;; </a><sub>(1)</sub><br />
+        <a href="https://www.youtube.com/watch?v=l9iYue8o2dk" target="_top">;; </a><sub>(2)</sub><br />
+    </details>
+    <br />
+    <details>
+      <summary>Toy Programming Languages</summary>
+      <a href="https://github.com/unforswearing/functional_esolang" target="_top">Functional Esolang</a><br />
+      <a href="https://github.com/unforswearing/unnamed_lang" target="_top">An Unnamed Language</a><br />
+      <a href="https://github.com/unforswearing/todo_markup.js" target="_top">Todo Markup</a><br />
+    </details>
+    <br />
+    <hr class="lr">
+    <br />
+    <div class="footer">
+    <!-- <sup><a href="resume.pdf" class="np" target="_top">Resume</a></sup><br />  -->
+    <a style="float:left; padding-right:20px;" href="https://github.com/unforswearing" class="np" target="_top">Github</a><br />
+    <a style="float:left; padding-right:20px;" href="https://linkedin.com/in/alvin-charity" class="np" target="_top">LinkedIn</a><br />
+    </div>
+    <span>alvin @ unforswearing.com</span><br />
+    </div>
+  </body>
+</html>
