@@ -1,0 +1,63 @@
+<style>
+body {
+  width: 75%;
+  font-family: sans-serif;
+  padding-left: 20px;
+}
+</style>
+<h3>Welcome!</h3>
+<h4>Please select a question from the drop down list below to be taken to the answer. If you don't see your question, please email payroll@momsorganicmarket.com for further information. Thank you!</h4>
+ <br>
+ <br>
+<select name="" onchange="showDiv(this.value)">
+	<option value="http://example.com">(choose an item below)</option>
+	<option value="QUESTION-TWO">What do I need to do to get manager ADP access?</option>
+	<option value="QUESTION-THREE">How can an employee enroll in MOM's 401(k) plan?</option>
+	<option value="QUESTION-FIVE">An employee moved, what information do you need?</option>
+</select>
+<div id="QUESTION-TWO" style="display:none; width:60%;">
+ <br>
+ <br>
+ <b>What do I need to do to get manager ADP access?</b> <br>
+ <br>
+	 You can create an account in the same manner as any employee. The instructions can be found by clicking the box below. Please ensure a PAN form has been submitted for the manager—this will alert Central Office that their permissions need to be changed. <br>
+ <br>
+</div>
+<div id="QUESTION-THREE" style="display:none; width:60%;">
+ <br>
+ <br>
+ <b>How can an employee enroll in MOM's 401(k) plan?</b> <br>
+ <br>
+	 Information on MOM's 401(k) plan, including steps for enrolling, can be found <a href="https://example.com">here</a>. If an employee would like to enroll in 401(k) with MOM's, they can visit the TransAmerica 401(k) website and sign up.
+</div>
+<div id="QUESTION-FIVE" style="display:none; width:60%;">
+	<p>
+ <strong>An employee moved, what information do you need</strong>
+	</p>
+	<p>
+		 When an employee moves, HR needs to be updated with their address so their benefits, W2s, and other important information go the right place. If they moved between states, please have them complete state income tax form for their new state.
+	</p>
+</div>
+
+ <!-- SCRIPT STARTS HERE. Please avoid editing below this line -->
+<script>
+function hideDiv(id) {
+    var obj = document.getElementById(id);
+    if (obj){ obj.style.display='none';
+    }
+}
+
+function showDiv(id) {
+    var obj = document.getElementById(id);
+    if (obj) {
+        obj.style.display='block';
+    }
+    var whichdiv = ['QUESTION-ONE', 'QUESTION-TWO', 'QUESTION-THREE', 'QUESTION-FOUR', 'QUESTION-FIVE', 'QUESTION-SIX', 'QUESTION-SEVEN', 'QUESTION-EIGHT', 'QUESTION-NINE', 'QUESTION-TEN', 'QUESTION-ELEVEN', 'QUESTION-TWELVE'];
+
+    for (var i = 0; i < whichdiv.length; i++) {
+        var seldiv = whichdiv[i].toString();
+        if (seldiv != id) { hideDiv(seldiv);
+        }
+    }
+}
+</script>
