@@ -1,8 +1,0 @@
-append='>>'
-bkg='&'
-devnull='>/dev/null 2>&1'
-here=.
-hidden='&'
-into='>'
-null='>/dev/null 2>&1'
-overwrite='>|'
