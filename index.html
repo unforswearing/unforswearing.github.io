@@ -19,8 +19,9 @@
         font-size: 1.3em;
         text-decoration: none;
         padding: 5px;
+        width:100%;
         transition: all 0.2s ease-in-out;
-      }
+      } 
       a:hover,
       a:visited:hover {
         /* color: #b7410e;*/
@@ -32,6 +33,16 @@
       }
       a:visited {
         color: #6495ed;
+      }
+      .align_right:hover {
+        text-align: right;
+                
+      }
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
       }
       body {
         width: 60%;
@@ -71,15 +82,15 @@
     <hr>
 
     <div style="padding-bottom: 40px;"><code>Writer, Programmer, Musician, Sound Artist</code></div>
-    <br /><br />
-    <a href="/portfolio" target="_blank">Writing Portfolio</a><br />
-    <a href="https://github.com/unforswearing" target="_blank">Github</a><br />
-    <a href="https://bandcamp.com/unforswearing" target="_blank">Music/Sound</a
+    <br />
+    <a class="stretch" href="/portfolio" target="_blank">Writing Portfolio</a><br />
+    <a class="stretch" href="https://github.com/unforswearing" target="_blank">Github</a><br />
+    <a class="stretch" href="https://bandcamp.com/unforswearing" target="_blank">Music/Sound</a
     ><br />
-    <a href="https://www.linkedin.com/in/alvin-charity/" target="_blank">LinkedIn</a
+    <a class="stretch" href="https://www.linkedin.com/in/alvin-charity/" target="_blank">LinkedIn</a
     >
-    <br /><br />
-    <div style="padding-top:25vh;">
+    <br />
+    <div style="padding-top:20vh;">
     <hr>
     <div>
       <code><a class="foots" href="https://unforswearing.com">home</a>  ::  <a class="foots"
