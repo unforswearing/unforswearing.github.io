@@ -77,6 +77,18 @@ a {
   .sm {
     font-size: 0.9em;
   }
+      a.foots {
+        font-size: inherit;
+        padding: 5px;
+
+      }
+      a.foots:hover  {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
 </style>
 <div>
 <p>
@@ -197,9 +209,10 @@ to the writing samples above, I have experience in instructional design, video e
 <button style="margin-right: 25px;"><a href="https://www.linkedin.com/in/alvin-charity">LinkedIn</a></button>
 <button><a href="https://github.com/unforswearing">Github</a></button><br />
 </div>
-<span class="smol"><code><a href="#top">back to top</a></code></span>
+<span><code><a href="#top">&#8593; back to top</a></code></span>
 <hr>
-<span class="smol" style="padding-bottom:60px;" >
-  <code><a style="color:inherit;"
-  href="https://bandcamp.com/unforswearing">music/sound</a> :: <a style="color:inherit;" href="https://unforswearing.com">unforswearing.com</a></code>
-</span>
+<div style="padding-bottom:60px;" >
+  <code><a class="foots"
+  href="https://bandcamp.com/unforswearing">music/sound</a> :: <a class="foots"
+  href="https://unforswearing.com">home</a></code>
+</div>
