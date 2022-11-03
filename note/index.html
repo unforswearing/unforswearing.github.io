@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Notepad</title>
+    <title>Note</title>
     <style>
       html {
         height: 100%;
@@ -14,9 +14,10 @@
         height: 100%;
       }
       button {
-        width: 75px;
-        height: 25px;
+        width: 100px;
+        height: 35px;
         float: left;
+        font-size: 18px;
       }
       input {
         background: none;
@@ -63,10 +64,11 @@
       }
     </style>
   </head>
-  <body onload="loadFileByUrl()">
+  <body onload="loadFileByUrl() || setTitle('enter text below')">
     <div class="top">
       <button onclick="saveToLocalStorage()">save</button>
       <button onclick="deleteCurrentFile()">delete</button>
+      <button onclick="clearLocalStorage()">remove all</button>
       <br />
       <div>
         <h1 id="title"></h1>
@@ -83,7 +85,6 @@
         let title = new Date().getTime();
         let content = document.getElementById("content").innerText.toString();
         localStorage.setItem(title, content);
-        localStorage.setItem("autosave", { title, content });
 
         const loc = window.location.toString().split();
         loc[1] = title;
@@ -93,7 +94,7 @@
       }
 
       function loadFile(fromUrl) {
-        const title = fromUrl; // || window.prompt("enter file title");
+        const title = fromUrl;
         if (localStorage[title]) {
           document.getElementById("content").innerHTML =
             localStorage.getItem(title);
@@ -111,6 +112,7 @@
         setTitle(fileId);
       }
 
+      function autoSave() {}
       function getAutoSave() {}
 
       function getCurrentTitle() {
@@ -119,15 +121,16 @@
 
       function deleteCurrentFile() {
         localStorage.removeItem(getCurrentTitle());
-        const loc = window.location.toString().split();
+        const loc = window.location.toString().split("?");
         window.location = loc[0];
-        setTitle("");
+        setTitle("Note");
       }
 
       function clearLocalStorage() {
         Object.keys(localStorage).forEach((item) =>
           localStorage.removeItem(item)
         );
+        window.alert("Local Storage Cleared");
       }
     </script>
   </body>
