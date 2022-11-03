@@ -1,1 +1,134 @@
-<html> <head> <title>Notepad</title> <style> html { height: 100%; } body { background: rgb(255, 255, 170); padding: 0; margin: 0; font-family: monospace; font-size: 20px; height: 100%; } input { background: none; padding: 0; border: none; margin: 0; width: 100%; line-height: inherit; font-size: inherit; height: inherit; } input:focus { outline: none !important; border-color: inherit; border: none; -webkit-box-shadow: none; box-shadow: none; } .top, .bottom { width: 840px; max-width: 100%; margin: auto; padding: 0 20px; } .hiddentitle { display: none; } .top { height: 100px; padding-top: 40px; } .bottom, .bottom:focus { padding: 30px 20px; min-height: calc(100% - 200px); outline: 0 solid transparent; } img { max-width: 80%; margin: auto; max-height: 250px; text-align: center; } </style> </head> <body> <div class="top"> <h1><span class="hiddentitle" id="hiddentitle"></span><input id="title" placeholder="Title" autocomplete="off" onkeyup="updateTitle()" /></h1> </div> <div class="bottom" placeholder="content" contenteditable></div> <script> function updateTitle() { var newtitle = document.getElementById("title").value || "Notepad"; document.title = newtitle; document.getElementById("hiddentitle").innerHTML = newtitle; } document.getElementById("title").value = document.getElementById("hiddentitle").innerHTML; </script> </body></html>
+<html>
+  <head>
+    <title>Notepad</title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background: rgb(237, 237, 192);
+        padding: 0;
+        margin: 0;
+        font-family: monospace;
+        font-size: 20px;
+        height: 100%;
+      }
+      button {
+        width: 75px;
+        height: 25px;
+        float: left;
+      }
+      input {
+        background: none;
+        padding: 0;
+        border: none;
+        margin: 0;
+        width: 100%;
+        line-height: inherit;
+        font-size: inherit;
+        height: inherit;
+      }
+      input:focus {
+        outline: none !important;
+        border-color: inherit;
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .top,
+      .bottom {
+        width: 840px;
+        max-width: 100%;
+        margin: auto;
+        padding: 0 20px;
+      }
+      .hiddentitle {
+        display: none;
+      }
+      .top {
+        height: 100px;
+        padding-top: 40px;
+      }
+      .bottom,
+      .bottom:focus {
+        padding: 30px 20px;
+        min-height: calc(100% - 200px);
+        outline: 0 solid transparent;
+      }
+      img {
+        max-width: 80%;
+        margin: auto;
+        max-height: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="loadFileByUrl()">
+    <div class="top">
+      <button onclick="saveToLocalStorage()">save</button>
+      <button onclick="deleteCurrentFile()">delete</button>
+      <br />
+      <div>
+        <h1 id="title"></h1>
+      </div>
+    </div>
+    <div
+      id="content"
+      class="bottom"
+      placeholder="content"
+      contenteditable
+    ></div>
+    <script>
+      function saveToLocalStorage() {
+        let title = new Date().getTime();
+        let content = document.getElementById("content").innerText.toString();
+        localStorage.setItem(title, content);
+        localStorage.setItem("autosave", { title, content });
+
+        const loc = window.location.toString().split();
+        loc[1] = title;
+        window.location = loc.join("?");
+        document.title = title;
+        setTitle(title);
+      }
+
+      function loadFile(fromUrl) {
+        const title = fromUrl; // || window.prompt("enter file title");
+        if (localStorage[title]) {
+          document.getElementById("content").innerHTML =
+            localStorage.getItem(title);
+        }
+      }
+
+      function setTitle(titleFromUrl) {
+        document.getElementById("title").innerHTML = titleFromUrl;
+      }
+
+      function loadFileByUrl() {
+        const loc = window.location.toString();
+        const fileId = loc.split("?")[1] || "";
+        loadFile(fileId);
+        setTitle(fileId);
+      }
+
+      function getAutoSave() {}
+
+      function getCurrentTitle() {
+        return document.getElementById("title").innerHTML;
+      }
+
+      function deleteCurrentFile() {
+        localStorage.removeItem(getCurrentTitle());
+        const loc = window.location.toString().split();
+        window.location = loc[0];
+        setTitle("");
+      }
+
+      function clearLocalStorage() {
+        Object.keys(localStorage).forEach((item) =>
+          localStorage.removeItem(item)
+        );
+      }
+    </script>
+  </body>
+</html>
