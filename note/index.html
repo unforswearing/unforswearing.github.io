@@ -56,6 +56,10 @@
         min-height: calc(100% - 200px);
         outline: 0 solid transparent;
       }
+      .help {
+        color: rgb(126, 139, 160);
+        font-size: large;
+      }
       img {
         max-width: 80%;
         margin: auto;
@@ -64,15 +68,17 @@
       }
     </style>
   </head>
-  <body onload="loadFileByUrl() || setTitle('enter text below')">
+  <body onload="updateHelp('enter text below'); loadFileByUrl(); ">
     <div class="top">
-      <button onclick="saveToLocalStorage()">save</button>
-      <button onclick="deleteCurrentFile()">delete</button>
-      <button onclick="clearLocalStorage()">remove all</button>
-      <br />
       <div>
         <h1 id="title"></h1>
       </div>
+      <button onclick="saveToLocalStorage()">save</button>
+      <button onclick="deleteCurrentFile()">delete</button>
+      <button onclick="clearLocalStorage()">remove all</button>
+      <br /><br />
+      <span class="help" id="help"></span>
+      <br /><br />
     </div>
     <div
       id="content"
@@ -81,6 +87,19 @@
       contenteditable
     ></div>
     <script>
+      let state = {
+        _title: document.getElementById("title").innerHTML,
+        _content: document.getElementById("content").innerText,
+      };
+
+      const hasTitle = () => !state._title;
+      const hasContent = () => (state._content ? true : false);
+
+      function updateHelp(text) {
+        let help = document.getElementById("help");
+        help.innerHTML = text;
+      }
+
       function saveToLocalStorage() {
         let title = new Date().getTime();
         let content = document.getElementById("content").innerText.toString();
@@ -91,6 +110,7 @@
         window.location = loc.join("?");
         document.title = title;
         setTitle(title);
+        updateHelp("");
       }
 
       function loadFile(fromUrl) {
@@ -103,6 +123,7 @@
 
       function setTitle(titleFromUrl) {
         document.getElementById("title").innerHTML = titleFromUrl;
+        state.hasTitle = true;
       }
 
       function loadFileByUrl() {
@@ -130,7 +151,13 @@
         Object.keys(localStorage).forEach((item) =>
           localStorage.removeItem(item)
         );
-        window.alert("Local Storage Cleared");
+        const loc = window.location.toString().split("?");
+        document.getElementById("content").innerHTML = "";
+        setTitle("");
+
+        updateHelp("local storage cleared<br />");
+
+        setTimeout(() => (window.location = loc[0]), 1500);
       }
     </script>
   </body>
