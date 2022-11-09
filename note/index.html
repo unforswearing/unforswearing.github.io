@@ -70,7 +70,7 @@
       placeholder="content"
       contenteditable
     ></div>
-    <span class="version">0.1.0</span>
+    <span class="version">0.1.3</span>
     <script>
       const action = {
         get() {
@@ -188,7 +188,7 @@
           message = `<span style="color: rgb(144, 42, 42);">
               enter text below before saving.
             </span>`;
-          updateUrl("");
+          setTimeout(updateUrl(""), 1500);
         } else {
           localStorage.setItem(title, content);
           message = `saved: ${newUrl}. reloading file...`;
