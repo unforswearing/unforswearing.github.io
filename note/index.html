@@ -14,71 +14,52 @@
         height: 100%;
       }
       button {
+        background: rgb(182, 194, 242);
         width: 100px;
-        height: 35px;
+        height: 30px;
         float: left;
+        margin-right: 10px;
         font-size: 18px;
-      }
-      input {
-        background: none;
-        padding: 0;
+        border-radius: 10px;
         border: none;
-        margin: 0;
-        width: 100%;
-        line-height: inherit;
-        font-size: inherit;
-        height: inherit;
-      }
-      input:focus {
-        outline: none !important;
-        border-color: inherit;
-        border: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
       }
       .top,
       .bottom {
         width: 840px;
         max-width: 100%;
         margin: auto;
-        padding: 0 20px;
-      }
-      .hiddentitle {
-        display: none;
+        display: block;
       }
       .top {
         height: 100px;
         padding-top: 40px;
+        display: fixed;
       }
+      input,
+      input:focus,
       .bottom,
+      .bottom:active,
       .bottom:focus {
-        padding: 30px 20px;
         min-height: calc(100% - 200px);
-        outline: 0 solid transparent;
+        display: block;
+        border: 1px solid rgb(126, 139, 160);
       }
       .help {
         color: rgb(126, 139, 160);
         font-size: large;
-      }
-      img {
-        max-width: 80%;
-        margin: auto;
-        max-height: 250px;
-        text-align: center;
+        display: block;
       }
     </style>
   </head>
-  <body onload="updateHelp('enter text below'); loadFileByUrl(); ">
+  <body onload="loadFileByUrl();">
     <div class="top">
-      <div>
-        <h1 id="title"></h1>
-      </div>
+      <button onclick="setContent(''); loadFile()">new</button>
       <button onclick="saveToLocalStorage()">save</button>
       <button onclick="deleteCurrentFile()">delete</button>
       <button onclick="clearLocalStorage()">remove all</button>
       <br /><br />
       <span class="help" id="help"></span>
-      <br /><br />
+      <br />
     </div>
     <div
       id="content"
@@ -87,77 +68,154 @@
       contenteditable
     ></div>
     <script>
-      let state = {
-        _title: document.getElementById("title").innerHTML,
-        _content: document.getElementById("content").innerText,
+      const action = {
+        get() {
+          return localStorage["action"];
+        },
+        new() {
+          localStorage.setItem("action", "new");
+        },
+        save() {
+          localStorage.setItem("action", "save");
+        },
+        delete() {
+          localStorage.setItem("action", "delete");
+        },
+        removeAll() {
+          localStorage.setItem("action", "removeAll");
+        },
+        loadFile() {
+          localStorage.setItem("action", "loadFile");
+        },
+        loadFileByUrl() {
+          localStorage.setItem("action", "loadFileByUrl");
+        },
       };
+      function setHelpMessage(message) {
+        localStorage.setItem("msg", message);
+      }
 
-      const hasTitle = () => !state._title;
-      const hasContent = () => (state._content ? true : false);
+      function getHelpMessage() {
+        return localStorage["msg"];
+      }
+
+      function getCurrentLocation() {
+        return window.location.href.toString().split("?");
+      }
+
+      function getContent() {
+        return document.getElementById("content").innerHTML;
+      }
+
+      function setContent(text) {
+        document.getElementById("content").innerHTML = text;
+      }
 
       function updateHelp(text) {
         let help = document.getElementById("help");
         help.innerHTML = text;
+        setHelpMessage(text);
+      }
+
+      function updateUrl(title) {
+        let locArray = getCurrentLocation();
+        let base = locArray[0];
+        let newUrl;
+
+        if (title) {
+          newUrl = [base, title].join("?");
+        } else {
+          newUrl = base;
+        }
+
+        window.location.href = newUrl;
+        loadFile(title);
+      }
+
+      function loadFile(title) {
+        let previousAction = action.get();
+        action.loadFile();
+
+        let message;
+        if (previousAction === "delete") {
+          message = getHelpMessage();
+        } else if (!title || title === undefined) {
+          message = "new file loaded. enter text below";
+        } else if (localStorage[title]) {
+          setContent(localStorage[title]);
+          message = `'${title}' loaded successfully`;
+        } else {
+          message = `<span style="color: rgb(144, 42, 42);">
+              '${title}' not found in local storage
+            </span>`;
+        }
+        setHelpMessage(message);
+        updateHelp(getHelpMessage());
+      }
+
+      function loadFileByUrl() {
+        action.loadFileByUrl();
+
+        let title = getCurrentLocation()[1];
+        let message;
+        if (!title || title === undefined) {
+          message = "new file loaded. enter text below";
+        } else if (localStorage[title]) {
+          message = `'${title}' loaded successfully`;
+          loadFile(title);
+        } else {
+          message = `<span style="color: rgb(144, 42, 42);">
+              '${title}' not found in local storage
+            </span>`;
+        }
+
+        setHelpMessage(message);
+        updateHelp(getHelpMessage());
       }
 
       function saveToLocalStorage() {
+        action.save();
+
         let title = new Date().getTime();
         let content = document.getElementById("content").innerText.toString();
         localStorage.setItem(title, content);
 
-        const loc = window.location.toString().split();
-        loc[1] = title;
-        window.location = loc.join("?");
-        document.title = title;
-        setTitle(title);
-        updateHelp("");
-      }
+        let newUrl = `${getCurrentLocation()[0]}?${title}`;
+        let message = `saved: ${newUrl}. reloading file...`;
+        setHelpMessage(message);
+        updateHelp(getHelpMessage());
 
-      function loadFile(fromUrl) {
-        const title = fromUrl;
-        if (localStorage[title]) {
-          document.getElementById("content").innerHTML =
-            localStorage.getItem(title);
-        }
-      }
-
-      function setTitle(titleFromUrl) {
-        document.getElementById("title").innerHTML = titleFromUrl;
-        state.hasTitle = true;
-      }
-
-      function loadFileByUrl() {
-        const loc = window.location.toString();
-        const fileId = loc.split("?")[1] || "";
-        loadFile(fileId);
-        setTitle(fileId);
-      }
-
-      function autoSave() {}
-      function getAutoSave() {}
-
-      function getCurrentTitle() {
-        return document.getElementById("title").innerHTML;
+        const execLoadFile = () => updateUrl(title);
+        setTimeout(execLoadFile, 1500);
       }
 
       function deleteCurrentFile() {
-        localStorage.removeItem(getCurrentTitle());
-        const loc = window.location.toString().split("?");
-        window.location = loc[0];
-        setTitle("Note");
+        action.delete();
+
+        localStorage.removeItem(getCurrentLocation()[1]);
+
+        let message = `removed: ${getCurrentLocation()[1]}`;
+        setHelpMessage(message);
+        updateHelp(getHelpMessage());
+
+        const execLoadFile = () => updateUrl("");
+        setTimeout(execLoadFile, 1500);
       }
 
       function clearLocalStorage() {
+        action.removeAll();
+
         Object.keys(localStorage).forEach((item) =>
           localStorage.removeItem(item)
         );
-        const loc = window.location.toString().split("?");
-        document.getElementById("content").innerHTML = "";
-        setTitle("");
 
-        updateHelp("local storage cleared<br />");
+        setContent("");
 
-        setTimeout(() => (window.location = loc[0]), 1500);
+        let msg = "local storage cleared<br />";
+        setHelpMessage(msg);
+        updateHelp(msg);
+
+        setTimeout(() => updateUrl(""), 2500);
       }
     </script>
   </body>
