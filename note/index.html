@@ -184,21 +184,22 @@
         let title = new Date().getTime();
         let content = document.getElementById("content").innerText.toString();
         let message;
-        let execLoadFile;
+        let url;
         if (!content) {
+          url = "";
           message = `<span style="color: rgb(144, 42, 42);">
               enter text below before saving.
             </span>`;
-
-          execLoadFile = () => updateUrl("");
         } else {
           localStorage.setItem(title, content);
           message = `saved: ${newUrl}. reloading file...`;
 
-          execLoadFile = () => updateUrl(title);
+          url = title;
         }
 
+        const execLoadFile = () => updateUrl(title);
         setTimeout(execLoadFile, 1500);
+
         setHelpMessage(message);
         updateHelp(getHelpMessage());
       }
