@@ -49,6 +49,9 @@
         font-size: large;
         display: block;
       }
+      .version {
+        display: none;
+      }
     </style>
   </head>
   <body onload="loadFileByUrl();">
@@ -67,6 +70,7 @@
       placeholder="content"
       contenteditable
     ></div>
+    <span class="version">0.1.0</span>
     <script>
       const action = {
         get() {
@@ -178,10 +182,17 @@
 
         let title = new Date().getTime();
         let content = document.getElementById("content").innerText.toString();
-        localStorage.setItem(title, content);
+        let message;
 
-        let newUrl = `${getCurrentLocation()[0]}?${title}`;
-        let message = `saved: ${newUrl}. reloading file...`;
+        if (!content) {
+          message = `<span style="color: rgb(144, 42, 42);">
+              enter text below before saving.
+            </span>`;
+        } else {
+          localStorage.setItem(title, content);
+          message = `saved: ${newUrl}. reloading file...`;
+        }
+
         setHelpMessage(message);
         updateHelp(getHelpMessage());
 
