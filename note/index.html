@@ -191,13 +191,13 @@
         } else {
           localStorage.setItem(title, content);
           message = `saved: ${newUrl}. reloading file...`;
+
+          const execLoadFile = () => updateUrl(title);
+          setTimeout(execLoadFile, 1500);
         }
 
         setHelpMessage(message);
         updateHelp(getHelpMessage());
-
-        const execLoadFile = () => updateUrl(title);
-        setTimeout(execLoadFile, 1500);
       }
 
       function deleteCurrentFile() {
