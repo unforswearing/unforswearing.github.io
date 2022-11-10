@@ -104,7 +104,7 @@
     <br />
     <div class="version">
       <details>
-        <summary>0.2.1</summary>
+        <summary>0.2.3</summary>
         <a href="https://unforswearing.com">unforswearing.com</a>
       </details>
     </div>
@@ -219,14 +219,11 @@
           message = getHelpMessage();
         } else if (!title || title === undefined) {
           message = messageData().startup();
-          // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
           setContent(localStorage[title]);
           message = messageData().load_success(title);
-          // message = `'${title}' loaded successfully`;
         } else {
           message = messageData().error_file_not_found(title);
-          // message = errorMessage(`'${title}' not found in local storage.`);
           setTimeout(() => updateUrl(""), 1500);
         }
         setHelpMessage(message);
@@ -238,14 +235,11 @@
         let message;
         if (!title || title === undefined) {
           message = messageData().startup();
-          // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
           message = messageData().load_success(title);
-          // message = `'${title}' loaded successfully.`;
           loadFile(title);
         } else {
           message = messageData().error_file_not_found(title);
-          // message = errorMessage(`'${title}' not found in local storage.`);
           setTimeout(() => updateUrl(""), 1500);
         }
         setHelpMessage(message);
@@ -265,11 +259,9 @@
         if (!content) {
           url = "";
           message = messageData().error_enter_text();
-          // message = errorMessage("enter text below before saving.");
         } else if (content) {
           localStorage.setItem(title, content);
           message = messageData().save_success(title);
-          // message = `saved ${title}. reloading file.`;
           url = title;
         }
         const execLoadFile = () => updateUrl(url);
@@ -279,14 +271,13 @@
       }
       function deleteCurrentFile() {
         action.delete();
+        let title = getLocation()[1];
         let message;
-        if (!getLocation()[1]) {
+        if (!title || !localStorage[title]) {
           message = messageData().error_no_file_delete();
-          // message = errorMessage("no file to delete.");
         } else {
-          localStorage.removeItem(getLocation()[1]);
+          localStorage.removeItem();
           message = messageData().delete_success(title);
-          // message = `removed ${getLocation()[1]}.`;
         }
         setHelpMessage(message);
         updateHelp(getHelpMessage());
@@ -300,8 +291,7 @@
         );
         setContent("");
         let message = messageData().clear_local_storage_success();
-        // let msg = "local storage cleared.";
-        setHelpMessage(msg);
+        setHelpMessage(message);
         updateHelp(getHelpMessage());
         setTimeout(() => updateUrl(""), 2500);
       }
