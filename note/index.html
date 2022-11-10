@@ -210,6 +210,7 @@
           message = `<span style="color: rgb(144, 42, 42);">
               enter text below before saving.
             </span>`;
+          setTimeout(() => updateUrl(""), 1500);
         } else if (content) {
           localStorage.setItem(title, content);
           message = `saved ${title}. reloading file...`;
