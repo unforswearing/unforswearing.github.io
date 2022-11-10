@@ -104,7 +104,7 @@
     <br />
     <div class="version">
       <details>
-        <summary>0.1.17</summary>
+        <summary>0.2.0</summary>
         <a href="https://unforswearing.com">unforswearing.com</a>
       </details>
     </div>
@@ -131,10 +131,42 @@
         loadFile() {
           localStorage.setItem("action", "loadFile");
         },
+        loadNewFile() {
+          localStorage.setItem("action", "loadNewFile");
+        },
         loadFileByUrl() {
           localStorage.setItem("action", "loadFileByUrl");
         },
       };
+      function messageData(title) {
+        const options = {
+          error_enter_text() {
+            return errorMessage("enter text below before saving.");
+          },
+          error_no_file_delete() {
+            return errorMessage("no file to delete.");
+          },
+          error_file_not_found(_title) {
+            return errorMessage(`'${_title}' not found in local storage.`);
+          },
+          startup() {
+            return "new file loaded. enter text below.";
+          },
+          load_success(_title) {
+            return `'${title}' loaded successfully.`;
+          },
+          save_success(_title) {
+            return ` saved '${title}'. reloading file.`;
+          },
+          delete_success(_title) {
+            return `removed ${_title}.`;
+          },
+          clear_local_storage_success(_title) {
+            return `'${_title}' not found in local storage.`;
+          },
+        };
+        return options;
+      }
       function errorMessage(message) {
         return `<span style="color: rgb(144, 42, 42);">
               ${message}
@@ -153,7 +185,7 @@
       function getHelpMessage() {
         return localStorage["msg"];
       }
-      function getCurrentLocation() {
+      function getLocation() {
         return window.location.href.toString().split("?");
       }
       function getContent() {
@@ -168,7 +200,7 @@
         setHelpMessage(text);
       }
       function updateUrl(title) {
-        let locArray = getCurrentLocation();
+        let locArray = getLocation();
         let base = locArray[0];
         let newUrl;
         if (title) {
@@ -186,15 +218,15 @@
         if (previousAction === "delete") {
           message = getHelpMessage();
         } else if (!title || title === undefined) {
-          message = "new file loaded. enter text below.";
+          message = messageData().startup();
+          // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
           setContent(localStorage[title]);
-          message = `'${title}' loaded successfully`;
+          message = messageData().load_success();
+          // message = `'${title}' loaded successfully`;
         } else {
-          /* message = `<span style="color: rgb(144, 42, 42);">
-              '${title}' not found in local storage
-            </span>`; */
-          message = errorMessage(`'${title}' not found in local storage`);
+          message = messageData().error_file_not_found(title);
+          // message = errorMessage(`'${title}' not found in local storage.`);
           setTimeout(() => updateUrl(""), 1500);
         }
         setHelpMessage(message);
@@ -202,24 +234,25 @@
       }
       function loadFileByUrl() {
         action.loadFileByUrl();
-        let title = getCurrentLocation()[1];
+        let title = getLocation()[1];
         let message;
         if (!title || title === undefined) {
-          message = "new file loaded. enter text below.";
+          message = messageData().startup();
+          // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
-          message = `'${title}' loaded successfully`;
+          message = messageData().load_success();
+          // message = `'${title}' loaded successfully.`;
           loadFile(title);
         } else {
-          /* message = `<span style="color: rgb(144, 42, 42);">
-              '${title}' not found in local storage.
-            </span>`; */
-          message = errorMessage(`'${title}' not found in local storage`);
+          message = messageData().error_file_not_found(title);
+          // message = errorMessage(`'${title}' not found in local storage.`);
           setTimeout(() => updateUrl(""), 1500);
         }
         setHelpMessage(message);
         updateHelp(getHelpMessage());
       }
       function loadNewFile() {
+        action.loadNewFile();
         setContent("");
         updateUrl("");
       }
@@ -231,12 +264,12 @@
         let url;
         if (!content) {
           url = "";
-          /* message = `<span style="color: rgb(144, 42, 42);">
-            </span>`; */
-          message = errorMessage("enter text below before saving.");
+          message = messageData().error_enter_text();
+          // message = errorMessage("enter text below before saving.");
         } else if (content) {
           localStorage.setItem(title, content);
-          message = `saved ${title}. reloading file.`;
+          message = messageData().save_success(title);
+          // message = `saved ${title}. reloading file.`;
           url = title;
         }
         const execLoadFile = () => updateUrl(url);
@@ -247,14 +280,13 @@
       function deleteCurrentFile() {
         action.delete();
         let message;
-        if (!getCurrentLocation()[1]) {
-          /* message = `<span style="color: rgb(144, 42, 42);">
-              no file to delete.
-            </span>`; */
-          message = errorMessage("no file to delete.");
+        if (!getLocation()[1]) {
+          message = messageData().error_no_file_delete();
+          // message = errorMessage("no file to delete.");
         } else {
-          localStorage.removeItem(getCurrentLocation()[1]);
-          message = `removed: ${getCurrentLocation()[1]}`;
+          localStorage.removeItem(getLocation()[1]);
+          message = messageData().delete_success(title);
+          // message = `removed ${getLocation()[1]}.`;
         }
         setHelpMessage(message);
         updateHelp(getHelpMessage());
@@ -267,7 +299,8 @@
           localStorage.removeItem(item)
         );
         setContent("");
-        let msg = "local storage cleared.";
+        let message = messageData().clear_local_storage_success();
+        // let msg = "local storage cleared.";
         setHelpMessage(msg);
         updateHelp(getHelpMessage());
         setTimeout(() => updateUrl(""), 2500);
