@@ -68,19 +68,12 @@
         display: none;
       }
       .version {
-        display: none;
+        display: block;
       }
     </style>
   </head>
   <body onload="execOnLoad();">
     <div class="top">
-      <span style="color: rgb(126, 139, 160)"
-        ><a href="https://unforswearing.com">unforswearing.com</a>/<a
-          href="https://unforswearing.com/note"
-          >note</a
-        ></span
-      >
-      <br /><br />
       <button onclick="loadNewFile()">new</button>
       <button onclick="saveToLocalStorage()">save</button>
       <button onclick="deleteCurrentFile()">delete</button>
@@ -97,7 +90,14 @@
       placeholder="content"
       contenteditable
     ></div>
-    <span class="version">0.1.11</span>
+    <br /><br />
+    <div style="color: rgb(126, 139, 160)">
+      <a href="https://unforswearing.com">unforswearing.com</a>/<a
+        href="https://unforswearing.com/note"
+        >note</a
+      >
+    </div>
+    <span class="version help">0.1.14</span>
     <script>
       const action = {
         get() {
