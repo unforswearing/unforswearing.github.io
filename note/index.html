@@ -104,7 +104,7 @@
     <br />
     <div class="version">
       <details>
-        <summary>0.1.16</summary>
+        <summary>0.1.17</summary>
         <a href="https://unforswearing.com">unforswearing.com</a>
       </details>
     </div>
@@ -142,7 +142,8 @@
       }
       function execOnLoad() {
         loadFileByUrl();
-        if (localStorage.length > 2) {
+        // storage[1:2] = msg, action;
+        if (localStorage.length > 3) {
           document.getElementById("showmult").style.display = "block";
         }
       }
@@ -220,7 +221,7 @@
       }
       function loadNewFile() {
         setContent("");
-        loadFile();
+        updateUrl("");
       }
       function saveToLocalStorage() {
         action.save();
