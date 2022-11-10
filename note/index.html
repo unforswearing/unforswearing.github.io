@@ -50,6 +50,12 @@
         padding-top: 20px;
         display: fixed;
       }
+      details > summary {
+        list-style: none;
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
       input,
       input:focus,
       .bottom,
@@ -68,6 +74,11 @@
         display: none;
       }
       .version {
+        color: rgb(126, 139, 160);
+        font-size: var(--std-size);
+        width: 840px;
+        max-width: 100%;
+        margin: auto;
         display: block;
       }
     </style>
@@ -90,14 +101,13 @@
       placeholder="content"
       contenteditable
     ></div>
-    <br /><br />
-    <div style="color: rgb(126, 139, 160); display: none">
-      <a href="https://unforswearing.com/note">note</a>|<a
-        href="https://unforswearing.com"
-        >unforswearing.com</a
-      >
+    <br />
+    <div class="version">
+      <details>
+        <summary>0.1.16</summary>
+        <a href="https://unforswearing.com">unforswearing.com</a>
+      </details>
     </div>
-    <span class="version help" style="margin: auto">0.1.14</span>
     <script>
       const action = {
         get() {
@@ -221,9 +231,8 @@
         if (!content) {
           url = "";
           /* message = `<span style="color: rgb(144, 42, 42);">
-              enter text below before saving.
             </span>`; */
-          message = errorMessage(`'${title}' not found in local storage`);
+          message = errorMessage("enter text below before saving.");
         } else if (content) {
           localStorage.setItem(title, content);
           message = `saved ${title}. reloading file.`;
@@ -241,7 +250,7 @@
           /* message = `<span style="color: rgb(144, 42, 42);">
               no file to delete.
             </span>`; */
-          message = errorMessage(`'${title}' not found in local storage`);
+          message = errorMessage("no file to delete.");
         } else {
           localStorage.removeItem(getCurrentLocation()[1]);
           message = `removed: ${getCurrentLocation()[1]}`;
