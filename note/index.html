@@ -139,6 +139,11 @@
         },
       };
       function messageData(title) {
+        function errorMessage(message) {
+          return `<span style="color: rgb(144, 42, 42);">
+              ${message}
+            </span>`;
+        }
         const options = {
           error_enter_text() {
             return errorMessage("enter text below before saving.");
@@ -166,11 +171,6 @@
           },
         };
         return options;
-      }
-      function errorMessage(message) {
-        return `<span style="color: rgb(144, 42, 42);">
-              ${message}
-            </span>`;
       }
       function execOnLoad() {
         loadFileByUrl();
@@ -276,7 +276,7 @@
         if (!title || !localStorage[title]) {
           message = messageData().error_no_file_delete();
         } else {
-          localStorage.removeItem();
+          localStorage.removeItem(title);
           message = messageData().delete_success(title);
         }
         setHelpMessage(message);
