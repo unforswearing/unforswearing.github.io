@@ -20,12 +20,12 @@
         color: rgb(126, 139, 160);
         font-size: var(--std-size);
       }
-      a:hover {
-        color: rgb(144, 42, 42);
-        font-size: var(--std-size);
-      }
       a:visited {
         color: rgb(182, 194, 242);
+        font-size: var(--std-size);
+      }
+      a:hover {
+        color: rgb(144, 42, 42);
         font-size: var(--std-size);
       }
       button {
@@ -47,7 +47,7 @@
       }
       .top {
         height: 100px;
-        padding-top: 40px;
+        padding-top: 20px;
         display: fixed;
       }
       input,
@@ -74,9 +74,11 @@
   </head>
   <body onload="execOnLoad();">
     <div class="top">
-      <a href="https://unforswearing.com">unforswearing.com</a>/<a
-        href="https://unforswearing.com/note"
-        >note</a
+      <span style="color: rgb(126, 139, 160)"
+        ><a href="https://unforswearing.com">unforswearing.com</a>/<a
+          href="https://unforswearing.com/note"
+          >note</a
+        ></span
       >
       <br /><br />
       <button onclick="loadNewFile()">new</button>
