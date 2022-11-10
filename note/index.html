@@ -222,7 +222,7 @@
           // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
           setContent(localStorage[title]);
-          message = messageData().load_success();
+          message = messageData().load_success(title);
           // message = `'${title}' loaded successfully`;
         } else {
           message = messageData().error_file_not_found(title);
@@ -240,7 +240,7 @@
           message = messageData().startup();
           // message = "new file loaded. enter text below.";
         } else if (localStorage[title]) {
-          message = messageData().load_success();
+          message = messageData().load_success(title);
           // message = `'${title}' loaded successfully.`;
           loadFile(title);
         } else {
