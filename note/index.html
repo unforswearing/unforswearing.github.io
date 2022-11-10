@@ -2,6 +2,9 @@
   <head>
     <title>Note</title>
     <style>
+      :root {
+        --std-size: large;
+      }
       html {
         height: 100%;
       }
@@ -12,6 +15,18 @@
         font-family: monospace;
         font-size: 20px;
         height: 100%;
+      }
+      a {
+        color: rgb(126, 139, 160);
+        font-size: var(--std-size);
+      }
+      a:hover {
+        color: rgb(144, 42, 42);
+        font-size: var(--std-size);
+      }
+      a:visited {
+        color: rgb(182, 194, 242);
+        font-size: var(--std-size);
       }
       button {
         background: rgb(182, 194, 242);
@@ -46,7 +61,7 @@
       }
       .help {
         color: rgb(126, 139, 160);
-        font-size: large;
+        font-size: var(--std-size);
         display: block;
       }
       .showmult {
@@ -80,7 +95,7 @@
       placeholder="content"
       contenteditable
     ></div>
-    <span class="version">0.1.9</span>
+    <span class="version">0.1.11</span>
     <script>
       const action = {
         get() {
