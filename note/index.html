@@ -146,23 +146,23 @@
           error_no_file_delete() {
             return errorMessage("no file to delete.");
           },
-          error_file_not_found(_title) {
-            return errorMessage(`'${_title}' not found in local storage.`);
+          error_file_not_found(title) {
+            return errorMessage(`'${title}' not found in local storage.`);
           },
           startup() {
             return "new file loaded. enter text below.";
           },
-          load_success(_title) {
+          load_success(title) {
             return `'${title}' loaded successfully.`;
           },
-          save_success(_title) {
+          save_success(title) {
             return ` saved '${title}'. reloading file.`;
           },
-          delete_success(_title) {
-            return `removed ${_title}.`;
+          delete_success(title) {
+            return `removed ${title}.`;
           },
-          clear_local_storage_success(_title) {
-            return `'${_title}' not found in local storage.`;
+          clear_local_storage_success(title) {
+            return `'${title}' not found in local storage.`;
           },
         };
         return options;
