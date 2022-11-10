@@ -57,7 +57,7 @@
       }
     </style>
   </head>
-  <body onload="loadFileByUrl();">
+  <body onload="execOnLoad();">
     <div class="top">
       <button onclick="loadNewFile()">new</button>
       <button onclick="saveToLocalStorage()">save</button>
@@ -86,6 +86,9 @@
       const action = {
         get() {
           return localStorage["action"];
+        },
+        load() {
+          localStorage.setItem("action", "load");
         },
         new() {
           localStorage.setItem("action", "new");
@@ -207,9 +210,9 @@
           message = `<span style="color: rgb(144, 42, 42);">
               enter text below before saving.
             </span>`;
-        } else {
+        } else if (content) {
           localStorage.setItem(title, content);
-          message = `saved ${newUrl}. reloading file...`;
+          message = `saved ${title}. reloading file...`;
           url = title;
         }
 
