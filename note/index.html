@@ -133,6 +133,9 @@
         removeAll() {
           localStorage.setItem("action", "removeAll");
         },
+        listAll() {
+          localStorage.setItem("action", "listAll"); 
+        },
         loadFile() {
           localStorage.setItem("action", "loadFile");
         },
@@ -254,6 +257,13 @@
         action.loadNewFile();
         setContent("");
         updateUrl("");
+      }
+      function listAllFiles() {
+        let storedItems = Object.keys(localStorage).sort()
+        storedItems.splice((storedItems.length - 2), 2)
+        // display items as a list somewhere in the notepad
+        // on click (or hover) of each item, show in main editor
+        // when clicked, allow editing (load file into editor)
       }
       function saveToLocalStorage() {
         action.save();
