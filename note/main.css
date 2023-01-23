@@ -1,0 +1,93 @@
+:root {
+  --std-size: large;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: rgb(237, 237, 192);
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  font-size: 20px;
+  height: 100%;
+}
+
+a {
+  color: rgb(126, 139, 160);
+  font-size: var(--std-size);
+}
+
+a:visited {
+  color: rgb(182, 194, 242);
+  font-size: var(--std-size);
+}
+
+a:hover {
+  color: rgb(144, 42, 42);
+  font-size: var(--std-size);
+}
+
+button {
+  background: rgb(182, 194, 242);
+  width: 100px;
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+}
+
+.top,
+.bottom {
+  width: 840px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.top {
+  height: 100px;
+  padding-top: 20px;
+  display: fixed;
+}
+
+details>summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+input,
+input:focus,
+.bottom,
+.bottom:active,
+.bottom:focus {
+  min-height: calc(100% - 200px);
+  display: block;
+  border: 1px solid rgb(126, 139, 160);
+}
+
+.help {
+  color: rgb(126, 139, 160);
+  font-size: var(--std-size);
+  display: block;
+}
+
+.showmult {
+  display: none;
+}
+
+.version {
+  color: rgb(126, 139, 160);
+  font-size: var(--std-size);
+  width: 840px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
