@@ -1,11 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
-FN;CHARSET=UTF-8:Alvin Charity, Writer
+FN;CHARSET=UTF-8:Alvin Charity
 N;CHARSET=UTF-8:Charity;Alvin
-EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:alvin@unforswearing.com
-TITLE;CHARSET=UTF-8:Writer
+EMAIL;CHARSET=UTF-8;type=email,INTERNET:alvin@unforswearing.com
+TITLE;CHARSET=UTF-8:Writer, Programmer, Musician, Sound Artist
 URL;CHARSET=UTF-8:unforswearing.com
-URL;type=WORK;CHARSET=UTF-8:unforswearing.com
-X-SOCIALPROFILE;TYPE=linkedin:linkedin.com/in/alvin-charity
+URL;type=writing portfolio;CHARSET=UTF-8:unforswearing.com/portfolio
+URL;type=blog;CHARSET=UTF-8:unforswearing.substack.com
+URL;type=github;CHARSET=UTF-8:github.com/unforswearing
+URL;type=linkedin;CHARSET=UTF-8:linkedin.com/in/alvin-charity
 REV:2022-10-18T00:59:26.089Z
 END:VCARD
