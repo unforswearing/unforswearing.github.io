@@ -1,30 +1,31 @@
+const storage = localStorage;
 const action = {
   get() {
-    return localStorage["action"];
+    return storage["action"];
   },
   load() {
-    localStorage.setItem("action", "load");
+    storage.setItem("action", "load");
   },
   new() {
-    localStorage.setItem("action", "new");
+    storage.setItem("action", "new");
   },
   save() {
-    localStorage.setItem("action", "save");
+    storage.setItem("action", "save");
   },
   delete() {
-    localStorage.setItem("action", "delete");
+    storage.setItem("action", "delete");
   },
   removeAll() {
-    localStorage.setItem("action", "removeAll");
+    storage.setItem("action", "removeAll");
   },
   loadFile() {
-    localStorage.setItem("action", "loadFile");
+    storage.setItem("action", "loadFile");
   },
   loadNewFile() {
-    localStorage.setItem("action", "loadNewFile");
+    storage.setItem("action", "loadNewFile");
   },
   loadFileByUrl() {
-    localStorage.setItem("action", "loadFileByUrl");
+    storage.setItem("action", "loadFileByUrl");
   },
 };
 function messageData(title) {
@@ -64,15 +65,15 @@ function messageData(title) {
 function execOnLoad() {
   loadFileByUrl();
   // storage[1:2] = msg, action;
-  if (localStorage.length > 3) {
+  if (storage.length > 3) {
     document.getElementById("showmult").style.display = "block";
   }
 }
 function setHelpMessage(message) {
-  localStorage.setItem("msg", message);
+  storage.setItem("msg", message);
 }
 function getHelpMessage() {
-  return localStorage["msg"];
+  return storage["msg"];
 }
 function getLocation() {
   return window.location.href.toString().split("?");
@@ -108,8 +109,8 @@ function loadFile(title) {
     message = getHelpMessage();
   } else if (!title || title === undefined) {
     message = messageData().startup();
-  } else if (localStorage[title]) {
-    setContent(localStorage[title]);
+  } else if (storage[title]) {
+    setContent(storage[title]);
     message = messageData().load_success(title);
   } else {
     message = messageData().error_file_not_found(title);
@@ -124,7 +125,7 @@ function loadFileByUrl() {
   let message;
   if (!title || title === undefined) {
     message = messageData().startup();
-  } else if (localStorage[title]) {
+  } else if (storage[title]) {
     message = messageData().load_success(title);
     loadFile(title);
   } else {
@@ -149,7 +150,7 @@ function saveToLocalStorage() {
     url = "";
     message = messageData().error_enter_text();
   } else if (content) {
-    localStorage.setItem(title, content);
+    storage.setItem(title, content);
     message = messageData().save_success(title);
     url = title;
   }
@@ -162,10 +163,10 @@ function deleteCurrentFile() {
   action.delete();
   let title = getLocation()[1];
   let message;
-  if (!title || !localStorage[title]) {
+  if (!title || !storage[title]) {
     message = messageData().error_no_file_delete();
   } else {
-    localStorage.removeItem(title);
+    storage.removeItem(title);
     message = messageData().delete_success(title);
   }
   setHelpMessage(message);
@@ -175,7 +176,7 @@ function deleteCurrentFile() {
 }
 function clearLocalStorage() {
   action.removeAll();
-  Object.keys(localStorage).forEach((item) => localStorage.removeItem(item));
+  Object.keys(storage).forEach((item) => storage.removeItem(item));
   setContent("");
   let message = messageData().clear_local_storage_success();
   setHelpMessage(message);
