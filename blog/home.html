@@ -14,23 +14,21 @@
 
       a {
         /*  padding-left:18px;*/
+        padding: 0px;
         color: #6495ed;
         cursor: pointer;
-        font-size: 1.3em;
         text-decoration: none;
-        padding: 5px;
-        width: 100%;
         transition: all 0.2s ease-in-out;
       }
 
       a:hover,
       a:visited:hover {
-        /* color: #b7410e;*/
-        color: #2a2f33;
-        background-color: #edbfaa;
-        padding: 5px;
-        border-radius: 5px;
+        color: #b7410e;
         transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
       }
 
       a:visited {
@@ -87,7 +85,8 @@
     </style>
   </head>
   <body>
-    <span class="smol"><a href="/">unforswearing.com</a></span><br />
+    <span class="smol">blog :: <a href="/">unforswearing.com</a></span>
+    <br /><br />
     <div id="posts"></div>
   </body>
 </html>
