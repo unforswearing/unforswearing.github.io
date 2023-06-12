@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
     <link href="../../css/prism.css" rel="stylesheet" />
+    <script src="../../js/prism.js"></script>
     <style>
       html {
         color: #2a2f33;
@@ -91,8 +92,7 @@
       copy tomorrows date, or some date <code>x</code> days in the future.</p>
     <p><strong>Tomorrows Date</strong> simply copies tomorrows date to the
       clipboard.</p>
-    <pre><code
-      class="language-applescript">
+    <pre><code class="language-applescript">
       set morrow to current date  
       set morrow to morrow + days  
       set the clipboard to (do shell script &quot;echo &quot; &amp; morrow &amp; &quot; | sed s/,[^,]*$//&quot;)   
@@ -174,6 +174,5 @@
       functionality of the above script, with a few added options for date and
       time processing. Repository home is <a href="https://github.com/unforswearing/dued">located here</a>. Updates
       soon.</p>
-  <script src="../../js/prism.js"></script>
   </body>
 </html>
