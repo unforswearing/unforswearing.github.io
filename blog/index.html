@@ -1,693 +1,154 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1"> <title>Blog :: Unforswearing</title> <meta name="description" content="documenting small tools, creating new markup languages, and using the shell"> <meta name=version content=Chickadee_1.3.1> <meta name=application-name content="Feather Wiki"> <style id=s>html{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif}html,button,input,select,option,textarea{font-size:12pt;background:#fff;color:#000}html,body{margin:0;padding:0}:focus{outline:2px solid #000}*{box-sizing:border-box;position:relative;max-width:100vw}*+*,p,.pell-content>*:not(:first-child){margin:.5rem 0}main>*{padding:1rem 1.5rem 2rem}#g:not([open]),.sb .n{display:none}input,select,textarea{padding:.5rem}h1,h2,h3,h4,h5,h6,.t{font-weight:700;margin:.5rem 0}h1{font-size:1.8rem}h2{font-size:1.65rem}h3,.t{font-size:1.5rem}h4{font-size:1.35rem}h5{font-size:1.2rem}h6{font-size:1.05rem}.np{max-width:8rem}button,summary:is(.np,.b){text-align:center;color:#fff;padding:5px 12px;background-color:#65a;border:0;border-radius:1rem;z-index:2}a,button,summary,.noti{cursor:pointer}a{text-decoration:none;color:#65a}:is(a,button):is(:hover,:active,:visited){opacity:.8}a.e{color:red}a.l{visibility:hidden}:is(h1,h2,h3,h4,h5,h6):hover a.l,a.l:is(:focus,:active){visibility:visible}a:is([target="_blank"],.e):after{font-size:70%;vertical-align:top;margin-left:3px}a[target=_blank]:after{content:"\29c9"}a.e:after{content:"!"}nav ul{list-style:none}ul,ol{padding:0 0 0 1rem}nav li summary{text-indent:-1rem}label{display:block}blockquote{margin-left:2rem;padding-left:1rem;border-left:3px solid #888}.uc pre{font-size:80%;padding:1em;border-radius:6px;background-color:#eee;line-height:1.5;overflow-x:auto}abbr[title]{cursor:help}.sb{background:#ddd}.w1,.w34,.w12,.w14,.r,main{width:100%}.tabs>*{border:2px solid #65A;border-bottom:0;border-radius:.5rem .5rem 0 0;margin:0}.a{background:#87C;color:#fff}@media (min-width:50rem){.r,main{display:table;border-spacing:1rem 0}.r.ns,main{border-spacing:0}.c,main>*{display:table-cell!important;vertical-align:top}.sb{width:20%;min-width:200px;max-width:500px;height:100vh;overflow-y:auto}.sb .n{display:unset}.sbt{display:none}.w34{width:75%}.w12{width:50%}.w13{width:33%}.w14{width:25%}body>footer{position:absolute;inset:auto 1.5rem 0}form,.mw,#g,input,select,textarea,.ed{max-width:1000px}.tr{text-align:right}.fr{float:right}}.sr{visibility:hidden;height:0;width:0;position:absolute}.tr:not(.ml){text-align:right}.fr:not(.ml){float:right}.chg,.del{background:red}.del{opacity:.8}.h,.del{font-size:.8rem}.db{display:block}.il{display:inline}.ib{display:inline-block}.at{vertical-align:top}.pb{margin:0 0 1.5rem!important}.uc a{text-decoration:underline}.notis{position:fixed;inset:1vw 40vw auto}.noti{padding:1em;box-shadow:3px 3px 5px #555}#g,input,select,textarea,.ed,.noti{border:1px solid #000;border-radius:3px}.ed *{margin:unset}.pell-content,textarea,#g,.g{width:100%;overflow-y:auto;padding:10px;margin:0 auto}.pell-content,textarea{height:50vh;min-height:300px;max-height:600px}:is(.pell-content,textarea,.uc) *{max-width:100%}.pell-actionbar{border-bottom:1px solid #000}.pell-button{background:transparent;color:#000;vertical-align:middle}.pell-button-selected{background:#ddd} </style> <style id=c>button,html,input,option,select,textarea{color:#5c5962}.sb{background:#f5f6fa}.uc pre{background-color:#f5f6fa}button,summary:is(.np,.b){color:#7253ed;background-color:#f5f6fa}.a{background:#ededf5;color:#000;font-weight:600}.tabs>*{border:0}:focus{outline:1px solid #ccc}#g,.ed,.noti:focus,input,select,textarea{border:1px solid #eeebee}.pell-actionbar{border-bottom:1px solid #eeebee}.chg,.del{background:#fdd}p{line-height:1.6}hr{height:1px;padding:0;margin:2rem 0;background-color:#eeebee;border:0}
-body, li, a, sb, nb, main, a, n { color: #2A2F33; }</style> <script id=p type=application/json>{"A":"Blog :: Unforswearing","B":"documenting small tools, creating new markup languages, and using the shell","J":[{"C":"{!zrm5'St","A":"About","D":"about","E":1661575975071,"F":"I am [Alvin](https://unforswearing.com) and this is a blog that collects various posts that were written as I was learning to program and use the shell. \n\nMore generally, I am a writer with over twenty years experience crafting copy for technical documentation, technical blogs, corporate trainings, mobile apps, product marketing, email campaigns, business strategy, and arts / entertainment.\n","G":"about","H":"md","I":1680880561609},{"C":"3o'\\8Hh3c","A":"20220903 Get Started with Fzf in Zsh","D":"20220903_get_started_with_fzf_in_zsh","E":1662230434090,"F":"## Introduction\n\nHave you ever navigated to a directory in your terminal and wanted to select a file or folder from a menu, rather than typing `ls` to print a list of contents? Or perhaps you would rather use a single command to present a list of `git` options for you to choose instead of having to search your command history for frequently used (but often forgotten) commands? If you have experienced these annoyances, or if you want a simple way to choose items from a menu, `fzf` is the tool for you. \n\nIn this article you will learn about [`fzf`](https://github.com/junegunn/fzf), the command-line fuzzy finder. You will also learn a few ways that `fzf` can improve your scripts. \n\n## Installing `fzf`\n\n`fzf` can be installed by cloning the repository, using `homebrew` on MacOS, or by using the default package manager in your Linux system. For more information, see [junegunn/fzf#installation](https://github.com/junegunn/fzf#installation).\n\n## Basic Usage\n\n`fzf` can be used to generate a simple menu from a list of items. For example, you can use `fzf` to display a list of files for you to choose from. To do this you can pipe a list of items into `fzf` in your terminal by using the command below\n\n```\nfind . -type f -maxdepth 1 | fzf\n```\n\nYou can also use [command substitution](https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html) to open the selected file in your editor.\n\n```\n$EDITOR $(find . -type f -maxdepth 1 | fzf)\n```\n\nNow that you understand the basic use of `fzf`, you can use the tool for more interesting automations.\n\n## Use `fzf` with Git\n\nLet's say you have a list of `git` commands that you use regularly but you want to speed up your `git` usage by choosing commands from a menu, rather than typing `git –help` to remember the name of the command you want to use. First, start by printing a list of your commands in your terminal.\n\n```\n# The \"-e\" option translates \"\\n\" to a literal new line, required by fzf\necho -e \"clone\\ninit\\nadd\\ncommit\\npush\\n\"\n```\n\nOnce your list of commands is set, you can pipe this list to `fzf` to display them in a menu\n\n```\necho -en \"clone\\ninit\\nadd –all\\ncommit\\npush\\n\" | fzf\n```\n\nThe command above will present your list of commands as a menu, allowing you to select a command via `fzf`. However, this does not actually run the `git` command. To use `fzf` for executing `git` commands, you can use the code below\n\n```\ngit $(echo -en \"clone\\ninit\\nadd –all\\ncommit\\npush\\n\" | fzf)\n```\n\nThe above command will run the selected `git` command without any additional work on your part, simplifying your workflow and saving time. \n\n## Conclusion\n\nIn this article you learned about `fzf`, how to install `fzf`, and some basic usage examples you can apply to your workflow today. For more information about the `fzf` command-line fuzzy finder, visit the official `fzf` repository at [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf).\n\n\n","G":"command line,fzf,terminal,zsh","H":"md","I":1680879755514},{"C":"\\`;!D1Er:","A":"20211206 A Markup Language","D":"20211206_a_markup_language","E":1661576349721,"F":"# A Markup Language\n\nName: ?? \n\nGoal: Create a somewhat restricted markup language with minimal formatting noise.\n\nLang: ???\n\n \n\n## Sources / Inspiration\n\nMany of the ideas below were borrowed from other systems / markup languages. \n\n- AbstractML: https://github.com/ntrupin/abstractml\n- Markdown Extra: https://michelf.ca/projects/php-markdown/extra/\n- Orgmode: https://orgmode.org/manual/\n- Pug: https://pugjs.org/\n- Quaint: http://breuleux.github.io/quaint/syntax.html\n- Restructured Text: https://docutils.sourceforge.io/docs/user/rst/quickref.html\n- Skriv: http://markup.skriv.org/language/syntax\n\n## Features\n\n- Minimal markup to enhance readability \n- Outputs HTML\n- All markup should be explicit with no magic or hidden behavior\n- Only one method to achieve a particular formatting goal\n- Lightweight options to formatting params to save keystrokes\n- Formatting is a single character aside from enumerated items (headings, lists, etc)\n- New Lines denote the end of paragraphs and other elements. All other whitespace is ignored.\n- No Task or To Do support\n\n## Syntax\n\n### Comments\n\n```\n\n% Comments run to the end of the line and are ignored during processing\n\n```\n\n- No multiline comments\n\n### Headings\n\n```\n\n= h1\n== h2\n=== h3\n\n```\n\n### Paragraphs\n\n- New lines denote the end of a paragraph. Multiple consecutive new lines are ignored. \n\n### Dividers\n\n- Three hyphens\n\n```\n\n---\n\n```\n\n### Lists\n\n- Unordered lists\n\n```\n\n+ item 1\n+ item 2\n++ item 2.1\n++ item 2.2\n+++ item 2.2.1\n\n```\n\n- Ordered lists\n\n```\n\n# item 1\n# item 2\n## item 2.1\n## item 2.2\n### item 2.2.1\n\n```\n\n### Code / Monospace\n\n- Inline code and code blocks wrapped in two backticks\n\n```\n\n``const addTwo = (num) => num + 2``\n\n```\n\n### Code Blocks\n\n```\n\n``\nconst addTwo = (num) => num + 2\naddTwo(5) // 7\n``\n\n```\n\n### Text Formatting\n\n```\n\n*bold*\n|italic|\n_underline_\n~strikeout~\n\n```\n\n- \\*bold\\* and |italic| can be nested together\n- all other formatting cannot be nested and must be used individually\n\n### Block Quotes\n\n```\n\n> this is text in a block quote\n> each line in the block quote must be \n> prepended with the right bracket char (like markdown)\n> otherwise the text is assumed to be paragraph\n\n```\n\n### Links\n\n```\n\n::title=https://url.com\n\n```\n\n- Or without title (autolink)\n\n```\n\n::=https://url.com\n\n```\n\n### Images\n\n```\n\n!!=image.jpg\n\n```\n\n### Linked Images\n\n```\n\n!!=image.jpg::https://viewimage.com\n\n```\n\n---\n\n## Advanced Usage\n\n- These things will be built later and as extensions to the main markup lang above. \n\n### Text Formatting\n\n```\n\n:highlight:\n^superscript^\n,subscript,\n\n```\n\n### Definitions\n\n```\n\nmarkup |= special formatting used when creating textual documentation\n\n```\n\n### Abbreviations\n\n```\n\nSSIMS := Silver Spring International Middle School\n\n```\n\n### Footnotes\n\n- Footnotes must be added to the bottom of the document\n\n```\n\nA footnote|1 can be used like so\n\n---\n1: Here is some supplemental text about footnotes\n\n```\n\n### Tables\n\n- Tables are like CSV with special identifiers for headings and rows. Columns are indicated with commas. Tables are not meant to display complex data or formatting. \n\n```\n\n=Cities,    Pop,    State=\n+Balitmore, 600K,   Maryland+\n+New York,  2.5M,   New York+\n\n```\n\n### Front Matter\n\n```\n\n---\ntitle: A Markup Language\nauthor: Unforswearing\n---\n\n```\n\n- Lengthy front matter can be sourced from an external file:\n\n```\n\n---\ntitle: Appendix\ninclude: pub_data.yaml\n---\n\n% this document now contains all front matter located in pub_data.yaml\n\n```\n\n### Specifying HTML\n\n- Any html tag can be used, however they are best used to denote non-ambiguous document structure. \n- Optional new lines and indentation can be added for readibility. \n\n```\n\n= This is a document that contains HTML tags\n\nBelow is an introduction using a specified <div> element\n\n#div Hello, I am unforswearing and this text is in a div element\n#p Here is an additional paragraph\n\n\n```\n\n### Computed Values / Inline Variables\n\n### Highlighted Callout Boxes\n\n- green (correct, continue)\n- blue (neutral)\n- red (incorrect, stop)\n- yellow (warning, caution)\n\n### Transclusions\n\n- to include content from other files in the current doc\n","G":"blog,idea,markup language,programming language","H":"md","I":1680879782415},{"C":"FYmU\"\\f1K","A":"20200918 DSL Thoughts","D":"20200918_dsl_thoughts","E":1661578092760,"F":"# General Thoughts about Creating a Langauge / DSL\n> see also: configuration language, command language, other non-turing complete langauges\n\n## A very simple language\n\n> really only a few things are needed to implement a programming language:\n- system: args, show (print/echo), input, exit\n- file i/o: read, write, close\n- math: nothing, or whatever is in the source language\n- control: \n  - if/then/else, repeat\n  - repeat is the only loop structure\n  - returns are explicit\n  >> no curly braces. if and for commands should end with dn for \"done\"\n- data structure: functions, arrays/lists (and methods)\n  >> functionname = (arg1, arg2) -> arg1 + arg2 :: functions only have two args max\n  >> list = [1, 2, \"a\", \"b\"] :: there are no types, arrays can be anything\n\n> a less minimal list could be something like:\nsystem commands: args, print/show, input/read, exit, execute, (others)\nmath: basic infix expressions / equality / modulous / etc   <<< implemented myself ??\ncontrol: if/then/else, for..in, break, return, try/err, wait/sleep, loop\ndata structures: array/list (and methods) [], struct/object {} (and methods), function/func/fun/fn/int/\ntypes: number, string, array, struct, function, etc\n\n- use: include a file as a library for the current script\n  - use adds functions from \"lib_file.lang\" in the current global object\n- variables cannot be assigned to the output of \"use\"\n\n`use(\"/path/to/lib_file.lang\")`\n\n- exp: export a function to be used from a library file \n\n```\n..file lib.lang\nfn printhello() show \"hello\" dn\nexp(printhello)\n\n..file script.lang\nuse(\"lib.lang\")\n@printhello()\n```\n\n\n## Interesting things from other languages\n\n- [Cue](https://cuelang.org/docs/) is interesting as a whole\n- [Dhall](https://docs.dhall-lang.org/howtos/Cheatsheet.html) is similar to Cue but with functions (and other stuff)\n\nFrom [Gleam](https://gleam.run)\n- [case expressions](https://gleam.run/book/tour/case-expressions.html)\n- [pipe operator](https://gleam.run/book/tour/functions.html)\n- [modules](https://gleam.run/book/tour/modules.html)\n\nIt would be fun to implement some of the [Open Formula spec](https://www.oasis-open.org/committees/download.php/16826/openformula-spec-20060221.html)\n\n- see also: [[open_formula_implementation.md]]\n\n\n## Etc\n\n#### type conversion\n\n- classes have parameters attached that describe how a conversion should be handled\n\n**list**\n\n`list.char`   - split text or file by character, eg. `{\"a\",,\"l\",\"i\",\"s\",\"t\"}\n`list.word`   - split text or file by word     , eg. `{\"a\", \"list\"}`\n`list.line`   - split text or file by line     , eg. `{\"a list\"}`\n\n**file**\n\n`file`        - method to save files to disk  , eg. `@conv({#text, file, \"/path/file.txt\"}`\n\n**text to number and number to text**\n\nthese operations only require two arguments:\n\n```\n@conv({#var, file, \"/path/to/number.txt\"})\n@conv({#var, file, \"/path/to/text.txt\"})\n\n```\n\n**examples**\n\n```\n..\n..change type from number/file/list/text to text/list/file/number\n..NOTE: conv will only accept a list as an argument!!\n\n@conv({#var, type - list|number|text|file, #optional_argument})\n\n..\n..NOTE:\n..- there is no number or none types so they cannot be declared as classes like list, text, and file\n..- file to text is not necessary since files are read by default\n..  when declaring the file instance using `filename::file(\"/path/to/file.txt\")`\n\n..\n..\"file to list\" and \"text to list\" splits the file or text by character, word, or lines\n..text and file have the same properties so the operations will work exactly the same for both types\n\n@conv({#var, list, list.char})\n@conv({#var, list, list.word})\n@conv({#var, list, list.line})\n\n..\n..\"number to file\" and \"text to file\" saves the var value into a new file \n.. at path specified in #optional_argument\n\n@conv({#var, file, \"/path/to/number.txt\"})\n@conv({#var, file, \"/path/to/text.txt\"})\n\n..\n..number to text conversions numeric characters to text strings\n..the third item in the list argument will be discarded\n\n@conv({#var, text})\n\n..\n..text to number convs numeric characters to text strings\n..NOTE: there is no number type so it cannot be declared like list, text, and file\n..the third item in the list argument will be discarded\n\n@conv({#var, number})\n\n\n```","G":"blog,programming,programming language","H":"md","I":1680879794814},{"C":"zwSMj#^l)","A":"20170919 The JavaScript String Object","D":"20170919_the_javascript_string_object","E":1680879115920,"F":"*Edit: The post below describes a primitive wrapper, [which do not act like primitives and will always resolve to true](https://eslint.org/docs/rules/no-new-wrappers). Please use with caution!*\n\nIn the previous post, I mentioned that I am using Bash far less frequently as my work generally involves fewer server-related tasks and more business process type workflows. This generally means that my Javascript (by way of Google Apps Script) abilities have moved from \"How do I do this?\" to \"How do I do this better!\" In the past this led me to fleshing out the nuances of command line scripting ([e.g. my post about reading files without `cat`](/blog/posts/20161119-read-a-file-without-cat.html)), but JavaScript offers much deeper depths to plumb, many of which I have only discovered in passing. \n\nOne particular aspect of JavaScript objects has always bothered me: how do I use an object in a way that allows me to return a default value while still allowing access to properties contained within. Until today, I had assumed this wasn't possible, and I was trying to bring too much of my Bash-oriented brain to this relatively new-to-me langauge. However, looking through [Stackoverflow](https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object) I discovered a method that met my perhaps non-standard needs. \n\n```javascript  \n\n/*\n  Add object methods/values to a string while retaining the original value\n  from Stack Overflow: https://unforswearing.com/shorten/?KRn\n*/\n\nfunction addPropertiesToString() {\n  var str = 'hello';\n  \n  // create string object\n  str = new String(str);\n  \n  // add object properties\n  // repeat() is available per MDN, but not Google Apps Script\n  // see MDN: https://unforswearing.com/shorten/?ywk\n\n  str.repeat = function(x) {\n    var r = '';\n    for (var q = 0; q < x; q++) {\n      r = r + str;\n    }\n    \n    return r;\n  };\n  \n  // prepend text to str\n  str.prepend = function(text) {\n    var wpre = text + str;\n    return wpre;\n  }\n  \n  // a different hello\n  str.alternate = 'howdy';\n\n  // Logs for the methods above:  \n  Logger.log(str.repeat(3));  \n  // [17-09-19 17:34:46:698 EDT] hellohellohello\t\n\n  Logger.log(str.prepend('someone said: '));\n  // [17-09-19 17:34:46:699 EDT] someone said: hello\n\n  Logger.log(str.alternate);\n  // [17-09-19 17:34:46:699 EDT] howdy\n\n  // And accessing the original str value\n  Logger.log(str);\n  // [17-09-19 17:34:46:700 EDT] hello \n\n}\n\n``` \n\n<br>\nHaving only recently explored objects, I wondered if setting a default string value <i>after</i> adding a property was possible:  \n\n\n```javascript\n\nfunction addPropertiesBeforeString() {\n  var newStr = new String();\n  newStr.goodbye = function() { return 'see ya!' };\n  \n  Logger.log(newStr.goodbye());\n  // [17-09-19 17:34:46:700 EDT] see ya!\n \n  newStr = 'Greetings!'\n\n  Logger.log(newStr);\n  // [17-09-19 17:34:46:701 EDT] Greetings! \n  \n  try {\n    // Doesn't work!\n    Logger.log(newStr.goodbye()); \n  } catch(e) {\n    Logger.log(e);\n    // TypeError: Cannot find function goodbye \n    //            in object Greetings!\n  }\n}\n\n```\n\n<br>  \nOverall though, this opens up some interesting possibilities. I can think of at least one fairly practical example:  \n\n\n```javascript\n\nfunction stringMethodExample() {\n  var htmlMessage = '<h1>Hello</h1><br><br>Attached is a copy of your form responses.' \n  + 'If you have any questions, get in touch!';\n \n  var file = DriveApp.getFileById(123456789); \n  \n  htmlMessage = new String(htmlMessage);\n  htmlMessage.sendEmail = function(submitter, subject, body, htmlMessage) {\n    GmailApp.sendEmail(submitter, subject, body, {htmlBody: htmlMessage});\n  }\n  \n  // Do other things that will generate the submitter and subject...\n  var submitter = 'you@yourdomain.com';\n  var subject = 'Form Responses';\n  \n  // blank body because we are using htmlBody;\n  var body = ''; \n  \n  htmlMessage.sendEmail(submitter, subject, body, htmlMessage);\n}\n\n```\n\nIn the above example, logging `htmlMessage` by itself would return the original string, which could be used elsewhere in the script (as part of a generated PDF, for example). \n\nWhile this doesn't save much time or increase productivity, it does keep the email scoped to the `htmlMessage` and with a few additional lines of code, an `emailHtmlMessage` class could be created to generate this type of object on the fly.  \n\nThis was a fun exercise and my first real foray into deeper JavaScript methods/practices. Get in touch if you have any comments or suggestions!  \n\n \n","G":"javascript,strings","H":"md","I":1680879803549},{"C":"!RvRzXF-~","A":"20170918 Reading Files Without Cat","D":"20170918_reading_files_without_cat","E":1661576846610,"F":"# Reading A File Without cat\n\nI have been trying to find ways to avoid [useless use of cat](https://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat) but could never come up with a method of reading a file that did not involve creating an entire <code>for</code> or <code>while</code> loop. This problem crossed my mind yesterday and, after a quick google search, I [found a neat way to avoid this](http://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell) in a single small command:   \n\n```\n# contents of 'hi.txt'\ncat hi.txt\nhi\nhello\nok\n```\n\n\n\n```\n# reading hi.txt without 'cat'\necho $(<hi.txt)\nhi hello ok\n```\n\n\nUnfortunately, the command does not preserve new lines but for those times when you only need to read from a single line file, this does the trick.\n\n","G":"archive,bash,blog,cat","H":"md","I":1680879821964},{"C":"V<O[S4R#r","A":"20170420 Fun With Pseudo Namespaces in Bash","D":"20170420_fun_with_pseudo_namespaces_in_bash","E":1680878961047,"F":"Looking through the [bash oo framework repository](https://github.com/niieani/bash-oo-framework) I noticed the use of `::` in function names. I have never seen this in bash scripts prior to using this framework, and I was curious about how I could leverage these in scripts to help more easily identify related processing commands.  \n<br>  \n\nInterestingly, some things work very well and some not so much:  \n<br>\n\n```bash\n2:00 PM [~] > alias hi::there='echo hi'\n2:00 PM [~] > hi::there\nhi\n2:00 PM [~] > hi\nbash: hi: command not found\n2:00 PM [~] > there\nbash: there: command not found\n\n2:00 PM [~] > alias hi.there='echo hi'\n2:00 PM [~] > hi.there\nhi\n2:00 PM [~] > hi\nbash: hi: command not found\n2:01 PM [~] > there\nbash: there: command not found\n\n2:01 PM [~] > hi.there() { echo hi; }\nbash: syntax error near unexpected token `(`\n\n2:01 PM [~] > hi:there() { echo hi; }\n2:01 PM [~] > hi:there\nhi\n2:01 PM [~] > hi\nbash: hi: command not found\n2:01 PM [~] > there\nbash: there: command not found\n\n```\n\n<p/>\n\n[A quick search for Bash Namespaces](https://www.google.com/search?q=bash+namespaces) brings up a weath of additional \ninformation for using this technique.\n\n<br>\n","G":"bash,terminal","H":"md","I":1680879837318},{"C":"W*hRtqg/:","A":"20161014 A Bash Strict Mode Function","D":"20161014_a_bash_strict_mode_function","E":1680879446726,"F":"# A Strict-Mode Function  \n\nSome lessons taken from [\"Unofficial Bash Strict Mode\"](http://redsymbol.net/articles/unofficial-bash-strict-mode/) placed into a simple `strict` function that can be called at will.  \n\n```bash  \n#!/usr/bin/env bash\n\nstrict() {\n    set -Ceo pipefail\n    IFS=$'\\n\\t'\n\n    alias cp='cp -i'\n    alias mv='mv -i'\n    alias rm='rm -i'\n\n    error_exit() {\n      echo \"$1\" 1>&2\n      exit 1\n    }\n\n    _end_strict() {\n        unalias cp\n        unalias mv\n        unalias rm\n\n        set +Ceo\n    }\n\n    trap error_exit ERR\n    trap _end_strict ERR EXIT SIGHUP SIGTERM\n}\n```  \n","G":"bash,command line","H":"md","I":1680879862931},{"C":"r\"X/;AVfW","A":"20160701 Create a New File in MacOS Finder","D":"20160701_create_a_new_file_in_macos_finder","E":1680879260540,"F":"# Create a New File in Finder  \n\nI love recreating functionality found in non-free applications. The latest example of this is the [New File menu app on Product Hunt](https://www.producthunt.com/tech/new-file-menu). This application essentially provides the user with a method of creating new files on the fly, from any folder within finder. This is a wonderful tool that can be recreated with a little applescript. Open the Script Editor and enter the code below:   \n\n```\n\ntell application \"Finder\"  \n    set FoldName to selection as text  \n    set FoldName to POSIX path of FoldName  \n    set newfile to text returned of (display dialog \"Enter file name and extension\" default answer \"\")  \n    set FileName to FoldName & newfile  \n    set FileName to POSIX path of FileName  \n    set FileName to quoted form of FileName  \n    do shell script \"touch \" & FileName  \n    do shell script \"open \" & FileName  \nend tell \n```\n\n_Note:_ When using this script you must enter the file name and extension. Finder will automatically open the file in the default application. For example, creating \"My Notes.txt\" will open the new file in Text Edit (or your default application for .txt files).  \n  \nTo add the script to Finder, save as \"New File\" (without an extension) and click \"cmd\" while dragging the script from the folder to the Finder toolbar. You now have a quick shortcut to create a new file any time you need one, and you saved yourself a few bucks in the process. \n\n","G":"applescript,finder,macos","H":"md","I":1680879873783},{"C":"Oo P^u(Mf","A":"20161013 Lnks","D":"20131013_lnks","E":1661576587125,"F":"# lnks\n\nMy tool to [get a list of links from Google Chrome](https://github.com/unforswearing/lnks) has been updated more than a few times since the [previous post](/blog/posts/20140802-getting-a-list-of-links-from-chrome.html), including the ability to save links to instapaper or pastebin, and an option to save the page(s) to pdf (via [wkhtmltopdf](http://wkhtmltopdf.org/downloads.html)). Here's the brand new full list of options:\n\n\t-s to save the links to a file on the desktop\n\t-c to copy the links to your clipboard\n\t-v to print the links to stdout with leading text\n\t-p to print the links to stdout\n\t-i to save the link(s) to instapaper\n\t-b to save the link(s) to pastebin.com\n\t-w to save each url as a pdf (saves the page via 'wkhtmltopdf')\n\t-h prints this help message\n\n\tNote:\n\t- lnks accepts one option. the program will fail if run with more than one option.\n\t- using option -s will allow you to specify an output file, such as:\n\t\t\tlnks -s searchterm matchinglinks.txt\n\n<br>\nI spent a while trying to figure out what I want to do next with `lnks` and feel pretty good about what I have planned:\n\n## Use Safari Instead  \n\nEvery now and again I take Safari out for a spin, and during one of those times I created [`surls`](https://github.com/unforswearing/surls) to mimic `lnks` functionality. Merging `surls` with `lnks` makes a lot of sense, and got me thinking maybe I can add...\n\n## Canary, Chromium, and Webkit Support As Well  \n\nMost (if not all) of these browsers are scriptable via `Applescript` and it's gonna be great to brush up on my Applescripting. I am more than a bit out of practice. \n\n## Pinboard Support  \n\nI was [super excited](http://unforswearing.com/blog/posts/20160517-instapaper-folder-rss.html) to add Instapaper support to `lnks` but got [super bummed](http://unforswearing.com/blog/posts/20160823-instapaper-is-joining-pinterest.html) when I saw that they were sold to Pinterest. I probably won't drop Instapaper support for `lnks` (despite my silly threat), but I definitely want to add an alternative. [Pinboard](http://pinboard.in) is a clean, well  developed option I have on the horizon.  \n\n## lnks.conf  \n\nIt'd be really great to not have to specify any new or old options every time `lnks` is run, so how about a configuration file? This will essentially be an expanded version of [the current `conf` file](https://github.com/unforswearing/lnks/blob/master/.lnks.conf) that will be read at runtime. \n\nThere are a few other maintenance updates that I have planned for the far distant future, but I'm not quite there yet. Check back soon!\n","G":"archive,bash,command line,lnks","H":"md","I":1680879884200},{"C":"uTOFw|`S#","A":"20130314 Video Processing","D":"20130314_video_processing","E":1661577039251,"F":"PROCESS:\n\n1. Videos are exported from Camtasia/FCE/Etc\n2. Exports are saved directly to a Dropbox folder: /Dropbox/VideoProcessing/Originals\n\t* Files in the Originals folder are immediately processed by FFMPEG/HandbrakeCLI\n\t* Files in the Originals folder that are 1 week old are sent to permanent storage\n3. Processed files are sent to the Exports folder: /Dropbox/VideoProcessing/Exports\n4. The exports folder will be \"watched\" by Hazel \n\t* A script will alert me to new files, or\n\t* The file will automatically be moved to a folder on my desktop\n\n\n\nISSUES:\n\n1. Video sizes are often more than 2 GB\n\t* Personal account is too small\n\t* Training account will put files on Jons computer\n\t* Work account will work for anything under 2 GB\n\t* Sub with Google Drive (up to 40 GB)?\n\t\n2. There may be issues with the script running prematurely\n\t* Script did not wait until the video fully processed. \n\t* That issue might be specific to applescript/hazel?\n\t\n3. \n\n```\n                        +---------+\n                    +-->|Originals+----+-------+\n                    |   +---------+    |       |     +----------------+\n                    |                  |       |     |FFMPEG/HANDBRAKE+-----------+\n                    |                  |       |     +----------------+           |\n                    |raw exp           |       |         ^                        |\n+------+            |                  |       |         |                        |\n|      | raw exp +-------------+       |       v         |                        |\n|      +-------->|             |       |     +-----------+---+                    |\n| MAC  |         |   DROPBOX   |       |     | Processing PC |                    |\n|      |<--------+             |       |     +---------------+                    |\n|      | pross'd +-------------+       |                                          |\n+------+            ^                  |                                          |\n                    |                  |                                          |\n                    |                  |                                          |\n                    |                  |                                          |\n                    |processed         |after 1 wk +--> +---------------------+   |\n                    |                  +--------------->|Raw/Originals Storage|   |\n                    |    +-------+                      +---------------------+   |\n                    +----+Exports|                                                |\n                         +-------+                                                |\n                             ^                                                    |\n                             |                                                    |\n                             |          <--------+compressed files                |\n                             +----------------------------------------------------+\n```                             \n\n---\n\nSources:              \n                             \n- http://www.gna-productions.com/tutos/how-to-use-ffmpeg-with-batch-scripts  \n \n- http://jonhall.info/how_to/setup_and_use_ffmpeg_on_windows  \n\n- http://jorge.fbarr.net/2012/05/19/batch-convert-videos-using-handbrake-and-a-script/                           \n                          \n- http://www.paulkiddie.com/2010/02/batching-video-transcodes-with-handbrake-windows/  ","G":"archive,bash,blog,ffmpeg,processing,video","H":"md","I":1680879900033},{"C":"'Y&d1*(xb","A":"20120820 Navi Note Language","D":"20120820_navi_note_language","E":1661577287905,"F":"Navi Note Processing Language\n\nNavi is a simple way to take and process notes. Take notes using the simple Navi syntax and when you need a review of the important tasks, low priority tasks, comments, and contexts, run it through the Navi processor. \n\n- All notes, questions, high priority, and comments fit under a context heading as a project\n\n- There is no whitespace within the project. Whitespace delimits each project  \n\n- All tasks/items begin with a signifier (-,>,∆,etc)  \n\n- Completed tasks/items have x placed before their signifier (x-,x>,x∆,etc)  \n\nSYNTAX\n\n```\n@Project\n\t- Normal priority/unprioritized task/item/comment/note\n\t> High priority task/item\n\t∆ Backburner task/item (alt+j)\n\t† Waiting for something before continuing (alt+t)\n\tx Completed task/item\n\t? Question about a task/project\n\t! Important comment about a task/project\n$$ end of project\n```\n\nParsing\n\n```\nsed -n '/@Project/ ,/$$/'\n\tgrep '>' (etc)\n```","G":"archive,bash,blog,markup language,notes","H":"md","I":1680879910683},{"C":"No;}<$(<.","A":"201201216 Ivan Markup Language","D":"201201216_ivan_markup_language","E":1661577544483,"F":"## Ivan Markup Language\n\n### Syntax\n\nThe goal is to be fast and simple, without having to remember formatting rules. When run through the parser, all Ivan Markup is compiled into HTML, which can then be optionally converted to pdf via wkhtmltopdf. Ivan is built entirely with Ruby and Sed. \n\nI built Ivan to suit my needs, and so it doesn't have a lot of the capabilities of other \"lightweight markup languages.\" Specifically:\n\n- No support for tables, since I never use them\n\n- No support for code blocks, but this may change\n\n- Only the `<h1>` and `<h2>` header options\n\n- No relative links, inline anchors, cross references. \n\nSince this was a test of my limited programming capabilities, the syntax rules are pretty strict\n\n- no spaces between the formatting characters and the words you are applying the formatting to. E.G. :bold words: works but : bold words : will not. \n\n```\n=h1=\n==h2==\n\n*bold* \n/italic/\n_underline_\n\n- list item - \n- list item - \n  - nested list item - \n  - nested list item - \n```\n\nPossible later additions:\n\n```\n;http://google.com;\n;google;http://google.com;\n\n+http://google.com/smiley.gif+\n+smiley+http://google.com/smiley.gif+\n\n+;me@email.com;+\n+;my email+;me@email.com;+\n\n</code/>\n\n</\ncode block\n/>\n```\n\n### Code structure\n\nTo start, write functions for each conversion that is needed:\t\n 1.  h1\n 2.  h2\n 3.  bold\n 4.  italic\n 5.  underline\n 6.  links w/o alt text\n 7.  links w/ alt text\n 8.  email w/o alt text\n 9.  email w/ alt text\n 10. inline code\n\n### Pseudocode\n\n```\nFUNCTIONs 1-10\nDOCUMENT = ARGV[0]\nOPTION = ARGV[1]\nOPTION2 = ARGV[2]\n\nRead file DOCUMENT\n  WORDS = words of DOCUMENT\n  if WORDS contains (markup syntax 1) \n    do FUNCTION 1\n  elsif WORDS contains (markup syntax 2) \n    do FUNCTION 2\n(etc through 10 functions\nDone\n\nCase OPTION\n\n  when “-o” \n    save as newname.html\n  when “-f”\n    save as name.pdf,md\nDone\n\nCase OPTION2 \n\n  when “-o” \n    save as newname.html\n  when “-f”\n    save as name.pdf,md\nDone\n```\n\n### Description\n\nThe parser will read each line and then each word of the file, compare it to each of the 10 functions using ‘if’ statements in a ‘for’ loop. If it matches one, the function containing the code will process the word. If it doesn’t match any, it will continue to loop through the words in the file until there are no more words. \n\nIvan parser will exist as a command line only (because this has no place in Applescript). The script will take one file as an argument and convert to HTML by default. I am undecided about accepting processing options, but some ideas would be to\n\n- ivan foo.txt (html only)  \n\n- ivan foo.txt -o bar.html (specify output filename — HOW?)  \n\n- ivan foo.txt -f [pdf,md] (convert a doc to pdf or markdown, maybe rtf)  \n\n- ivan foo.txt -f [pdf,md] -o bar.[pdf,md] (like above, with a new filename  \n\nThe internal Ivan parsing will be written by me. The pdf and md formats will happen via ‘wkhtmltopdf’ (ruby) and ‘pandoc’ respectively. \n\n**Considerations**\n\n- Make sure the script doesn't endlessly iterate\n\n\t- Possibly use the ‘++’ option to stop the script from starting at the beginning\n\n- Make sure the script can handle any punctuation\n\n- Make sure the script can process the words regardless where they are placed in the string. \n\n- Keep the formatting strict to avoid stupid errors\n\n\n## Processing\n\n```\n# Sed\n\n## bold: \nsed 's/ :/ <bold>/g' | sed 's/: /<\\/bold> /g' |  sed 's/^:/ <bold>/g' | sed 's/:$/<\\/bold> /g' | sed 's/:./<\\/bold>/'\n\n## paragraph breaks:\nsed 's/^/<p>/' | sed 's/$/<\\/p>/'\n\n\n# Awk\n## get alt text for link\nawk -F+ '{ print $1 }' | sed 's/{//'\n```\n\n---","G":"archive,bash,blog,markup language,programming","H":"md","I":1680879926067}],"K":{},"L":true,"M":false,"N":"3o'\\8Hh3c","_":{"A":"name","B":"desc","C":"id","D":"slug","E":"cd","F":"content","G":"tags","H":"editor","I":"md","J":"pages","K":"img","L":"static","M":"published","N":"home"}}</script> <script id=a>(()=>{function P(a){return a.replace(RegExp("^"+(a.match(/^(\t| )+/)||"")[0],"gm"),"")}function G(a){return(a+"").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function J(a,d){function b(t){var u=Q[t[1]||""],r=k[k.length-1]==t;return u?u[1]?(r?k.pop():k.push(t),u[0|r]):u[0]:t}function f(){for(var t="";k.length;)t+=b(k[k.length-1]);return t}var h,e,c,g=/((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:!\[([^\]]*?)\]\(([^)]+?)\))|(\[)|(\](?:\(([^)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,
-k=[],p="",m=d||{},n=0;for(a=a.replace(/^\[(.+?)\]:\s*(.+)$/gm,function(t,u,r){return m[u.toLowerCase()]=r,""}).replace(/^\n+|\n+$/g,"");h=g.exec(a);){var l=a.substring(n,h.index);n=g.lastIndex;d=h[0];l.match(/[^\\](\\\\)*\\$/)||((c=h[3]||h[4])?d='<pre class="code '+(h[4]?"poetry":h[2].toLowerCase())+'"><code'+(h[2]?' class="language-'+h[2].toLowerCase()+'"':"")+">"+P(G(c).replace(/^\n+|\n+$/g,""))+"</code></pre>":(c=h[6])?(c.match(/\./)&&(h[5]=h[5].replace(/^\d+/gm,"")),e=J(P(h[5].replace(/^\s*[>*+.-]/gm,
-""))),">"==c?c="blockquote":(c=c.match(/\./)?"ol":"ul",e=e.replace(/^(.*)(\n|$)/gm,"<li>$1</li>")),d="<"+c+">"+e+"</"+c+">"):h[8]?d='<img src="'+G(h[8])+'" alt="'+G(h[7])+'">':h[10]?(p=p.replace("<a>",'<a href="'+G(h[11]||m[l.toLowerCase()])+'">'),d=f()+"</a>"):h[9]?d="<a>":h[12]||h[14]?d="<"+(c="h"+(h[14]?h[14].length:"="<h[13]?1:2))+">"+J(h[12]||h[15],m)+"</"+c+">":h[16]?d="<code>"+G(h[16])+"</code>":(h[17]||h[1])&&(d=b(h[17]||"--")));p+=l;p+=d}return(p+a.substring(n)+f()).replace(/^\n+|\n+$/g,
-"")}function sa(a){var d;(null!=(d=a.match(/<.*?[_*].*?(?=>)|\[\[.+?\]\]/gs))?d:[]).forEach(f=>{a=a.replace(f,f.replace(/_/g,"\ufffe").replace(/\*/g,"\uffff").replace(/\[\[/g,"\ufffd").replace(/\]\]/g,"\ufffc"))});let b=!1;return a.split(/(?:\r?\n){2,}/).map(f=>{let h=f.trim();if(f.includes("```")){let e=f.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace("```",`<${b?"/":""}pre>`).replace("```","</pre>");return b=!h.endsWith("```")||!b&&"```"===h,e}return!b&&h.match(/^[-*]{2,}$/)?"<hr>":b?f.replace(/</g,
-"&lt;").replace(/>/g,"&gt;"):" \t#-*>".split("").some(e=>f.startsWith(e))?J(f):`<p>${J(f)}</p>`}).join("\n").replace(RegExp("\ufffe","g"),"_").replace(RegExp("\uffff","g"),"*").replace(RegExp("\ufffd","g"),"[[").replace(RegExp("\ufffc","g"),"]]")}function K(a,d,b){b=`\\s<${d} id=${b}>`;a=a.match(new RegExp(b+`.+?(?=</${d}>)`,"s"));return(null!=a?a:[]).length?a[0].replace(b.replace("\\s",""),"").trim():""}function ta(a){return R(this,null,function*(){let d=Object.keys(a);return d.length&&!a[d[0]].img&&
-(yield Promise.all(d.map(b=>new Promise(f=>{let h=new Image;h.src=a[b];h.onload=()=>{a[b]={img:a[b],alt:"image",size:[h.width,h.height]};f()}})))),a})}function ua(){function a(e){var c;return(null!=(c=null==e?void 0:e.match(/\[\[.+?(?=\]\])/g))?c:[]).forEach(g=>{let k=g.replace("[[","").split("|"),p=k[1]?k[1].trim():FW.slug(k[0]);e=e.replace(`${g}]]`,`<a href="#${p}">${k[0]}</a>`)}),e}let {state:d}=FW,{pages:b}=d.p,{img:f,out:h}=FW.inject;return html`<div> ${b.map(e=>{let c=e.content;return c="md"===
-e.editor?md(c):c,c=f(a(h(c)),d),html`<article> <h1 id=${e.slug}>${e.name}</h1> <section>${html.raw(c)}</section> </article>`})} </div>`}function va(a,d=()=>{}){!confirm("Inserting an image will increase your wiki's file size. Continue?")||FW.upload("image/*",b=>{S(b,(f,h,e)=>{if(f){let c=FW.hash.string(f);a.p.img[c.toString()]={alt:prompt("Set alt text",b.name),size:[h,e],img:f};d({img:f,id:c})}})})}function wa(a,d,b=()=>{}){a.preventDefault();document.getElementById("g").close();b(d)}function xa(a){return a.replace(/(?:<img src=")[^"]+#([-\d]+)(?=")/g,
-'<img src="img:$1:img')}function S(a,d=()=>{}){let b=new FileReader;b.onload=f=>{let h=new Image;h.src=f.target.result;h.onload=()=>{let e=document.createElement("canvas"),c=h.width,g=h.height,k=prompt("Set max width pixels:","400");k=null!=k&&k.length?parseInt(k):400;let p=prompt("Set max height pixels:","350");p=null!=p&&p.length?parseInt(p):350;c>g?c>k&&(g*=k/c,c=k):g>p&&(c*=p/g,g=p);e.width=c;e.height=g;e.getContext("2d").drawImage(h,0,0,c,g);d(e.toDataURL(a.type),c,g)}};b.onerror=f=>{d(null)};
-b.readAsDataURL(a)}function T(a){var d=0,b;if(0===a.length)return d;for(b=0;b<a.length;b++){var f=a.charCodeAt(b);d=(d<<5)-d+f;d|=0}return d}function ya(a){return T(JSON.stringify(a))}function za(a,d){var b;let f=null!=a?a:null;return f&&(null!=(b=null==a?void 0:a.match(/\[\[.+?(?=\]\])/g))?b:[]).forEach(h=>{let e=h.replace("[[","").split("|"),c=e[1]?e[1].trim():FW.slug(e[0]),g=d.p.pages.some(k=>k.slug===c);f=f.replace(`${h}]]`,`<a href="${d.root}?page=${c}"${g?"":" class=e"}>${e[0]}</a>`)}),f}function Aa(a,
-d,b=!1){var f;let h=null!=a?a:null;return h&&(null!=(f=null==a?void 0:a.match(/img:.+?(?=:img)/g))?f:[]).forEach(e=>{id=e.replace("img:","");let c=d.p.img[id];h=h.replace(`${e}:img`,c.img+(b?`#${id}`:"")+`" alt="${c.alt}`)}),h}function Ba(a){var d;let b=null!=a?a:null;return b&&(null!=(d=null==a?void 0:a.match(/<a href=".+?(?=")/gi))?d:[]).forEach(f=>{b=b.replace(f,`${f}" target="_blank" rel="noopener noreferrer`)}),b}function Ca(a){var d;let b=null!=a?a:null;return b&&(null!=(d=null==a?void 0:a.match(/<h\d>.+?<\/h\d>/gi))?
-d:[]).forEach(f=>{let h=f.match(/<h(\d)>(.+)<\/h\d>/i),e=FW.slug(h[2]);b=b.replace(f,`<h${h[1]} id=${e}>${h[2]} <a class=l href=#${e}>#</a></h${h[1]}>`)}),b}function U(a,d,b){"boolean"==typeof d?(b=d,d=void 0):b="undefined"!=typeof b?b:!1;"undefined"==typeof d&&(H=-1);d=d||[];if(Array.isArray(a)){var f=b,h;b=0;for(h=a.length;b<h;b++)a[b]=U(a[b],d,f)}else{var e;d=V(W(a,d));!0===b&&(d=X(d));b=JSON.stringify(a);h=d.length;for(e=0;e<h;e++)a=d[e],b=b.replace(new RegExp('(?:"'+a[1].replace(/[-[\]{}()*+?.,\\^$|#\s]/g,
-"\\$&")+'"):',"g"),'"'+a[0]+'":');a=(f=JSON.parse(b),f._=Da(d),f)}return a}function Y(a){a=JSON.parse(JSON.stringify(a));if(Array.isArray(a)){var d;var b=0;for(d=a.length;b<d;b++)a[b]=Y(a[b])}else{var f=JSON.parse(JSON.stringify(a._));delete a._;d=JSON.stringify(a);for(b in f)"undefined"!=typeof f[b]&&(d=d.replace(new RegExp('(?:"'+b+'"):',"g"),'"'+f[b]+'":'));f=d}return f?JSON.parse(f):a}function Z(a,d){var b,f=a.length;for(b=0;b<f;b++)if(a[b][1]===d)return!0;return!1}function V(a){var d,b=a.length,
-f=[];for(d=0;d<b;d++)Z(f,a[d][1])||f.push(a[d]);return f}function Da(a){return a.reduce((d,b)=>(d[b[0]]=b[1],d),{})}function aa(a,d,b=0){var f=[];for(d=d||71;a>=d;)f.push("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_!?()*".charCodeAt(a%d+b)),a=Math.floor(a/d-1);return f.push("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=_!?()*".charCodeAt(a+b)),f.reverse()}function W(a,d){var b,f,h;for(f in a)"undefined"!=typeof a[f]&&(h=a[f],((null==h?void 0:h.constructor)===
-Object||Array.isArray(h))&&(d=d.concat(V(W(h,d)))),isNaN(Number(f))&&(Z(d,f)||(H+=1,b=[String.fromCharCode.apply(String,aa(H)),f],d.push(b))));return d}function X(a){var d,b=a.length,f={};for(d=0;d<b;d++)f[a[d][0]]=d;for(d=0;d<b;d++){var h=a[d][1];if("undefined"!=typeof f[h])return d=f[h],H+=1,a[d][0]=String.fromCharCode.apply(String,aa(H)),f[d]=a[d][0],delete f[h],X(a)}return a}var Ea=Object.create,I=Object.defineProperty,Fa=Object.defineProperties,Ga=Object.getOwnPropertyDescriptor,Ha=Object.getOwnPropertyDescriptors,
-Ia=Object.getOwnPropertyNames,ba=Object.getOwnPropertySymbols,Ja=Object.getPrototypeOf,ca=Object.prototype.hasOwnProperty,Ka=Object.prototype.propertyIsEnumerable,da=(a,d,b)=>d in a?I(a,d,{enumerable:!0,configurable:!0,writable:!0,value:b}):a[d]=b,L=(a,d)=>{for(var b in d||={})ca.call(d,b)&&da(a,b,d[b]);if(ba)for(b of ba(d))Ka.call(d,b)&&da(a,b,d[b]);return a},ea=(a,d)=>Fa(a,Ha(d)),E=(a,d)=>()=>(a&&(d=a(a=0)),d),z=(a,d)=>()=>(d||a((d={exports:{}}).exports,d),d.exports),F=(a,d)=>{for(var b in d)I(a,
-b,{get:d[b],enumerable:!0})},fa=(a,d,b,f)=>{if(d&&"object"==typeof d||"function"==typeof d)for(let h of Ia(d))!ca.call(a,h)&&h!==b&&I(a,h,{get:()=>d[h],enumerable:!(f=Ga(d,h))||f.enumerable});return a},ha=a=>fa(I({},"__esModule",{value:!0}),a),R=(a,d,b)=>new Promise((f,h)=>{var e=k=>{try{g(b.next(k))}catch(p){h(p)}},c=k=>{try{g(b.throw(k))}catch(p){h(p)}},g=k=>k.done?f(k.value):Promise.resolve(k.value).then(e,c);g((b=b.apply(a,d)).next())}),La=z((a,d)=>{d.exports=function(b,f){if(b)try{var h=document.querySelector(b);
-h&&h.scrollIntoView(f)}catch(e){}}}),Ma=z((a,d)=>{d.exports=function(b){if("undefined"==typeof document)throw Error("document-ready only runs in the browser");var f=document.readyState;if("complete"===f||"interactive"===f)return setTimeout(b,0);document.addEventListener("DOMContentLoaded",function(){b()})}}),C=z((a,d)=>{function b(f,h){if(!f)throw Error(h||"AssertionError");}b.notEqual=function(f,h,e){b(f!=h,e)};b.notOk=function(f,h){b(!f,h)};b.equal=function(f,h,e){b(f==h,e)};b.ok=b;d.exports=b}),
-Na=z((a,d)=>{function b(e){this.method=(this.hasIdle=(this.hasWindow=e)&&window.requestIdleCallback)?window.requestIdleCallback.bind(window):this.setTimeout;this.scheduled=!1;this.queue=[]}var f=C(),h="undefined"!=typeof window;b.prototype.push=function(e){f.equal(typeof e,"function","nanoscheduler.push: cb should be type function");this.queue.push(e);this.schedule()};b.prototype.schedule=function(){if(!this.scheduled){this.scheduled=!0;var e=this;this.method(function(c){for(var g;e.queue.length&&
-0<c.timeRemaining();)g=e.queue.shift(),g(c);e.scheduled=!1;e.queue.length&&e.schedule()})}};b.prototype.setTimeout=function(e){setTimeout(e,0,{timeRemaining:function(){return 1}})};d.exports=function(){var e;return h?(window._nanoScheduler||(window._nanoScheduler=new b(!0)),e=window._nanoScheduler):e=new b,e}}),ia=z((a,d)=>{function b(g){function k(n){var l="end-"+p+"-"+g;c.mark(l);h.push(function(){var t=null;try{c.measure(g+" ["+p+"]",m,l),c.clearMarks(m),c.clearMarks(l)}catch(u){t=u}n&&n(t,g)})}
-if(e.equal(typeof g,"string","nanotiming: name should be type string"),b.disabled)return f;var p=(1E4*c.now()).toFixed()%Number.MAX_SAFE_INTEGER,m="start-"+p+"-"+g;c.mark(m);return k.uuid=p,k}function f(g){g&&h.push(function(){g(Error("nanotiming: performance API unavailable"))})}var h=Na()(),e=C();b.disabled=!0;try{var c=window.performance;b.disabled="true"===window.localStorage.DISABLE_NANOTIMING||!c.mark}catch(g){}d.exports=b}),Oa=z((a,d)=>{function b(){if(!(this instanceof b))return new b;this.trie=
-{nodes:{}}}var f=C();d.exports=b;b.prototype.create=function(h){function e(g,k){var p=Object.prototype.hasOwnProperty.call(c,g)&&c[g];if(!1===p)return k;var m=null;return/^:|^\*/.test(p)?(Object.prototype.hasOwnProperty.call(k.nodes,"$$")?m=k.nodes.$$:(m={nodes:{}},k.nodes.$$=m),"*"===p[0]&&(k.wildcard=!0),k.name=p.replace(/^:|^\*/,"")):Object.prototype.hasOwnProperty.call(k.nodes,p)?m=k.nodes[p]:(m={nodes:{}},k.nodes[p]=m),e(g+1,m)}f.equal(typeof h,"string","route should be a string");var c=h.replace(/^\//,
-"").split("/");return e(0,this.trie)};b.prototype.match=function(h){function e(k,p){if(void 0!==p){var m=c[k];if(void 0===m)return p;if(Object.prototype.hasOwnProperty.call(p.nodes,m))return e(k+1,p.nodes[m]);if(p.name){try{g[p.name]=decodeURIComponent(m)}catch(n){return e(k,void 0)}return e(k+1,p.nodes.$$)}if(p.wildcard){try{g.wildcard=decodeURIComponent(c.slice(k).join("/"))}catch(n){return e(k,void 0)}return p.nodes.$$}return e(k+1)}}f.equal(typeof h,"string","route should be a string");var c=
-h.replace(/^\//,"").split("/"),g={};if(h=e(0,this.trie))return h=Object.assign({},h),h.params=g,h};b.prototype.mount=function(h,e){f.equal(typeof h,"string","route should be a string");f.equal(typeof e,"object","trie should be a object");h=h.replace(/^\//,"").split("/");var c=null,g=null;if(1===h.length)g=h[0],c=this.create(g);else{var k=h.join("/");g=h[0];c=this.create(k)}Object.assign(c.nodes,e.nodes);e.name&&(c.name=e.name);c.nodes[""]&&(Object.keys(c.nodes[""]).forEach(function(p){"nodes"!==p&&
-(c[p]=c.nodes[""][p])}),Object.assign(c.nodes,c.nodes[""].nodes),delete c.nodes[""].nodes)}}),Pa=z((a,d)=>{function b(e){function c(n){var l=g(n),t=Array(arguments.length);t[0]=l.params;for(var u=1;u<t.length;u++)t[u]=arguments[u];return l.cb.apply(l.cb,t)}function g(n){f.notEqual(n,void 0,"'route' must be defined");var l=m.match(n);if(l&&l.cb||(l=m.match(p))&&l.cb)return new k(l);throw Error("route '"+n+"' did not match");}function k(n){this.cb=n.cb;this.route=n.route;this.params=n.params}if(!(this instanceof
-b))return new b(e);var p=(e||"").replace(/^\//,""),m=h();return c._trie=m,c.on=function(n,l){if(f.equal(typeof n,"string"),f.equal(typeof l,"function"),n=n||"/",l._wayfarer&&l._trie)m.mount(n,l._trie.trie);else{var t=m.create(n);t.cb=l;t.route=n}return c},c.emit=c,c.match=g,c._wayfarer=!0,c}var f=C(),h=Oa();d.exports=b}),Qa=z((a,d)=>{function b(n){if(!(this instanceof b))return new b(n);n=n||{};this.router=e(n.default||"/404")}function f(n,l){return l?n=n.replace(g,""):n=n.replace(k,""),decodeURI(n.replace(m,
-"").replace(p,"/"))}var h=C(),e=Pa(),c=/file:\/\//.test("object"==typeof window&&window.location&&window.location.origin),g=RegExp("^(file://|/)(.*.html?/?)?"),k=RegExp("^(http(s)?(://))?(www.)?[a-zA-Z0-9-_.]+(:[0-9]{1,5})?(/{1})?"),p=RegExp("#"),m=RegExp("[?].*$");d.exports=b;b.prototype.on=function(n,l){h.equal(typeof n,"string");n=n.replace(/^[#/]/,"");this.router.on(n,l)};b.prototype.emit=function(n){return h.equal(typeof n,"string"),n=f(n,c),this.router.emit(n)};b.prototype.match=function(n){return h.equal(typeof n,
-"string"),n=f(n,c),this.router.match(n)}}),Ra=z((a,d)=>{d.exports="onclick ondblclick onmousedown onmouseup onmouseover onmousemove onmouseout onmouseenter onmouseleave ontouchcancel ontouchend ontouchmove ontouchstart ondragstart ondrag ondragenter ondragleave ondragover ondrop ondragend onkeydown onkeypress onkeyup onunload onabort onerror onresize onscroll onselect onchange onsubmit onreset onfocus onblur oninput onanimationend onanimationiteration onanimationstart oncontextmenu onfocusin onfocusout".split(" ")}),
-Sa=z((a,d)=>{function b(e,c,g){e[g]!==c[g]&&(c[g]=e[g],e[g]?c.setAttribute(g,""):c.removeAttribute(g))}var f=Ra(),h=f.length;d.exports=function(e,c){var g=e.nodeType,k=e.nodeName;if(1===g){for(var p=c.attributes,m=e.attributes,n=null,l,t=null,u=null,r,q=m.length-1;0<=q;--q)r=m[q],u=r.name,n=r.namespaceURI,l=r.value,n?(u=r.localName||u,t=c.getAttributeNS(n,u),t!==l&&c.setAttributeNS(n,u,l)):c.hasAttribute(u)?(t=c.getAttribute(u),t!==l&&("null"===l||"undefined"===l?c.removeAttribute(u):c.setAttribute(u,
-l))):c.setAttribute(u,l);for(m=p.length-1;0<=m;--m)r=p[m],!1!==r.specified&&(u=r.name,n=r.namespaceURI,n?(u=r.localName||u,e.hasAttributeNS(n,u)||c.removeAttributeNS(n,u)):e.hasAttributeNS(null,u)||c.removeAttribute(u))}3!==g&&8!==g||c.nodeValue===e.nodeValue||(c.nodeValue=e.nodeValue);"INPUT"===k?(g=e.value,k=c.value,b(e,c,"checked"),b(e,c,"disabled"),e.indeterminate!==c.indeterminate&&(c.indeterminate=e.indeterminate),"file"!==c.type&&(g!==k&&(c.setAttribute("value",g),c.value=g),"null"===g&&(c.value=
-"",c.removeAttribute("value")),e.hasAttributeNS(null,"value")?"range"===c.type&&(c.value=g):c.removeAttribute("value"))):"OPTION"===k?b(e,c,"selected"):"TEXTAREA"===k&&(g=e.value,(g!==c.value&&(c.value=g),!c.firstChild||c.firstChild.nodeValue===g)||""===g&&c.firstChild.nodeValue===c.placeholder||(c.firstChild.nodeValue=g));for(g=0;g<h;g++)k=f[g],e[k]?c[k]=e[k]:c[k]&&(c[k]=void 0)}}),Ta=z((a,d)=>{function b(g,k){return k?g?g.isSameNode&&g.isSameNode(k)?k:g.tagName!==k.tagName||(g.dataset?g.dataset.nanomorphComponentId:
-void 0)!==(k.dataset?k.dataset.nanomorphComponentId:void 0)?g:(c(g,k),f(g,k),k):null:g}function f(g,k){for(var p,m,n,l,t=0,u=0;p=k.childNodes[u],m=g.childNodes[u-t],p||m;u++)if(m)if(p)if(h(m,p))n=b(m,p),n!==p&&(k.replaceChild(n,p),t++);else{l=null;for(var r=u;r<k.childNodes.length;r++)if(h(k.childNodes[r],m)){l=k.childNodes[r];break}l?(n=b(m,l),n!==l&&t++,k.insertBefore(n,p)):m.id||p.id?(k.insertBefore(m,p),t++):(n=b(m,p),n!==p&&(k.replaceChild(n,p),t++))}else k.appendChild(m),t++;else k.removeChild(p),
-u--}function h(g,k){return g.id?g.id===k.id:g.isSameNode?g.isSameNode(k):g.tagName!==k.tagName?!1:3===g.type?g.nodeValue===k.nodeValue:!1}var e=C(),c=Sa();d.exports=function(g,k,p){return e.equal(typeof g,"object","nanomorph: oldTree should be an object"),e.equal(typeof k,"object","nanomorph: newTree should be an object"),p&&p.childrenOnly?(f(k,g),g):(e.notEqual(k.nodeType,11,"nanomorph: newTree should have one root node (which is not a DocumentFragment)"),b(k,g))}}),Ua=z((a,d)=>{var b=/([^?=&]+)(=([^&]*))?/g,
-f=C();d.exports=function(h){f.equal(typeof h,"string","nanoquery: url should be type string");var e={};return h.replace(/^.*\?/,"").replace(b,function(c,g,k,p){c=decodeURIComponent(p);g=decodeURIComponent(g);e.hasOwnProperty(g)?Array.isArray(e[g])?e[g].push(c):e[g]=[e[g],c]:e[g]=c}),e}}),Va=z((a,d)=>{var b=C(),f=/(noopener|noreferrer) (noopener|noreferrer)/,h=/^[\w-_]+:/;d.exports=function(e,c){b.notEqual(typeof window,"undefined","nanohref: expected window to exist");c=c||window.document;b.equal(typeof e,
-"function","nanohref: cb should be type function");b.equal(typeof c,"object","nanohref: root should be type object");window.addEventListener("click",function(g){if(!(g.button&&0!==g.button||g.ctrlKey||g.metaKey||g.altKey||g.shiftKey||g.defaultPrevented)){var k=function n(m){if(m&&m!==c)return"a"!==m.localName||void 0===m.href?n(m.parentNode):m}(g.target);!k||window.location.protocol!==k.protocol||window.location.hostname!==k.hostname||window.location.port!==k.port||k.hasAttribute("data-nanohref-ignore")||
-k.hasAttribute("download")||"_blank"===k.getAttribute("target")&&f.test(k.getAttribute("rel"))||h.test(k.getAttribute("href"))||(g.preventDefault(),e(k))}})}}),Wa=z((a,d)=>{var b=C();d.exports=function(f,h){b.equal(typeof f,"function","nanoraf: render should be a function");b.ok("function"==typeof h||"undefined"==typeof h,"nanoraf: raf should be a function or undefined");h||=window.requestAnimationFrame;var e=!1,c=null;return function(){null===c&&!e&&(e=!0,h(function(){e=!1;for(var g=c.length,k=Array(g),
-p=0;p<g;p++)k[p]=c[p];f.apply(f,k);c=null}));c=arguments}}}),Xa=z((a,d)=>{d.exports=function(b,f,h){var e=b.length;if(!(f>=e||0===h)){h=f+h>e?e-f:h;for(e-=h;f<e;++f)b[f]=b[f+h];b.length=e}}}),Ya=z((a,d)=>{function b(c){if(!(this instanceof b))return new b(c);this._name=c||"nanobus";this._starListeners=[];this._listeners={}}var f=Xa(),h=ia(),e=C();d.exports=b;b.prototype.emit=function(c){e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.emit: eventName should be type string or symbol");for(var g=
-[],k=1,p=arguments.length;k<p;k++)g.push(arguments[k]);k=h(this._name+"('"+c.toString()+"')");p=this._listeners[c];return p&&0<p.length&&this._emit(this._listeners[c],g),0<this._starListeners.length&&this._emit(this._starListeners,c,g,k.uuid),k(),this};b.prototype.on=b.prototype.addListener=function(c,g){return e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.on: eventName should be type string or symbol"),e.equal(typeof g,"function","nanobus.on: listener should be type function"),"*"===c?this._starListeners.push(g):
-(this._listeners[c]||(this._listeners[c]=[]),this._listeners[c].push(g)),this};b.prototype.prependListener=function(c,g){return e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.prependListener: eventName should be type string or symbol"),e.equal(typeof g,"function","nanobus.prependListener: listener should be type function"),"*"===c?this._starListeners.unshift(g):(this._listeners[c]||(this._listeners[c]=[]),this._listeners[c].unshift(g)),this};b.prototype.once=function(c,g){function k(){g.apply(p,
-arguments);p.removeListener(c,k)}e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.once: eventName should be type string or symbol");e.equal(typeof g,"function","nanobus.once: listener should be type function");var p=this;this.on(c,k);return this};b.prototype.prependOnceListener=function(c,g){function k(){g.apply(p,arguments);p.removeListener(c,k)}e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.prependOnceListener: eventName should be type string or symbol");e.equal(typeof g,"function","nanobus.prependOnceListener: listener should be type function");
-var p=this;this.prependListener(c,k);return this};b.prototype.removeListener=function(c,g){function k(p,m){if(p&&(m=p.indexOf(m),-1!==m))return f(p,m,1),!0}return(e.ok("string"==typeof c||"symbol"==typeof c,"nanobus.removeListener: eventName should be type string or symbol"),e.equal(typeof g,"function","nanobus.removeListener: listener should be type function"),"*"===c)?(this._starListeners=this._starListeners.slice(),k(this._starListeners,g)):("undefined"!=typeof this._listeners[c]&&(this._listeners[c]=
-this._listeners[c].slice()),k(this._listeners[c],g))};b.prototype.removeAllListeners=function(c){return c?"*"===c?this._starListeners=[]:this._listeners[c]=[]:(this._starListeners=[],this._listeners={}),this};b.prototype.listeners=function(c){c="*"!==c?this._listeners[c]:this._starListeners;var g=[];if(c)for(var k=c.length,p=0;p<k;p++)g.push(c[p]);return g};b.prototype._emit=function(c,g,k,p){if("undefined"!=typeof c&&0!==c.length)for(void 0===k&&(k=g,g=null),g&&(void 0!==p?k=[g].concat(k,p):k=[g].concat(k)),
-g=c.length,p=0;p<g;p++){var m=c[p];m.apply(m,k)}}}),Za=z((a,d)=>{function b(f){if(!(this instanceof b))return new b(f);"number"==typeof f&&(f={max:f});f||={};this.cache={};this.head=this.tail=null;this.length=0;this.max=f.max||1E3;this.maxAge=f.maxAge||0}d.exports=b;Object.defineProperty(b.prototype,"keys",{get:function(){return Object.keys(this.cache)}});b.prototype.clear=function(){this.cache={};this.head=this.tail=null;this.length=0};b.prototype.remove=function(f){if("string"!=typeof f&&(f=""+
-f),this.cache.hasOwnProperty(f)){var h=this.cache[f];return delete this.cache[f],this._unlink(f,h.prev,h.next),h.value}};b.prototype._unlink=function(f,h,e){this.length--;0===this.length?this.head=this.tail=null:this.head===f?(this.head=h,this.cache[this.head].next=null):this.tail===f?(this.tail=e,this.cache[this.tail].prev=null):(this.cache[h].next=e,this.cache[e].prev=h)};b.prototype.peek=function(f){if(this.cache.hasOwnProperty(f)){var h=this.cache[f];if(this._checkAge(f,h))return h.value}};b.prototype.set=
-function(f,h){"string"!=typeof f&&(f=""+f);var e;if(this.cache.hasOwnProperty(f)){if(e=this.cache[f],e.value=h,this.maxAge&&(e.modified=Date.now()),f===this.head)return h;this._unlink(f,e.prev,e.next)}else e={value:h,modified:0,next:null,prev:null},this.maxAge&&(e.modified=Date.now()),this.cache[f]=e,this.length===this.max&&this.evict();return this.length++,e.next=null,e.prev=this.head,this.head&&(this.cache[this.head].next=f),this.head=f,this.tail||(this.tail=f),h};b.prototype._checkAge=function(f,
-h){return this.maxAge&&Date.now()-h.modified>this.maxAge?(this.remove(f),!1):!0};b.prototype.get=function(f){if("string"!=typeof f&&(f=""+f),this.cache.hasOwnProperty(f)){var h=this.cache[f];if(this._checkAge(f,h))return this.head!==f&&(f===this.tail?(this.tail=h.next,this.cache[this.tail].prev=null):this.cache[h.prev].next=h.next,this.cache[h.next].prev=h.prev,this.cache[this.head].next=f,h.prev=this.head,h.next=null,this.head=f),h.value}};b.prototype.evict=function(){!this.tail||this.remove(this.tail)}}),
-$a=z((a,d)=>{function b(c,g,k){h.ok(this instanceof b,"ChooComponentCache should be created with `new`");h.equal(typeof c,"object","ChooComponentCache: state should be type object");h.equal(typeof g,"function","ChooComponentCache: emit should be type function");"number"==typeof k?this.cache=new e(k):this.cache=k||new e(100);this.state=c;this.emit=g}function f(c){return new (c.bind.apply(c,arguments))}var h=C(),e=Za();d.exports=b;b.prototype.render=function(c,g){h.equal(typeof c,"function","ChooComponentCache.render: Component should be type function");
-h.ok("string"==typeof g||"number"==typeof g,"ChooComponentCache.render: id should be type string or type number");var k=this.cache.get(g);if(!k){k=[];for(var p=2,m=arguments.length;p<m;p++)k.push(arguments[p]);k.unshift(c,g,this.state,this.emit);k=f.apply(f,k);this.cache.set(g,k)}return k}}),M=z((a,d)=>{function b(r){var q=e("choo.constructor");if(!(this instanceof b))return new b(r);r=r||{};l.equal(typeof r,"object","choo: opts should be type object");var v=this;this._events={DOMCONTENTLOADED:"DOMContentLoaded",
-DOMTITLECHANGE:"DOMTitleChange",REPLACESTATE:"replaceState",PUSHSTATE:"pushState",NAVIGATE:"navigate",POPSTATE:"popState",RENDER:"render"};this._historyEnabled=void 0===r.history?!0:r.history;this._hrefEnabled=void 0===r.href?!0:r.href;this._hashEnabled=void 0===r.hash?!1:r.hash;this._hasWindow="undefined"!=typeof window;this._cache=r.cache;this._loaded=!1;this._stores=[function(x){v.emitter.prependListener(v._events.DOMTITLECHANGE,function(y){l.equal(typeof y,"string","events.DOMTitleChange: title should be type string");
-x.title=y;v._hasWindow&&(document.title=y)})}];this._tree=null;r={events:this._events,components:{}};this._hasWindow?(this.state=window.initialState?Object.assign({},window.initialState,r):r,delete window.initialState):this.state=r;this.router=c({curry:!0});this.emitter=n("choo.emit");this.emit=this.emitter.emit.bind(this.emitter);this._hasWindow&&(this.state.title=document.title);q()}var f=La(),h=Ma(),e=ia(),c=Qa(),g=Ta(),k=Ua(),p=Va(),m=Wa(),n=Ya(),l=C(),t=$a();d.exports=b;var u={};b.prototype.route=
-function(r,q){var v=e("choo.route('"+r+"')");l.equal(typeof r,"string","choo.route: route should be type string");l.equal(typeof q,"function","choo.handler: route should be type function");this.router.on(r,q);v()};b.prototype.use=function(r){l.equal(typeof r,"function","choo.use: cb should be type function");var q=this;this._stores.push(function(v){var x="choo.use";x=r.storeName?x+"("+r.storeName+")":x;x=e(x);r(v,q.emitter,q);x()})};b.prototype.start=function(){l.equal(typeof window,"object","choo.start: window was not found. .start() must be called in a browser, use .toString() if running in Node");
-var r=e("choo.start"),q=this;return this._historyEnabled&&(this.emitter.prependListener(this._events.NAVIGATE,function(){q._matchRoute(q.state);q._loaded&&(q.emitter.emit(q._events.RENDER),setTimeout(f.bind(null,window.location.hash),0))}),this.emitter.prependListener(this._events.POPSTATE,function(){q.emitter.emit(q._events.NAVIGATE)}),this.emitter.prependListener(this._events.PUSHSTATE,function(v){l.equal(typeof v,"string","events.pushState: href should be type string");window.history.pushState(u,
-null,v);q.emitter.emit(q._events.NAVIGATE)}),this.emitter.prependListener(this._events.REPLACESTATE,function(v){l.equal(typeof v,"string","events.replaceState: href should be type string");window.history.replaceState(u,null,v);q.emitter.emit(q._events.NAVIGATE)}),window.onpopstate=function(){q.emitter.emit(q._events.POPSTATE)},q._hrefEnabled&&p(function(v){var x=v.href;v=v.hash;x===window.location.href?!q._hashEnabled&&v&&f(v):q.emitter.emit(q._events.PUSHSTATE,x)})),this._setCache(this.state),this._matchRoute(this.state),
-this._stores.forEach(function(v){v(q.state)}),this._tree=this._prerender(this.state),l.ok(this._tree,"choo.start: no valid DOM node returned for location "+this.state.href),this.emitter.prependListener(q._events.RENDER,m(function(){var v=e("choo.render"),x=q._prerender(q.state);l.ok(x,"choo.render: no valid DOM node returned for location "+q.state.href);l.equal(q._tree.nodeName,x.nodeName,"choo.render: The target node <"+q._tree.nodeName.toLowerCase()+"> is not the same type as the new node <"+x.nodeName.toLowerCase()+
-">.");var y=e("choo.morph");g(q._tree,x);y();v()})),h(function(){q.emitter.emit(q._events.DOMCONTENTLOADED);q._loaded=!0}),r(),this._tree};b.prototype.mount=function(r){var q=e("choo.mount('"+r+"')");if("object"!=typeof window)return l.ok("string"==typeof r,"choo.mount: selector should be type String"),this.selector=r,q(),this;l.ok("string"==typeof r||"object"==typeof r,"choo.mount: selector should be type String or HTMLElement");var v=this;h(function(){var x=e("choo.render"),y=v.start();"string"==
-typeof r?v._tree=document.querySelector(r):v._tree=r;l.ok(v._tree,"choo.mount: could not query selector: "+r);l.equal(v._tree.nodeName,y.nodeName,"choo.mount: The target node <"+v._tree.nodeName.toLowerCase()+"> is not the same type as the new node <"+y.nodeName.toLowerCase()+">.");var B=e("choo.morph");g(v._tree,y);B();x()});q()};b.prototype.toString=function(r,q){q=q||{};q.components=q.components||{};q.events=Object.assign({},q.events,this._events);
-l.equal(typeof r,"string","choo.toString: location should be type string");l.equal(typeof q,"object","choo.toString: state should be type object");this._setCache(q);this._matchRoute(q,r);this.emitter.removeAllListeners();this._stores.forEach(function(x){x(q)});var v=this._prerender(q);return l.ok(v,"choo.toString: no valid value returned for the route "+r),l(!Array.isArray(v),"choo.toString: return value was an array for the route "+r),"string"==typeof v.outerHTML?v.outerHTML:v.toString()};b.prototype._matchRoute=
-function(r,q){var v,x;q?(v=q.replace(/\?.+$/,"").replace(/\/$/,""),this._hashEnabled||(v=v.replace(/#.+$/,"")),x=q):(v=window.location.pathname.replace(/\/$/,""),this._hashEnabled&&(v+=window.location.hash.replace(/^#/,"/")),x=window.location.search);q=this.router.match(v);this._handler=q.cb;r.href=v;r.query=k(x);r.route=q.route;r.params=q.params};b.prototype._prerender=function(r){var q=e("choo.prerender('"+r.route+"')");r=this._handler(r,this.emit);return q(),r};b.prototype._setCache=function(r){function q(x,
-y){l.equal(typeof x,"function","choo.state.cache: Component should be type function");for(var B=[],A=0,D=arguments.length;A<D;A++)B.push(arguments[A]);return v.render.apply(v,B)}var v=new t(r,this.emitter.emit.bind(this.emitter),this._cache);r.cache=q;q.toJSON=function(){return null}}}),N,ja,ka=E(()=>{N=(a,d,b={})=>{function f(p,m){if(p.preventDefault(),!confirm("Permanently delete image from all pages in wiki?"))return!1;delete a.p.img[m.id];0<m.pgs.length&&(a.p.pages=a.p.pages.map(n=>(n.content&&
-(n.content=n.content.replaceAll(`<img src="img:${m.id}:img">`,"")),n)));d(h.CHECK_CHANGED)}let {events:h,root:e}=a,{showDelete:c=!1,showUsed:g=!1,insert:k=null}=b;b=function(){let {pages:p,img:m}=a.p;return Object.keys(m).map(n=>ea(L({id:n},m[n]),{pgs:g?p.filter(l=>{var t;return null==(t=l.content)?void 0:t.includes(`img:${n}:img`)}):[]}))}();return html`<section> <h1>Existing Images</h1> ${b.map(p=>html`<div class="ib at ed w14"> <div class=g> <img src=${p.img} class=w1 aria-describedby=alt> <span id=alt class=db>${p.alt} (${p.size[0]}x${p.size[1]}px)</span> <div class=pb> <button onclick=${m=>
-{var n=p.img;m.preventDefault();m=new Image;m.src=n;window.open("").document.write(m.outerHTML)}}>View</button> ${c?html`<button onclick=${m=>{m.preventDefault();a.p.img[p.id].alt=prompt("Set alt text",p.alt);d(h.CHECK_CHANGED)}}>Edit Alt</button>`:""} ${c?html`<button class=del onclick=${m=>f(m,p)}>Delete</button>`:""} ${k?html`<button onclick=${m=>k(m,p)}>Insert</button>`:""} </div> ${g?[html`<details> <summary class=b>Used in ${p.pgs.length} pages</summary> <ul> ${p.pgs.map(m=>html`<li><a href="${e}?page=${m.slug}">${m.name}</a></li>`)} </ul> </details>`]:
-""} </div> </div>`)} </section>`};ja=(a,d)=>html`<dialog id=g> <form class=fr method=dialog> <button>Close</button> </form> ${N(a,()=>{},{insert:(b,f)=>FW.img.put(b,f,d)})} </dialog>`}),la={};F(la,{editor:()=>ma});var ma,ab=E(()=>{ka();ma=a=>{function d({id:f}){f=`![](img:${f}:img)`;if(document.activeElement!==b&&b.focus(),document.selection)document.selection.createRange().text=f;else if(b.selectionStart||0===b.selectionStart){var h=b.selectionStart,e=b.selectionEnd;b.value=b.value.substring(0,h)+
-f+b.value.substring(e,b.value.length);b.selectionStart=h+f.length;b.selectionEnd=h+f.length}else b.value+=f;a.edits.content=b.value}let b=html`<textarea onchange=${f=>a.edits.content=f.target.value}>${a.edits.content}</textarea>`;return[b,html`<button onclick=${f=>{f.preventDefault();FW.img.upload(a,d)}}>Insert Image from File</button>`,html`<button onclick=${f=>{f.preventDefault();document.getElementById("g").showModal()}}>Add Existing Image</button>`,ja(a,d)]}}),bb=z((a,d)=>{d.exports=function(f){return function(h,
-e,c){for(var g in e)g in b&&(e[b[g]]=e[g],delete e[g]);return f(h,e,c)}};var b={class:"className",for:"htmlFor","http-equiv":"httpEquiv"}}),cb=z((a,d)=>{var b=bb();d.exports=function(h,e){function c(k){return"function"==typeof k||"string"==typeof k||k&&"object"==typeof k||null==k?k:g("",k)}e||={};var g=e.concat||function(k,p){return String(k)+String(p)};return!1!==e.attrToProp&&(h=b(h)),function(k){function p(B){var A=[];7===m&&(m=4);for(var D=0;D<B.length;D++){var w=B.charAt(D);1===m&&"<"===w?(n.length&&
-A.push([1,n]),n="",m=2):">"===w&&9!==m&&10!==m&&13!==m?(2===m&&n.length?A.push([2,n]):5===m?A.push([5,n]):8===m&&n.length&&A.push([8,n]),A.push([3]),n="",m=1):13===m&&/-$/.test(n)&&"-"===w?(e.comments&&A.push([8,n.substr(0,n.length-1)]),n="",m=1):2===m&&/^!--$/.test(n)?(e.comments&&A.push([2,n],[5,"comment"],[11]),n=w,m=13):1===m||13===m?n+=w:2===m&&"/"===w&&n.length||(2===m&&/\s/.test(w)?(n.length&&A.push([2,n]),n="",m=4):2===m?n+=w:4===m&&/[^\s"'=/]/.test(w)?(m=5,n=w):4===m&&/\s/.test(w)?(n.length&&
-A.push([5,n]),A.push([12])):5===m&&/\s/.test(w)?(A.push([5,n]),n="",m=6):5===m&&"="===w?(A.push([5,n],[11]),n="",m=7):5===m?n+=w:6!==m&&4!==m||"="!==w?6!==m&&4!==m||/\s/.test(w)?7===m&&'"'===w?m=10:7===m&&"'"===w?m=9:10===m&&'"'===w?(A.push([8,n],[12]),n="",m=4):9===m&&"'"===w?(A.push([8,n],[12]),n="",m=4):7!==m||/\s/.test(w)?8===m&&/\s/.test(w)?(A.push([8,n],[12]),n="",m=4):(8===m||9===m||10===m)&&(n+=w):(m=8,D--):(A.push([12]),/[\w-]/.test(w)?(n+=w,m=5):m=4):(A.push([11]),m=7))}return 1===m&&n.length?
-(A.push([1,n]),n=""):8===m&&n.length?(A.push([8,n]),n=""):10===m&&n.length?(A.push([8,n]),n=""):9===m&&n.length?(A.push([8,n]),n=""):5===m&&(A.push([5,n]),n=""),A}for(var m=1,n="",l=arguments.length,t=[],u=0;u<k.length;u++)if(u<l-1){var r=arguments[u+1],q=p(k[u]),v=m;10===v&&(v=8);9===v&&(v=8);7===v&&(v=8);4===v&&(v=5);2===v?"/"===n?(q.push([2,"/",r]),n=""):q.push([2,r]):13===v&&e.comments?n+=String(r):13!==v&&q.push([0,v,r]);t.push.apply(t,q)}else t.push.apply(t,p(k[u]));l=[null,{},[]];r=[[l,-1]];
-for(u=0;u<t.length;u++){v=r[r.length-1][0];q=t[u];var x=q[0];if(2===x&&/^\//.test(q[1]))q=r[r.length-1][1],1<r.length&&(r.pop(),r[r.length-1][0][2][q]=h(v[0],v[1],v[2].length?v[2]:void 0));else if(2===x)q=[q[1],{},[]],v[2].push(q),r.push([q,v[2].length-1]);else if(5===x||0===x&&5===q[1]){q="";for(var y;u<t.length;u++)if(5===t[u][0])q=g(q,t[u][1]);else if(0===t[u][0]&&5===t[u][1])if("object"!=typeof t[u][2]||q)q=g(q,t[u][2]);else for(y in t[u][2])t[u][2].hasOwnProperty(y)&&!v[1][y]&&(v[1][y]=t[u][2][y]);
-else break;11===t[u][0]&&u++;for(x=u;u<t.length;u++)if(8===t[u][0]||5===t[u][0])v[1][q]?""===t[u][1]||(v[1][q]=g(v[1][q],t[u][1])):v[1][q]=c(t[u][1]);else if(0!==t[u][0]||8!==t[u][1]&&5!==t[u][1]){!q.length||v[1][q]||u!==x||3!==t[u][0]&&12!==t[u][0]||(v[1][q]=q.toLowerCase());3===t[u][0]&&u--;break}else v[1][q]?""===t[u][2]||(v[1][q]=g(v[1][q],t[u][2])):v[1][q]=c(t[u][2])}else if(5===x)v[1][q[1]]=!0;else if(0===x&&5===q[1])v[1][q[2]]=!0;else if(3===x)f.test(v[0])&&r.length&&(q=r[r.length-1][1],r.pop(),
-r[r.length-1][0][2][q]=h(v[0],v[1],v[2].length?v[2]:void 0));else if(0===x&&1===q[1])void 0===q[2]||null===q[2]?q[2]="":q[2]||(q[2]=g("",q[2])),Array.isArray(q[2][0])?v[2].push.apply(v[2],q[2]):v[2].push(q[2]);else if(1===x)v[2].push(q[1]);else if(11!==x&&12!==x)throw Error("unhandled: "+x);}if(1<l[2].length&&/^\s*$/.test(l[2][0])&&l[2].shift(),2<l[2].length||2===l[2].length&&/\S/.test(l[2][1])){if(e.createFragment)return e.createFragment(l[2]);throw Error("multiple root elements must be wrapped in an enclosing tag");
-}return Array.isArray(l[2][0])&&"string"==typeof l[2][0][0]&&Array.isArray(l[2][0][2])&&(l[2][0]=h(l[2][0][0],l[2][0][1],l[2][0][2])),l[2][0]}};var f=RegExp("^(area|base|basefont|bgsound|br|col|command|embed|frame|hr|img|input|isindex|keygen|link|meta|param|source|track|wbr|!--|animate|animateTransform|circle|cursor|desc|ellipse|feBlend|feColorMatrix|feComposite|feConvolveMatrix|feDiffuseLighting|feDisplacementMap|feDistantLight|feFlood|feFuncA|feFuncB|feFuncG|feFuncR|feGaussianBlur|feImage|feMergeNode|feMorphology|feOffset|fePointLight|feSpecularLighting|feSpotLight|feTile|feTurbulence|font-face-format|font-face-name|font-face-uri|glyph|glyphRef|hkern|image|line|missing-glyph|mpath|path|polygon|polyline|rect|set|stop|tref|use|view|vkern)(?:[.#][a-zA-Z0-9\u007f-\uffff_:-]+)*$")}),
-db=z((a,d)=>{var b=/\n[\s]+$/,f=/^\n[\s]+/,h=/[\s]+$/,e=/^[\s]+/,c=/[\n\s]+/g,g="a abbr b bdi bdo br cite data dfn em i kbd mark q rp rt rtc ruby s amp small span strong sub sup time u var wbr".split(" "),k=["code","pre","textarea"];d.exports=function l(m,n){if(Array.isArray(n))for(var t=m.nodeName.toLowerCase(),u=!1,r,q,v=0,x=n.length;v<x;v++){var y=n[v];if(Array.isArray(y))l(m,y);else{("number"==typeof y||"boolean"==typeof y||"function"==typeof y||y instanceof Date||y instanceof RegExp)&&(y=y.toString());
-var B=m.childNodes[m.childNodes.length-1];"string"==typeof y?(u=!0,B&&"#text"===B.nodeName?B.nodeValue+=y:(y=m.ownerDocument.createTextNode(y),m.appendChild(y),B=y),v===x-1&&(u=!1,-1===g.indexOf(t)&&-1===k.indexOf(t)?(r=B.nodeValue.replace(f,"").replace(h,"").replace(b,"").replace(c," "),""===r?m.removeChild(B):B.nodeValue=r):-1===k.indexOf(t)&&(q=0===v?"":" ",r=B.nodeValue.replace(f,q).replace(e," ").replace(h,"").replace(b,"").replace(c," "),B.nodeValue=r))):y&&y.nodeType&&(u&&(u=!1,-1===g.indexOf(t)&&
--1===k.indexOf(t)?(r=B.nodeValue.replace(f,"").replace(b," ").replace(c," "),""===r?m.removeChild(B):B.nodeValue=r):-1===k.indexOf(t)&&(r=B.nodeValue.replace(e," ").replace(f,"").replace(b," ").replace(c," "),B.nodeValue=r)),(B=y.nodeName)&&(t=B.toLowerCase()),m.appendChild(y))}}}}),eb=z((a,d)=>{d.exports="svg altGlyph altGlyphDef altGlyphItem animate animateColor animateMotion animateTransform circle clipPath color-profile cursor defs desc ellipse feBlend feColorMatrix feComponentTransfer feComposite feConvolveMatrix feDiffuseLighting feDisplacementMap feDistantLight feFlood feFuncA feFuncB feFuncG feFuncR feGaussianBlur feImage feMerge feMergeNode feMorphology feOffset fePointLight feSpecularLighting feSpotLight feTile feTurbulence filter font font-face font-face-format font-face-name font-face-src font-face-uri foreignObject g glyph glyphRef hkern image line linearGradient marker mask metadata missing-glyph mpath path pattern polygon polyline radialGradient rect set stop switch symbol text textPath title tref tspan use view vkern".split(" ")}),
-fb=z((a,d)=>{d.exports="async autofocus autoplay checked controls default defaultchecked defer disabled formnovalidate hidden ismap loop multiple muted novalidate open playsinline readonly required reversed selected".split(" ")}),gb=z((a,d)=>{d.exports=["indeterminate"]}),hb=z((a,d)=>{var b=cb(),f=db(),h=eb(),e=fb(),c=gb();d.exports=function(g){function k(n,l,t){var u;-1!==h.indexOf(n)&&(l.namespace="http://www.w3.org/2000/svg");var r=!1;l.namespace&&(r=l.namespace,delete l.namespace);var q=!1;if(l.is&&
-(q=l.is,delete l.is),r)q?u=g.createElementNS(r,n,{is:q}):u=g.createElementNS(r,n);else{if("!--"===n)return g.createComment(l.comment);q?u=g.createElement(n,{is:q}):u=g.createElement(n)}for(var v in l)if(l.hasOwnProperty(v)){n=v.toLowerCase();q=l[v];if("classname"===n&&(n="class",v="class"),"htmlFor"===v&&(v="for"),-1!==e.indexOf(n))if("true"===String(q))q=n;else if("false"===String(q))continue;"on"===n.slice(0,2)||-1!==c.indexOf(n)?u[v]=q:r?"xlink:href"===v?u.setAttributeNS("http://www.w3.org/1999/xlink",
-v,q):/^xmlns($|:)/i.test(v)||u.setAttributeNS(null,v,q):u.setAttribute(v,q)}return f(u,t),u}function p(n){for(var l=g.createDocumentFragment(),t=0;t<n.length;t++)null!=n[t]&&(Array.isArray(n[t])?l.appendChild(p(n[t])):("string"==typeof n[t]&&(n[t]=g.createTextNode(n[t])),l.appendChild(n[t])));return l}var m=b(k,{comments:!0,createFragment:p});return m.default=m,m.createComment=k,m}}),ib=z((a,d)=>{d.exports=hb()(document)}),jb=z((a,d)=>{d.exports=ib()}),kb=z((a,d)=>{d.exports=function(b){var f=document.createElement("div");
-f.innerHTML=b;b=f.childNodes;return Array.isArray(b)?b:[].slice.call(b)}});z=z((a,d)=>{d.exports=kb()});var Q,lb=E(()=>{Q={"":["<em>","</em>"],_:["<strong>","</strong>"],"*":["<strong>","</strong>"],"~":["<s>","</s>"],"\n":["<br />"]," ":["<br />"],"-":["<hr />"]}}),na={};F(na,{default:()=>sa});E=E(()=>{lb()});M=((a,d,b)=>(b=null!=a?Ea(Ja(a)):{},fa(!d&&a&&a.__esModule?b:I(b,"default",{value:a,enumerable:!0}),a)))(M(),1);var mb=(a,d)=>{let {p:b,help:f}=a;return[html`<header> <h1>All Pages</h1> </header>`,
-html`<article> <p>This wiki has ${b.pages.length} page${1!==b.pages.length?"s":""}:</p> <ul> ${b.pages.filter(h=>!h.parent).map(h=>f.getChildList(h))} </ul> </article>`]};ka();var nb=(a,d)=>{function b(){FW.upload("text/html",l=>{FW.xtr(l,t=>{t&&(a.p=t[0],f(t[1]),h(t[2]),d(g.DOMCONTENTLOADED),d(g.CHECK_CHANGED),d(g.NOTIFY,"Wiki Loaded"))})})}function f(l){let t=document.getElementById("c");l.trim()?(a.c=l,t?t.innerHTML=l:document.head.innerHTML+=`<style id=c>${l}</style>`):(delete a.c,t&&document.head.removeChild(t))}
-function h(l){l.trim()?(a.j!==l&&alert("You must save & reload to run your JavaScript"),a.j=l):delete a.j}var e,c;let {events:g,p:k,c:p,j:m}=a,n=k.pages.map(l=>l.slug).join("\n");return[html`<header> <h1>Wiki Settings</h1> </header>`,html`<article class=mw> <form onsubmit=${(function(l){l.preventDefault();l=l.currentTarget;let t=l.wTitle.value.trim();if(1>t.length)return alert("Title is required");a.p.name=t;a.p.desc=l.wDesc.value.trim();1<l.home.value.length?a.p.home=l.home.value:delete a.p.home;
-let u=l.wPo.value.split("\n").map(r=>r.trim());a.p.pages.sort((r,q)=>u.indexOf(r.slug)<u.indexOf(q.slug)?-1:1);f(l.wCss.value);h(l.wJs.value);a.p.static=l.wOut.checked;a.p.published=l.wPub.checked;d(g.CHECK_CHANGED);d(g.NOTIFY,"Settings updated")})} class=pb> <label for=wTitle>Wiki Title</label> <input class=w1 id=wTitle value=${k.name} minlength=1 required> <label for=wDesc>Wiki Description</label> <input class=w1 id=wDesc value=${k.desc}> <label for=home>Home Page</label> <select id=home> <option value="" selected=${!k.home}>All Pages (default)</option> ${k.pages.map(l=>
-html`<option selected=${l.id===k.home} value=${l.id}>${l.name} (${l.slug})</option>`)} </select> <label for=wPo>Page Order</label> <textarea id=wPo>${n}</textarea> <label for=wCss>Custom CSS</label> <textarea id=wCss>${p}</textarea> <label for=wJs>Custom JS</label> <span class=h>Only runs once on wiki load. To test, save your wiki & load that file.</span> <textarea id=wJs>${m}</textarea> <label for=wOut>Include Static HTML</label> <input id=wOut type=checkbox checked=${null!=(e=k.static)?e:!1}> <span class=h>Include your wiki content in simple HTML for non-JS browsers. Nearly doubles output size.</span> <label for=wPub>Publish</label> <input id=wPub type=checkbox checked=${null!=
-(c=k.published)?c:!1}> <span class=h>Hides Save, New Page, & Wiki Settings buttons. You will need to manually visit <code>?page=s</code> to unset this when set.</span> <div class=tr> <button type=submit>Update</button> </div> </form> <div class=tr> <p class="pb h"> Feather Wiki Version: Chickadee_1.3.1 </p> <p> <button class=del onclick=${()=>b()}>Import & Overwrite with Other Feather Wiki file</button> </p> </div> ${N(a,d,{showDelete:!0,showUsed:!0})} </article>`]},
-ob=(a,d)=>{let {p:b,query:f}=a;a=b.pages.filter(h=>{var e;return null==(e=h.tags)?void 0:e.includes(f.tag)});return[html`<header> <h1>Pages Tagged <code>${f.tag}</code></h1> </header>`,html`<article> ${0<a.length?html`<ul> ${a.map(h=>html`<li><a href="?page=${h.slug}">${h.name}</a></li>`)} </ul>`:"None Found"} </article>`]},pb=(a,d,b)=>{var f;let {img:h,pg:e,out:c,hLink:g}=FW.inject,{help:k}=a;d=b.content;d="md"===b.editor?md(d):d;d=h(e(g(c(d)),a),a);a=k.getChildren(b);return[null!=b&&b.e||null==
-(f=null==b?void 0:b.tags)||!f.length?"":html`<aside> <dl class="db r"> <dt class=c><b>Tagged:</b></dt> <dd class=c> ${b.tags.replace(/,/g,", ")} </dd> </dl> </aside>`,html`<article class=uc> ${d?html.raw(d):"No Page Content"} </article>`,0<a.length?html`<footer> <h2>Sub Pages</h2> <ul> ${a.map(p=>k.getChildList(p,!0))} </ul> </footer>`:null]},qb=(a,d,b)=>{function f(l){l=l.target;a.edits[l.id]=l.value;d(e.RENDER)}function h(){return FW.tidy(document.getElementById("tags").value.split(","))}let {events:e,
-edits:c,p:g,help:k}=a,p=k.getChildren(b).map(l=>l.id),m=!g.pages.some(l=>l.id===b.id),n;return n=(ab(),ha(la)).editor(a,d),html`<form onsubmit=${(function(l){l.preventDefault();l=l.currentTarget;let t=l.name.value.trim();if(1>t.length)return alert("Page Title cannot be blank.");let u=l.slug.value.trim();if(2>u.length)return alert("Page Slug must be more than 1 character long.");pg=L({},b);pg.name=t;pg.slug=FW.slug(u);pg.content=FW.img.abbr(a.edits.content);pg.tags=h().join(",");pg.parent=l.parent.value;
-c.useMd?pg.editor="md":delete pg.editor;d(e.UPDATE_PAGE,pg)})}> <header> <h1>Edit Page</h1> <div class=r> <div class="c w12"> <label for=name>Page Title</label> <input id=name value=${c.name} required minlength=2 onchange=${f}> </div> <div class="c w12"> <label for=slug>Page Slug</label> <input id=slug value=${c.slug} required minlength=2 onchange=${f}> <button onclick=${(function(l){l.preventDefault();document.getElementById("slug").value=FW.slug(document.getElementById("name").value.trim())})}>Slugify Title</button> </div> </div></header> <span class=h style=float:left>Use [[Page Title]] or [[text|page_slug]] for internal links.</span> ${n} <footer class=r> <div class="c w13"> <label for=tags>Page Tags</label> <input id=tags value=${c.tags} placeholder="Comma, Separated, List" onchange=${f}> <select onchange=${(function(l){let t=
-l.target.value;if(0<t.length){let u=h();u.includes(t)||(c.tags+=(0<u.length?",":"")+t,d(e.RENDER))}l.target.value=""})}> <option value="" selected=selected disabled=disabled>Add Existing Tag</option> ${a.t.filter(l=>!c.tags.split(",").includes(l)).map(l=>html`<option>${l}</option>`)} </select> </div> <div class="c w13"> <label for=parent>Parent</label> <select id=parent onchange=${f}> <option value="" selected=${""===c.parent}>None</option> ${g.pages.filter(l=>l.id!==(null==b?void 0:b.id)&&!p.includes(l.id)).map(l=>
-html`<option selected=${l.id===c.parent} value=${l.id}>${l.name} (${l.slug})</option>`)} </select> </div> <div class="c w13 tr"> <div class=pb><button type=submit>Save</button></div> ${m?"":[html`<div class=pb><button onclick=${l=>{l.preventDefault();d(e.CANCEL_EDIT)}}>Cancel</button></div>`,html`<div><button class=del onclick=${l=>{l.preventDefault();confirm("You can't undo this after saving your wiki! Delete this page?")&&d(e.DELETE_PAGE,b.id)}}>Delete</button></div>`]} </div> </footer> </form>`},
-rb=(a,d,b)=>{let {root:f,edit:h,help:e,p:c,events:g}=a,{cd:k,md:p}=b;if(h)return qb(a,d,b);let m=e.breadcrumb(b),n=FW.date(new Date(k)),l=new Date(null!=p?p:k),t=FW.date(l);return[html`<header> ${m.map(u=>[html`<a href="${f}?page=${u.slug}">${u.name}</a>`," / "])} <div class="r ns"> <h1 class=c>${b.name}</h1> ${b.e?"":html`<div class="c w14 tr"> <time datetime=${l.toISOString()}> ${n!==t?html`<abbr title="Created: ${n}">${t}</abbr>`:t} </time> ${c.published?"":html`<button onclick=${()=>d(g.START_EDIT)}>Edit</button> `} </div>`} </div> </header>`,
-pb(a,d,b)]},oa={};F(oa,{abbr:()=>xa,put:()=>wa,resizeImage:()=>S,upload:()=>va});var pa={};F(pa,{object:()=>ya,string:()=>T});var qa={};F(qa,{hLink:()=>Ca,img:()=>Aa,out:()=>Ba,pg:()=>za});var ra={};F(ra,{compress:()=>U,decompress:()=>Y});var H=-1;window.html=jb();html.raw=z();window.md=(E(),ha(na)).default;window.FW=(0,M.default)({hash:!0});FW.slug=a=>a.toLowerCase().replace(/\s/g,"_").replace(/\W/g,"-");FW.date=a=>`${a.getFullYear()}-${(a.getMonth()+1).toString().padStart(2,"0")}-${a.getDate().toString().padStart(2,
-"0")} ${a.getHours()%12}:${a.getMinutes().toString().padStart(2,"0")} ${1>a.getHours()/12?"a":"p"}m`;FW.tidy=a=>{let d=a.map(b=>b.trim());return d.filter((b,f)=>b.length&&d.indexOf(b)===f).sort()};FW.xtr=function(a,d=()=>{}){let b=new FileReader;b.onload=f=>R(this,null,function*(){let h=f.target.result;var e=K(h,"script","p type=application/json");if(!e.length||"{"!==e[0])return alert("Could not find Feather Wiki data.");e=FW.json.decompress(JSON.parse(e));e.img=yield ta(e.img);d([e,K(h,
-"style","c"),K(h,"script","j")])});b.onerror=function(f){d(null)};b.readAsText(a)};FW.gen=function(a){let {c:d,p:b,j:f,views:h}=a;a=(b.static?ua():h.a(a)[1]).outerHTML;return`<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1"> <title>${b.name}</title> ${b.desc?`<meta name="description" content="${b.desc.replace(/"/g,'\\"')}">`:""} <meta name=version content=Chickadee_1.3.1> <meta name=application-name content="Feather Wiki"> <style id=s>${document.getElementById("s").innerHTML}</style> ${d?
-`<style id=c>${d}</style>`:""} <script id=p type=application/json>${JSON.stringify(FW.json.compress(b))}<\/script> <script id=a>${document.getElementById("a").innerHTML}<\/script> </head> <body> <header> <h1>${b.name}</h1> ${b.desc?`<p>${b.desc}</p>`:""} </header> <main>${a}</main> <footer><a href=https://src.feather.wiki/#versions>JavaScript required to edit</a></footer> ${f?`<script id=j>${f}<\/script>`:""} </body> </html>`};FW.img=oa;FW.hash=pa;FW.inject=qa;FW.json=ra;FW.upload=function(a,d){a=
-html`<input type=file accept=${a} onchange=${b=>{({files:b}=b.target);0<b.length&&d(b[0])}}>`;document.body.appendChild(a);a.click();document.body.removeChild(a)};FW.use(a=>{var d,b,f,h;a.root=location.pathname;1>a.root.length&&(a.root="/");a.sb=!1;a.sbTab="Pages";a.sbx=new Set;a.recent=[];a.edit=!1;a.edits=null;a.keep=!1;a.src=!1;a.notis=[];a.help={find:(e,c="slug")=>a.p.pages.find(g=>g[c]===e),getPage:()=>{let {query:e,help:c,p:g}=a;return!e.page&&g.home?c.find(g.home,"id"):c.find(e.page)},getParent:e=>
-a.p.pages.find(c=>c.id===(null==e?void 0:e.parent)),getChildren:e=>a.p.pages.filter(c=>c.parent===(null==e?void 0:e.id)),getChildList:(e,c)=>{var g;let {getChildren:k,getChildList:p}=a.help;var m=k(e);let n=null==(g=a.pg)?void 0:g.slug,l=n===e.slug,t=u=>{var r;return l||a.sbx.has(e.id)||(null!=(r=u.find(q=>q.slug===n||t(k(q))))?r:!1)};g=[html`<a href="?page=${e.slug}" class=${l?"a":""}>${e.name}</a>`,0<m.length?html`<ul>${m.map(u=>p(u,c))}</ul>`:""];m=c&&g[1]?html`<details open=${t(m)} onclick=${u=>
-a.sbx.add(e.id)} ontoggle=${u=>{u.target.open||a.sbx.delete(e.id)}}> <summary>${g[0]}</summary> ${g[1]} </details>`:g;return html`<li> ${m} </li>`},breadcrumb:e=>{let c=[];for(e=a.help.getParent(e);e;)c.unshift(e),e=a.help.getParent(e);return c}};a.events=ea(L({},a.events),{HANDLE_404:"404",CREATE_PAGE:"cp",START_EDIT:"se",CANCEL_EDIT:"ce",UPDATE_PAGE:"up",DELETE_PAGE:"dp",COLLECT_TAGS:"ct",CHECK_CHANGED:"cc",SAVE_WIKI:"sw",NOTIFY:"n",REMOVE_NOTI:"rn"});a.views={a:mb,s:nb,t:ob,p:rb};a.c=null!=(b=
-null==(d=document.getElementById("c"))?void 0:d.innerHTML)?b:"";a.j=null!=(h=null==(f=document.getElementById("j"))?void 0:f.innerHTML)?h:"";try{a.p=FW.json.decompress(JSON.parse(document.getElementById("p").innerHTML))}catch(e){a.p={name:"New Wiki",desc:"",pages:[],img:{}}}return a.pg=a.help.getPage(),a.t=[],a.prev=FW.hash.object(a.p),a.now=a.prev,a.changed=!1,a});FW.use((a,d)=>{let {events:b,views:f}=a,h=()=>d.emit(...[b.DOMTITLECHANGE,a.p.name+(a.pg?" | "+a.pg.name:"")]),e=()=>a.edits&&!confirm("Lose unsaved changes?");
-return d.on(b.DOMCONTENTLOADED,()=>{d.emit(...[b.HANDLE_404]);h();d.emit(...[b.COLLECT_TAGS]);a.t.length&&d.emit(...[b.RENDER])}),d.on(b.RENDER,c=>{"function"==typeof c&&setTimeout(c,100)}),d.on(b.HANDLE_404,()=>{var {page:c}=a.query;if(1<(null==c?void 0:c.length)){let {help:g,events:k}=a,p=FW.slug(c);g.find(p)||f[p]||(c=c.split("_").map(m=>m[0].toUpperCase()+m.substring(1)).join(" "),d.emit(...[k.CREATE_PAGE,c,!1]))}else 0<(null==c?void 0:c.length)&&!f[c]&&(a.pg={e:!0,name:"404",content:"<p>Page not found</p>"},
-d.emit(...[b.RENDER]))}),d.on(b.NAVIGATE,()=>{var c;if(!a.keep&&e())return a.keep=!0,history.go(-1);a.keep?a.keep=!1:(a.edit=!1,a.edits=null,a.pg=a.help.getPage(),a.recent=[{p:null==(c=a.pg)?void 0:c.id,t:Date.now()},...a.recent.filter(g=>{var k;return g.p!==(null==(k=a.pg)?void 0:k.id)})].filter(g=>!!g.p),d.emit(...[b.HANDLE_404]),h(),window.scroll(0,0))}),d.on(b.CREATE_PAGE,(c,g=!0)=>{if(!(2>c.length||e())){a.edit=!1;a.edits=null;var {p:k,events:p,query:m,root:n}=a,l=()=>{let q=[];for(let v=0;9>
-v;v++)q.push(String.fromCharCode(Math.round(94*Math.random())+32));return q.join("")};do var t=l();while(0<=k.pages.findIndex(q=>q.id===t));l=0;var u=FW.slug(c);do{var r=u+(0<l?"_"+l:"");l++}while(k.pages.some(q=>q.slug===r));c={id:t,name:c,slug:r,cd:Date.now()};a.showNewPageField=!1;g?(a.p.pages.push(c),d.emit(...[p.CHECK_CHANGED]),d.emit(...[p[m.page!==r?"REPLACESTATE":"PUSHSTATE"],n+"?page="+r])):a.pg=c;d.emit(...[p.START_EDIT])}}),d.on(b.START_EDIT,()=>{var c,g,k,p,m;let {pg:n}=a;a.edit=!0;let l=
-{name:null!=(c=n.name)?c:"",slug:null!=(g=n.slug)?g:"",content:null!=(k=n.content)?k:"",tags:null!=(p=n.tags)?p:"",parent:null!=(m=n.parent)?m:"",useMd:!0};a.edits=l;a.src=!1;d.emit(...[b.RENDER])}),d.on(b.CANCEL_EDIT,()=>{e()||(a.edit=!1,a.edits=null,d.emit(...[b.RENDER]))}),d.on(b.UPDATE_PAGE,c=>{let {p:g}=a;if(g.pages.some(p=>p.slug===c.slug&&p.id!==c.id))return alert('A page with the slug "'+c.slug+'" already exists!');let k=g.pages.findIndex(p=>p.id===c.id);Object.keys(c).forEach(p=>{1>c[p].length&&
-delete c[p]});c.md=Date.now();-1<k?g.pages[k]=c:g.pages.push(c);a.edit=!1;a.edits=null;a.useMd="md"===c.editor;d.emit(...[b.COLLECT_TAGS]);d.emit(...[b.PUSHSTATE,a.root+"?page="+c.slug]);d.emit(...[b.CHECK_CHANGED])}),d.on(b.DELETE_PAGE,c=>{a.p.pages=a.p.pages.map(g=>(g.parent===c&&delete g.parent,g)).filter(g=>g.id!==c);a.edit=!1;a.edits=null;d.emit(...[b.COLLECT_TAGS]);d.emit(...[b.PUSHSTATE,a.root]);d.emit(...[b.CHECK_CHANGED])}),d.on(b.COLLECT_TAGS,()=>{a.t=FW.tidy(a.p.pages.reduce((c,g)=>{var k,
-p;return[...c,...(null!=(p=null==(k=g.tags)?void 0:k.split(","))?p:[])]},[]))}),d.on(b.CHECK_CHANGED,c=>{a.now=FW.hash.object(a.p);a.changed=a.prev!==a.now;d.emit(...[b.RENDER,c])}),d.on(b.NOTIFY,(c,g=5E3,k="background:#ddd; color:#000")=>{let p=FW.hash.string(c+k+(a.notis.length+1));c={text:c,css:k,id:p,t:0<g?setTimeout(()=>d.emit(...[b.REMOVE_NOTI,p]),g):null};a.notis.push(c);d.emit(...[b.RENDER])}),d.on(b.REMOVE_NOTI,c=>{a.notis.splice(a.notis.findIndex(g=>g.id===c),1);d.emit(...[b.RENDER])}),
-d.on(b.SAVE_WIKI,()=>{let c=FW.gen(a),{p:g,root:k}=a,p=/\/$/.test(k)?"index.html":k.substring(k.lastIndexOf("/")+1),m=document.createElement("a");m.setAttribute("href","data:text/html;charset=utf-8,"+encodeURIComponent(c));m.setAttribute("download",p);document.body.appendChild(m);m.click();document.body.removeChild(m);a.prev=FW.hash.object(g);d.emit(...[b.CHECK_CHANGED])}),d});FW.use(a=>addEventListener("beforeunload",d=>{if(a.changed)return d.preventDefault(),d.returnValue="Lose unsaved changes?"},
-{capture:!0}));FW.route("/:p",(a,d)=>{function b(w){w.preventDefault();w=w.currentTarget.np.value.trim();if(2>w.length)return alert("Enter more than 1 character to create a new page.");d(l.CREATE_PAGE,w.trim())}function f(w){a.sbTab=w.target.innerText;d(l.RENDER)}var h,e;let {root:c,help:g,pg:k,p,t:m,recent:n,events:l,query:t,changed:u,sb:r,sbTab:q,views:v,notis:x}=a,y=!p.published||"s"===t.page,B=p.pages.filter(w=>!w.parent),A=n.sort((w,O)=>w.t>O.t?-1:1).map(w=>p.pages.find(O=>O.id===w.p)),D=k?v.p(a,
-d,k):(null!=(e=v[null!=(h=t.page)?h:"a"])?e:()=>{})(a,d);t.tag&&(D=v.t(a,d));h=[u?html`<div>Wiki has changed!</div>`:""];return h=[...h,html`<div><button class=${u?"chg":""} title="Download wiki in its current state" onclick=${()=>d(l.SAVE_WIKI)}>Save Wiki</button></div>`],html`<body> <main> <div class=sb> <span class=db><a href=${c} class=t>${p.name}</a></span> ${p.desc?html`<p class=pb>${p.desc}</p>`:""} ${y?h:""} <button class=sbt onclick=${()=>{a.sb=!a.sb;d(l.RENDER)}}>${r?"Hide":"Show"} Menu</button> <nav class=${r?
-"":"n"}> ${y?[html`<p><a href="${c}?page=s">Wiki Settings</a></p>`,html`<details class=pb ontoggle=${()=>document.getElementById("np").focus()}> <summary class=np>New Page</summary> <form onsubmit=${b}> <label class=sr for=np>New Page Title</label> <input id=np placeholder="New Page Title" autocomplete=off> <button type=submit>Create</button> </form> </details>`]:""} <div class=tabs> <button class=${"Pages"===q&&"a"} onclick=${f}>Pages</button> ${0<m.length?html`<button class=${"Tags"===q&&"a"} onclick=${f}>Tags</button>`:
-""} <button class=${"Recent"===q&&"a"} onclick=${f}>Recent</button> </div> ${"Pages"===q?html`<ul> ${B.map(w=>g.getChildList(w,!0))} <li><a href="${c}?page=a">All Pages</a></li> </ul>`:""} ${"Tags"===q?html`<ul> ${m.map(w=>html`<li><a href="${c}?tag=${w}">${w}</a></li>`)} </ul>`:""} ${"Recent"===q?html`<ol> ${A.map(w=>html`<li><a href="${c}?page=${w.slug}">${w.name}</a></li>`)} </ol>`:""} </nav> </div> <section>${D}</section> </main> <footer> <span class=fr>Powered by <a href=https://feather.wiki title="Version: Chickadee_1.3.1" target=_blank rel="noopener noreferrer">Feather Wiki</a></span> </footer> <div class=notis> ${x.map(w=>
-html`<div class=noti style=${w.css} onclick=${()=>d(l.REMOVE_NOTI,w.id)} title="Click to close"> ${w.text}<span class=fr>\u00d7</span> </div>`)} </div> </body>`});FW.mount("body");window.choo=FW})(); </script> </head> <body> <header> <h1>Blog :: Unforswearing</h1> <p>documenting small tools, creating new markup languages, and using the shell</p> </header> <main><div> <article> <h1 id="about">About</h1> <section><p>I am <a href="https://unforswearing.com" target="_blank" rel="noopener noreferrer">Alvin</a> and this is a blog that collects various posts that were written as I was learning to program and use the shell. </p>
-<p>More generally, I am a writer with over twenty years experience crafting copy for technical documentation, technical blogs, corporate trainings, mobile apps, product marketing, email campaigns, business strategy, and arts / entertainment.</p></section></article><article> <h1 id="20220903_get_started_with_fzf_in_zsh">20220903 Get Started with Fzf in Zsh</h1> <section><h2>Introduction</h2>
-<p>Have you ever navigated to a directory in your terminal and wanted to select a file or folder from a menu, rather than typing <code>ls</code> to print a list of contents? Or perhaps you would rather use a single command to present a list of <code>git</code> options for you to choose instead of having to search your command history for frequently used (but often forgotten) commands? If you have experienced these annoyances, or if you want a simple way to choose items from a menu, <code>fzf</code> is the tool for you. </p>
-<p>In this article you will learn about <a href="https://github.com/junegunn/fzf" target="_blank" rel="noopener noreferrer"><code>fzf</code></a>, the command-line fuzzy finder. You will also learn a few ways that <code>fzf</code> can improve your scripts. </p>
-<h2>Installing <code>fzf</code></h2>
-<p><code>fzf</code> can be installed by cloning the repository, using <code>homebrew</code> on MacOS, or by using the default package manager in your Linux system. For more information, see <a href="https://github.com/junegunn/fzf#installation" target="_blank" rel="noopener noreferrer">junegunn/fzf#installation</a>.</p>
-<h2>Basic Usage</h2>
-<p><code>fzf</code> can be used to generate a simple menu from a list of items. For example, you can use <code>fzf</code> to display a list of files for you to choose from. To do this you can pipe a list of items into <code>fzf</code> in your terminal by using the command below</p>
-<pre>find . -type f -maxdepth 1 | fzf
-</pre>
-<p>You can also use <a href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html" target="_blank" rel="noopener noreferrer">command substitution</a> to open the selected file in your editor.</p>
-<pre>$EDITOR $(find . -type f -maxdepth 1 | fzf)
-</pre>
-<p>Now that you understand the basic use of <code>fzf</code>, you can use the tool for more interesting automations.</p>
-<h2>Use <code>fzf</code> with Git</h2>
-<p>Let's say you have a list of <code>git</code> commands that you use regularly but you want to speed up your <code>git</code> usage by choosing commands from a menu, rather than typing <code>git –help</code> to remember the name of the command you want to use. First, start by printing a list of your commands in your terminal.</p>
-<pre># The "-e" option translates "\n" to a literal new line, required by fzf
-echo -e "clone\ninit\nadd\ncommit\npush\n"
-</pre>
-<p>Once your list of commands is set, you can pipe this list to <code>fzf</code> to display them in a menu</p>
-<pre>echo -en "clone\ninit\nadd –all\ncommit\npush\n" | fzf
-</pre>
-<p>The command above will present your list of commands as a menu, allowing you to select a command via <code>fzf</code>. However, this does not actually run the <code>git</code> command. To use <code>fzf</code> for executing <code>git</code> commands, you can use the code below</p>
-<pre>git $(echo -en "clone\ninit\nadd –all\ncommit\npush\n" | fzf)
-</pre>
-<p>The above command will run the selected <code>git</code> command without any additional work on your part, simplifying your workflow and saving time. </p>
-<h2>Conclusion</h2>
-<p>In this article you learned about <code>fzf</code>, how to install <code>fzf</code>, and some basic usage examples you can apply to your workflow today. For more information about the <code>fzf</code> command-line fuzzy finder, visit the official <code>fzf</code> repository at <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a>.</p>
-<p></p></section></article><article> <h1 id="20211206_a_markup_language">20211206 A Markup Language</h1> <section><h1>A Markup Language</h1>
-<p>Name: ?? </p>
-<p>Goal: Create a somewhat restricted markup language with minimal formatting noise.</p>
-<p>Lang: ???</p>
- 
-<h2>Sources / Inspiration</h2>
-<p>Many of the ideas below were borrowed from other systems / markup languages. </p>
-<ul><li>AbstractML: https://github.com/ntrupin/abstractml</li><li>Markdown Extra: https://michelf.ca/projects/php-markdown/extra/</li><li>Orgmode: https://orgmode.org/manual/</li><li>Pug: https://pugjs.org/</li><li>Quaint: http://breuleux.github.io/quaint/syntax.html</li><li>Restructured Text: https://docutils.sourceforge.io/docs/user/rst/quickref.html</li><li>Skriv: http://markup.skriv.org/language/syntax</li></ul>
-<h2>Features</h2>
-<ul><li>Minimal markup to enhance readability </li><li>Outputs HTML</li><li>All markup should be explicit with no magic or hidden behavior</li><li>Only one method to achieve a particular formatting goal</li><li>Lightweight options to formatting params to save keystrokes</li><li>Formatting is a single character aside from enumerated items (headings, lists, etc)</li><li>New Lines denote the end of paragraphs and other elements. All other whitespace is ignored.</li><li>No Task or To Do support</li></ul>
-<h2>Syntax</h2>
-<h3>Comments</h3>
-<pre>% Comments run to the end of the line and are ignored during processing
-</pre>
-<ul><li>No multiline comments</li></ul>
-<h3>Headings</h3>
-<pre>= h1
-== h2
-=== h3
-</pre>
-<h3>Paragraphs</h3>
-<ul><li>New lines denote the end of a paragraph. Multiple consecutive new lines are ignored. </li></ul>
-<h3>Dividers</h3>
-<ul><li>Three hyphens</li></ul>
-<pre>---
-</pre>
-<h3>Lists</h3>
-<ul><li>Unordered lists</li></ul>
-<pre>+ item 1
-+ item 2
-++ item 2.1
-++ item 2.2
-+++ item 2.2.1
-</pre>
-<ul><li>Ordered lists</li></ul>
-<pre># item 1
-# item 2
-## item 2.1
-## item 2.2
-### item 2.2.1
-</pre>
-<h3>Code / Monospace</h3>
-<ul><li>Inline code and code blocks wrapped in two backticks</li></ul>
-<pre>``const addTwo = (num) =&gt; num + 2``
-</pre>
-<h3>Code Blocks</h3>
-<pre>``
-const addTwo = (num) =&gt; num + 2
-addTwo(5) // 7
-``
-</pre>
-<h3>Text Formatting</h3>
-<pre>*bold*
-|italic|
-_underline_
-~strikeout~
-</pre>
-<ul><li>\<em>bold\* and |italic| can be nested together</em></li><li><em>all other formatting cannot be nested and must be used individually</em></li></ul>
-<h3>Block Quotes</h3>
-<pre>&gt; this is text in a block quote
-&gt; each line in the block quote must be 
-&gt; prepended with the right bracket char (like markdown)
-&gt; otherwise the text is assumed to be paragraph
-</pre>
-<h3>Links</h3>
-<pre>::title=https://url.com
-</pre>
-<ul><li>Or without title (autolink)</li></ul>
-<pre>::=https://url.com
-</pre>
-<h3>Images</h3>
-<pre>!!=image.jpg
-</pre>
-<h3>Linked Images</h3>
-<pre>!!=image.jpg::https://viewimage.com
-</pre>
-<hr>
-<h2>Advanced Usage</h2>
-<ul><li>These things will be built later and as extensions to the main markup lang above. </li></ul>
-<h3>Text Formatting</h3>
-<pre>:highlight:
-^superscript^
-,subscript,
-</pre>
-<h3>Definitions</h3>
-<pre>markup |= special formatting used when creating textual documentation
-</pre>
-<h3>Abbreviations</h3>
-<pre>SSIMS := Silver Spring International Middle School
-</pre>
-<h3>Footnotes</h3>
-<ul><li>Footnotes must be added to the bottom of the document</li></ul>
-<pre>A footnote|1 can be used like so
----
-1: Here is some supplemental text about footnotes
-</pre>
-<h3>Tables</h3>
-<ul><li>Tables are like CSV with special identifiers for headings and rows. Columns are indicated with commas. Tables are not meant to display complex data or formatting. </li></ul>
-<pre>=Cities,    Pop,    State=
-+Balitmore, 600K,   Maryland+
-+New York,  2.5M,   New York+
-</pre>
-<h3>Front Matter</h3>
-<pre>---
-title: A Markup Language
-author: Unforswearing
----
-</pre>
-<ul><li>Lengthy front matter can be sourced from an external file:</li></ul>
-<pre>---
-title: Appendix
-include: pub_data.yaml
----
-% this document now contains all front matter located in pub_data.yaml
-</pre>
-<h3>Specifying HTML</h3>
-<ul><li>Any html tag can be used, however they are best used to denote non-ambiguous document structure. </li><li>Optional new lines and indentation can be added for readibility. </li></ul>
-<pre>= This is a document that contains HTML tags
-Below is an introduction using a specified &lt;div&gt; element
-#div Hello, I am unforswearing and this text is in a div element
-#p Here is an additional paragraph
-</pre>
-<h3>Computed Values / Inline Variables</h3>
-<h3>Highlighted Callout Boxes</h3>
-<ul><li>green (correct, continue)</li><li>blue (neutral)</li><li>red (incorrect, stop)</li><li>yellow (warning, caution)</li></ul>
-<h3>Transclusions</h3>
-<ul><li>to include content from other files in the current doc</li></ul></section></article><article> <h1 id="20200918_dsl_thoughts">20200918 DSL Thoughts</h1> <section><h1>General Thoughts about Creating a Langauge / DSL</h1><blockquote>see also: configuration language, command language, other non-turing complete langauges</blockquote>
-<h2>A very simple language</h2>
-<ul><li>really only a few things are needed to implement a programming language:</li><li>system: args, show (print/echo), input, exit</li><li>file i/o: read, write, close</li><li>math: nothing, or whatever is in the source language</li><li>control: </li></ul>
-  - if/then/else, repeat
-  - repeat is the only loop structure
-  - returns are explicit
-  &gt;&gt; no curly braces. if and for commands should end with dn for "done"<ul><li>data structure: functions, arrays/lists (and methods)</li></ul>
-  &gt;&gt; functionname = (arg1, arg2) -&gt; arg1 + arg2 :: functions only have two args max
-  &gt;&gt; list = <a href="undefined" target="_blank" rel="noopener noreferrer">1, 2, "a", "b"</a> :: there are no types, arrays can be anything
-<blockquote>a less minimal list could be something like:</blockquote>
-system commands: args, print/show, input/read, exit, execute, (others)
-math: basic infix expressions / equality / modulous / etc   &lt;&lt;&lt; implemented myself ??
-control: if/then/else, for..in, break, return, try/err, wait/sleep, loop
-data structures: array/list (and methods) <a href="undefined"></a>, struct/object {} (and methods), function/func/fun/fn/int/
-types: number, string, array, struct, function, etc
-<ul><li>use: include a file as a library for the current script</li></ul>
-  - use adds functions from "lib<em>file.lang" in the current global object<ul><li>variables cannot be assigned to the output of "use"</li></ul></em>
-<p><code>use("/path/to/lib_file.lang")</code></p>
-<ul><li>exp: export a function to be used from a library file </li></ul>
-<pre>..file lib.lang
-fn printhello() show "hello" dn
-exp(printhello)
-..file script.lang
-use("lib.lang")
-@printhello()
-</pre>
-<h2>Interesting things from other languages</h2>
-<ul><li><a href="https://cuelang.org/docs/" target="_blank" rel="noopener noreferrer">Cue</a> is interesting as a whole</li><li><a href="https://docs.dhall-lang.org/howtos/Cheatsheet.html" target="_blank" rel="noopener noreferrer">Dhall</a> is similar to Cue but with functions (and other stuff)</li></ul>
-<p>From <a href="https://gleam.run" target="_blank" rel="noopener noreferrer">Gleam</a></p><ul><li><a href="https://gleam.run/book/tour/case-expressions.html" target="_blank" rel="noopener noreferrer">case expressions</a></li><li><a href="https://gleam.run/book/tour/functions.html" target="_blank" rel="noopener noreferrer">pipe operator</a></li><li><a href="https://gleam.run/book/tour/modules.html" target="_blank" rel="noopener noreferrer">modules</a></li></ul><p></p>
-<p>It would be fun to implement some of the <a href="https://www.oasis-open.org/committees/download.php/16826/openformula-spec-20060221.html" target="_blank" rel="noopener noreferrer">Open Formula spec</a></p>
-<ul><li>see also: <a href="#open_formula_implementation-md">open_formula_implementation.md</a></li></ul>
-<h2>Etc</h2>
-<h4>type conversion</h4>
-<ul><li>classes have parameters attached that describe how a conversion should be handled</li></ul>
-<strong>list</strong>
-<p><code>list.char</code>   - split text or file by character, eg. `{"a",,"l","i","s","t"}
-<code>list.word</code>   - split text or file by word     , eg. <code>{"a", "list"}</code>
-<code>list.line</code>   - split text or file by line     , eg. <code>{"a list"}</code></p>
-<strong>file</strong>
-<p><code>file</code>        - method to save files to disk  , eg. <code>@conv({#text, file, "/path/file.txt"}</code></p>
-<strong>text to number and number to text</strong>
-<p>these operations only require two arguments:</p>
-<pre>@conv({#var, file, "/path/to/number.txt"})
-@conv({#var, file, "/path/to/text.txt"})
-</pre>
-<strong>examples</strong>
-<pre>..
-..change type from number/file/list/text to text/list/file/number
-..NOTE: conv will only accept a list as an argument!!
-@conv({#var, type - list|number|text|file, #optional_argument})
-..
-..NOTE:
-..- there is no number or none types so they cannot be declared as classes like list, text, and file
-..- file to text is not necessary since files are read by default
-..  when declaring the file instance using `filename::file("/path/to/file.txt")`
-..
-.."file to list" and "text to list" splits the file or text by character, word, or lines
-..text and file have the same properties so the operations will work exactly the same for both types
-@conv({#var, list, list.char})
-@conv({#var, list, list.word})
-@conv({#var, list, list.line})
-..
-.."number to file" and "text to file" saves the var value into a new file 
-.. at path specified in #optional_argument
-@conv({#var, file, "/path/to/number.txt"})
-@conv({#var, file, "/path/to/text.txt"})
-..
-..number to text conversions numeric characters to text strings
-..the third item in the list argument will be discarded
-@conv({#var, text})
-..
-..text to number convs numeric characters to text strings
-..NOTE: there is no number type so it cannot be declared like list, text, and file
-..the third item in the list argument will be discarded
-@conv({#var, number})
-</pre></section></article><article> <h1 id="20170919_the_javascript_string_object">20170919 The JavaScript String Object</h1> <section><em>Edit: The post below describes a primitive wrapper, <a href="https://eslint.org/docs/rules/no-new-wrappers" target="_blank" rel="noopener noreferrer">which do not act like primitives and will always resolve to true</a></em>. Please use with caution!<em></em>
-<p>In the previous post, I mentioned that I am using Bash far less frequently as my work generally involves fewer server-related tasks and more business process type workflows. This generally means that my Javascript (by way of Google Apps Script) abilities have moved from "How do I do this?" to "How do I do this better!" In the past this led me to fleshing out the nuances of command line scripting (<a href="/blog/posts/20161119-read-a-file-without-cat.html" target="_blank" rel="noopener noreferrer">e.g. my post about reading files without <code>cat</code></a>), but JavaScript offers much deeper depths to plumb, many of which I have only discovered in passing. </p>
-<p>One particular aspect of JavaScript objects has always bothered me: how do I use an object in a way that allows me to return a default value while still allowing access to properties contained within. Until today, I had assumed this wasn't possible, and I was trying to bring too much of my Bash-oriented brain to this relatively new-to-me langauge. However, looking through <a href="https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object" target="_blank" rel="noopener noreferrer">Stackoverflow</a> I discovered a method that met my perhaps non-standard needs. </p>
-<pre>javascript  
-/*
-  Add object methods/values to a string while retaining the original value
-  from Stack Overflow: https://unforswearing.com/shorten/?KRn
-*/
-function addPropertiesToString() {
-  var str = 'hello';
-  
-  // create string object
-  str = new String(str);
-  
-  // add object properties
-  // repeat() is available per MDN, but not Google Apps Script
-  // see MDN: https://unforswearing.com/shorten/?ywk
-  str.repeat = function(x) {
-    var r = '';
-    for (var q = 0; q &lt; x; q++) {
-      r = r + str;
-    }
-    
-    return r;
-  };
-  
-  // prepend text to str
-  str.prepend = function(text) {
-    var wpre = text + str;
-    return wpre;
-  }
-  
-  // a different hello
-  str.alternate = 'howdy';
-  // Logs for the methods above:  
-  Logger.log(str.repeat(3));  
-  // [17-09-19 17:34:46:698 EDT] hellohellohello	
-  Logger.log(str.prepend('someone said: '));
-  // [17-09-19 17:34:46:699 EDT] someone said: hello
-  Logger.log(str.alternate);
-  // [17-09-19 17:34:46:699 EDT] howdy
-  // And accessing the original str value
-  Logger.log(str);
-  // [17-09-19 17:34:46:700 EDT] hello 
-}
-</pre> 
-<p><br>
-Having only recently explored objects, I wondered if setting a default string value <i>after</i> adding a property was possible:  </p>
-<pre>javascript
-function addPropertiesBeforeString() {
-  var newStr = new String();
-  newStr.goodbye = function() { return 'see ya!' };
-  
-  Logger.log(newStr.goodbye());
-  // [17-09-19 17:34:46:700 EDT] see ya!
- 
-  newStr = 'Greetings!'
-  Logger.log(newStr);
-  // [17-09-19 17:34:46:701 EDT] Greetings! 
-  
-  try {
-    // Doesn't work!
-    Logger.log(newStr.goodbye()); 
-  } catch(e) {
-    Logger.log(e);
-    // TypeError: Cannot find function goodbye 
-    //            in object Greetings!
-  }
-}
-</pre>
-<p><br><br>Overall though, this opens up some interesting possibilities. I can think of at least one fairly practical example:  </p>
-<pre>javascript
-function stringMethodExample() {
-  var htmlMessage = '&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Attached is a copy of your form responses.' 
-  + 'If you have any questions, get in touch!';
- 
-  var file = DriveApp.getFileById(123456789); 
-  
-  htmlMessage = new String(htmlMessage);
-  htmlMessage.sendEmail = function(submitter, subject, body, htmlMessage) {
-    GmailApp.sendEmail(submitter, subject, body, {htmlBody: htmlMessage});
-  }
-  
-  // Do other things that will generate the submitter and subject...
-  var submitter = 'you@yourdomain.com';
-  var subject = 'Form Responses';
-  
-  // blank body because we are using htmlBody;
-  var body = ''; 
-  
-  htmlMessage.sendEmail(submitter, subject, body, htmlMessage);
-}
-</pre>
-<p>In the above example, logging <code>htmlMessage</code> by itself would return the original string, which could be used elsewhere in the script (as part of a generated PDF, for example). </p>
-<p>While this doesn't save much time or increase productivity, it does keep the email scoped to the <code>htmlMessage</code> and with a few additional lines of code, an <code>emailHtmlMessage</code> class could be created to generate this type of object on the fly.  </p>
-<p>This was a fun exercise and my first real foray into deeper JavaScript methods/practices. Get in touch if you have any comments or suggestions!  </p>
- </section></article><article> <h1 id="20170918_reading_files_without_cat">20170918 Reading Files Without Cat</h1> <section><h1>Reading A File Without cat</h1>
-<p>I have been trying to find ways to avoid <a href="https://en.wikipedia.org/wiki/Cat_(Unix" target="_blank" rel="noopener noreferrer">useless use of cat</a>#Useless<em>use</em>of<em>cat) but could never come up with a method of reading a file that did not involve creating an entire <code>for</code> or <code>while</code> loop. This problem crossed my mind yesterday and, after a quick google search, I <a href="http://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell" target="_blank" rel="noopener noreferrer">found a neat way to avoid this</a></em> in a single small command:   </p>
-<pre># contents of 'hi.txt'
-cat hi.txt
-hi
-hello
-ok
-</pre>
-<pre># reading hi.txt without 'cat'
-echo $(&lt;hi.txt)
-hi hello ok
-</pre>
-<p>Unfortunately, the command does not preserve new lines but for those times when you only need to read from a single line file, this does the trick.</p>
-<p></p></section></article><article> <h1 id="20170420_fun_with_pseudo_namespaces_in_bash">20170420 Fun With Pseudo Namespaces in Bash</h1> <section><p>Looking through the <a href="https://github.com/niieani/bash-oo-framework" target="_blank" rel="noopener noreferrer">bash oo framework repository</a> I noticed the use of <code>::</code> in function names. I have never seen this in bash scripts prior to using this framework, and I was curious about how I could leverage these in scripts to help more easily identify related processing commands.<br><br>  </p>
-<p>Interestingly, some things work very well and some not so much:<br><br></p>
-<pre>bash
-2:00 PM [~] &gt; alias hi::there='echo hi'
-2:00 PM [~] &gt; hi::there
-hi
-2:00 PM [~] &gt; hi
-bash: hi: command not found
-2:00 PM [~] &gt; there
-bash: there: command not found
-2:00 PM [~] &gt; alias hi.there='echo hi'
-2:00 PM [~] &gt; hi.there
-hi
-2:00 PM [~] &gt; hi
-bash: hi: command not found
-2:01 PM [~] &gt; there
-bash: there: command not found
-2:01 PM [~] &gt; hi.there() { echo hi; }
-bash: syntax error near unexpected token `(`
-2:01 PM [~] &gt; hi:there() { echo hi; }
-2:01 PM [~] &gt; hi:there
-hi
-2:01 PM [~] &gt; hi
-bash: hi: command not found
-2:01 PM [~] &gt; there
-bash: there: command not found
-</pre>
-<p></p><p></p>
-<p><a href="https://www.google.com/search?q=bash+namespaces" target="_blank" rel="noopener noreferrer">A quick search for Bash Namespaces</a> brings up a weath of additional 
-information for using this technique.</p>
-<p><br></p></section></article><article> <h1 id="20161014_a_bash_strict_mode_function">20161014 A Bash Strict Mode Function</h1> <section><h1>A Strict-Mode Function  </h1>
-<p>Some lessons taken from <a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/" target="_blank" rel="noopener noreferrer">"Unofficial Bash Strict Mode"</a> placed into a simple <code>strict</code> function that can be called at will.  </p>
-<pre>bash  
-#!/usr/bin/env bash
-strict() {
-    set -Ceo pipefail
-    IFS=$'\n\t'
-    alias cp='cp -i'
-    alias mv='mv -i'
-    alias rm='rm -i'
-    error_exit() {
-      echo "$1" 1&gt;&amp;2
-      exit 1
-    }
-    _end_strict() {
-        unalias cp
-        unalias mv
-        unalias rm
-        set +Ceo
-    }
-    trap error_exit ERR
-    trap _end_strict ERR EXIT SIGHUP SIGTERM
-}
-</pre>  
-</section></article><article> <h1 id="20160701_create_a_new_file_in_macos_finder">20160701 Create a New File in MacOS Finder</h1> <section><h1>Create a New File in Finder  </h1>
-<p>I love recreating functionality found in non-free applications. The latest example of this is the <a href="https://www.producthunt.com/tech/new-file-menu" target="_blank" rel="noopener noreferrer">New File menu app on Product Hunt</a>. This application essentially provides the user with a method of creating new files on the fly, from any folder within finder. This is a wonderful tool that can be recreated with a little applescript. Open the Script Editor and enter the code below:   </p>
-<pre>tell application "Finder"  
-    set FoldName to selection as text  
-    set FoldName to POSIX path of FoldName  
-    set newfile to text returned of (display dialog "Enter file name and extension" default answer "")  
-    set FileName to FoldName &amp; newfile  
-    set FileName to POSIX path of FileName  
-    set FileName to quoted form of FileName  
-    do shell script "touch " &amp; FileName  
-    do shell script "open " &amp; FileName  
-end tell 
-</pre>
-<p><em>Note:</em> When using this script you must enter the file name and extension. Finder will automatically open the file in the default application. For example, creating "My Notes.txt" will open the new file in Text Edit (or your default application for .txt files).<br><br>To add the script to Finder, save as "New File" (without an extension) and click "cmd" while dragging the script from the folder to the Finder toolbar. You now have a quick shortcut to create a new file any time you need one, and you saved yourself a few bucks in the process. </p>
-<p></p></section></article><article> <h1 id="20131013_lnks">20161013 Lnks</h1> <section><h1>lnks</h1>
-<p>My tool to <a href="https://github.com/unforswearing/lnks" target="_blank" rel="noopener noreferrer">get a list of links from Google Chrome</a> has been updated more than a few times since the <a href="/blog/posts/20140802-getting-a-list-of-links-from-chrome.html" target="_blank" rel="noopener noreferrer">previous post</a>, including the ability to save links to instapaper or pastebin, and an option to save the page(s) to pdf (via <a href="http://wkhtmltopdf.org/downloads.html" target="_blank" rel="noopener noreferrer">wkhtmltopdf</a>). Here's the brand new full list of options:</p>
-<pre class="code poetry"><code>-s to save the links to a file on the desktop
--c to copy the links to your clipboard
--v to print the links to stdout with leading text
--p to print the links to stdout
--i to save the link(s) to instapaper
--b to save the link(s) to pastebin.com
--w to save each url as a pdf (saves the page via 'wkhtmltopdf')
--h prints this help message</code></pre>
-<pre class="code poetry"><code>Note:
-- lnks accepts one option. the program will fail if run with more than one option.
-- using option -s will allow you to specify an output file, such as:
-		lnks -s searchterm matchinglinks.txt</code></pre>
-<p><br>
-I spent a while trying to figure out what I want to do next with <code>lnks</code> and feel pretty good about what I have planned:</p>
-<h2>Use Safari Instead  </h2>
-<p>Every now and again I take Safari out for a spin, and during one of those times I created <a href="https://github.com/unforswearing/surls" target="_blank" rel="noopener noreferrer"><code>surls</code></a> to mimic <code>lnks</code> functionality. Merging <code>surls</code> with <code>lnks</code> makes a lot of sense, and got me thinking maybe I can add...</p>
-<h2>Canary, Chromium, and Webkit Support As Well  </h2>
-<p>Most (if not all) of these browsers are scriptable via <code>Applescript</code> and it's gonna be great to brush up on my Applescripting. I am more than a bit out of practice. </p>
-<h2>Pinboard Support  </h2>
-<p>I was <a href="http://unforswearing.com/blog/posts/20160517-instapaper-folder-rss.html" target="_blank" rel="noopener noreferrer">super excited</a> to add Instapaper support to <code>lnks</code> but got <a href="http://unforswearing.com/blog/posts/20160823-instapaper-is-joining-pinterest.html" target="_blank" rel="noopener noreferrer">super bummed</a> when I saw that they were sold to Pinterest. I probably won't drop Instapaper support for <code>lnks</code> (despite my silly threat), but I definitely want to add an alternative. <a href="http://pinboard.in" target="_blank" rel="noopener noreferrer">Pinboard</a> is a clean, well  developed option I have on the horizon.  </p>
-<h2>lnks.conf  </h2>
-<p>It'd be really great to not have to specify any new or old options every time <code>lnks</code> is run, so how about a configuration file? This will essentially be an expanded version of <a href="https://github.com/unforswearing/lnks/blob/master/.lnks.conf" target="_blank" rel="noopener noreferrer">the current <code>conf</code> file</a> that will be read at runtime. </p>
-<p>There are a few other maintenance updates that I have planned for the far distant future, but I'm not quite there yet. Check back soon!</p></section></article><article> <h1 id="20130314_video_processing">20130314 Video Processing</h1> <section><p>PROCESS:</p>
-<p></p><ol><li>Videos are exported from Camtasia/FCE/Etc</li><li>Exports are saved directly to a Dropbox folder: /Dropbox/VideoProcessing/Originals</li></ol><pre class="code poetry"><code>* Files in the Originals folder are immediately processed by FFMPEG/HandbrakeCLI
-* Files in the Originals folder that are 1 week old are sent to permanent storage</code></pre><ol><li>Processed files are sent to the Exports folder: /Dropbox/VideoProcessing/Exports</li><li>The exports folder will be "watched" by Hazel </li></ol><pre class="code poetry"><code>* A script will alert me to new files, or
-* The file will automatically be moved to a folder on my desktop</code></pre><p></p>
-<p>ISSUES:</p>
-<p></p><ol><li>Video sizes are often more than 2 GB</li></ol><pre class="code poetry"><code>* Personal account is too small
-* Training account will put files on Jons computer
-* Work account will work for anything under 2 GB
-* Sub with Google Drive (up to 40 GB)?</code></pre>	<ol><li>There may be issues with the script running prematurely</li></ol><pre class="code poetry"><code>* Script did not wait until the video fully processed. 
-* That issue might be specific to applescript/hazel?</code></pre>	<ol><li></li></ol><p></p>
-<pre>                        +---------+
-                    +--&gt;|Originals+----+-------+
-                    |   +---------+    |       |     +----------------+
-                    |                  |       |     |FFMPEG/HANDBRAKE+-----------+
-                    |                  |       |     +----------------+           |
-                    |raw exp           |       |         ^                        |
-+------+            |                  |       |         |                        |
-|      | raw exp +-------------+       |       v         |                        |
-|      +--------&gt;|             |       |     +-----------+---+                    |
-| MAC  |         |   DROPBOX   |       |     | Processing PC |                    |
-|      |&lt;--------+             |       |     +---------------+                    |
-|      | pross'd +-------------+       |                                          |
-+------+            ^                  |                                          |
-                    |                  |                                          |
-                    |                  |                                          |
-                    |                  |                                          |
-                    |processed         |after 1 wk +--&gt; +---------------------+   |
-                    |                  +---------------&gt;|Raw/Originals Storage|   |
-                    |    +-------+                      +---------------------+   |
-                    +----+Exports|                                                |
-                         +-------+                                                |
-                             ^                                                    |
-                             |                                                    |
-                             |          &lt;--------+compressed files                |
-                             +----------------------------------------------------+
-</pre>                             
-<hr>
-<p>Sources:            <br></p><pre class="code poetry"><code></code></pre><ul><li>http://www.gna-productions.com/tutos/how-to-use-ffmpeg-with-batch-scripts  </li></ul>
- <ul><li>http://jonhall.info/how<em>to/setup</em>and<em>use</em>ffmpeg<em>on</em>windows  </li></ul><p></p>
-<ul><li>http://jorge.fbarr.net/2012/05/19/batch-convert-videos-using-handbrake-and-a-script/                           </li></ul><pre class="code poetry"><code></code></pre><ul><li>http://www.paulkiddie.com/2010/02/batching-video-transcodes-with-handbrake-windows/  </li></ul></section></article><article> <h1 id="20120820_navi_note_language">20120820 Navi Note Language</h1> <section><p>Navi Note Processing Language</p>
-<p>Navi is a simple way to take and process notes. Take notes using the simple Navi syntax and when you need a review of the important tasks, low priority tasks, comments, and contexts, run it through the Navi processor. </p>
-<ul><li>All notes, questions, high priority, and comments fit under a context heading as a project</li></ul>
-<ul><li>There is no whitespace within the project. Whitespace delimits each project  </li></ul>
-<ul><li>All tasks/items begin with a signifier (-,&gt;,∆,etc)  </li></ul>
-<ul><li>Completed tasks/items have x placed before their signifier (x-,x&gt;,x∆,etc)  </li></ul>
-<p>SYNTAX</p>
-<pre>@Project
-	- Normal priority/unprioritized task/item/comment/note
-	&gt; High priority task/item
-	∆ Backburner task/item (alt+j)
-	† Waiting for something before continuing (alt+t)
-	x Completed task/item
-	? Question about a task/project
-	! Important comment about a task/project
-$$ end of project
-</pre>
-<p>Parsing</p>
-<pre>sed -n '/@Project/ ,/$$/'
-	grep '&gt;' (etc)
-</pre></section></article><article> <h1 id="201201216_ivan_markup_language">201201216 Ivan Markup Language</h1> <section><h2>Ivan Markup Language</h2>
-<h3>Syntax</h3>
-<p>The goal is to be fast and simple, without having to remember formatting rules. When run through the parser, all Ivan Markup is compiled into HTML, which can then be optionally converted to pdf via wkhtmltopdf. Ivan is built entirely with Ruby and Sed. </p>
-<p>I built Ivan to suit my needs, and so it doesn't have a lot of the capabilities of other "lightweight markup languages." Specifically:</p>
-<ul><li>No support for tables, since I never use them</li></ul>
-<ul><li>No support for code blocks, but this may change</li></ul>
-<ul><li>Only the <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> header options</li></ul>
-<ul><li>No relative links, inline anchors, cross references. </li></ul>
-<p>Since this was a test of my limited programming capabilities, the syntax rules are pretty strict</p>
-<ul><li>no spaces between the formatting characters and the words you are applying the formatting to. E.G. :bold words: works but : bold words : will not. </li></ul>
-<pre>=h1=
-==h2==
-*bold* 
-/italic/
-_underline_
-- list item - 
-- list item - 
-  - nested list item - 
-  - nested list item - 
-</pre>
-<p>Possible later additions:</p>
-<pre>;http://google.com;
-;google;http://google.com;
-+http://google.com/smiley.gif+
-+smiley+http://google.com/smiley.gif+
-+;me@email.com;+
-+;my email+;me@email.com;+
-&lt;/code/&gt;
-&lt;/
-code block
-/&gt;
-</pre>
-<h3>Code structure</h3>
-<p>To start, write functions for each conversion that is needed:	
- 1.  h1
- 2.  h2
- 3.  bold
- 4.  italic
- 5.  underline
- 6.  links w/o alt text
- 7.  links w/ alt text
- 8.  email w/o alt text
- 9.  email w/ alt text
- 10. inline code</p>
-<h3>Pseudocode</h3>
-<pre>FUNCTIONs 1-10
-DOCUMENT = ARGV[0]
-OPTION = ARGV[1]
-OPTION2 = ARGV[2]
-Read file DOCUMENT
-  WORDS = words of DOCUMENT
-  if WORDS contains (markup syntax 1) 
-    do FUNCTION 1
-  elsif WORDS contains (markup syntax 2) 
-    do FUNCTION 2
-(etc through 10 functions
-Done
-Case OPTION
-  when “-o” 
-    save as newname.html
-  when “-f”
-    save as name.pdf,md
-Done
-Case OPTION2 
-  when “-o” 
-    save as newname.html
-  when “-f”
-    save as name.pdf,md
-Done
-</pre>
-<h3>Description</h3>
-<p>The parser will read each line and then each word of the file, compare it to each of the 10 functions using ‘if’ statements in a ‘for’ loop. If it matches one, the function containing the code will process the word. If it doesn’t match any, it will continue to loop through the words in the file until there are no more words. </p>
-<p>Ivan parser will exist as a command line only (because this has no place in Applescript). The script will take one file as an argument and convert to HTML by default. I am undecided about accepting processing options, but some ideas would be to</p>
-<ul><li>ivan foo.txt (html only)  </li></ul>
-<ul><li>ivan foo.txt -o bar.html (specify output filename — HOW?)  </li></ul>
-<ul><li>ivan foo.txt -f <a href="undefined" target="_blank" rel="noopener noreferrer">pdf,md</a> (convert a doc to pdf or markdown, maybe rtf)  </li></ul>
-<ul><li>ivan foo.txt -f <a href="undefined">pdf,md</a> -o bar.<a href="undefined">pdf,md</a> (like above, with a new filename  </li></ul>
-<p>The internal Ivan parsing will be written by me. The pdf and md formats will happen via ‘wkhtmltopdf’ (ruby) and ‘pandoc’ respectively. </p>
-<p>**Considerations**</p>
-<ul><li>Make sure the script doesn't endlessly iterate</li></ul>
-<pre class="code poetry"><code>- Possibly use the ‘++’ option to stop the script from starting at the beginning</code></pre>
-<ul><li>Make sure the script can handle any punctuation</li></ul>
-<ul><li>Make sure the script can process the words regardless where they are placed in the string. </li></ul>
-<ul><li>Keep the formatting strict to avoid stupid errors</li></ul>
-<h2>Processing</h2>
-<pre># Sed
-## bold: 
-sed 's/ :/ &lt;bold&gt;/g' | sed 's/: /&lt;\/bold&gt; /g' |  sed 's/^:/ &lt;bold&gt;/g' | sed 's/:$/&lt;\/bold&gt; /g' | sed 's/:./&lt;\/bold&gt;/'
-## paragraph breaks:
-sed 's/^/&lt;p&gt;/' | sed 's/$/&lt;\/p&gt;/'
-# Awk
-## get alt text for link
-awk -F+ '{ print $1 }' | sed 's/{//'
-</pre>
-<hr></section></article></div></main> <footer><a href=https://src.feather.wiki/#versions>JavaScript required to edit</a></footer>  </body> </html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      .post_date {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+        padding-right: 15px;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <code><a href="blog">blog</a> :: <a href="/">unforswearing.com</a></code>
+    <br />
+    <hr>
+    <h2>About</h2>
+    <div class="smol">
+      I am a writer with over twenty years experience crafting copy for technical documentation,
+      technical blogs, corporate trainings, mobile apps, product marketing, email campaigns,
+      business strategy, and arts / entertainment. This blog documents processes and ideas around
+      creating small shell tools, creating new markup languages, and scripts for technical / creative
+      writing.
+    </div>
+    <br />
+    <h2>Posts</h2>
+    <!-- 
+      posts are a folder of markdown files. how to convert? 
+      - on the fly? click link, md -> html (showdown.js?)
+      - as a build step? would prefer not...
+    -->
+    <div id="posts">
+      <span class="post_date">2022-09-03</span> <a href="./posts/html/20220903_get_started_with_fzf_in_zsh.html">Get
+        Started with FZF in Zsh</a><br />
+      <span class="post_date">2017-09-19</span> <a href="./posts/html/20170919-the-javascript-string-object.html">The
+        Javascript String Object</a><br />
+      <span class="post_date">2017-05-13</span> <a
+        href="./posts/html/20170513-Google-Apps-Script-And-Gmail.html">Google Apps Script and Gmail</a><br />
+      <span class="post_date">2017-04-20</span> <a
+        href="./posts/html/20170420-Fun-With-Psuedo-Namespaces-In-Bash.html">Fun with Pseudo Namespaces in
+        Bash</a><br />
+      <span class="post_date">2016-11-19</span> <a href="./posts/html/20161119-read-a-file-without-cat.html">Read a
+        File Without Cat</a><br />
+      <span class="post_date">2016-10-30</span> <a href="./posts/html/20161030-praise-aliaser.html">Aliaser</a><br />
+      <span class="post_date">2016-10-13</span> <a href="./posts/html/20161013-lnks.html">Lnks</a><br />
+      <span class="post_date">2016-07-01</span> <a
+        href="./posts/html/20160701-create-a-new-file-in-finder.html">Create a New File in Finder</a><br />
+      <span class="post_date">2015-09-17</span> <a href="./posts/html/20150917-wrapping-text.html">Wrapping
+        Text</a><br />
+      <span class="post_date">2014-10-05</span> <a
+        href="./posts/html/20141005-variables-in-prosepreprocessors.html">Variables in Preprocessors</a><br />
+      <span class="post_date">2014-07-08</span> <a href="./posts/html/20140708-future-dates.html">Future
+        Dates</a><br />
+    </div>
+    <br /><br />
+    <!-- BOTTOM / FOOTER -->
+    <!-- <span><code>
+      <a href="#top">
+        <span style="font-size: 200%">↑</span>Back to Top
+      </a>
+    </code></span> -->
+    <hr>
+    <div style="padding-bottom:30px;">
+      <code><a class="foots" href="https://github.com/unforswearing">github</a>
+          :: <a class="foots" href=
+          "./pt.html">audio / sound</a> :: <a class=
+          "foots" href="https://unforswearing.com">home</a></code>
+    </div>
+  </body>
+
+</html>
