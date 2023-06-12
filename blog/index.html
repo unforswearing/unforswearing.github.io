@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -108,11 +107,19 @@
     <br />
     <h2>Posts</h2>
     <!-- 
+      note: blog is updated very infrequently and does not necessarily need a build script.
+    -->
+    <!--
       posts are a folder of markdown files. how to convert? 
       - on the fly? click link, md -> html (showdown.js?)
       - as a build step? would prefer not...
     -->
     <div id="posts">
+      <!-- 
+        todo 6/12/2023
+        - all posts need a footer redirecting back to blog/
+        - all posts need an <H1> title added to markdown and html
+      -->
       <span class="post_date">2022-09-03</span> <a href="./posts/html/20220903_get_started_with_fzf_in_zsh.html">Get
         Started with FZF in Zsh</a><br />
       <span class="post_date">2017-09-19</span> <a href="./posts/html/20170919-the-javascript-string-object.html">The
