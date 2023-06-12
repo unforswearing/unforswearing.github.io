@@ -1,27 +1,112 @@
-<p><em>Edit: The post below describes a primitive wrapper, <a
-href="https://eslint.org/docs/rules/no-new-wrappers">which do not act
-like primitives and will always resolve to true</a>. Please use with
-caution!</em></p>
-<p>In the previous post, I mentioned that I am using Bash far less
-frequently as my work generally involves fewer server-related tasks and
-more business process type workflows. This generally means that my
-Javascript (by way of Google Apps Script) abilities have moved from “How
-do I do this?” to “How do I do this better!” In the past this led me to
-fleshing out the nuances of command line scripting (<a
-href="/blog/posts/20161119-read-a-file-without-cat.html">e.g. my post
-about reading files without <code>cat</code></a>), but JavaScript offers
-much deeper depths to plumb, many of which I have only discovered in
-passing.</p>
-<p>One particular aspect of JavaScript objects has always bothered me:
-how do I use an object in a way that allows me to return a default value
-while still allowing access to properties contained within. Until today,
-I had assumed this wasn’t possible, and I was trying to bring too much
-of my Bash-oriented brain to this relatively new-to-me langauge.
-However, looking through <a
-href="https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object">Stackoverflow</a>
-I discovered a method that met my perhaps non-standard needs.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p><em>Edit: The post below describes a primitive wrapper, <a
+          href="https://eslint.org/docs/rules/no-new-wrappers">which do not act
+          like primitives and will always resolve to true</a>. Please use with
+        caution!</em></p>
+    <p>In the previous post, I mentioned that I am using Bash far less
+      frequently as my work generally involves fewer server-related tasks and
+      more business process type workflows. This generally means that my
+      Javascript (by way of Google Apps Script) abilities have moved from “How
+      do I do this?” to “How do I do this better!” In the past this led me to
+      fleshing out the nuances of command line scripting (<a
+        href="/blog/posts/20161119-read-a-file-without-cat.html">e.g. my post
+        about reading files without <code>cat</code></a>), but JavaScript offers
+      much deeper depths to plumb, many of which I have only discovered in
+      passing.</p>
+    <p>One particular aspect of JavaScript objects has always bothered me:
+      how do I use an object in a way that allows me to return a default value
+      while still allowing access to properties contained within. Until today,
+      I had assumed this wasn’t possible, and I was trying to bring too much
+      of my Bash-oriented brain to this relatively new-to-me langauge.
+      However, looking through <a
+        href="https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object">Stackoverflow</a>
+      I discovered a method that met my perhaps non-standard needs.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Add object methods/values to a string while retaining the original value</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  from Stack Overflow: https://unforswearing.com/shorten/?KRn</span></span>
@@ -69,11 +154,12 @@ class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(str)<span class="op">;</span></span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:700 EDT] hello </span></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><br> Having only recently explored objects, I wondered if setting a
-default string value <i>after</i> adding a property was possible:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+    </div>
+    <p><br> Having only recently explored objects, I wondered if setting a
+      default string value <i>after</i> adding a property was possible:</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">addPropertiesBeforeString</span>() {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> newStr <span class="op">=</span> <span class="kw">new</span> <span class="bu">String</span>()<span class="op">;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  newStr<span class="op">.</span><span class="at">goodbye</span> <span class="op">=</span> <span class="kw">function</span>() { <span class="cf">return</span> <span class="st">&#39;see ya!&#39;</span> }<span class="op">;</span></span>
@@ -94,12 +180,13 @@ class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TypeError: Cannot find function goodbye </span></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">//            in object Greetings!</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><br><br />
-Overall though, this opens up some interesting possibilities. I can
-think of at least one fairly practical example:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+    </div>
+    <p><br><br />
+      Overall though, this opens up some interesting possibilities. I can
+      think of at least one fairly practical example:</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">stringMethodExample</span>() {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> htmlMessage <span class="op">=</span> <span class="st">&#39;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Attached is a copy of your form responses.&#39;</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">+</span> <span class="st">&#39;If you have any questions, get in touch!&#39;</span><span class="op">;</span></span>
@@ -119,14 +206,18 @@ class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> body <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span> </span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  htmlMessage<span class="op">.</span><span class="fu">sendEmail</span>(submitter<span class="op">,</span> subject<span class="op">,</span> body<span class="op">,</span> htmlMessage)<span class="op">;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>In the above example, logging <code>htmlMessage</code> by itself
-would return the original string, which could be used elsewhere in the
-script (as part of a generated PDF, for example).</p>
-<p>While this doesn’t save much time or increase productivity, it does
-keep the email scoped to the <code>htmlMessage</code> and with a few
-additional lines of code, an <code>emailHtmlMessage</code> class could
-be created to generate this type of object on the fly.</p>
-<p>This was a fun exercise and my first real foray into deeper
-JavaScript methods/practices. Get in touch if you have any comments or
-suggestions!</p>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+    </div>
+    <p>In the above example, logging <code>htmlMessage</code> by itself
+      would return the original string, which could be used elsewhere in the
+      script (as part of a generated PDF, for example).</p>
+    <p>While this doesn’t save much time or increase productivity, it does
+      keep the email scoped to the <code>htmlMessage</code> and with a few
+      additional lines of code, an <code>emailHtmlMessage</code> class could
+      be created to generate this type of object on the fly.</p>
+    <p>This was a fun exercise and my first real foray into deeper
+      JavaScript methods/practices. Get in touch if you have any comments or
+      suggestions!</p>
+  </body>
+
+</html>

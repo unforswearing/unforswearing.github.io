@@ -1,22 +1,110 @@
-<h1 id="create-a-new-file-in-finder">Create a New File in Finder</h1>
-<p>I am decidedly not a programmer, but I love recreating functionality
-found in non-free applications. The latest example of this is the <a
-href="https://www.producthunt.com/tech/new-file-menu">New File menu app
-on Product Hunt</a>. This application essentially provides the user with
-a method of creating new files on the fly, from any folder within
-finder. This is a wonderful tool that can be recreated with a little
-applescript. Open the Script Editor and enter the code below:</p>
-<script src="https://gist.github.com/unforswearing/eb266344d37fc9b862d305ac11633e8c.js"></script>
-<p><em>Note:</em> When using this script you must enter the file name
-and extension. Finder will automatically open the file in the default
-application. For example, creating “My Notes.txt” will open the new file
-in Text Edit (or your default application for .txt files).</p>
-<p>To add the script to Finder, save as “New File” (without an
-extension) and click “cmd” while dragging the script from the folder to
-the Finder toolbar. You now have a quick shortcut to create a new file
-any time you need one, and you saved yourself a few bucks in the
-process.</p>
-<p>Stay tuned for the next installment, where I will recreate another
-paid application.</p>
-<p><em>(This is the first in a series of posts wherein I save money and
-learn new skills by porting interesting (but paid) software)</em></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="create-a-new-file-in-finder">Create a New File in Finder</h1>
+    <p>I am decidedly not a programmer, but I love recreating functionality
+      found in non-free applications. The latest example of this is the <a
+        href="https://www.producthunt.com/tech/new-file-menu">New File menu app
+        on Product Hunt</a>. This application essentially provides the user with
+      a method of creating new files on the fly, from any folder within
+      finder. This is a wonderful tool that can be recreated with a little
+      applescript. Open the Script Editor and enter the code below:</p>
+    <script src="https://gist.github.com/unforswearing/eb266344d37fc9b862d305ac11633e8c.js"></script>
+    <p><em>Note:</em> When using this script you must enter the file name
+      and extension. Finder will automatically open the file in the default
+      application. For example, creating “My Notes.txt” will open the new file
+      in Text Edit (or your default application for .txt files).</p>
+    <p>To add the script to Finder, save as “New File” (without an
+      extension) and click “cmd” while dragging the script from the folder to
+      the Finder toolbar. You now have a quick shortcut to create a new file
+      any time you need one, and you saved yourself a few bucks in the
+      process.</p>
+    <p>Stay tuned for the next installment, where I will recreate another
+      paid application.</p>
+    <p><em>(This is the first in a series of posts wherein I save money and
+        learn new skills by porting interesting (but paid) software)</em></p>
+  </body>
+
+</html>

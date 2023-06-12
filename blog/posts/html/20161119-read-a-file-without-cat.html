@@ -1,22 +1,112 @@
-<h1 id="reading-a-file-without-cat">Reading A File Without cat</h1>
-<p>I have been trying to find ways to avoid <a
-href="https://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat">useless
-use of cat</a> but could never come up with a method of reading a file
-that did not involve creating an entire <code>for</code> or
-<code>while</code> loop. This problem crossed my mind yesterday and,
-after a quick google search, I <a
-href="http://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell">found
-a neat way to avoid this</a> in a single small command:</p>
-<pre><code># contents of &#39;hi.txt&#39;
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="reading-a-file-without-cat">Reading A File Without cat</h1>
+    <p>I have been trying to find ways to avoid <a
+        href="https://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat">useless
+        use of cat</a> but could never come up with a method of reading a file
+      that did not involve creating an entire <code>for</code> or
+      <code>while</code> loop. This problem crossed my mind yesterday and,
+      after a quick google search, I <a
+        href="http://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell">found
+        a neat way to avoid this</a> in a single small command:
+    </p>
+    <pre><code># contents of &#39;hi.txt&#39;
 cat hi.txt
 hi
 hello
 ok</code></pre>
-<p>
-<pre><code># reading hi.txt without &#39;cat&#39;
+    <p>
+    <pre><code># reading hi.txt without &#39;cat&#39;
 echo $(&lt;hi.txt)
 hi hello ok</code></pre>
-<p />
-<p>Unfortunately, the command does not preserve new lines but for those
-times when you only need to read from a single line file, this does the
-trick.</p>
+    <p />
+    <p>Unfortunately, the command does not preserve new lines but for those
+      times when you only need to read from a single line file, this does the
+      trick.</p>
+    </p>
+  </body>
+
+</html>

@@ -1,57 +1,148 @@
-<h2 id="introduction">Introduction</h2>
-<p>Have you ever navigated to a directory in your terminal and wanted to
-select a file or folder from a menu, rather than typing <code>ls</code>
-to print a list of contents? Or perhaps you would rather use a single
-command to present a list of <code>git</code> options for you to choose
-instead of having to search your command history for frequently used
-(but often forgotten) commands? If you have experienced these
-annoyances, or if you want a simple way to choose items from a menu,
-<code>fzf</code> is the tool for you.</p>
-<p>In this article you will learn about <a
-href="https://github.com/junegunn/fzf"><code>fzf</code></a>, the
-command-line fuzzy finder. You will also learn a few ways that
-<code>fzf</code> can improve your scripts.</p>
-<h2 id="installing-fzf">Installing <code>fzf</code></h2>
-<p><code>fzf</code> can be installed by cloning the repository, using
-<code>homebrew</code> on MacOS, or by using the default package manager
-in your Linux system. For more information, see <a
-href="https://github.com/junegunn/fzf#installation">junegunn/fzf#installation</a>.</p>
-<h2 id="basic-usage">Basic Usage</h2>
-<p><code>fzf</code> can be used to generate a simple menu from a list of
-items. For example, you can use <code>fzf</code> to display a list of
-files for you to choose from. To do this you can pipe a list of items
-into <code>fzf</code> in your terminal by using the command below</p>
-<pre><code>find . -type f -maxdepth 1 | fzf</code></pre>
-<p>You can also use <a
-href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html">command
-substitution</a> to open the selected file in your editor.</p>
-<pre><code>$EDITOR $(find . -type f -maxdepth 1 | fzf)</code></pre>
-<p>Now that you understand the basic use of <code>fzf</code>, you can
-use the tool for more interesting automations.</p>
-<h2 id="use-fzf-with-git">Use <code>fzf</code> with Git</h2>
-<p>Let’s say you have a list of <code>git</code> commands that you use
-regularly but you want to speed up your <code>git</code> usage by
-choosing commands from a menu, rather than typing <code>git –help</code>
-to remember the name of the command you want to use. First, start by
-printing a list of your commands in your terminal.</p>
-<pre><code># The &quot;-e&quot; option translates &quot;\n&quot; to a literal new line, required by fzf
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 id="introduction">Introduction</h2>
+    <p>Have you ever navigated to a directory in your terminal and wanted to
+      select a file or folder from a menu, rather than typing <code>ls</code>
+      to print a list of contents? Or perhaps you would rather use a single
+      command to present a list of <code>git</code> options for you to choose
+      instead of having to search your command history for frequently used
+      (but often forgotten) commands? If you have experienced these
+      annoyances, or if you want a simple way to choose items from a menu,
+      <code>fzf</code> is the tool for you.
+    </p>
+    <p>In this article you will learn about <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>, the
+      command-line fuzzy finder. You will also learn a few ways that
+      <code>fzf</code> can improve your scripts.
+    </p>
+    <h2 id="installing-fzf">Installing <code>fzf</code></h2>
+    <p><code>fzf</code> can be installed by cloning the repository, using
+      <code>homebrew</code> on MacOS, or by using the default package manager
+      in your Linux system. For more information, see <a
+        href="https://github.com/junegunn/fzf#installation">junegunn/fzf#installation</a>.
+    </p>
+    <h2 id="basic-usage">Basic Usage</h2>
+    <p><code>fzf</code> can be used to generate a simple menu from a list of
+      items. For example, you can use <code>fzf</code> to display a list of
+      files for you to choose from. To do this you can pipe a list of items
+      into <code>fzf</code> in your terminal by using the command below</p>
+    <pre><code>find . -type f -maxdepth 1 | fzf</code></pre>
+    <p>You can also use <a href="https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html">command
+        substitution</a> to open the selected file in your editor.</p>
+    <pre><code>$EDITOR $(find . -type f -maxdepth 1 | fzf)</code></pre>
+    <p>Now that you understand the basic use of <code>fzf</code>, you can
+      use the tool for more interesting automations.</p>
+    <h2 id="use-fzf-with-git">Use <code>fzf</code> with Git</h2>
+    <p>Let’s say you have a list of <code>git</code> commands that you use
+      regularly but you want to speed up your <code>git</code> usage by
+      choosing commands from a menu, rather than typing <code>git –help</code>
+      to remember the name of the command you want to use. First, start by
+      printing a list of your commands in your terminal.</p>
+    <pre><code># The &quot;-e&quot; option translates &quot;\n&quot; to a literal new line, required by fzf
 echo -e &quot;clone\ninit\nadd\ncommit\npush\n&quot;</code></pre>
-<p>Once your list of commands is set, you can pipe this list to
-<code>fzf</code> to display them in a menu</p>
-<pre><code>echo -en &quot;clone\ninit\nadd –all\ncommit\npush\n&quot; | fzf</code></pre>
-<p>The command above will present your list of commands as a menu,
-allowing you to select a command via <code>fzf</code>. However, this
-does not actually run the <code>git</code> command. To use
-<code>fzf</code> for executing <code>git</code> commands, you can use
-the code below</p>
-<pre><code>git $(echo -en &quot;clone\ninit\nadd –all\ncommit\npush\n&quot; | fzf)</code></pre>
-<p>The above command will run the selected <code>git</code> command
-without any additional work on your part, simplifying your workflow and
-saving time.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>In this article you learned about <code>fzf</code>, how to install
-<code>fzf</code>, and some basic usage examples you can apply to your
-workflow today. For more information about the <code>fzf</code>
-command-line fuzzy finder, visit the official <code>fzf</code>
-repository at <a
-href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a>.</p>
+    <p>Once your list of commands is set, you can pipe this list to
+      <code>fzf</code> to display them in a menu
+    </p>
+    <pre><code>echo -en &quot;clone\ninit\nadd –all\ncommit\npush\n&quot; | fzf</code></pre>
+    <p>The command above will present your list of commands as a menu,
+      allowing you to select a command via <code>fzf</code>. However, this
+      does not actually run the <code>git</code> command. To use
+      <code>fzf</code> for executing <code>git</code> commands, you can use
+      the code below
+    </p>
+    <pre><code>git $(echo -en &quot;clone\ninit\nadd –all\ncommit\npush\n&quot; | fzf)</code></pre>
+    <p>The above command will run the selected <code>git</code> command
+      without any additional work on your part, simplifying your workflow and
+      saving time.</p>
+    <h2 id="conclusion">Conclusion</h2>
+    <p>In this article you learned about <code>fzf</code>, how to install
+      <code>fzf</code>, and some basic usage examples you can apply to your
+      workflow today. For more information about the <code>fzf</code>
+      command-line fuzzy finder, visit the official <code>fzf</code>
+      repository at <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a>.
+    </p>
+  </body>
+
+</html>

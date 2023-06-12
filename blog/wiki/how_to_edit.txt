@@ -1,0 +1,9 @@
+If the blog is in "publish mode" add the following text to the end of the url: `?page=s`
+
+!!!
+**Always start with a downloaded copy, do not use "unforswearing/blog"**
+
+To edit, the url should look like this
+
+file:///Users/unforswearing/Downloads/blog_unforswearing.html?page=s
+

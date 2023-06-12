@@ -1,13 +1,97 @@
-<h1 id="lnks">lnks</h1>
-<p>My tool to <a href="https://github.com/unforswearing/lnks">get a list
-of links from Google Chrome</a> has been updated more than a few times
-since the <a
-href="/blog/posts/20140802-getting-a-list-of-links-from-chrome.html">previous
-post</a>, including the ability to save links to instapaper or pastebin,
-and an option to save the page(s) to pdf (via <a
-href="http://wkhtmltopdf.org/downloads.html">wkhtmltopdf</a>). Here’s
-the brand new full list of options:</p>
-<pre><code>-s to save the links to a file on the desktop
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="lnks">lnks</h1>
+    <p>My tool to <a href="https://github.com/unforswearing/lnks">get a list
+        of links from Google Chrome</a> has been updated more than a few times
+      since the <a href="/blog/posts/20140802-getting-a-list-of-links-from-chrome.html">previous
+        post</a>, including the ability to save links to instapaper or pastebin,
+      and an option to save the page(s) to pdf (via <a href="http://wkhtmltopdf.org/downloads.html">wkhtmltopdf</a>).
+      Here’s
+      the brand new full list of options:</p>
+    <pre><code>-s to save the links to a file on the desktop
 -c to copy the links to your clipboard
 -v to print the links to stdout with leading text
 -p to print the links to stdout
@@ -20,35 +104,39 @@ Note:
 - lnks accepts one option. the program will fail if run with more than one option.
 - using option -s will allow you to specify an output file, such as:
         lnks -s searchterm matchinglinks.txt</code></pre>
-<p><br> I spent a while trying to figure out what I want to do next with
-<code>lnks</code> and feel pretty good about what I have planned:</p>
-<h2 id="use-safari-instead">Use Safari Instead</h2>
-<p>Every now and again I take Safari out for a spin, and during one of
-those times I created <a
-href="https://github.com/unforswearing/surls"><code>surls</code></a> to
-mimic <code>lnks</code> functionality. Merging <code>surls</code> with
-<code>lnks</code> makes a lot of sense, and got me thinking maybe I can
-add…</p>
-<h2 id="canary-chromium-and-webkit-support-as-well">Canary, Chromium,
-and Webkit Support As Well</h2>
-<p>Most (if not all) of these browsers are scriptable via
-<code>Applescript</code> and it’s gonna be great to brush up on my
-Applescripting. I am more than a bit out of practice.</p>
-<h2 id="pinboard-support">Pinboard Support</h2>
-<p>I was <a
-href="http://unforswearing.com/blog/posts/20160517-instapaper-folder-rss.html">super
-excited</a> to add Instapaper support to <code>lnks</code> but got <a
-href="http://unforswearing.com/blog/posts/20160823-instapaper-is-joining-pinterest.html">super
-bummed</a> when I saw that they were sold to Pinterest. I probably won’t
-drop Instapaper support for <code>lnks</code> (despite my silly threat),
-but I definitely want to add an alternative. <a
-href="http://pinboard.in">Pinboard</a> is a clean, well developed option
-I have on the horizon.</p>
-<h2 id="lnks.conf">lnks.conf</h2>
-<p>It’d be really great to not have to specify any new or old options
-every time <code>lnks</code> is run, so how about a configuration file?
-This will essentially be an expanded version of <a
-href="https://github.com/unforswearing/lnks/blob/master/.lnks.conf">the
-current <code>conf</code> file</a> that will be read at runtime.</p>
-<p>There are a few other maintenance updates that I have planned for the
-far distant future, but I’m not quite there yet. Check back soon!</p>
+    <p><br> I spent a while trying to figure out what I want to do next with
+      <code>lnks</code> and feel pretty good about what I have planned:
+    </p>
+    <h2 id="use-safari-instead">Use Safari Instead</h2>
+    <p>Every now and again I take Safari out for a spin, and during one of
+      those times I created <a href="https://github.com/unforswearing/surls"><code>surls</code></a> to
+      mimic <code>lnks</code> functionality. Merging <code>surls</code> with
+      <code>lnks</code> makes a lot of sense, and got me thinking maybe I can
+      add…
+    </p>
+    <h2 id="canary-chromium-and-webkit-support-as-well">Canary, Chromium,
+      and Webkit Support As Well</h2>
+    <p>Most (if not all) of these browsers are scriptable via
+      <code>Applescript</code> and it’s gonna be great to brush up on my
+      Applescripting. I am more than a bit out of practice.
+    </p>
+    <h2 id="pinboard-support">Pinboard Support</h2>
+    <p>I was <a href="http://unforswearing.com/blog/posts/20160517-instapaper-folder-rss.html">super
+        excited</a> to add Instapaper support to <code>lnks</code> but got <a
+        href="http://unforswearing.com/blog/posts/20160823-instapaper-is-joining-pinterest.html">super
+        bummed</a> when I saw that they were sold to Pinterest. I probably won’t
+      drop Instapaper support for <code>lnks</code> (despite my silly threat),
+      but I definitely want to add an alternative. <a href="http://pinboard.in">Pinboard</a> is a clean, well developed
+      option
+      I have on the horizon.</p>
+    <h2 id="lnks.conf">lnks.conf</h2>
+    <p>It’d be really great to not have to specify any new or old options
+      every time <code>lnks</code> is run, so how about a configuration file?
+      This will essentially be an expanded version of <a
+        href="https://github.com/unforswearing/lnks/blob/master/.lnks.conf">the
+        current <code>conf</code> file</a> that will be read at runtime.</p>
+    <p>There are a few other maintenance updates that I have planned for the
+      far distant future, but I’m not quite there yet. Check back soon!</p>
+  </body>
+
+</html>

@@ -1,14 +1,101 @@
-<p>Looking through the <a
-href="https://github.com/niieani/bash-oo-framework">bash oo framework
-repository</a> I noticed the use of <code>::</code> in function names. I
-have never seen this in bash scripts prior to using this framework, and
-I was curious about how I could leverage these in scripts to help more
-easily identify related processing commands.<br />
-<br></p>
-<p>Interestingly, some things work very well and some not so much:<br />
-<br></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">2:00</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> alias hi::there=<span class="st">&#39;echo hi&#39;</span></span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
+    <style>
+      html {
+        color: #2a2f33;
+        background-color: #f0f0f0;
+        line-height: 1.5;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        padding: 0px;
+        color: #6495ed;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.4s ease-in-out;
+      }
+
+      a:visited {
+        color: #6495ed;
+      }
+
+      .align_right:hover {
+        text-align: right;
+
+      }
+
+      .stretch:hover {
+        padding-left: calc(5vw - 40px);
+        padding-right: calc(5vw - 40px);
+        border-width: 5px;
+        border-color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-left: 40px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Serif", serif;
+        font-size: 1.25em;
+      }
+
+      h1 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      .smol {
+        font-size: 0.75em;
+        font-family: "Source Code Pro", monospace !important;
+        color: dimgrey;
+      }
+
+      a.foots {
+        font-size: inherit;
+
+      }
+
+      a.foots:hover {
+        color: #f0f0f0;
+        background-color: #2a2f33;
+        border-radius: 5px;
+        padding: 5px;
+        transition: all 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Looking through the <a href="https://github.com/niieani/bash-oo-framework">bash oo framework
+        repository</a> I noticed the use of <code>::</code> in function names. I
+      have never seen this in bash scripts prior to using this framework, and
+      I was curious about how I could leverage these in scripts to help more
+      easily identify related processing commands.<br />
+      <br>
+    </p>
+    <p>Interestingly, some things work very well and some not so much:<br />
+      <br>
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">2:00</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> alias hi::there=<span class="st">&#39;echo hi&#39;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2:00</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> hi::there</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">hi</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">2:00</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> hi</span>
@@ -33,8 +120,12 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ex">2:01</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> hi</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ex">bash:</span> hi: command not found</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ex">2:01</span> PM <span class="pp">[</span><span class="ss">~</span><span class="pp">]</span> <span class="op">&gt;</span> there</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ex">bash:</span> there: command not found</span></code></pre></div>
-<p/>
-<p><a href="https://www.google.com/search?q=bash+namespaces">A quick
-search for Bash Namespaces</a> brings up a weath of additional
-information for using this technique. <br></p>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ex">bash:</span> there: command not found</span></code></pre>
+    </div>
+    <p />
+    <p><a href="https://www.google.com/search?q=bash+namespaces">A quick
+        search for Bash Namespaces</a> brings up a weath of additional
+      information for using this technique. <br></p>
+  </body>
+
+</html>
