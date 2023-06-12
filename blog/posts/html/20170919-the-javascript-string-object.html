@@ -123,19 +123,24 @@
     // see MDN: https://unforswearing.com/shorten/?ywk
     
     str.repeat = function(x) {
-    var r = '';
-    for (var q = 0; q < x; q++) { r=r + str; } return r; }; // prepend text to str str.prepend=function(text) { var
-      wpre=text + str; return wpre; } // a different hello str.alternate='howdy' ; // Logs for the methods above:
-      Logger.log(str.repeat(3)); // [17-09-19 17:34:46:698 EDT] hellohellohello Logger.log(str.prepend('someone said: '));
-      // [17-09-19 17:34:46:699 EDT] someone said: hello
-    
-      Logger.log(str.alternate);
-      // [17-09-19 17:34:46:699 EDT] howdy
-    
-      // And accessing the original str value
-      Logger.log(str);
-      // [17-09-19 17:34:46:700 EDT] hello 
-    
+      var r = '';
+      for (var q = 0; q < x; q++) { r=r + str; } return r; }; 
+        // prepend text to str str.prepend=function(text) { 
+        var wpre=text + str; return wpre; } // a different hello str.alternate='howdy' ; 
+        
+        // Logs for the methods above:
+        Logger.log(str.repeat(3)); 
+        // [17-09-19 17:34:46:698 EDT] hellohellohello 
+        Logger.log(str.prepend('someone said: '));      
+        // [17-09-19 17:34:46:699 EDT] someone said: hello
+
+        Logger.log(str.alternate);
+        // [17-09-19 17:34:46:699 EDT] howdy
+      
+        // And accessing the original str value
+        Logger.log(str);
+
+        // [17-09-19 17:34:46:700 EDT] hello     
     }
     </code></pre>
     </div>
