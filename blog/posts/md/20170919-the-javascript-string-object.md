@@ -5,7 +5,6 @@ In the previous post, I mentioned that I am using Bash far less frequently as my
 One particular aspect of JavaScript objects has always bothered me: how do I use an object in a way that allows me to return a default value while still allowing access to properties contained within. Until today, I had assumed this wasn't possible, and I was trying to bring too much of my Bash-oriented brain to this relatively new-to-me langauge. However, looking through [Stackoverflow](https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object) I discovered a method that met my perhaps non-standard needs. 
 
 ```javascript  
-
 /*
   Add object methods/values to a string while retaining the original value
   from Stack Overflow: https://unforswearing.com/shorten/?KRn
@@ -54,8 +53,8 @@ function addPropertiesToString() {
   // [17-09-19 17:34:46:700 EDT] hello 
 
 }
-
 ``` 
+
 <br>
 Having only recently explored objects, I wondered if setting a default string value <i>after</i> adding a property was possible:  
 

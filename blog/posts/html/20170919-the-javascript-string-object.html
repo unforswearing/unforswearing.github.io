@@ -106,109 +106,39 @@
       of my Bash-oriented brain to this relatively new-to-me langauge.
       However, looking through <a
         href="https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object">Stackoverflow</a>
-      I discovered a method that met my perhaps non-standard needs.</p>
-    <div class="sourceCode" id="cb1">
-      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Add object methods/values to a string while retaining the original value</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  from Stack Overflow: https://unforswearing.com/shorten/?KRn</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">addPropertiesToString</span>() {</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> str <span class="op">=</span> <span class="st">&#39;hello&#39;</span><span class="op">;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// create string object</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  str <span class="op">=</span> <span class="kw">new</span> <span class="bu">String</span>(str)<span class="op">;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// add object properties</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// repeat() is available per MDN, but not Google Apps Script</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">// see MDN: https://unforswearing.com/shorten/?ywk</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  str<span class="op">.</span><span class="at">repeat</span> <span class="op">=</span> <span class="kw">function</span>(x) {</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> r <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> q <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> q <span class="op">&lt;</span> x<span class="op">;</span> q<span class="op">++</span>) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      r <span class="op">=</span> r <span class="op">+</span> str<span class="op">;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> r<span class="op">;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">// prepend text to str</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  str<span class="op">.</span><span class="at">prepend</span> <span class="op">=</span> <span class="kw">function</span>(text) {</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> wpre <span class="op">=</span> text <span class="op">+</span> str<span class="op">;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> wpre<span class="op">;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">// a different hello</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  str<span class="op">.</span><span class="at">alternate</span> <span class="op">=</span> <span class="st">&#39;howdy&#39;</span><span class="op">;</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Logs for the methods above:  </span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(str<span class="op">.</span><span class="fu">repeat</span>(<span class="dv">3</span>))<span class="op">;</span>  </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:698 EDT] hellohellohello    </span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(str<span class="op">.</span><span class="fu">prepend</span>(<span class="st">&#39;someone said: &#39;</span>))<span class="op">;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:699 EDT] someone said: hello</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(str<span class="op">.</span><span class="at">alternate</span>)<span class="op">;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:699 EDT] howdy</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="co">// And accessing the original str value</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(str)<span class="op">;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:700 EDT] hello </span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
-    </div>
-    <p><br> Having only recently explored objects, I wondered if setting a
-      default string value <i>after</i> adding a property was possible:</p>
-    <div class="sourceCode" id="cb2">
-      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">addPropertiesBeforeString</span>() {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> newStr <span class="op">=</span> <span class="kw">new</span> <span class="bu">String</span>()<span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  newStr<span class="op">.</span><span class="at">goodbye</span> <span class="op">=</span> <span class="kw">function</span>() { <span class="cf">return</span> <span class="st">&#39;see ya!&#39;</span> }<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(newStr<span class="op">.</span><span class="fu">goodbye</span>())<span class="op">;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:700 EDT] see ya!</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  newStr <span class="op">=</span> <span class="st">&#39;Greetings!&#39;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  Logger<span class="op">.</span><span class="fu">log</span>(newStr)<span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// [17-09-19 17:34:46:701 EDT] Greetings! </span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span> {</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Doesn&#39;t work!</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    Logger<span class="op">.</span><span class="fu">log</span>(newStr<span class="op">.</span><span class="fu">goodbye</span>())<span class="op">;</span> </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">catch</span>(e) {</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    Logger<span class="op">.</span><span class="fu">log</span>(e)<span class="op">;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TypeError: Cannot find function goodbye </span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">//            in object Greetings!</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
-    </div>
-    <p><br><br />
-      Overall though, this opens up some interesting possibilities. I can
-      think of at least one fairly practical example:</p>
-    <div class="sourceCode" id="cb3">
-      <pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">stringMethodExample</span>() {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> htmlMessage <span class="op">=</span> <span class="st">&#39;&lt;h1&gt;Hello&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Attached is a copy of your form responses.&#39;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">+</span> <span class="st">&#39;If you have any questions, get in touch!&#39;</span><span class="op">;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> file <span class="op">=</span> DriveApp<span class="op">.</span><span class="fu">getFileById</span>(<span class="dv">123456789</span>)<span class="op">;</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  htmlMessage <span class="op">=</span> <span class="kw">new</span> <span class="bu">String</span>(htmlMessage)<span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  htmlMessage<span class="op">.</span><span class="at">sendEmail</span> <span class="op">=</span> <span class="kw">function</span>(submitter<span class="op">,</span> subject<span class="op">,</span> body<span class="op">,</span> htmlMessage) {</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    GmailApp<span class="op">.</span><span class="fu">sendEmail</span>(submitter<span class="op">,</span> subject<span class="op">,</span> body<span class="op">,</span> {<span class="dt">htmlBody</span><span class="op">:</span> htmlMessage})<span class="op">;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Do other things that will generate the submitter and subject...</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> submitter <span class="op">=</span> <span class="st">&#39;you@yourdomain.com&#39;</span><span class="op">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> subject <span class="op">=</span> <span class="st">&#39;Form Responses&#39;</span><span class="op">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">// blank body because we are using htmlBody;</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> body <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span> </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  htmlMessage<span class="op">.</span><span class="fu">sendEmail</span>(submitter<span class="op">,</span> subject<span class="op">,</span> body<span class="op">,</span> htmlMessage)<span class="op">;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+      I discovered a method that met my perhaps non-standard needs.
+    <pre><code class="language-javasript">
+    /*
+    Add object methods/values to a string while retaining the original value
+    from Stack Overflow: https://unforswearing.com/shorten/?KRn
+    */
+    
+    function addPropertiesToString() {
+    var str = 'hello';
+    
+    // create string object
+    str = new String(str);
+    
+    // add object properties
+    // repeat() is available per MDN, but not Google Apps Script
+    // see MDN: https://unforswearing.com/shorten/?ywk
+    
+    str.repeat = function(x) {
+    var r = '';
+    for (var q = 0; q < x; q++) { r=r + str; } return r; }; // prepend text to str str.prepend=function(text) { var
+      wpre=text + str; return wpre; } // a different hello str.alternate='howdy' ; // Logs for the methods above:
+      Logger.log(str.repeat(3)); // [17-09-19 17:34:46:698 EDT] hellohellohello Logger.log(str.prepend('someone said: '));
+      // [17-09-19 17:34:46:699 EDT] someone said: hello
+    
+      Logger.log(str.alternate);
+      // [17-09-19 17:34:46:699 EDT] howdy
+    
+      // And accessing the original str value
+      Logger.log(str);
+      // [17-09-19 17:34:46:700 EDT] hello 
+    
+    }
+    </code></pre>
     </div>
     <p>In the above example, logging <code>htmlMessage</code> by itself
       would return the original string, which could be used elsewhere in the
