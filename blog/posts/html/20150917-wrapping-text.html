@@ -60,10 +60,77 @@
     </p>
     <p>If you experience any issues, holler at me.</p>
     <p>For Automator:</p>
-    <script src="https://gist.github.com/unforswearing/43af571e92f8a081f4e5.js"></script>
+    <pre><code>on run {input}
+  
+  # this script handles cancellations properly, but is much slower than the shell script version
+  try
+  set bloog to (choose from list {"double-quote \"\"", "single-quote ''", "parenthesis ()", "curly-brace {}", "brace []",
+  "angled-bracket <>"} with title "Select an Item" OK button name "Wrap" default items {"double-quote"} with empty
+    selection allowed)
+  
+    if bloog is false then
+    error number -128
+    end if
+  
+    set bloog to do shell script "echo " & bloog & " | sed 's/[[:punct:]]. *$/ /g;s/[[:space:]]//g'"
+  
+    if bloog contains "double-quote" then
+    set wrap to do shell script "echo " & input & " | sed 's/^/\\\"/;s/$/\\\"/'"
+    else if bloog contains "single-quote" then
+    set wrap to do shell script "echo " & input & " | sed \"s/^/\\'/;s/$/\\'/\""
+    else if bloog contains "parenthesis" then
+    set wrap to do shell script "echo " & input & " | sed 's/^/\\(/;s/$/\\)/'"
+    else if bloog contains "curly-brace" then
+    set wrap to do shell script "echo " & input & " | sed 's/^/\\{/;s/$/\\}/'"
+    else if bloog contains "brace" then
+    set wrap to do shell script "echo " & input & " | sed 's/^/\\[/;s/$/\\]/'"
+    else if bloog contains "angled-bracket" then
+    set wrap to do shell script "echo " & input & " | sed 's/^/\\</;s /$/\\>/'"
+    end if
+  
+    return wrap
+  
+    end try
+    end run</code></pre>
     <p><br></p>
     <p>Shell Script for use with Alfred (or standalone):</p>
-    <script src="https://gist.github.com/unforswearing/42d67c1552aee194efb9.js"></script>
+    <pre><code>which_wrap() {
+
+# this script is much faster than the applescript version, but does not properly handle cancellation
+
+osascript <<EOF 
+  try set bloog to (choose from list {
+    "double-quote \"\"", 
+    "single-quote ''", 
+    "parenthesis ()",
+    "curly-brace {}", 
+    "brace []", 
+    "angled-bracket <>" 
+  } with title "Select an Item" OK 
+    button name "Wrap" default
+     items {"double-quote"} with empty selection allowed) 
+     return bloog 
+     if bloog is false then error number -128 
+     end if 
+  end
+  try EOF } 
+  which_wrap=$(which_wrap | sed 's/[[:punct:]]. *$/ /g;s/[[:space:]]//g' ) 
+  case "$which_wrap" in 
+    double-quote)
+      sed 's/^/\"/;s/$/\"/' ;; 
+    single-quote) 
+      sed "s/^/\'/;s/$/\'/" ;; 
+    parenthesis) 
+      sed 's/^/\(/;s/$/\)/' ;; 
+    curly-brace)
+      sed 's/^/\{/;s/$/\}/' ;; 
+    brace) 
+      sed 's/^/\[/;s/$/\]/' ;; 
+    angled-bracket) 
+      sed 's/^/\</;s/$/\>/' ;; 
+    "false" )
+       exit 1 ;;
+  esac</code></pre>
     <!-- blog-footer.html -->
     <span><code>
         <a href="../../index.html">

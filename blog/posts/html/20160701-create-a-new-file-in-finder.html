@@ -27,7 +27,16 @@
       a method of creating new files on the fly, from any folder within
       finder. This is a wonderful tool that can be recreated with a little
       applescript. Open the Script Editor and enter the code below:</p>
-    <script src="https://gist.github.com/unforswearing/eb266344d37fc9b862d305ac11633e8c.js"></script>
+    <pre><code>tell application "Finder"
+set FoldName to selection as text
+set FoldName to POSIX path of FoldName
+set newfile to text returned of (display dialog "Enter file name and extension" default answer "")
+set FileName to FoldName & newfile
+set FileName to POSIX path of FileName
+set FileName to quoted form of FileName
+do shell script "touch " & FileName
+do shell script "open " & FileName
+end tell</code></pre>
     <p><em>Note:</em> When using this script you must enter the file name
       and extension. Finder will automatically open the file in the default
       application. For example, creating “My Notes.txt” will open the new file
@@ -37,10 +46,6 @@
       the Finder toolbar. You now have a quick shortcut to create a new file
       any time you need one, and you saved yourself a few bucks in the
       process.</p>
-    <p>Stay tuned for the next installment, where I will recreate another
-      paid application.</p>
-    <p><em>(This is the first in a series of posts wherein I save money and
-        learn new skills by porting interesting (but paid) software)</em></p>
     <!-- blog-footer.html -->
     <span><code>
         <a href="../../index.html">

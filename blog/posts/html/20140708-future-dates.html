@@ -20,29 +20,25 @@
     <!-- START content -->
     <h1 id="future-dates">Future Dates</h1>
     <br />
-    <p>I take a lot of notes in plain text and often want to add a due date
+    I take a lot of notes in plain text and often want to add a due date
       to current tasks, but I’m usually too lazy to open up a calendar. These
       scripts (saved as applications and launched via Alfred) will quickly
-      copy tomorrows date, or some date <code>x</code> days in the future.</p>
-    <p><strong>Tomorrows Date</strong> simply copies tomorrows date to the
-      clipboard.</p>
-    <pre><code class="language-applescript">
-      set morrow to current date  
-      set morrow to morrow + days  
-      set the clipboard to (do shell script &quot;echo &quot; &amp; morrow &amp; &quot; | sed s/,[^,]*$//&quot;)   
-    </code></pre>
+      copy tomorrows date, or some date <code>x</code> days in the future.
+      <br /><br />
+      <strong>Tomorrows Date</strong> simply copies tomorrows date to the
+      clipboard.
+    <pre><code>set morrow to current date  
+set morrow to morrow + days  
+set the clipboard to (do shell script &quot;echo &quot; &amp; morrow &amp; &quot; | sed s/,[^,]*$//&quot;)</code></pre>
     <p>If the script is run today (Thursday, March 20, 2014),
       <code>Friday, March 21</code> will be copied to the clipboard.
     </p>
     <p><strong>Future Date</strong> will fetch the date of any day in the
       future based on how many days it is from today (via dialog box).</p>
-    <pre><code
-      class="language-applescript">
-      set dayss to text returned of (display dialog &quot;How many days from now?&quot; default answer &quot;&quot; buttons {&quot;OK&quot;} default button &quot;OK&quot;)  
-      set morrow to current date  
-      set morrow to morrow + dayss * days  
-      set the clipboard to (do shell script &quot;echo &quot; &amp; morrow &amp; &quot; | sed s/,[^,]*$//&quot;)    
-    </code></pre>
+    <pre><code>set dayss to text returned of (display dialog &quot;How many days from now?&quot; default answer &quot;&quot; buttons {&quot;OK&quot;} default button &quot;OK&quot;)  
+set morrow to current date  
+set morrow to morrow + dayss * days  
+set the clipboard to (do shell script &quot;echo &quot; &amp; morrow &amp; &quot; | sed s/,[^,]*$//&quot;)</code></pre>
     <p>If the project or task is due 4 days from today (Thursday, March 20,
       2014), enter <code>4</code> in the dialog box when your run the script.
       <code>Monday, March 24</code> will be copied to the clipboard.
@@ -58,17 +54,15 @@
     <p>Applescript allows for the adjustment of <code>hours</code> as well
       as <code>days</code>. You could alter the script to read something
       like:</p>
-    <pre><code class="language-applescript">
-      set dued to text returned of (display dialog &quot;How many days and hours from now?&quot; default answer &quot;&quot; buttons {&quot;OK&quot;} default button &quot;OK&quot;)  
-      set dued to words of dued  
-      set dayss to item 1 of dued  
-      set hourss to item 2 of dued  
-      set morrow to current date  
-      set morrow to morrow + dayss * days  
-      set morrow to morrow + hourss * hours  
-      set morrow to morrow as text  
-      set the clipboard to morrow  
-    </code></pre>
+    <pre><code>set dued to text returned of (display dialog &quot;How many days and hours from now?&quot; default answer &quot;&quot; buttons {&quot;OK&quot;} default button &quot;OK&quot;)  
+set dued to words of dued  
+set dayss to item 1 of dued  
+set hourss to item 2 of dued  
+set morrow to current date  
+set morrow to morrow + dayss * days  
+set morrow to morrow + hourss * hours  
+set morrow to morrow as text  
+set the clipboard to morrow</code></pre>
     <p>Example: if it is currently noon on Thursday and you have a project
       due Monday at 4 pm (4 days and 4 hours from now) run the script, and
       when the dialog box appears, type <code>4</code> followed by a space and
@@ -91,15 +85,13 @@
         4:00 PM”<br />
       </li>
       <li>And if you just wanted the hour without minutes or seconds, add
-        <code
-          class="language-applescript">set the clipboard to (do shell script "echo " &amp; morrow &amp; " | sed s/:[^..][0-9]//g")</code>
+        <code>set the clipboard to (do shell script "echo " &amp; morrow &amp; " | sed s/:[^..][0-9]//g")</code>
         to the end of the script. This will give you “Monday, March 24, 2014 4
         PM”<br />
       </li>
       <li>Finally, (because I’m on a roll) if you wanted to remove the year,
         minutes and seconds, add
-        <code
-          class="language-applescript">set the clipboard to (do shell script "echo " &amp; morrow &amp; " | sed s/:[^..][0-9]//g | sed s/20..// | sed s/' '//3")</code>
+        <code>set the clipboard to (do shell script "echo " &amp; morrow &amp; " | sed s/:[^..][0-9]//g | sed s/20..// | sed s/' '//3")</code>
         to the end of the script. This will give you “Monday, March 24, 4
         PM”
       </li>
