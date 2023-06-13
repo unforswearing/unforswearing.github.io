@@ -1,3 +1,4 @@
+<!-- blog-head.html -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 
@@ -6,95 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
-    <style>
-      html {
-        color: #2a2f33;
-        background-color: #f0f0f0;
-        line-height: 1.5;
-      }
-
-      a {
-        /*  padding-left:18px;*/
-        padding: 0px;
-        color: #6495ed;
-        cursor: pointer;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-      }
-
-      a:hover,
-      a:visited:hover {
-        color: #b7410e;
-        transition: all 0.4s ease-in-out;
-      }
-
-      a:visited {
-        color: #6495ed;
-      }
-
-      .align_right:hover {
-        text-align: right;
-
-      }
-
-      .stretch:hover {
-        padding-left: calc(5vw - 40px);
-        padding-right: calc(5vw - 40px);
-        border-width: 5px;
-        border-color: #2a2f33;
-      }
-
-      body {
-        width: 60%;
-        padding: 30px;
-        padding-right: 0px;
-        padding-top: 40px;
-        padding-left: 40px;
-        background-color: #f0f0f0;
-        color: #2a2f33;
-        font-family: "Computer Modern Serif", serif;
-        font-size: 1.25em;
-      }
-
-      h1 {
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-      }
-
-      .smol {
-        font-size: 0.75em;
-        font-family: "Source Code Pro", monospace !important;
-        color: dimgrey;
-      }
-
-      a.foots {
-        font-size: inherit;
-
-      }
-
-      a.foots:hover {
-        color: #f0f0f0;
-        background-color: #2a2f33;
-        border-radius: 5px;
-        padding: 5px;
-        transition: all 0.4s ease-in-out;
-      }
-    </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   </head>
-
   <body>
-    <p><em>Edit: The post below describes a primitive wrapper, <a
-          href="https://eslint.org/docs/rules/no-new-wrappers">which do not act
-          like primitives and will always resolve to true</a>. Please use with
-        caution!</em></p>
+    <code class="non"><a href="../../index.html">blog</a> :: <a href="/">unforswearing.com</a></code>
+    <br />
+    <hr>
+    <!-- END blog-head.html -->
+    <!-- post-content -->
+    <h1>The Javascript String Object</h1>
+    <br />
+    <blockquote>
+      The post below describes a primitive wrapper, <a href="https://eslint.org/docs/rules/no-new-wrappers">which do not
+        act
+        like primitives and will always resolve to true</a>. Please use with
+      caution!
+    </blockquote>
     <p>In the previous post, I mentioned that I am using Bash far less
       frequently as my work generally involves fewer server-related tasks and
       more business process type workflows. This generally means that my
       Javascript (by way of Google Apps Script) abilities have moved from “How
       do I do this?” to “How do I do this better!” In the past this led me to
       fleshing out the nuances of command line scripting (<a
-        href="/blog/posts/20161119-read-a-file-without-cat.html">e.g. my post
+        href="/blog/posts/html/20161119-read-a-file-without-cat.html">e.g. my post
         about reading files without <code>cat</code></a>), but JavaScript offers
       much deeper depths to plumb, many of which I have only discovered in
       passing.</p>
@@ -106,43 +43,49 @@
       However, looking through <a
         href="https://stackoverflow.com/questions/5539047/javascript-why-cant-i-add-new-attributes-to-a-string-object">Stackoverflow</a>
       I discovered a method that met my perhaps non-standard needs.
-    <pre><code class="language-javascript">
-    /*
-    Add object methods/values to a string while retaining the original value
-    from Stack Overflow: https://unforswearing.com/shorten/?KRn
-    */
-    
-    function addPropertiesToString() {
-    var str = 'hello';
-    
-    // create string object
-    str = new String(str);
-    
-    // add object properties
-    // repeat() is available per MDN, but not Google Apps Script
-    // see MDN: https://unforswearing.com/shorten/?ywk
-    
-    str.repeat = function(x) {
-      var r = '';
-      for (var q = 0; q < x; q++) { r=r + str; } return r; }; 
-        // prepend text to str str.prepend=function(text) { 
-        var wpre=text + str; return wpre; } // a different hello str.alternate='howdy' ; 
-        
-        // Logs for the methods above:
-        Logger.log(str.repeat(3)); 
-        // [17-09-19 17:34:46:698 EDT] hellohellohello 
-        Logger.log(str.prepend('someone said: '));      
-        // [17-09-19 17:34:46:699 EDT] someone said: hello
+    <pre>
+      <code class="language-javascript">/*
+Add object methods/values to a string while 
+retaining the original value. From Stack Overflow
+https://unforswearing.com/shorten/?KRn
+*/
 
-        Logger.log(str.alternate);
-        // [17-09-19 17:34:46:699 EDT] howdy
-      
-        // And accessing the original str value
-        Logger.log(str);
+function addPropertiesToString() {
+  var str = 'hello';
 
-        // [17-09-19 17:34:46:700 EDT] hello     
-    }
-    </code></pre>
+  // create string object
+  str = new String(str);
+
+// add object properties
+// repeat() is available per MDN, but not Google Apps Script
+// see MDN: https://unforswearing.com/shorten/?ywk
+
+str.repeat = function(x) {
+  var r = '';
+  for (var q = 0; q < x; q++) { r=r + str; } return r; }; 
+    // prepend text to str str.prepend=function(text) { 
+    var wpre=text + str; return wpre; 
+  }
+    
+  // a different hello 
+  str.alternate='howdy' ; 
+  
+  // Logs for the methods above:
+  
+  console.log(str.repeat(3)); 
+  // [17-09-19 17:34:46:698 EDT] hellohellohello 
+
+  console.log(str.prepend('someone said: '));      
+  // [17-09-19 17:34:46:699 EDT] someone said: hello
+
+  console.log(str.alternate);
+  // [17-09-19 17:34:46:699 EDT] howdy
+
+  // And accessing the original str value
+  console.log(str);
+
+  // [17-09-19 17:34:46:700 EDT] hello     
+}</code></pre>
     </div>
     <p>In the above example, logging <code>htmlMessage</code> by itself
       would return the original string, which could be used elsewhere in the
@@ -154,7 +97,22 @@
     <p>This was a fun exercise and my first real foray into deeper
       JavaScript methods/practices. Get in touch if you have any comments or
       suggestions!</p>
-    <script src="/blog/js/prism.js"></script>
+    <br />
+    <!-- END post-content -->
+    <!-- blog-footer.html -->
+    <span><code>
+      <a href="../../index.html">
+        back to blog
+      </a>
+    </code></span>
+    <hr>
+    <div style="padding-bottom:30px;">
+      <code class="non"><a class="foots" href="https://github.com/unforswearing">github</a>
+          :: <a class="foots" href=
+          "./pt.html">audio / sound</a> :: <a class=
+          "foots" href="https://unforswearing.com">home</a></code>
+    </div>
+    <script>hljs.highlightAll();</script>
   </body>
 
 </html>
