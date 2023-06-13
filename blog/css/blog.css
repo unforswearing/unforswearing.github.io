@@ -7,7 +7,7 @@ html {
 a {
   /*  padding-left:18px;*/
   padding: 0px;
-  color: #6495ed;
+  color: #437eec;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -20,7 +20,7 @@ a:visited:hover {
 }
 
 a:visited {
-  color: #6495ed;
+  color: #437eec;
 }
 
 .align_right:hover {
@@ -96,5 +96,5 @@ pre {
 
 pre>code {
   border-radius: 10px;
-  border-left: solid 10px #6495ed60;
+  border-left: solid 10px #437eec60;
 }
