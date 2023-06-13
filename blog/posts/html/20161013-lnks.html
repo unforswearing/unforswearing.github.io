@@ -1,89 +1,25 @@
+<!-- blog-head.html -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 
   <head>
+    <link href="/blog/css/prism.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
-    <style>
-      html {
-        color: #2a2f33;
-        background-color: #f0f0f0;
-        line-height: 1.5;
-      }
-
-      a {
-        /*  padding-left:18px;*/
-        padding: 0px;
-        color: #6495ed;
-        cursor: pointer;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-      }
-
-      a:hover,
-      a:visited:hover {
-        color: #b7410e;
-        transition: all 0.4s ease-in-out;
-      }
-
-      a:visited {
-        color: #6495ed;
-      }
-
-      .align_right:hover {
-        text-align: right;
-
-      }
-
-      .stretch:hover {
-        padding-left: calc(5vw - 40px);
-        padding-right: calc(5vw - 40px);
-        border-width: 5px;
-        border-color: #2a2f33;
-      }
-
-      body {
-        width: 60%;
-        padding: 30px;
-        padding-right: 0px;
-        padding-top: 40px;
-        padding-left: 40px;
-        background-color: #f0f0f0;
-        color: #2a2f33;
-        font-family: "Computer Modern Serif", serif;
-        font-size: 1.25em;
-      }
-
-      h1 {
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-      }
-
-      .smol {
-        font-size: 0.75em;
-        font-family: "Source Code Pro", monospace !important;
-        color: dimgrey;
-      }
-
-      a.foots {
-        font-size: inherit;
-
-      }
-
-      a.foots:hover {
-        color: #f0f0f0;
-        background-color: #2a2f33;
-        border-radius: 5px;
-        padding: 5px;
-        transition: all 0.4s ease-in-out;
-      }
-    </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   </head>
 
   <body>
+    <code class="non"><a href="../../index.html">blog</a> :: <a href="/">unforswearing.com</a></code>
+    <br />
+    <hr>
+    <!-- END blog-head.html -->
+    <!-- START content -->
     <h1 id="lnks">lnks</h1>
+    <br />
     <p>My tool to <a href="https://github.com/unforswearing/lnks">get a list
         of links from Google Chrome</a> has been updated more than a few times
       since the <a href="/blog/posts/20140802-getting-a-list-of-links-from-chrome.html">previous
@@ -137,6 +73,20 @@ Note:
         current <code>conf</code> file</a> that will be read at runtime.</p>
     <p>There are a few other maintenance updates that I have planned for the
       far distant future, but I’m not quite there yet. Check back soon!</p>
+    <!-- blog-footer.html -->
+    <span><code>
+        <a href="../../index.html">
+          back to blog
+        </a>
+      </code></span>
+    <hr>
+    <div style="padding-bottom:30px;">
+      <code class="non"><a class="foots" href="https://github.com/unforswearing">github</a>
+            :: <a class="foots" href=
+            "./pt.html">audio / sound</a> :: <a class=
+            "foots" href="https://unforswearing.com">home</a></code>
+    </div>
+    <script>hljs.highlightAll();</script>
   </body>
 
 </html>
