@@ -1,0 +1,38 @@
+root: blog/
+  css: blog/css/
+  posts: blog/posts/
+content:
+  source: blog/posts/md/
+  output: blog/posts/html/
+template:
+  head: |
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+    <html>
+    <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    </head>
+    <body>
+    <code class="non"><a href="../../index.html">blog</a> :: <a href="/">unforswearing.com</a></code>
+    <br />
+    <hr>
+  footer: |
+    <span><code>
+    <a href="../../index.html">
+    back to blog
+    </a>
+    </code></span>
+    <hr>
+    <div style="padding-bottom:30px;">
+    <code class="non"><a class="foots" href="https://github.com/unforswearing">github</a>
+    :: <a class="foots" href=
+    "./pt.html">audio / sound</a> :: <a class=
+    "foots" href="https://unforswearing.com">home</a></code>
+    </div>
+    <script>hljs.highlightAll();</script>
+    </body>
+    </html>

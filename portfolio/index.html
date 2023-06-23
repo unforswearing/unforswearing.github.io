@@ -184,9 +184,9 @@
       <li><a href="https://drive.google.com/file/d/1HryHMBBX4sDRfrBppE_gQ1IqNpATUOyb/view">Time
           Off Request Form Script</a></li>
     </ul><br>
-    <hr id="contact">
+    <hr>
     <div style="padding-bottom:200px;">
-      <h2 style="font-size: 2em; padding-bottom: 10px;">
+      <h2 id="contact" style="font-size: 2em; padding-bottom: 10px;">
         Contact</h2><br>
       <div style="font-size: 20px; margin-bottom: calc((.5 * 50vh) - 50px);">
         <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">General Inquiries</h3>
@@ -211,7 +211,9 @@
           <a href="../contact.html">contact form</a>. Thank
           you!
         </p>
-      </div><span><code><a href="#top">back to top</a></code></span>
+      </div><span><code>
+        <a onclick="scrollToTop();return false" href="#top">back to top</a>
+      </code></span>
       <hr>
       <div style="padding-bottom:30px;">
         <code><a class="foots" href="https://github.com/unforswearing">github</a>
@@ -220,6 +222,11 @@
       "foots" href="https://unforswearing.com">home</a></code>
       </div>
     </div>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
   </body>
 
 </html>
