@@ -62,9 +62,17 @@ Colophon:
 
       }
 
+      .stretch {
+        transition-timing-function: ease-in;
+        transition: 0.25s;
+      }
+
       .stretch:hover {
         /* padding-left: calc(5vw - 40px); */
+        transition-timing-function: ease-out;
+        transition: 0.5s;
         padding-right: calc(5vw - 20px);
+        padding-left: 10px;
         border-width: 5px;
         border-color: #2a2f33;
       }
