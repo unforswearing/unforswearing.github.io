@@ -1,1 +1,1 @@
-[unforswearing.com](https://www.unforswearing.com/): A Website
+[unforswearing.com](https://www.unforswearing.com/)
