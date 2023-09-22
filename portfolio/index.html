@@ -11,8 +11,11 @@
         background-color: #f0f0f0;
         color: #2a2f33;
       }
-
-      a {
+      .ml { 
+        display: none; 
+        margin-top: -25px;
+      }
+      a, .mls {
         /*  padding-left:18px;*/
         padding: 0px;
         color: #437eec;
@@ -22,12 +25,15 @@
       }
 
       a:hover,
-      a:visited:hover {
+      a:visited:hover
+      .mls:hover,
+      .mls:visited:hover {
         color: #b7410e;
         transition: all 0.4s ease-in-out;
       }
 
-      a:visited {
+      a:visited,
+      .mls:visited {
         color: #437eec;
       }
 
@@ -92,9 +98,20 @@
         transition: all 0.4s ease-in-out;
       }
     </style>
+    <script>
+      function show() {
+        let elements = document.getElementsByClassName("ml");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].style.display = "block";
+        }
+      }
+      function remove(el) {
+        let element = el;
+        element.remove();
+      }
+    </script>
     <title>unforswearing portfolio</title>
   </head>
-
   <body>
     <div>
       <p></p>
@@ -120,19 +137,6 @@
       Technical Writing</h2>
     <p><strong>Blog Posts</strong></p>
     <ul>
-      <!--
-      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-editors-regex-and-hooks-with-z-shell">
-          How to Use Editors, Regex, and Hooks with Z-shell
-        </a></li>
-      <li><a href="https://reflect.run/articles/introduction-to-bun/">
-          Introduction to Bun
-        </a></li>
-      <li><a href="https://reflect.run/articles/guide-to-safari-developer-tools/">
-          Guide to Safari Developer Tools
-        </a></li>
-      <li><a href="https://reflect.run/articles/creating-automated-tests-for-safari-and-webkit/">
-          Creating Automated Tests for Safari and Webkit</a></li>
-      -->
       <li><a href="https://stateful.com/blog/deno-vs-node-five-major-differences">
           Deno vs. Node.js - Five Major Differences
         </a></li>
@@ -144,6 +148,21 @@
           Better Runbooks Through Automation and Documentation</a></li>
       <li><a href="https://www.unforswearing.com/blog/?page=20220903_get_started_with_fzf_in_zsh">
           Getting Started with Fzf in Zsh</a></li>
+
+      <li onclick="this.remove(); show()"><span class="mls">More</span></li>
+      </ul>
+      <ul class="ml">
+      <li><a
+          href="https://www.digitalocean.com/community/tutorials/how-to-use-editors-regex-and-hooks-with-z-shell">How to Use
+          Editors, Regex, and Hooks with Z-shell</a></li>
+      <li><a href="https://reflect.run/articles/introduction-to-bun/">
+          Introduction to Bun
+        </a></li>
+      <li><a href="https://reflect.run/articles/guide-to-safari-developer-tools/">
+          Guide to Safari Developer Tools
+        </a></li>
+      <li><a href="https://reflect.run/articles/creating-automated-tests-for-safari-and-webkit/">
+          Creating Automated Tests for Safari and Webkit</a></li>
     </ul>
     <p><strong>Software Documentation</strong></p>
     <ul>
