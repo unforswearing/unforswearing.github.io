@@ -1,3 +1,4 @@
+<!-- 9/24/2023: dev/index.html is now site index.html -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
   <head>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
-         html {
+      html {
         background-color: #f0f0f0;
         color: #2a2f33;
       }
@@ -19,7 +20,13 @@
         margin-top: -20px;
       }
 
-      a, .mls {
+      summary {
+        font-size: 125%;
+      }
+
+      a,
+      summary, 
+      .mls {
         /*  padding-left:18px;*/
         padding: 0px;
         color: #437eec;
@@ -29,7 +36,9 @@
       }
 
       a:hover,
-      a:visited:hover
+      a:visited:hover,
+      summary:hover,
+      summary:visited:hover,
       .mls:hover,
       .mls:visited:hover {
         color: #b7410e;
@@ -42,11 +51,10 @@
       }
 
       body {
-        width: 60%;
-        padding: 30px;
-        padding-right: 0px;
-        padding-top: 40px;
-        padding-left: 40px;
+        width: 800px;
+        padding: 40px;
+        padding-right:0px;
+        padding-left: 80px;
         background-color: #f0f0f0;
         color: #2a2f33;
         font-family: "Computer Modern Serif", serif;
@@ -56,7 +64,7 @@
 
       @media (orientation: portrait) {
         html {
-          font-size: 2em;
+          font-size: 2.5em;
           margin-right: 20px;
         }
       }
@@ -100,41 +108,45 @@
   <body>
     <h1>Alvin Charity</h1>
     <hr>
-    <div style="padding-bottom: 40px;">
-      <code>Maryland based writer, musician, and artist</code>
-    </div><br>
-    <!-- <details class="stretch" href="/portfolio/index.html">-->
-      <details>
-      <summary>Writing Portfolio</summary>
-      <div style="padding-bottom:25px;">
+    <div style="padding-bottom: 30px;">
+      <div style="padding-top:10px; padding-bottom:10px; position:static">
         I am a writer with over twenty years experience crafting copy for technical
         documentation, technical blogs, corporate trainings, mobile apps, product marketing, email
         campaigns, business strategy, and arts / entertainment. I have an analytical, data-backed
         approach to writing and thrive on making quick work of complicated topics.
         <br /><br />
-        An abridged listing of professional work can be found below. Please <a href="#contact">get in touch</a> if you'd like
-        to chat.
+        An abridged portfolio of professional work can be found in my <a 
+        onclick="let d=document.getElementById('portfolio'); d.open == true ? d.open = false : d.open = true;"
+        >portfolio</a> below.
       </div>
+    </div>
+    <div style="padding-bottom:20px;">
+      <details id="portfolio">
+      <summary>Writing Portfolio</summary>
       <h2 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
         Business Writing</h2>
       <p><strong>Copywriting</strong></p>
       <ul>
-        <li><a href="writing_sample_occ_rider_school.pdf">College Motorcycle Rider Course Copy</a>
-        <li><a href="copper_app_faq/index.html">Mobile Banking App FAQ</a></li>
-        <li><a href="sample_workshop_handout.pdf">Mobile Banking App Workshop Handout</a></li>
-        <li><a href="sample_member_profile_jeff_dance.pdf">Leadership Newsletter Profile: Jeff Dance</a></li>
+        <li><a href="../portfolio/writing_sample_occ_rider_school.pdf">College Motorcycle Rider Course Copy</a>
+        <li><a href="../portfolio/copper_app_faq/index.html">Mobile Banking App FAQ</a></li>
+        <li><a href="../portfolio/sample_workshop_handout.pdf">Mobile Banking App Workshop Handout</a></li>
+        <li><a href="../portfolio/sample_member_profile_jeff_dance.pdf">Leadership Newsletter Profile: Jeff Dance</a></li>
       </ul>
       <p><strong>Employee Training</strong></p>
       <ul>
-        <li><a href="employee_management_scenarios.md.html">Employee Management Scenarios</a></li>
-        <li><a href="sample_providing_effective_employee_feedback.pdf">Providing Effective Employee Feedback</a></li>
-        <li><a href="time_off_request_form_introduction.pdf"> Time Off Request Form - Introduction</a></li>
+        <li><a href="../portfolio/employee_management_scenarios.md.html">Employee Management Scenarios</a></li>
+        <li><a href="../portfolio/sample_providing_effective_employee_feedback.pdf">Providing Effective Employee Feedback</a></li>
+        <li><a href="../portfolio/time_off_request_form_introduction.pdf"> Time Off Request Form - Introduction</a></li>
       </ul><!-- -->
       <p><strong>Proposal</strong></p>
       <ul>
-        <li><a href="proposal_content_management.md.html">Content Management Proposal</a></li>
-        <li><a href="proposal_intranet.md.html">Intranet Proposal</a></li>
+        <li><a href="../portfolio/proposal_content_management.md.html">Content Management Proposal</a></li>
+        <li><a href="../portfolio/proposal_intranet.md.html">Intranet Proposal</a></li>
       </ul>
+      <span><code>
+        <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
+        <br /><br />
+      </code></span>
       <h2 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
         Technical Writing</h2>
       <p><strong>Blog Posts</strong></p>
@@ -168,16 +180,16 @@
       </ul>
       <p><strong>Software Documentation</strong></p>
       <ul>
-        <li><a href="gas_send_email/index.html">Google Apps Script - Send Email</a></li>
+        <li><a href="../portfolio/gas_send_email/index.html">Google Apps Script - Send Email</a></li>
         <li><a href="https://github.com/unforswearing/todo_markup.js">todoMarkup.js</a></li>
         <li><a href="https://github.com/unforswearing/bash_semver">Bash Semver</a></li>
       </ul>
       <p><strong>Guides</strong></p>
       <ul>
-        <li><a href="helpdesk_faq.pdf">Helpdesk FAQ</a></li>
-        <li><a href="actionkit/index.html">Setting Up ActionKit</a></li>
-        <li><a href="outline_for_solving_it_incidents.md.html">Outline for Solving IT Incidents</a></li>
-        <li><a href="time_off_request_form_how_to.pdf">Time Off Request Form - How To</a></li>
+        <li><a href="../portfolio/helpdesk_faq.pdf">Helpdesk FAQ</a></li>
+        <li><a href="../portfolio/actionkit/index.html">Setting Up ActionKit</a></li>
+        <li><a href="../portfolio/outline_for_solving_it_incidents.md.html">Outline for Solving IT Incidents</a></li>
+        <li><a href="../portfolio/time_off_request_form_how_to.pdf">Time Off Request Form - How To</a></li>
       </ul>
       <p><strong>Flowchart / Diagrams</strong></p>
       <ul>
@@ -186,33 +198,42 @@
         <li><a href="https://drive.google.com/file/d/1HryHMBBX4sDRfrBppE_gQ1IqNpATUOyb/view">Time
             Off Request Form Script</a></li>
       </ul>
-      <br /><br />
-      <span><code><!--
-            <a onclick="scrollToTop();return false" href="#top">back to top</a>
-          </code></span>-->
-      <hr>
-      <div style="padding-bottom:200px;">
-        <h2 id="contact" style="font-size: 2em;">Contact</h2>
-        <p style="padding-bottom:20px;">
-          If you need an experienced freelance writer forpart-time copywriting, web content, blog posts, or technical
-          documentation, lets chat! <a href="https://www.linkedin.com/in/alvin-charity">LinkedIn</a>
+      <span><code>
+        <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
+        <br /><br /><br /><br />
+      </code></span>
+    </details>
+    <details open>
+      <summary>Contact</summary>
+      <div>
+        <p>
+          If you need an experienced freelance writer for project based copywriting, web content, blog posts, or technical documentation, lets chat! <a href="https://www.linkedin.com/in/alvin-charity">LinkedIn</a>
           is the best way to kick off a conversation.
         </p>
-      </div><!--
-            <span><code>
-              <a onclick="scrollToTop();return false" href="#top">back to top</a>
-            </code></span>-->
       </div>
-    </details><br>
-    <a class="stretch" href="pt.html">Audio / Visual Art</a><br>
-    <div style="padding-top:20vh;">
-      <hr>
-      <div>
-        <code>
-      <a class="foots" href=
-      "/portfolio#contact">contact</a>
-      </code>
-      </div>
+      <br /><br />
+    </details>
     </div>
-  </body>
+    <hr>
+    <div style="padding-bottom:30px;">
+      <code><a class="foots" href="https://github.com/unforswearing">github</a>
+          :: <a class="foots" href="https://www.linkedin.com/in/alvin-charity">linkedin</a>
+      </code>
+    </div>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      function show() {
+        let elements = document.getElementsByClassName("ml");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].style.display = "block";
+        }
+      }
+      function remove(el) {
+        let element = el;
+        element.remove();
+      }
+    </script>
+    </body>
 </html>

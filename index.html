@@ -16,7 +16,6 @@ Colophon:
     - Blog About Foreground / Text: #696969
 -->
 <html lang="en">
-
   <head>
     <title>Alvin Charity</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,81 +26,88 @@ Colophon:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
       html {
-        color: #2a2f33;
         background-color: #f0f0f0;
-        line-height: 1.5;
+        color: #2a2f33;
       }
 
-      a {
+      .ml {
+        display: none;
+        margin-top: -20px;
+      }
+
+      summary {
+        font-size: 125%;
+      }
+
+      a,
+      summary,
+      .mls {
         /*  padding-left:18px;*/
+        padding: 0px;
         color: #437eec;
         cursor: pointer;
-        font-size: 1.3em;
         text-decoration: none;
-        padding: 5px;
-        width: 100%;
         transition: all 0.2s ease-in-out;
       }
 
       a:hover,
-      a:visited:hover {
-        /* color: #b7410e;*/
-        color: #2a2f33;
-        background-color: #edbfaa;
-        padding: 5px;
-        border-radius: 5px;
+      a:visited:hover,
+      summary:hover,
+      summary:visited:hover,
+      .mls:hover,
+      .mls:visited:hover {
+        color: #b7410e;
         transition: all 0.4s ease-in-out;
       }
 
-      a:visited {
+      a:visited,
+      .mls:visited {
         color: #437eec;
       }
 
-      .align_right:hover {
-        text-align: right;
-
-      }
-
-      .stretch {
-        transition-timing-function: ease-in;
-        transition: 0.25s;
-      }
-
-      .stretch:hover {
-        /* padding-left: calc(5vw - 40px); */
-        transition-timing-function: ease-out;
-        transition: 0.5s;
-        padding-right: calc(5vw - 20px);
-        padding-left: 10px;
-        border-width: 5px;
-        border-color: #2a2f33;
-      }
-
       body {
-        width: 60%;
-        padding: 30px;
+        width: 800px;
+        padding: 40px;
         padding-right: 0px;
-        padding-top: 40px;
-        padding-left: 40px;
+        padding-left: 80px;
         background-color: #f0f0f0;
         color: #2a2f33;
         font-family: "Computer Modern Serif", serif;
         font-size: 1.25em;
+        font-weight: lighter;
       }
 
-      h1 {
+      @media (orientation: portrait) {
+        html {
+          font-size: 2.5em;
+          margin-right: 20px;
+        }
+      }
+
+      button {
+        font-weight: bold;
+        border-radius: 0px;
+        border-width: 6px;
+        width: 120px;
+        margin-bottom: 10px;
+        border-top: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+      }
+
+      h1,
+      h2 {
         padding-bottom: 0px;
         margin-bottom: 0px;
       }
 
-      .smol {
+      .sm {
         font-size: 0.75em;
-        font-family: "Source Code Pro", monospace !important;
-        color: #696969;
       }
 
       a.foots {
         font-size: inherit;
+        padding: 5px;
 
       }
 
@@ -114,22 +120,142 @@ Colophon:
       }
     </style>
   </head>
+
   <body>
     <h1>Alvin Charity</h1>
     <hr>
-    <div style="padding-bottom: 40px;">
-      <code>Maryland based writer, musician, and artist</code>
-    </div><br>
-    <a class="stretch" href="/portfolio/index.html">Writing Portfolio</a><br>
-    <a class="stretch" href="/audio/index.html">Audio / Visual</a><br>
-    <div style="padding-top:20vh;">
-      <hr>
-      <div>
-        <code>
-      <a class="foots" href=
-      "/portfolio#contact">contact</a>
-      </code>
+    <div style="padding-bottom: 30px;">
+      <div style="padding-top:10px; padding-bottom:10px; position:static">
+        I am a writer with over twenty years experience crafting copy for technical
+        documentation, technical blogs, corporate trainings, mobile apps, product marketing, email
+        campaigns, business strategy, and arts / entertainment. I have an analytical, data-backed
+        approach to writing and thrive on making quick work of complicated topics.
+        <br /><br />
+        An abridged portfolio of professional work can be found in my <a
+          onclick="let d=document.getElementById('portfolio'); d.open == true ? d.open = false : d.open = true;">portfolio</a>
+        below.
       </div>
     </div>
+    <div style="padding-bottom:20px;">
+      <details id="portfolio">
+        <summary>Writing Portfolio</summary>
+        <h2 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
+          Business Writing</h2>
+        <p><strong>Copywriting</strong></p>
+        <ul>
+          <li><a href="../portfolio/writing_sample_occ_rider_school.pdf">College Motorcycle Rider Course Copy</a>
+          <li><a href="../portfolio/copper_app_faq/index.html">Mobile Banking App FAQ</a></li>
+          <li><a href="../portfolio/sample_workshop_handout.pdf">Mobile Banking App Workshop Handout</a></li>
+          <li><a href="../portfolio/sample_member_profile_jeff_dance.pdf">Leadership Newsletter Profile: Jeff Dance</a>
+          </li>
+        </ul>
+        <p><strong>Employee Training</strong></p>
+        <ul>
+          <li><a href="../portfolio/employee_management_scenarios.md.html">Employee Management Scenarios</a></li>
+          <li><a href="../portfolio/sample_providing_effective_employee_feedback.pdf">Providing Effective Employee
+              Feedback</a></li>
+          <li><a href="../portfolio/time_off_request_form_introduction.pdf"> Time Off Request Form - Introduction</a>
+          </li>
+        </ul><!-- -->
+        <p><strong>Proposal</strong></p>
+        <ul>
+          <li><a href="../portfolio/proposal_content_management.md.html">Content Management Proposal</a></li>
+          <li><a href="../portfolio/proposal_intranet.md.html">Intranet Proposal</a></li>
+        </ul>
+        <span><code>
+        <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
+        <br /><br />
+      </code></span>
+        <h2 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
+          Technical Writing</h2>
+        <p><strong>Blog Posts</strong></p>
+        <ul>
+          <li><a href="https://stateful.com/blog/deno-vs-node-five-major-differences">
+              Deno vs. Node.js - Five Major Differences
+            </a></li>
+          <li><a href="https://reflect.run/articles/deno-networking-and-file-permissions-model/">Deno
+              Networking and File Permissions model</a></li>
+          <li><a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers">12
+              Useful Python Scripts for Developers</a></li>
+          <li><a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation">
+              Better Runbooks Through Automation and Documentation</a></li>
+          <li><a href="https://www.unforswearing.com/blog/?page=20220903_get_started_with_fzf_in_zsh">
+              Getting Started with Fzf in Zsh</a></li>
+          <!-- Hide the additional examples behind a "show more" list item  -->
+          <li onclick="this.remove(); show()"><span class="mls sm">(click for more)</span></li>
+        </ul>
+        <ul class="ml">
+          <li><a
+              href="https://www.digitalocean.com/community/tutorials/how-to-use-editors-regex-and-hooks-with-z-shell">How
+              to
+              Use Editors, Regex, and Hooks with Z-shell</a></li>
+          <li><a href="https://reflect.run/articles/introduction-to-bun/">
+              Introduction to Bun
+            </a></li>
+          <li><a href="https://reflect.run/articles/guide-to-safari-developer-tools/">
+              Guide to Safari Developer Tools
+            </a></li>
+          <li><a href="https://reflect.run/articles/creating-automated-tests-for-safari-and-webkit/">
+              Creating Automated Tests for Safari and Webkit</a></li>
+          <li><a href="../blog/index.html">Unforswearing.com/blog</a></li>
+        </ul>
+        <p><strong>Software Documentation</strong></p>
+        <ul>
+          <li><a href="../portfolio/gas_send_email/index.html">Google Apps Script - Send Email</a></li>
+          <li><a href="https://github.com/unforswearing/todo_markup.js">todoMarkup.js</a></li>
+          <li><a href="https://github.com/unforswearing/bash_semver">Bash Semver</a></li>
+        </ul>
+        <p><strong>Guides</strong></p>
+        <ul>
+          <li><a href="../portfolio/helpdesk_faq.pdf">Helpdesk FAQ</a></li>
+          <li><a href="../portfolio/actionkit/index.html">Setting Up ActionKit</a></li>
+          <li><a href="../portfolio/outline_for_solving_it_incidents.md.html">Outline for Solving IT Incidents</a></li>
+          <li><a href="../portfolio/time_off_request_form_how_to.pdf">Time Off Request Form - How To</a></li>
+        </ul>
+        <p><strong>Flowchart / Diagrams</strong></p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1_2SO5_kFn_fCSNmdWFJeOk5zW5ulTC-D/view">Time
+              Off Request Form Update Request</a></li>
+          <li><a href="https://drive.google.com/file/d/1HryHMBBX4sDRfrBppE_gQ1IqNpATUOyb/view">Time
+              Off Request Form Script</a></li>
+        </ul>
+        <span><code>
+        <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
+        <br /><br /><br /><br />
+      </code></span>
+      </details>
+      <details open>
+        <summary>Contact</summary>
+        <div>
+          <p>
+            If you need an experienced freelance writer for project based copywriting, web content, blog posts, or
+            technical documentation, lets chat! <a href="https://www.linkedin.com/in/alvin-charity">LinkedIn</a>
+            is the best way to kick off a conversation.
+          </p>
+        </div>
+        <br /><br />
+      </details>
+    </div>
+    <hr>
+    <div style="padding-bottom:30px;">
+      <code><a class="foots" href="https://github.com/unforswearing">github</a>
+          :: <a class="foots" href="https://www.linkedin.com/in/alvin-charity">linkedin</a>
+      </code>
+    </div>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      function show() {
+        let elements = document.getElementsByClassName("ml");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].style.display = "block";
+        }
+      }
+      function remove(el) {
+        let element = el;
+        element.remove();
+      }
+    </script>
   </body>
 </html>
