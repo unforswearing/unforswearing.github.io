@@ -1,0 +1,5 @@
+s = sample
+s_bw = business writing
+s_fc = flow chart
+s_mr = music review
+s_ug = user guide
