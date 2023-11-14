@@ -90,7 +90,7 @@ function getContent() {
   return document.getElementById("content").innerText;
 }
 function setContent(text) {
-  return document.getElementById("content").innerText = removeTags(text);
+  return document.getElementById("content").innerText = text;
 }
 function updateHelp(text) {
   let help = document.getElementById("help");
