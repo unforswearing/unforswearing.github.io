@@ -187,7 +187,37 @@ function setContent(text) {
 function markdownContent() {
   let content = getContent();
   let parsed = `<html><body>${parseMarkdown(content)}</body></html>`;
-  return document.getElementById("content").innerHTML = parsed
+
+  let contentDiv = document.querySelectorAll("[contenteditable=true]")[0];
+
+  document.getElementById("content").innerHTML = parsed
+  storage.setItem("exception", "markdown");
+  storage.setItem("mdcontent", `${content}`)
+
+  let mdButton = document.getElementById("markdownbutton")
+  mdButton.style.backgroundColor = "#f4f4f4"
+  mdButton.style.color = "#4f4f4f"
+
+  function sendParseMessage() {
+    updateHelp(
+      `file is already displayed as markdown.<br>
+       click any other button to proceed.`
+    )
+  }
+
+  mdButton.onclick = sendParseMessage
+
+  // display message: "save disabled for markdown formatting"
+  /* 
+  window.saveToLocalStorage = () => {
+    updateHelp(
+      `save disabled for markdown parsing.<br>
+       click 'new' to create a file.`
+    )
+  }
+  */
+
+  return contentDiv.setAttribute("contentEditable", false);
 }
 function updateHelp(text) {
   let help = document.getElementById("help");
@@ -249,6 +279,11 @@ function saveToLocalStorage() {
   action.save();
   let title = new Date().getTime();
   let content = document.getElementById("content").innerText.toString();
+
+  if (storage.getItem("exception") === "markdown") {
+    content = storage.getItem("mdcontent").toString();
+  }
+
   let message;
   let url;
   if (!content) {

@@ -7,9 +7,9 @@
   <body onload="execOnLoad();">
     <div class="top">
       <button onclick="loadNewFile()">new</button>
-      <button onclick="saveToLocalStorage()">save</button>
+      <button id="savebutton" onclick="saveToLocalStorage()">save</button>
       <button onclick="deleteCurrentFile()">delete</button>
-      <button onclick="markdownContent()">markdown</button>
+      <button id="markdownbutton" onclick="markdownContent()">markdown</button>
       <button class="showmult" id="showmult" onclick="clearLocalStorage()">
         remove all
       </button>
@@ -21,12 +21,12 @@
       id="content"
       class="bottom"
       placeholder="content"
-      contenteditable
+      contenteditable=true
     ></div>
     <br />
     <div class="version">
       <details>
-        <summary style="float: left; text-decoration: underline;">0.3.2</summary>
+        <summary style="float: left; text-decoration: underline;">0.4.0</summary>
         <span style="float: left; margin-left: 5px;"
           >&nbsp;&nbsp;❯❯❯&nbsp;&nbsp;</span
         ><a
