@@ -141,6 +141,17 @@ function loadNewFile() {
   updateUrl("");
 }
 function saveToLocalStorage() {
+  function removeTags(str) {
+    if ((str === null) || (str === ''))
+      return false;
+    else
+      str = str.toString();
+
+    // Regular expression to identify HTML tags in 
+    // the input string. Replacing the identified 
+    // HTML tag with a null string. 
+    return str.replace(/(<([^>]+)>)/ig, '');
+  } 
   action.save();
   let title = new Date().getTime();
   let content = document.getElementById("content").innerText.toString();
@@ -150,7 +161,7 @@ function saveToLocalStorage() {
     url = "";
     message = messageData().error_enter_text();
   } else if (content) {
-    storage.setItem(title, content);
+    storage.setItem(title, removeTags(content));
     message = messageData().save_success(title);
     url = title;
   }
