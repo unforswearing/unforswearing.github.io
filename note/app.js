@@ -200,22 +200,11 @@ function markdownContent() {
 
   function sendParseMessage() {
     updateHelp(
-      `file is already displayed as markdown.<br>
-       click any other button to proceed.`
+      `file is already displayed as parsed markdown.<br>
+       this file cannot be edited. click any other button to proceed.`
     )
   }
-
   mdButton.onclick = sendParseMessage
-
-  // display message: "save disabled for markdown formatting"
-  /* 
-  window.saveToLocalStorage = () => {
-    updateHelp(
-      `save disabled for markdown parsing.<br>
-       click 'new' to create a file.`
-    )
-  }
-  */
 
   return contentDiv.setAttribute("contentEditable", false);
 }
@@ -282,6 +271,7 @@ function saveToLocalStorage() {
 
   if (storage.getItem("exception") === "markdown") {
     content = storage.getItem("mdcontent").toString();
+    storage.removeItem("exception");
   }
 
   let message;
@@ -298,6 +288,12 @@ function saveToLocalStorage() {
   setTimeout(execLoadFile, 1500);
   setHelpMessage(message);
   updateHelp(getHelpMessage());
+}
+function displaySavedFiles() {
+  Object.keys(localStorage).forEach((item, i) => {
+    let title = item
+    let content = localStorage[item]
+  })
 }
 function deleteCurrentFile() {
   action.delete();
