@@ -178,21 +178,11 @@ function getHelpMessage() {
 function getLocation() {
   return window.location.href.toString().split("?");
 }
-/*
-function removeTags(str) {
-  if ((str === null) || (str === '')) {
-    return false;
-  } else {
-    str = str.toString();
-  }
-  return str.replace(/(<([^>]+)>)/ig, '');
-}
-*/
 function getContent() {
   return document.getElementById("content").innerText;
 }
 function setContent(text) {
-  return document.getElementById("content").innerText = parseMarkdown(text);
+  return document.getElementById("content").innerText = text
 }
 function updateHelp(text) {
   let help = document.getElementById("help");
