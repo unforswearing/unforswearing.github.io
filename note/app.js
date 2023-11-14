@@ -184,6 +184,11 @@ function getContent() {
 function setContent(text) {
   return document.getElementById("content").innerText = text
 }
+function markdownContent() {
+  let content = getContent();
+  let parsed = `<html><body>${parseMarkdown(content)}</body></html>`;
+  return document.getElementById("content").innerHTML = parsed
+}
 function updateHelp(text) {
   let help = document.getElementById("help");
   help.innerHTML = text;
