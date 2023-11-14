@@ -78,6 +78,7 @@ function getHelpMessage() {
 function getLocation() {
   return window.location.href.toString().split("?");
 }
+/*
 function removeTags(str) {
   if ((str === null) || (str === '')) {
     return false;
@@ -86,11 +87,12 @@ function removeTags(str) {
   }
   return str.replace(/(<([^>]+)>)/ig, '');
 }
+*/
 function getContent() {
   return document.getElementById("content").innerText;
 }
 function setContent(text) {
-  return document.getElementById("content").innerText = text;
+  return document.getElementById("content").innerText = parseMarkdown(text);
 }
 function updateHelp(text) {
   let help = document.getElementById("help");
