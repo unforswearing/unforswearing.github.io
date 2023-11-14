@@ -78,22 +78,19 @@ function getHelpMessage() {
 function getLocation() {
   return window.location.href.toString().split("?");
 }
+function removeTags(str) {
+  if ((str === null) || (str === '')) {
+    return false;
+  } else {
+    str = str.toString();
+  }
+  return str.replace(/(<([^>]+)>)/ig, '');
+}
 function getContent() {
-  return document.getElementById("content").innerHTML;
+  return document.getElementById("content").innerText;
 }
 function setContent(text) {
-  function removeTags(str) {
-    if ((str === null) || (str === ''))
-      return false;
-    else
-      str = str.toString();
-
-    // Regular expression to identify HTML tags in 
-    // the input string. Replacing the identified 
-    // HTML tag with a null string. 
-    return str.replace(/(<([^>]+)>)/ig, '');
-  } 
-  document.getElementById("content").innerHTML = removeTags(text);
+  return document.getElementById("content").innerText = removeTags(text);
 }
 function updateHelp(text) {
   let help = document.getElementById("help");
@@ -161,8 +158,7 @@ function saveToLocalStorage() {
     url = "";
     message = messageData().error_enter_text();
   } else if (content) {
-    let strippedContent = removeTags(content);
-    storage.setItem(title, strippedContent);
+    storage.setItem(title, content);
     message = messageData().save_success(title);
     url = title;
   }
