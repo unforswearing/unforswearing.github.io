@@ -175,12 +175,6 @@ function execOnLoad() {
     document.getElementById("showmult").style.display = "block";
   }
 }
-function setHelpMessage(message) {
-  storage.setItem("msg", message);
-}
-function getHelpMessage() {
-  return storage["msg"];
-}
 function getLocation() {
   return window.location.href.toString().split("?");
 }
@@ -233,7 +227,6 @@ function markdownContent() {
 function updateHelp(text) {
   let help = document.getElementById("help");
   help.innerHTML = text;
-  setHelpMessage(text);
 }
 function updateUrl(title) {
   let locArray = getLocation();
@@ -252,7 +245,7 @@ function loadFile(title) {
   action.loadFile();
   let message;
   if (previousAction === "delete") {
-    message = getHelpMessage();
+    message = messageData().newMessage("there are no files to delete.");
   } else if (!title || title === undefined) {
     message = messageData().startup();
   } else if (storage[title]) {
@@ -262,9 +255,8 @@ function loadFile(title) {
     message = messageData().error_file_not_found(title);
     setTimeout(() => updateUrl(""), 1500);
   }
-  // why setHelpMessage just to display it immediately?
-  setHelpMessage(message);
-  updateHelp(getHelpMessage());
+
+  updateHelp(message);
 }
 function loadFileByUrl() {
   action.loadFileByUrl();
@@ -279,9 +271,8 @@ function loadFileByUrl() {
     message = messageData().error_file_not_found(title);
     setTimeout(() => updateUrl(""), 1500);
   }
-  // why setHelpMessage just to display it immediately?
-  setHelpMessage(message);
-  updateHelp(getHelpMessage());
+
+  updateHelp(message);
 }
 function loadNewFile() {
   action.loadNewFile();
@@ -305,21 +296,12 @@ function saveToLocalStorage() {
     return updateHelp(noContentMsg)
   }
 
-  let message;
-  let url;
-  if (!content) {
-    url = "";
-    message = messageData().error_enter_text();
-  } else if (content) {
-    storage.setItem(title, content);
-    message = messageData().save_success(title);
-    url = title;
-  }
+  storage.setItem(title, content);
+  let url = title;
   const execLoadFile = () => updateUrl(url);
   setTimeout(execLoadFile, 1500);
-  // why setHelpMessage just to display it immediately?
-  setHelpMessage(message);
-  updateHelp(getHelpMessage());
+  
+  updateHelp(messageData().save_success(title));
 }
 function displaySavedFiles() {
   Object.keys(localStorage).forEach((item, i) => {
@@ -331,27 +313,31 @@ function deleteCurrentFile() {
   action.delete();
   let title = getLocation()[1];
   let content = getContent();
-  let message;
+
   if (content) {
-    message = messageData().newMessage("clearing unsaved content.");
+    return updateHelp(
+      messageData().newMessage("clearing unsaved content.")
+    );
   } else if (!title || !storage[title]) {
-    message = messageData().error_no_file_delete();
-  } else {
-    storage.removeItem(title);
-    message = messageData().delete_success(title);
+    return updateHelp(messageData().error_no_file_delete());
   }
-  // why setHelpMessage just to display it immediately?
-  setHelpMessage(message);
-  updateHelp(getHelpMessage());
+
+  storage.removeItem(title);
+
   const execLoadFile = () => updateUrl("");
   setTimeout(execLoadFile, 1500);
+
+  updateHelp(messageData().delete_success(title));
 }
 function clearLocalStorage() {
   action.removeAll();
-  Object.keys(storage).forEach((item) => storage.removeItem(item));
+  Object.keys(storage).forEach((item) => {
+    if (item) storage.removeItem(item)
+  });
+  
   setContent("");
+  
   let message = messageData().clear_local_storage_success();
-  setHelpMessage(message);
-  updateHelp(getHelpMessage());
+  updateHelp(message);
   setTimeout(() => updateUrl(""), 2500);
 }
