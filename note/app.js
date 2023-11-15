@@ -252,6 +252,7 @@ function loadFile(title) {
     message = messageData().error_file_not_found(title);
     setTimeout(() => updateUrl(""), 1500);
   }
+  // why setHelpMessage just to display it immediately?
   setHelpMessage(message);
   updateHelp(getHelpMessage());
 }
@@ -268,6 +269,7 @@ function loadFileByUrl() {
     message = messageData().error_file_not_found(title);
     setTimeout(() => updateUrl(""), 1500);
   }
+  // why setHelpMessage just to display it immediately?
   setHelpMessage(message);
   updateHelp(getHelpMessage());
 }
@@ -303,6 +305,7 @@ function saveToLocalStorage() {
   }
   const execLoadFile = () => updateUrl(url);
   setTimeout(execLoadFile, 1500);
+  // why setHelpMessage just to display it immediately?
   setHelpMessage(message);
   updateHelp(getHelpMessage());
 }
