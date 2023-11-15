@@ -189,6 +189,12 @@ function setContent(text) {
 }
 function markdownContent() {
   let content = getContent();
+
+  if (!content) {
+    updateHelp("no markdown content to parse, add some text and try again.")
+    return
+  }
+
   let parsed = `<html><body>${parseMarkdown(content)}</body></html>`;
 
   document.getElementById("content").innerHTML = parsed
@@ -278,6 +284,11 @@ function saveToLocalStorage() {
   if (storage.getItem("exception") === "markdown") {
     content = storage.getItem("mdcontent").toString();
     storage.removeItem("exception");
+  }
+
+  if (!content) {
+    updateHelp("no content to save, add some text and try again.")
+    return
   }
 
   let message;
