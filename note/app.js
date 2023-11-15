@@ -211,13 +211,13 @@ function markdownContent() {
   mdButton.style.color = "#4f4f4f"
 
   function sendParseMessage() {
-    let parseMsg = messageData.newMessage(
+    let parseMsg = messageData().newMessage(
       `file is already displayed as parsed markdown.`
     )
     updateHelp(parseMsg)
   }
   function sendContentMessage() {
-    let contentMsg = messageData.newMessage(
+    let contentMsg = messageData().newMessage(
       `this file cannot be edited. click any other button to proceed.`
     )
     updateHelp(contentMsg)
@@ -296,7 +296,7 @@ function saveToLocalStorage() {
   }
 
   if (!content) {
-    let noContentMsg = messageData.newMessage(
+    let noContentMsg = messageData().newMessage(
       "no content to save, add some text and try again."
     )
     return updateHelp(noContentMsg)
@@ -330,9 +330,7 @@ function deleteCurrentFile() {
   let content = getContent();
   let message;
   if (content) {
-    message = messageData.newMessage(
-      "clearing unsaved content."
-    );
+    message = messageData().newMessage("clearing unsaved content.");
   } else if (!title || !storage[title]) {
     message = messageData().error_no_file_delete();
   } else {
