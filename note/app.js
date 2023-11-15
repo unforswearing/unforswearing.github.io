@@ -194,8 +194,11 @@ function markdownContent() {
   let content = getContent();
 
   if (!content) {
-    updateHelp("no markdown content to parse, add some text and try again.")
-    return
+    let noMarkdownContentMsg = messageData().newMessage(
+      "no markdown content to parse, add some text and try again."
+    )
+
+    return updateHelp(noMarkdownContentMsg);
   }
 
   let parsed = `<html><body>${parseMarkdown(content)}</body></html>`;
