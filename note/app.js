@@ -1,4 +1,6 @@
 /***   Regex Markdown Parser by chalarangelo   ***/
+// https://github.com/Chalarangelo/parse-md-js
+// https://chalarangelo.github.io/parse-md-js/index.html
 // Replaces 'regex' with 'replacement' in 'str'
 // Curry function, usage: replaceRegex(regexVar, replacementVar) (strVar)
 const replaceRegex = function (regex, replacement) {
@@ -97,7 +99,8 @@ const replaceMarkdown = function (str) {
 const parseMarkdown = function (str) {
   return fixCodeBlocks(replaceMarkdown('\n' + str + '\n')).trim();
 }
-
+// -------------------------------------------------------------------
+// begin app.js
 const storage = localStorage;
 const action = {
   get() {
@@ -188,24 +191,27 @@ function markdownContent() {
   let content = getContent();
   let parsed = `<html><body>${parseMarkdown(content)}</body></html>`;
 
-  let contentDiv = document.querySelectorAll("[contenteditable=true]")[0];
-
   document.getElementById("content").innerHTML = parsed
   storage.setItem("exception", "markdown");
   storage.setItem("mdcontent", `${content}`)
 
+  let contentDiv = document.getElementById("content")
   let mdButton = document.getElementById("markdownbutton")
+
   mdButton.style.backgroundColor = "#f4f4f4"
   mdButton.style.color = "#4f4f4f"
 
   function sendParseMessage() {
+    updateHelp(`file is already displayed as parsed markdown.`)
+  }
+  function sendContentMessage() {
     updateHelp(
-      `file is already displayed as parsed markdown.<br>
-       this file cannot be edited. click any other button to proceed.`
+      `this file cannot be edited. click any other button to proceed.`
     )
   }
-  mdButton.onclick = sendParseMessage
 
+  mdButton.onclick = sendParseMessage;
+  contentDiv.onclick = sendContentMessage;
   return contentDiv.setAttribute("contentEditable", false);
 }
 function updateHelp(text) {
