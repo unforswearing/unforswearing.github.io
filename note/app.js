@@ -309,12 +309,12 @@ function deleteCurrentFile() {
   if (!title || !storage[title]) {
     message = messageData().error_no_file_delete();
   } else if (content && !storage[title]) {
-    updateHelp("clearing unsaved content.");
-    loadNewFile();
+    message = "clearing unsaved content.";
   } else {
     storage.removeItem(title);
     message = messageData().delete_success(title);
   }
+  // why setHelpMessage just to display it immediately?
   setHelpMessage(message);
   updateHelp(getHelpMessage());
   const execLoadFile = () => updateUrl("");
