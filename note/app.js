@@ -329,10 +329,12 @@ function deleteCurrentFile() {
   let title = getLocation()[1];
   let content = getContent();
   let message;
-  if (!title || !storage[title]) {
+  if (content) {
+    message = messageData.newMessage(
+      "clearing unsaved content."
+    );
+  } else if (!title || !storage[title]) {
     message = messageData().error_no_file_delete();
-  } else if (content && !storage[title]) {
-    message = "clearing unsaved content.";
   } else {
     storage.removeItem(title);
     message = messageData().delete_success(title);
