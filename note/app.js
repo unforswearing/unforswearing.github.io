@@ -138,6 +138,9 @@ function messageData(title) {
             </span>`;
   }
   const options = {
+    newMessage(errorMessageText) {
+      return errorMessage(errorMessageText);
+    },
     error_enter_text() {
       return errorMessage("enter text below before saving.");
     },
@@ -208,12 +211,16 @@ function markdownContent() {
   mdButton.style.color = "#4f4f4f"
 
   function sendParseMessage() {
-    updateHelp(`file is already displayed as parsed markdown.`)
+    let parseMsg = messageData.newMessage(
+      `file is already displayed as parsed markdown.`
+    )
+    updateHelp(parseMsg)
   }
   function sendContentMessage() {
-    updateHelp(
+    let contentMsg = messageData.newMessage(
       `this file cannot be edited. click any other button to proceed.`
     )
+    updateHelp(contentMsg)
   }
 
   mdButton.onclick = sendParseMessage;
@@ -289,8 +296,10 @@ function saveToLocalStorage() {
   }
 
   if (!content) {
-    updateHelp("no content to save, add some text and try again.")
-    return
+    let noContentMsg = messageData.newMessage(
+      "no content to save, add some text and try again."
+    )
+    return updateHelp(noContentMsg)
   }
 
   let message;
