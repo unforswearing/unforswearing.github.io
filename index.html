@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
     <title>Alvin Charity, Writer</title>
     <style type="text/css">
+      :root {
+        --unvisited-link-color: #3860ac;
+      }
+      
       html {
         background-color: #f0f0f0;
         color: #2a2f33;
@@ -45,7 +49,7 @@
       .mls {
         /*  padding-left:18px;*/
         padding: 0px;
-        color: #437eec;
+        color: var(--unvisited-link-color);
         cursor: pointer;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
@@ -63,7 +67,7 @@
 
       a:visited,
       .mls:visited {
-        color: #437eec;
+        color: var(--unvisited-link-color);
       }
 
       @media (orientation: portrait) {
@@ -185,11 +189,12 @@
         campaigns, business strategy, and arts / entertainment. I have an analytical, data-backed
         approach to writing and thrive on making quick work of complicated topics.
         <br /><br />
-        An abridged <a onclick="openPortfolio()">portfolio of professional work</a> can be found below.
+        An abridged <a href="#portfolio" onclick="openPortfolio()">portfolio of professional work</a> can be found below.
       </div>
     </div>
     <div style="padding-bottom:20px;">
-      <details id="portfolio">
+      <h2 id="portfolio" style="visibility: hidden"></h2>
+      <details>
         <summary>Writing Portfolio</summary>
         <!-- <br /><span class="sm"><em>Writing samples will load in a new page</em></span> -->
         <h2 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
