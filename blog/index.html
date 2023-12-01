@@ -4,6 +4,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
     <style>
+      :root {
+        --unvisited-link-color: #1b61e4;
+      }
+
       html {
         color: #2a2f33;
         background-color: #f0f0f0;
@@ -13,7 +17,7 @@
       a {
         /*  padding-left:18px;*/
         padding: 0px;
-        color: #437eec;
+        color: var(--unvisited-link-color);
         cursor: pointer;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
@@ -26,11 +30,11 @@
       }
 
       a:visited {
-        color: #437eec;
+        color: var(--unvisited-link-color);
       }
 
       a:visited {
-        color: #437eec;;
+        color: var(--unvisited-link-color);
       }
 
       .align_right:hover {
