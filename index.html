@@ -38,6 +38,12 @@
         font-weight: bold;
       }
 
+      summary.nohover,
+      summary.nohover:hover {
+        color: inherit;
+        transition: none;
+      }
+
       .ml {
         display: none;
         margin-top: -20px;
@@ -318,7 +324,7 @@
       </code></span>
       </details>
       <details open disabled style="padding-bottom: 0px;" onclick="return false">
-        <summary tabindex="-1">Contact</summary>
+        <summary class="nohover" tabindex="-1">Contact</summary>
         <div>
           <p>
             If you need an experienced freelance writer 
