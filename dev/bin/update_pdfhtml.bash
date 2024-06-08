@@ -9,4 +9,4 @@ echo >| pdf.html && {
     echo "  <li><a href=\"$pdf\">$pdf</a></li>"; 
   done;
   echo "</ul>";
-  } >> pdf.html
+} >> pdf.html
