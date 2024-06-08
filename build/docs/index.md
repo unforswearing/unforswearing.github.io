@@ -6,10 +6,10 @@ I am a thoughtful, detail-oriented copywriter and technical writer excited to sh
 
 I am open to new work. If my experience is what you're looking for, lets chat on LinkedIn: [in/Alvin-Charity](https://linkedin.com/in/alvin-charity)
 
-## Portfolio
+[<button id=".btn .btn-default">Portfolio</button>](/portfolio)
 
-Find writing samples here.
+<br /><br />
 
-- [Copywriting](portfolio/copywriting.md)
-- [Technical Writing](portfolio/technical.md)
-- [Other Writing](portfolio/etc.md)
+<hr class="visible" id="visible>
+
+[Contact](../docs/contact.md)
