@@ -1,0 +1,22 @@
+site_name: unforswearing.com
+site_description: Alvin Charity is a Copywriter, Editor, Technical Writer, and Information Specialist
+nav:
+  - Home: index.md
+  - Portfolio:
+    - 'Technical Writing': writing/technical.md 
+    - 'Copywriting': writing/copywriting.md
+    - 'Other Writing': writing/etc.md 
+theme:
+  name: terminal
+  palette: sans
+  highlightjs: true
+  features:
+    - revision.date
+    - navigation.side.toc.hide
+    - navigation.top.hide
+    - navigation.top.cursor_animation.hide
+    - navigation.top.search_button.hide    
+markdown_extensions:
+  - toc
+plugins:
+  - git-revision-date
