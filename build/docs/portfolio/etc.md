@@ -14,6 +14,6 @@
 
 [Back](../portfolio/index.md)
 
-<hr class="visible" id="visible>
+<hr class="visible" id="visible">
 
-[Home](http://127.0.0.1:8000) | [Contact](../contact.md)
+[Home](../index.md) | [Contact](../contact.md)

@@ -8,8 +8,8 @@ I am open to new work. If my experience is what you're looking for, lets chat on
 
 [<button id=".btn .btn-default">Portfolio</button>](/portfolio)
 
-<br /><br />
+<br />
 
-<hr class="visible" id="visible>
+<hr class="visible" id="visible">
 
-[Contact](../docs/contact.md)
+[Contact](contact.md)

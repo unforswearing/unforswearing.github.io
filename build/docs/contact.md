@@ -6,6 +6,6 @@ I am always happy to chat about writing, writing technology, and prospective con
 
 <br /><br />
 
-<hr class="visible" id="visible>
+<hr class="visible" id="visible">
 
-[Home](http://127.0.0.1:8000) | [Portfolio](/portfolio)
+[Home](index.md) | [Portfolio](/portfolio)

@@ -30,18 +30,39 @@ h2, body, div, strong, em, a {
 }
 
 footer, hr {
-  display: none;
+  display:none;
 }
 
 hr.visible {
   display:block;
+  margin-bottom: 20px;
 }
 
 h1#about,
-h1#technical_writing,
-h1#copywriting,
-h1#other_writing,
 h1#portfolio,
-h1#contact {
+h1#technical-writing,
+h1#copywriting,
+h1#other-writing,
+h1#contact,
+.xl {
   font-size: x-large;
+}
+
+h2,
+h2#blog-posts,
+h2#software-documentation,
+h2#user-guides,
+h2#music-reviews,
+h2#fiction-poetry {
+  font-size: large;
+}
+
+body {
+  width: 70%;
+}
+
+nav {
+  margin-left:100px;
+  width: 300px;
+  text-align: right;
 }
