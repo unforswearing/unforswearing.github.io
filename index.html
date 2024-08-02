@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Cache-Control" content="max-age=31536000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Alvin Charity is a Copywriter, Editor, Technical Writer, and Information Specialist" />
-    <meta name="robots" content="index, follow" />
+    <title>Alvin Charity</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/md-retro.css"> -->
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
 
-    <link rel="stylesheet" type="text/css" href="./font/Sans/cmun-sans.css" />
-    <title>Alvin Charity, Writer</title>
-    <style type="text/css">
-      :root {
+     :root {
         --unvisited-link-color: #1b61e4;
       }
 
@@ -163,109 +163,144 @@
     </style>
   </head>
 
-  <body>
-    <div class="title">
-      <code>
-        <h1 style="font-style: normal">Alvin Charity</h1>
-        <div style="padding:2px;"></div>
-        <div>Writer | Editor | Technical Polymath</div>
-      </code>
-    </div>
-    <hr>
-    <div style="padding-bottom: 30px;">
-      <div class="blurb">
-        I am a thoughtful, detail-oriented copywriter and technical writer excited to share my extensive knowledge with
-        new collaborators. I have over twenty years of experience writing well-researched, in-voice copy for social
-        media, newsletters, print promotional materials, technical documentation, end-user training guides, web pages,
-        product copy, and mobile apps. My additional professional experience includes project management, web
-        programming, business automation, audio engineering, photo editing, and video production.
-        <br /><br />
-        Please message me on LinkedIn to kick off a conversation!
-        <br /><br />
-          Resume: <span class="sm"><a href="alvin_charity_resume_cw.pdf" target="_blank">alvin_charity_resume_cw.pdf</a></span>
-          <br />
-          Contact: <span class="sm"><a href="https://www.linkedin.com/in/alvin-charity/" target="_blank">linkedin.com/alvin-charity</a></span>
+  <body x-data="{page: location.hash}" @hashchange.window="page = location.hash" style="width:65%">
+    <nav style="font-family: Manrope">
+      <div>
+        <a href="" style="padding-right:18px;"><button>HOME</button></a>
+        <a href="#portfolio" style="padding-right:18px;"><button>PORTFOLIO</button></a>
+        <!--
+        <a href="#sound" style="padding-right:18px;"><button>SOUND</button></a>
+        <a href="#writing"><button>WRITING</button></a>
+-->
       </div>
-    </div>
-    <div style="padding-bottom:20px;">
-      <details open disabled style="padding-bottom: 0px;">
-        <summary>Writing Portfolio</summary>
-        <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
-          Copywriting</h3>
-        <ul>
-          <li><a href="../portfolio/s_cw_kids_camp_courses.pdf" target="_blank">Promotional Newsletter for Summer Camp
-              Classes</a></li>
-          <li><a href="../portfolio/s_bw_occ_rider_school.pdf" target="_blank">Social Media Promotion for Motorcycle
-              Classes</a></li>
-          <li><a href="../portfolio/copper_app_faq/index.html" target="_blank">Mobile Banking App FAQ</a></li>
-          </li>
-          <li><a href="../portfolio/s_bw_member_profile_jeff_dance.pdf" target="_blank">Leadership Newsletter Profile:
-              Jeff Dance</a>
-          </li>
-          <li><a href="../portfolio/s_ug_helpdesk_faq.pdf" target="_blank">Helpdesk FAQ for a Music Sharing SaaS</a>
-          </li>
-        </ul>
-        <span><code>
+    </nav>
+    <main>
+      <section>
+        <h1>Alvin Charity</h1>
+        <span style="font-size: 75%;">Writer | Editor | Technical Polymath</span>
+        <br /><br />
+      </section>
+      <section>
+        <div>
+          <div x-show="page === ''">
+            I am a thoughtful, detail-oriented copywriter and technical writer excited to share my extensive knowledge
+            with new
+            collaborators. I have over twenty years of experience writing well-researched, in-voice copy for social
+            media,
+            newsletters, print promotional materials, technical documentation, end-user training guides, web pages,
+            product copy,
+            and mobile apps. My additional professional experience includes project management, web programming,
+            business
+            automation, audio engineering, photo editing, and video production.
+            <div style="padding-top: 20px;">
+              Contact me on LinkedIn: <a href="https://linkedin.com/in/alvin-charity">in/Alvin-Charity</a>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section>
+        <div x-show="page === '#portfolio'">
+          <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">
+            Copywriting</h3>
+          <ul>
+            <li><a href="../portfolio/s_cw_kids_camp_courses.pdf" target="_blank">Promotional Newsletter for Summer Camp
+                Classes</a></li>
+            <li><a href="../portfolio/s_bw_occ_rider_school.pdf" target="_blank">Social Media Promotion for Motorcycle
+                Classes</a></li>
+            <li><a href="../portfolio/copper_app_faq/index.html" target="_blank">Mobile Banking App FAQ</a></li>
+            </li>
+            <li><a href="../portfolio/s_bw_member_profile_jeff_dance.pdf" target="_blank">Leadership Newsletter Profile:
+                Jeff Dance</a>
+            </li>
+            <li><a href="../portfolio/s_ug_helpdesk_faq.pdf" target="_blank">Helpdesk FAQ for a Music Sharing SaaS</a>
+            </li>
+          </ul>
+          <span><code>
         <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
         <br /><br />
       </code></span>
-        <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
-          Technical Writing</h3>
-        <p><strong>Blog Posts</strong></p>
-        <ul>
-          <li><a href="https://reflect.run/articles/creating-automated-tests-for-safari-and-webkit/" target="_blank">
-              Creating Automated Tests for Safari and Webkit</a></li>
-          <li><a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers" target="_blank">12
-              Useful Python Scripts for Developers</a></li>
-          <li><a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation"
-              target="_blank">
-              Better Runbooks Through Automation and Documentation</a></li>
-          <li><a href="../blog/posts/html/20220903_get_started_with_fzf_in_zsh.html" target="_blank">
-              Getting Started with Fzf in Zsh</a></li>
-        </ul>
-        <p><strong>Software Documentation</strong></p>
-        <ul>
-          <li><a href="../portfolio/gas_send_email/index.html" target="_blank">Google Apps Script - Send Email</a></li>
-          <li><a href="https://github.com/unforswearing/todo_markup.js" target="_blank">todoMarkup.js</a></li>
-        </ul>
-        <p><strong>User Guides</strong></p>
-        <ul>
-          <li><a href="../portfolio/actionkit/index.html" target="_blank">Setting Up ActionKit Guide for Non-Profit
-              Employees</a></li>
-          <li><a href="../portfolio/s_ug_solving_it_incidents.pdf" target="_blank">Outline for Solving IT
-              Incidents in a Retail Environment</a></li>
-        </ul>
-        <span><code>
+          <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
+            Technical Writing</h3>
+          <p><strong>Blog Posts</strong></p>
+          <ul>
+            <li><a href="https://reflect.run/articles/creating-automated-tests-for-safari-and-webkit/" target="_blank">
+                Creating Automated Tests for Safari and Webkit</a></li>
+            <li><a href="https://www.airplane.dev/blog/12-useful-python-scripts-for-developers" target="_blank">12
+                Useful Python Scripts for Developers</a></li>
+            <li><a href="https://www.airplane.dev/blog/building-a-better-runbook-through-automation-and-documentation"
+                target="_blank">
+                Better Runbooks Through Automation and Documentation</a></li>
+            <li><a href="../blog/posts/html/20220903_get_started_with_fzf_in_zsh.html" target="_blank">
+                Getting Started with Fzf in Zsh</a></li>
+          </ul>
+          <p><strong>Software Documentation</strong></p>
+          <ul>
+            <li><a href="../portfolio/gas_send_email/index.html" target="_blank">Google Apps Script - Send Email</a>
+            </li>
+            <li><a href="https://github.com/unforswearing/todo_markup.js" target="_blank">todoMarkup.js</a></li>
+          </ul>
+          <p><strong>User Guides</strong></p>
+          <ul>
+            <li><a href="../portfolio/actionkit/index.html" target="_blank">Setting Up ActionKit Guide for Non-Profit
+                Employees</a></li>
+            <li><a href="../portfolio/s_ug_solving_it_incidents.pdf" target="_blank">Outline for Solving IT
+                Incidents in a Retail Environment</a></li>
+          </ul>
+          <span><code>
         <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
         <br /><br />
       </code></span>
-        <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
-          Arts / Entertainment / Literary</h3>
-        <p><strong>Music Reviews</strong></p>
-        <ul>
-          <li><a href="../portfolio/s_mr_stylus_bats_and_mice_review.pdf" target="_blank">Bats and Mice - Believe It,
-              Mammals</a></li>
-          <li><a href="../portfolio/s_mr_stylus_liars_academy_review.pdf" target="_blank">Liars Academy - No News Is
-              Good News</a></li>
-        </ul>
-        <p><strong>Fiction / Poetry</strong></p>
-        <ul>
-          <li><a href="../portfolio/s_lit_the_past_is_itself.pdf" target="_blank">The Past Is Itself</a></li>
-          <li><a href="https://evergreenreview.com/read/allowing-pass/" target="_blank">Allowing Pass</a></li>
-        </ul>
-        <span><code>
+          <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px;">
+            Arts / Entertainment / Literary</h3>
+          <p><strong>Music Reviews</strong></p>
+          <ul>
+            <li><a href="../portfolio/s_mr_stylus_bats_and_mice_review.pdf" target="_blank">Bats and Mice - Believe It,
+                Mammals</a></li>
+            <li><a href="../portfolio/s_mr_stylus_liars_academy_review.pdf" target="_blank">Liars Academy - No News Is
+                Good News</a></li>
+          </ul>
+          <p><strong>Fiction / Poetry</strong></p>
+          <ul>
+            <li><a href="../portfolio/s_lit_the_past_is_itself.pdf" target="_blank">The Past Is Itself</a></li>
+            <li><a href="https://evergreenreview.com/read/allowing-pass/" target="_blank">Allowing Pass</a></li>
+          </ul>
+                  <span><code>
         <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
         <br /><br />
+        </div>
       </code></span>
-      </details>
-    </div>
-    <hr>
-    <div>
-      <code>
-        <a class="foots" href="https://github.com/unforswearing" target="_blank">Github</a> :: 
-        <a class="foots" href="https://www.linkedin.com/in/alvin-charity" target="_blank">LinkedIn</a>
-      </code>
-    </div>
+        </section>
+        <!--
+          <div x-show="page === '#sound'">
+            Experimental music has been an important part of my from an early age, finding various tape recorders
+            to dub and overdub household sounds into a collage of activity. I began playing bass and electric guitar
+            in punk and hardcore bands in my late teens and continue to do so today, along with solo audio work.
+            <br /><br />
+
+            <span>Selected Discography</span><br /><br />
+
+
+          </div>
+          <div x-show="page === '#writing'">
+            Reading always provided ways to reshape my perspective by entering worlds that are the entertaining "other"
+            as a respite from school or work. My own writing started as an attempt to understand my edge of the world
+            but moved to traditional and experimental short fiction and poetry. Professionally I write training content,
+            and technical documention.
+            <br /><br />
+            <span>Selected Writing</span><br /><br />
+            <strong>Published</strong><br />
+            <strong>Experimental</strong><br />
+            <strong>Professional Writing</strong><br />
+          </div>
+        </div>
+      </section>
+-->
+        <section>
+          <div></div>
+        </section>
+    </main>
+    <footer style="font-family: Manrope">
+    </footer>
     <script>
       function openPortfolio() {
         let d = document.getElementById('portfolio');
@@ -288,17 +323,3 @@
   </body>
 
 </html>
-<!--
-Colophon:
-  Font:
-    - Sans-Serif: Computer Modern Sans
-      https://en.wikipedia.org/wiki/Computer_Modern
-  Color:
-    - Background: #f0f0f0
-    - Foreground / Text: #2a2f33
-    - Href: #3860ac
-    - Href Hover Background: #edbfaa
-    - Href Hover Foreground / Text: #b7410e
-    - Blockquote Background: #d0d0d060
-    - Blog About Foreground / Text: #696969
--->
