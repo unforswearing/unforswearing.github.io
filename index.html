@@ -31,6 +31,9 @@
         font-weight: lighter;
       }
 
+      nav {
+        font-size: 80%;
+      }
       a {
         /*  padding-left:18px;*/
         padding: 0px;
@@ -99,24 +102,27 @@
   </head>
 
   <body x-data="{page: location.hash}" @hashchange.window="page = location.hash">
+    <h1 style="padding-top: 0px; padding-bottom:10px;">
+      <img src="./img/me.png" style="width: 0.9em; padding-bottom: 0px; border-radius: 15px;">
+      Alvin Charity
+    </h1>
     <nav>
       <div>
         <a href="">HOME</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <a href="#portfolio">PORTFOLIO</a>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <a href="#audio">AUDIO</a>
       </div>
     </nav>
     <main>
-      <section>
-        <h1>Alvin Charity</h1>
-        <span style="font-size: 80%; padding-top: 0px;">Writer | Editor | Technical Polymath</span>
-        <br /><br />
-      </section>
+      <!-- <section style="padding-bottom:30px;">
+        <!-- <span style="font-size:90%;">Writer | Editor | Technical Polymath</span> -->
+      <!-- </section> -->
       <section>
         <div>
           <div x-show="page === ''">
+            <br />
             Hello, nice to see you! My name is Alvin, and I am a writer with over twenty years of 
             experience crafting well-researched, in-voice copy for social media, newsletters, print 
             promotional materials, technical documentation, end-user training guides, web pages, 
@@ -130,8 +136,8 @@
               <strong>Recent Writing</strong>
             </div>
               <div style="padding-top: 4px;">
-                <span style="font-size: 80%;">
-                  <em><a href="../#portfolio">Visit my portfolio</a> for additional samples.</em>
+                <span style="font-size: 90%;">
+                  <a href="../#portfolio">Visit my portfolio</a> for additional samples.
                 </span>
               </div>
               <ul>
@@ -144,6 +150,7 @@
         </section>
         <section>
         <div x-show="page === '#portfolio'">
+          <h2 style="padding-bottom: 30px;">PORTFOLIO</h2>
           <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">
             Copywriting</h3>
           <ul>
@@ -211,6 +218,7 @@
       </section>
       <section>
       <div x-show="page === '#audio'">
+        <h2 style="padding-bottom: 30px;">AUDIO</h2>
           <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">Audio Engineering</h3>
           <br />
           I have extensive professional audio recording and engineering experience, primarily as a Training Content Developer. I have recorded voiceovers, audio for video productions, and podcasts for retail and non-profit organizations. Please find below examples of my recent work:
@@ -263,7 +271,7 @@
         <hr />
         <span style="font-size: 80%; padding-top: 0px;">
           <a href="https://linkedin.com/in/alvin-charity">LINKEDIN</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <a href="https://github.com/unforswearing">GITHUB</a>
         </span>
         </div>
