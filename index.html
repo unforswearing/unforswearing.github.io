@@ -32,8 +32,9 @@
       }
 
       nav {
-        font-size: 80%;
+        font-size: 100%;
       }
+
       a {
         /*  padding-left:18px;*/
         padding: 0px;
@@ -51,6 +52,11 @@
 
       a:visited {
         color: var(--unvisited-link-color);
+      }
+
+      .pmp:hover::after {
+        content: ' (PMP Certification #2076351, 2017-2023)';
+        transition: visibility 2s;
       }
 
       blockquote {
@@ -77,6 +83,12 @@
 
       h1 {
         font-size: 40px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #c9c9c9;  /* Modern Browsers */
       }
 
       @media all and (max-width: 900px) {
@@ -108,11 +120,16 @@
     </h1>
     <nav>
       <div>
-        <a href="">HOME</a>
-        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="#portfolio">PORTFOLIO</a>
-        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="#audio">AUDIO</a>
+        <div x-show="page !== ''" style="float: left;">
+          <a href="">HOME</a>
+        </div>
+        <div x-show="page === '#audio'" style="float: left;">
+          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
+        </div>
+        <div x-show="page !== '#portfolio'" style="float: left;">
+          <a href="#portfolio">PORTFOLIO</a>
+        </div>
+        <br />
       </div>
     </nav>
     <main>
@@ -125,7 +142,7 @@
             <br />
             Hello, nice to see you! My name is Alvin, and I am a <a href="/#portfolio">writer</a> with over twenty years of experience crafting well-researched, in-voice copy for social media, newsletters, print promotional materials, technical documentation, end-user training guides, web pages, product copy, and mobile apps. My additional professional experience includes project management, web programming, business automation, <a href="/#audio">audio engineering</a>, and video production.
             <br /><br />
-            Contact me on LinkedIn: <a href="https://linkedin.com/in/alvin-charity">in/Alvin-Charity</a>.
+            I am currently seeking employment as a Technical Writer or Copywriter. Interested? Contact me on LinkedIn: <a href="https://linkedin.com/in/alvin-charity">in/Alvin-Charity</a>.
             </div>
           </div>
         </section>
@@ -237,8 +254,10 @@
         <div style="padding-top: 70px;">
         <hr />
         <span style="font-size: 80%; padding-top: 0px;">
+          <a href="#audio">AUDIO</a>
+          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
           <a href="https://linkedin.com/in/alvin-charity">LINKEDIN</a>
-          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
           <a href="https://github.com/unforswearing">GITHUB</a>
         </span>
         </div>
