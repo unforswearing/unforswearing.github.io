@@ -91,6 +91,18 @@
         background-color: #c9c9c9;  /* Modern Browsers */
       }
 
+      img {
+        width: 2em;
+        padding-top: 0px;
+        margin-right: 10px;
+        border-radius: 15px;
+        float: left;
+      }
+
+      .divider {
+        color: #c9c9c9;
+      }
+
       @media all and (max-width: 900px) {
         /*
         @media (orientation: portrait) {
@@ -114,24 +126,12 @@
   </head>
 
   <body x-data="{page: location.hash}" @hashchange.window="page = location.hash">
-    <img src="./img/me.png" style="width: 2em; padding-top: 0px; margin-right: 10px; border-radius: 15px; float: left;">
-    <h1 style="padding-top: 0px; padding-bottom:10px;">
-      Alvin Charity
+    <img src="./img/me.png">
+    <h1 style="padding-top: 0px;">
+      <span x-show="page !== ''"><a href="https://unforswearing.com">Alvin Charity</a></span>
+      <span x-show="page === ''">Alvin Charity</span>
     </h1>
-    <nav>
-      <div>
-        <div x-show="page !== ''" style="float: left;">
-          <a href="">HOME</a>
-        </div>
-        <div x-show="page === '#audio'" style="float: left;">
-          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
-        </div>
-        <div x-show="page !== '#portfolio'" style="float: left;">
-          <a href="#portfolio">PORTFOLIO</a>
-        </div>
-        <br />
-      </div>
-    </nav>
+    <hr>
     <main>
       <!-- <section style="padding-bottom:30px;">
         <!-- <span style="font-size:90%;">Writer | Editor | Technical Polymath</span> -->
@@ -139,16 +139,28 @@
       <section>
         <div>
           <div x-show="page === ''">
-            <br />
-            Hello, nice to see you! My name is Alvin, and I am a <a href="/#portfolio">writer</a> with over twenty years of experience crafting well-researched, in-voice copy for social media, newsletters, print promotional materials, technical documentation, end-user training guides, web pages, product copy, and mobile apps. My additional professional experience includes project management, web programming, business automation, <a href="/#audio">audio engineering</a>, and video production.
+            <p>
+              <span style="padding:4px; padding-left: 4px; background-color: #dedede; border-radius: 5px;"><a href="#portfolio"><strong>PORTFOLIO</strong></a></span>
+            </p>
+            Hello, nice to see you! My name is Alvin, and I am a <a href="/#portfolio">writer</a> with over twenty years of experience crafting well-researched, in-voice copy for social media, newsletters, print promotional materials, technical documentation, end-user training guides, operational and human resource manuals and guides, management training, web pages, product copy, and mobile apps. My additional professional experience includes project management, web programming, data analysis, business automation, <a href="/#audio">audio engineering</a>, and video production.
             <br /><br />
-            I am currently seeking employment as a Technical Writer or Copywriter. Interested? Contact me on LinkedIn: <a href="https://linkedin.com/in/alvin-charity">in/Alvin-Charity</a>.
+            I am actively seeking employment. Interested in a conversation? Message me on LinkedIn: <a href="https://linkedin.com/in/alvin-charity">in/Alvin-Charity</a>.
             </div>
           </div>
         </section>
         <section>
         <div x-show="page === '#portfolio'">
-          <h2 style="padding-bottom: 30px;">PORTFOLIO</h2>
+          <strong>PORTFOLIO</strong>
+          <br /><br />
+          <div style="font-size: 80%; background-color: #dedede; border-width: 1px; border-radius: 5px; padding: 10px;">
+            <details open><summary><strong>Hire Me!</strong></summary>
+            <br />
+            I am currently seeking employment as a technical writer or copywriter. In addition to writing, <a href="https://unforswearing.com">my professional experience</a> has been firmly at the intersection of creative and techical, which makes me well suited for content administration, newsletter automation, documentation engineering, knowledge management, or similar roles.
+            <br /><br />
+            My resume is available upon request. <a href="https://linkedin.com/in/alvin-charity" target="_blank">Message me on LinkedIn</a> if you would like to chat.
+            </details>
+          </div>
+          <br /><br />
           <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">
             Copywriting</h3>
           <ul>
@@ -216,15 +228,16 @@
       </section>
       <section>
       <div x-show="page === '#audio'">
-        <h2 style="padding-bottom: 30px;">AUDIO</h2>
-          <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">Audio Engineering</h3>
-          <br />
-          I have extensive professional audio recording and engineering experience, primarily as a Training Content Developer. I have recorded voiceovers, audio for video productions, and podcasts for retail and non-profit organizations. Please find below examples of my recent work:
-          <br />
-          <ul>
-            <li>Audio Engineer. <a href="https://nationalcenterformobilitymanagement.org/mobility-lines-podcast/">NCMM Mobility Lines Podcast, Episodes 3–9</a></li>
-          </ul>
-          <span><code>
+        <strong>AUDIO</strong>
+        <br /><br />
+        <h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px; margin-top: -5px;">Audio Engineering</h3>
+        <br />
+        I have extensive professional audio recording and engineering experience, primarily as a Training Content Developer. I have recorded voiceovers, audio for video productions, and podcasts for retail and non-profit organizations. Please find below examples of my recent work:
+        <br />
+        <ul>
+          <li>Audio Engineer. <a href="https://nationalcenterformobilitymanagement.org/mobility-lines-podcast/">NCMM Mobility Lines Podcast, Episodes 3–9</a></li>
+        </ul>
+        <span><code>
         <a onclick="scrollToTop();return false" href="#top"><strong>back to top</strong></a>
         <br /><br />
       </code></span>
@@ -254,11 +267,19 @@
         <div style="padding-top: 70px;">
         <hr />
         <span style="font-size: 80%; padding-top: 0px;">
+          <span x-show="page !== ''">
+            <a href="">HOME</a>
+            &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          </span>
+          <span x-show="page !== '#portfolio'">
+            <a href="#portfolio">PORTFOLIO</a>
+            &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          </span>
           <a href="#audio">AUDIO</a>
-          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
-          <a href="https://linkedin.com/in/alvin-charity">LINKEDIN</a>
-          &nbsp;&nbsp;&nbsp;<span style="color: #c9c9c9;">|</span>&nbsp;&nbsp;&nbsp;
-          <a href="https://github.com/unforswearing">GITHUB</a>
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          <a href="https://linkedin.com/in/alvin-charity" target="_blank">LINKEDIN</a>
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
         </span>
         </div>
         <br /><br />
