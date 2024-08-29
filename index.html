@@ -271,12 +271,14 @@
             <a href="">HOME</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
-          <span x-show="page !== '#portfolio'">
+          <span x-show="page === '#audio'">
             <a href="#portfolio">PORTFOLIO</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
-          <a href="#audio">AUDIO</a>
-          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          <span x-show="page !== '#audio'">
+            <a href="#audio">AUDIO</a>
+            &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          </span>
           <a href="https://linkedin.com/in/alvin-charity" target="_blank">LINKEDIN</a>
           &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
