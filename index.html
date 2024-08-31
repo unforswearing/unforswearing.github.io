@@ -7,6 +7,7 @@
       content="width=device-width, height=device-height, initial-scale=1.0"
     />
     <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/hint/hint.css" />
     <style>
       [x-cloak] {
         display: none !important;
@@ -30,7 +31,6 @@
         color: #2a2f33;
         font-family: "Computer Modern Sans", sans-serif;
         font-size: 1.2em;
-        font-weight: lighter;
       }
 
       nav {
@@ -131,7 +131,7 @@
     x-data="{page: location.hash}"
     @hashchange.window="page = location.hash"
   >
-    <img src="./img/me.png" />
+    <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
     <h1 style="padding-top: 0px">
       <span x-show="page !== ''"
         ><a href="https://unforswearing.com">Alvin Charity</a></span
@@ -171,7 +171,8 @@
           >,
           <a href="https://github.com/unforswearing" target="_blank">
             programming / automation</a
-          >, data analysis, <a href="/#audio" target="_blank">audio engineering</a>, and video
+          >, data analysis,
+          <a href="/#audio" target="_blank">audio engineering</a>, and video
           production. <br /><br />
           I am actively seeking permanent or long-term contract employment.
           Message me on LinkedIn to chat about how I can help:
@@ -197,9 +198,22 @@
               copywriter. In addition to writing,
               <a href="https://unforswearing.com">my professional experience</a>
               has been firmly at the intersection of creative and techical,
-              which makes me well suited for content administration, newsletter
-              automation, documentation engineering, knowledge management, or
-              similar roles. <br /><br />
+              which makes me well suited for
+              <a
+                href="javascript:void(0)"
+                class="hint--bottom hint--large hint--no-arrow hint--no-shadow"
+                aria-label="Past and current experience managing CMS systems, establishing a documentation schema, and updating documents as needed."
+                >content administration</a
+              >, <a
+                href="javascript:void(0)"
+                class="hint--bottom hint--large hint--no-arrow hint--no-shadow"
+                aria-label="Established a custom newsletter automation system using HTML, CSS, and JavaScript (Google Apps Script) built on top of Google Workspace. I also have additional experience using MailChimp and Constant Contact platforms."
+                >newsletter automation</a>, <a
+                href="javascript:void(0)"
+                class="hint--bottom hint--large hint--no-arrow hint--no-shadow"
+                aria-label="Assessed organizational needs and established a document storage schema, a documentation update plan, and worked with department heads to create new documents based on company growth."
+                >knowledge
+              management</a>, or similar roles. <br /><br />
               My resume is available upon request.
               <a href="https://linkedin.com/in/alvin-charity" target="_blank"
                 >Message me on LinkedIn</a
