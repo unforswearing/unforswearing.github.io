@@ -137,7 +137,6 @@
   </head>
 
   <body
-    id="js"
     x-data="{page: location.hash}"
     @hashchange.window="page = location.hash"
   >
@@ -181,8 +180,12 @@
               padding: 10px;
             "
           >
-            <details open style="padding-bottom: 10px">
-              <summary><strong>Hire Me!</strong></summary>
+            <details>
+              <summary>
+                <span style="font-size: 20px; font-weight: bold; color: #1b61e4"
+                  >Hire Me!</span
+                >
+              </summary>
               <br />
               I am currently seeking employment as a technical writer or
               copywriter. In addition to writing,
@@ -230,6 +233,7 @@
                 >Message me on LinkedIn</a
               >
               if you would like to chat.
+              <br /><br />
             </details>
           </div>
           <h3
