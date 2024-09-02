@@ -137,7 +137,9 @@
   </head>
 
   <body
-    x-data="{page: location.hash}"
+    x-data="{
+      page: location.hash,
+    }"
     @hashchange.window="page = location.hash"
   >
     <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
@@ -166,9 +168,11 @@
         crafting well-researched, in-voice copy for software applications, the
         web, retail, higher education, and literary work. Message me on LinkedIn
         to chat about how I can help:
-        <a href="https://linkedin.com/in/alvin-charity" target="_blank">in/Alvin-Charity</a>.
+        <a href="https://linkedin.com/in/alvin-charity" target="_blank"
+          >in/Alvin-Charity</a
+        >.
       </div>
-      <div x-show="page === '#portfolio'">
+      <div x-show="page === '#portfolio'" x-transition>
         <strong>PORTFOLIO</strong>
         <br /><br />
         <div style="font-size: 80%">
@@ -547,17 +551,13 @@
         <hr />
         <span style="font-size: 80%; padding-top: 0px">
           <span x-show="page !== ''">
-            <a href="">HOME</a>
+            <a href="" x-transition>HOME</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
           <span x-show="page === '#audio'">
-            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#portfolio" x-transition>PORTFOLIO</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
-          <!--          <span x-show="page !== '#audio'">
-            <a href="#audio">AUDIO</a>
-            &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
-          </span>-->
           <a href="https://linkedin.com/in/alvin-charity" target="_blank"
             >LINKEDIN</a
           >
