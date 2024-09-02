@@ -151,7 +151,7 @@
     </h1>
     <hr />
     <main>
-      <div x-show="page === ''">
+      <div x-show="page === ''" x-transition>
         <p>
           <span
             style="
@@ -218,7 +218,7 @@
               >, or similar roles. Additionally, I am a self-taught programmer
               and excel at roles that include some web development, data
               analysis, or command line scripting. My experience is capped off
-              with my time working with
+              with my time working in
               <a
                 class="hint--bottom hint--large hint--no-arrow hint--no-shadow"
                 aria-label="PMP Certification #2076351, 2017-2023"
@@ -551,11 +551,11 @@
         <hr />
         <span style="font-size: 80%; padding-top: 0px">
           <span x-show="page !== ''">
-            <a href="" x-transition>HOME</a>
+            <a href="">HOME</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
           <span x-show="page === '#audio'">
-            <a href="#portfolio" x-transition>PORTFOLIO</a>
+            <a href="#portfolio">PORTFOLIO</a>
             &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
           </span>
           <a href="https://linkedin.com/in/alvin-charity" target="_blank"
