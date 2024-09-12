@@ -10,12 +10,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      :root {
+        --unvisited-link-color: #1b61e4;
+      }
+
+      html {
+        background-color: #f0f0f0;
+        color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 40px;
+        padding-right: 0px;
+        padding-left: 60px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Sans", sans-serif;
+        font-size: 1.2em;
+      }
+    </style>
   </head>
-  <body x-data="{query: new URL(location.href).search}" @hashchange.window="query = new URL(location.href).search">
+  <body
+    x-data="{query: new URL(location.href).search}"
+    @hashchange.window="query = new URL(location.href).search"
+  >
     <strong>EXPERIENCE PROFILE</strong>
     <br /><br />
-    I have a wealth of experience that allows me to excel in many writing or content related positions. Click an item below to view a summary of my experience in that area. Click "See All Experience" to view all summaries.
+    I have a wealth of experience that allows me to excel in many writing or
+    content related positions. Click an item below to view a summary of my
+    experience in that area. Click "See All Experience" to view all summaries.
     <br /><br />
     <div x-show="query === '?content-administration'">
       <h3
@@ -25,7 +58,8 @@
           border-radius: 5px;
           margin-top: -5px;
         "
-      >Content Administration
+      >
+        Content Administration
       </h3>
     </div>
     <div x-show="query === '?newsletter-automation'">
@@ -36,7 +70,8 @@
           border-radius: 5px;
           margin-top: -5px;
         "
-      >Newsletter Automation
+      >
+        Newsletter Automation
       </h3>
     </div>
     <div x-show="query === '?knowledge-management'">
@@ -47,7 +82,8 @@
           border-radius: 5px;
           margin-top: -5px;
         "
-      >Knowledge Management
+      >
+        Knowledge Management
       </h3>
     </div>
     <div x-show="query === '?commandline-scripting'">
@@ -58,7 +94,8 @@
           border-radius: 5px;
           margin-top: -5px;
         "
-      >Command Line Scripting
+      >
+        Command Line Scripting
       </h3>
     </div>
     <div x-show="query === '?project-management'">
@@ -69,7 +106,8 @@
           border-radius: 5px;
           margin-top: -5px;
         "
-      >Project Management
+      >
+        Project Management
       </h3>
     </div>
     <div x-show="query === '?programming-automation'">
@@ -96,10 +134,10 @@
         Audio Engineering
       </h3>
       <br />
-      I have extensive professional audio recording and engineering
-      experience, primarily as a Training Content Developer. I have recorded
-      voiceovers, audio for video productions, and podcasts for retail and
-      non-profit organizations. Please find below examples of my recent work:
+      I have extensive professional audio recording and engineering experience,
+      primarily as a Training Content Developer. I have recorded voiceovers,
+      audio for video productions, and podcasts for retail and non-profit
+      organizations. Please find below examples of my recent work:
       <br />
       <ul>
         <li>
@@ -185,7 +223,6 @@
           >
           <br /><br /> </code
       ></span>
-      </div>
     </div>
   </body>
 </html>
