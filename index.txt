@@ -1,71 +1,285 @@
-Technical Writer | Copywriter | UX Writer | Information Specialist
-
-Copywriting, Technical Writing, Editing, Microcopy, System Design Documentation, XML, Markdown, HTML, CSS, Javascript, Software Development, Web Development, Git, Command Line Tools, Python, Project Management (PMP), Excel, Microsoft Office, Google Workspace,
-
-Copywriting | SEO | Storytelling | Social Media | Email Marketing | Keyword Research | Document Management | Content Management | Project Management | Data Analysis
-Google Workspace | Microsoft Office | Constant Contact | Google Lighthouse | Slack | Notion | Trello | Asana | Basecamp | ProofHQ | Canva | Adobe Creative Suite
-
-"copywriting", "writing", "writing services", "blog writer", "editor", "copy editor", "technical writer"
-
-"Proofreading, Editing, Website Copy, Blog Posts"
-
-Diagramming (Visio, Draw.io, UML)
-
-Transactional Email Design / Writing
-Knowledge Manager · Technical Writer · Information Specialist · Copywriter · User Experience Writer
-
-Analytical Skills • Audio Engineering • Writing • Editing
-
-- Write and edit email newsletter content using course descriptions, input from subject matter experts, and user research; lead the editing and review process and incorporate feedback timely and effectively. 
-
-- Collaborate with subject matter experts to edit printed material, such as course catalogs, promotional flyers, and event postcards to match the AP style guide and college brand guidelines. 
-
-- Create social media posts using concise and engaging language to promote college courses, programs, and events on social media platforms such Facebook, Instagram, and LinkedIn. 
-
-- Manage college course records and descriptions in the Terminal4 content management system (CMS), ensuring the accuracy and relevance of the published content.
-
-Providing research, copywriting, and technical content for tech organizations and business leadership. 
-
-- Research topics on various web development and programming practices, including web development, web scraping, Python automation, JavaScript runtime environments (NodeJS, Deno, Bun).
-
-- Survey current publications to test various hypotheses relating to technical content and employee management best-practices, summarizing the results for stakeholders and C-level staff. 
-
-- Create 1500+ word articles and blog posts on personnel management, web development, and programming practices.
-
-- Draft articles using Markdown and HTML markup using various technical writing workflows, including Docs-As-Code (via GitHub), content management systems (CMS), and more traditional Google Docs / Microsoft word based systems.
-
-- Collaborate with editors and product managers to accurately reflect brand voice and style, and respond quickly to suggested feedback and document revisions.
-
-- Collaborated with marketing and design teams using canvas-based design tools to create succinct messaging for mobile and web. 
-
-- Created copy for app feature pages with a focus on brand voice targeting teens and parents, including website copy and helpdesk FAQ documentation. 
-
-- Drafted messaging for SMS and in-app notifications to match the needs of marketing campaigns. 
-Revised printed material for focused and timely communication during in-person workshops.
-
-- Created a glossary of terms used by the tool to help guide new users and to document new and changing features for legacy clients.
-
-- Documented the API by listing all functions and parameters and creating flow diagrams using web-based and desktop UML diagramming software. Review the codebase for consistency and bugs, reporting any found to lead developer
-
-- Created new tools based on the current codebase to provide additional functionality to users, including reporting and data aggregation features.
-
-- Served as Audio Engineer for the "Mobility Lines" podcast produced by the National Center for Mobility Management; tasks include improving audio quality from recorded interviews, creating intro and outro audio segments, effectively edit podcasts for length and content, and providing completed audio files to match the specifications of various podcast platforms.
-
- Wrote user guides, training materials, and procedural guides for hourly store staff, office employees, data analysts, Human Resources, and IT department staff.
-
-- Collaborated with category managers, human resources, organizational leadership, and subject matter 
-experts to create documentation for various business processes to streamline complex workflows.
-
-- Created content strategy and document storage schema for organizational guides, reference material, departmental price lists, and other documents housed on the company intranet / CMS.
-
-- Developed an in-house communications workflow using Google Apps Script and Google Workspace, to standardize data collection procedures and provide clarity for organizational standards and practices.
-
-- Led the design and development of the first training content for the produce department, including text manuals, one-page informational briefs, technical documentation for ordering and financial procedures, and video-based training materials.
-
-- Managed changes and updates to departmental reports, training guides, and other written material in the company intranet / CMS. 
-
-- Created copy for transactional email messages, forms, and business workflows, including automated messaging, text for form questions and interactive elements like buttons and links, and streamlining steps required for process-oriented tasks.
-
-- Observed in-person training sessions and reviewed related written material like handouts, short guides, and training scenarios; aided in improving the quality of written training guides and recommended additional training modalities as needed.- Led the design and development of the first training content for the produce department, including text manuals, one-page informational briefs, technical documentation for ordering and financial procedures, and video-based training materials. - Managed changes and updates to departmental reports, training guides, and other written material in the company intranet / CMS. - Created copy for transactional email messages, forms, and business workflows, including automated messaging, text for form questions and interactive elements like buttons and links, and streamlining steps required for process-oriented tasks. - Observed in-person training sessions and reviewed related written material like handouts, short guides, and training scenarios; aided in improving the quality of written training guides and recommended additional training modalities as needed.
-
-python, pandas, numpy
+Google Apps Script
+Social Media Marketing
+Customer Service
+Rhetorical Analysis
+Google Workspace
+Programming
+Digital Marketing
+MLA Style
+AP Style
+Native English Proficiency
+Linguistics
+Communication
+Print Materials
+Editing
+Copywriting
+Technical Writing
+Grammar
+Fact-checking
+Research
+Storytelling
+Software Development
+Software Development Lifecycle (SDLC)
+Data Analysis
+Report Writing
+Reporting
+Linux
+Microsoft Excel
+Microsoft Word
+Instructional Design
+Training Manuals
+Project Management
+NodeJs
+Deno
+Project Management
+Software Documentation
+Process Improvement
+Audio Engineering
+Writing
+Web Content Administration
+Analytical Skills
+Markup Languages
+Markdown
+Typst
+Git
+CSS
+HTML
+JavaScript
+TypeScript
+Python
+Lua
+Bash
+Zsh
+Shell Scripting
+Meta Data
+Knowledge Management
+Documentation
+Search Engine Optimization
+Copy Editing
+Technical Editing
+UX Writing
+Information Specialist
+Microcopy
+System Design
+XML
+Markdown
+Newsletters
+Email Marketing
+Social Media
+Keyword Research
+Document Management
+Content Management
+Project Management
+Constant Contact
+Google Lighthouse
+Canva
+Adobe Photoshop
+Basecamp
+Slack
+Notion
+Trello
+Asana
+Jira
+Confluence
+Proofreading
+Editing
+Blog Posts
+Diagramming
+Visio
+Draw.io
+UML
+Transactional Email Design
+Knowledge Management
+User Experience Writer
+Analytical Skills
+Pandas
+API Documentation
+SDK Documentation
+Web Development
+Collaboration
+Stakeholder Engagement
+Process Improvement
+Styleguides
+Content Management Systems
+Publishing
+Leadership
+Management Theory
+Web Scraping
+Git
+Code Review
+JavaScript Runtimes
+Developer Tools
+Employee Management
+Best Practices
+Systems Thinking
+Docs-As-Code
+GitHub
+Microcopy
+Product Promotion
+Messaging
+Glossaries
+Visual Communication
+Training Development
+End-user Training Guides
+Technical Documentation
+Mobile Apps
+Ad Copy
+Automation
+Formstack
+Jupyter Notebooks
+SQLite
+Databases
+Key-Value Databases
+Helpdesk Writing
+Zendesk
+ActionKit
+Editorial Content
+Creative Writing
+Poetry
+Short Stories
+Literature
+Continuous Improvement
+Iterative Documentation
+Progressive Elaboration
+Content Strategy
+Procedural Documentation
+Workflow Optimization
+Tool Development
+Technical Content Strategy
+Instructional Writing
+Technical Communication
+Business Communication
+B2B Communication
+Information Architecture
+YAML
+JSON
+Version Control Systems
+Literate Programming
+JSDoc
+Semantic Versioning
+Scripting
+Runbooks
+Static Site Generators
+Domain Specific Languages
+Regular Expressions
+Linux
+Server Administration
+AlpineJs
+TailwindCSS
+HTMX
+React
+Audience Analysis
+Product Development
+Programming Languages
+Technical Reports
+Case Studies
+User Stories
+Critical Thinking
+Media Literacy
+Detail Oriented
+Web Design
+Design
+Content Review
+Information Design
+Typography
+Graphic Design
+Team Building
+Problem Solving
+Conflict Resolution
+Cross-functional Collaboration
+Single Source Documentation / Transclusion
+OpenAI
+GCP
+AWS
+Retail
+Banking
+Transit
+Transportation
+Music
+Film
+Arts & Entertainment
+Typesetting
+Event Promotion
+Work Breakdown Structure
+Project Scope Management
+Image Editing
+Video Editing
+Audio Editing
+Strategic Planning
+Audience Design
+Functional Sentence Perspective
+Relevance Theory
+Text Cohesion and Coherence
+Schema Theory
+Frame Semantics
+Email Design
+GitHub Flavored Markdown
+Commonmark
+Pandoc
+MkDocs
+Simplified Technical English
+Indexing
+Linting
+mdBook
+Critic Markup
+Diff / Merge Tools
+Transcription
+Captioning
+Interactive Fiction
+Templating
+User Personas
+Buyer Personas
+Documentation Generation Tools
+Developer Relations
+Content Analysis
+Content Optimization
+Content Research
+Search Trends
+Tutorials
+How-to Guides
+White Papers
+Project Plans
+Design Specifications
+Figma
+Final Cut Pro
+OBS
+Camtasia
+SWOT Analysis
+A/B Testing
+Mind Mapping
+Active Listening
+Nonvoilent Communication
+Kanban
+SCRUM
+Software Architecture
+Solution Architecture
+Enterprise Architecture
+Slack
+Coaching
+Infrastructure-as-Code
+Serverless Computing
+Containers
+DevOps
+Market Analysis
+User Interviews
+Segmentation
+Reference Materials
+Narrative Writing
+Job Stories
+Design Thinking
+Backlog Management
+Data-driven Decision Making
+Cohort Analysis
+Microsoft Teams
+Risk Assessment
+Leadership
+Command-line Tools
+Visual Studio Code
+Sublime Text
+Clarity
+Online Help
+System Administration
+Open Source
+Content Planning
+DITA
+Read the Docs
