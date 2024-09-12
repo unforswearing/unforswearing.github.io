@@ -1,151 +1,191 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, height=device-height, initial-scale=1.0"
-  />
-  <script defer src="../js/alpine/dist/cdn.min.js"></script>
-  <style>
-    [x-cloak] {
-      display: none !important;
-    }
+<!--
+  For: unforswearing.com/profile
+  Usage of this page:
 
-    :root {
-      --unvisited-link-color: #1b61e4;
-    }
-
-    html {
-      background-color: #f0f0f0;
-      color: #2a2f33;
-    }
-
-    body {
-      width: 60%;
-      padding: 40px;
-      padding-right: 0px;
-      padding-left: 60px;
-      background-color: #f0f0f0;
-      color: #2a2f33;
-      font-family: "Computer Modern Sans", sans-serif;
-      font-size: 1.2em;
-    }
-
-    nav {
-      font-size: 100%;
-    }
-
-    a {
-      /*  padding-left:18px;*/
-      padding: 0px;
-      color: var(--unvisited-link-color);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    a:hover,
-    a:visited:hover {
-      color: #b7410e;
-      transition: all 0.4s ease-in-out;
-    }
-
-    a:visited {
-      color: var(--unvisited-link-color);
-    }
-
-    .pmp:hover::after {
-      content: " (PMP Certification #2076351, 2017-2023)";
-      transition: visibility 2s;
-    }
-
-    blockquote {
-      margin-left: 0px;
-      padding-left: 14px;
-      border-left: 4px solid #a9a9a9;
-    }
-
-    button {
-      font-weight: bold;
-      width: 120px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border: 0px;
-      background-color: #c9c9c9;
-    }
-
-    h1,
-    h2,
-    h3 {
-      padding-bottom: 0px;
-      margin-bottom: 0px;
-    }
-
-    h1 {
-      font-size: 40px;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background-color: #c9c9c9; /* Modern Browsers */
-    }
-
-    img {
-      width: 2em;
-      padding-top: 0px;
-      margin-right: 10px;
-      border-radius: 15px;
-      float: left;
-    }
-
-    .divider {
-      color: #c9c9c9;
-    }
-
-    @media all and (max-width: 900px) {
-      /*
-        @media (orientation: portrait) {
-          html {
-            font-size: 1.5em;
-            width: 40%;
-            margin-right: 20px;
-          }
-        }
-        */
-      body {
-        padding-left: 20px;
-        /*padding-right: 20px;*/
-        width: 80%;
-      }
-      main {
-        size: 0.85em;
-      }
-    }
-  </style>
-</head>
-<body x-data="{
-  query: new URL(location.href).search
-}">
-<h3 style="background-color: #adbac7; padding: 10px; border-radius: 5px">
-  Experience Profile
-</h3>
-<br /><br />
-<div x-show="query === '?content-administration">
-  <strong>Content Administration</strong>
-</div>
-<div x-show="query === '?programming-automation">
-  <strong>Programming / Automation</strong>
-</div>
-<div x-show="query === '?newsletter-automation">
-  <strong>Newsletter Automation</strong>
-</div>
-<div x-show="query === '?project-management">
-  <strong>Project Management</strong>
-</div>
-<div x-show="query === '?knowledge-management">
-  <strong>Knowledge Management</strong>
-</div>
-<div x-show="query === '?audio-engineering">
-  <strong>Audio Engineering</strong>
-</div>
-</body>
+  1. Create section for work experience element
+  2. Add 'x-show="query === '?experience-item'"'
+  3. Link to url 'profile?experience-item' from somewhere
+  4. The page should only show the content for the div with the matching `x-show` query value (via AlpineJs)
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body x-data="{query: new URL(location.href).search}" @hashchange.window="query = new URL(location.href).search">
+    <strong>EXPERIENCE PROFILE</strong>
+    <br /><br />
+    I have a wealth of experience that allows me to excel in many writing or content related positions. Click an item below to view a summary of my experience in that area. Click "See All Experience" to view all summaries.
+    <br /><br />
+    <div x-show="query === '?content-administration'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >Content Administration
+      </h3>
+    </div>
+    <div x-show="query === '?newsletter-automation'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >Newsletter Automation
+      </h3>
+    </div>
+    <div x-show="query === '?knowledge-management'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >Knowledge Management
+      </h3>
+    </div>
+    <div x-show="query === '?commandline-scripting'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >Command Line Scripting
+      </h3>
+    </div>
+    <div x-show="query === '?project-management'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >Project Management
+      </h3>
+    </div>
+    <div x-show="query === '?programming-automation'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >
+        Programming / Automation
+      </h3>
+    </div>
+    <div x-show="query === '?audio-engineering'">
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >
+        Audio Engineering
+      </h3>
+      <br />
+      I have extensive professional audio recording and engineering
+      experience, primarily as a Training Content Developer. I have recorded
+      voiceovers, audio for video productions, and podcasts for retail and
+      non-profit organizations. Please find below examples of my recent work:
+      <br />
+      <ul>
+        <li>
+          Audio Engineer.
+          <a
+            href="https://nationalcenterformobilitymanagement.org/mobility-lines-podcast/"
+            target="_blank"
+            >NCMM Mobility Lines Podcast, Episodes 3–9</a
+          >
+        </li>
+      </ul>
+      <span
+        ><code>
+          <a onclick="scrollToTop();return false" href="#top"
+            ><strong>back to top</strong></a
+          >
+          <br /><br /> </code
+      ></span>
+      <br />
+      <h3
+        style="
+          background-color: #adbac7;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: -5px;
+        "
+      >
+        Film Score
+      </h3>
+      <br />
+      My interest in audio engineering was a natural extension of my life-long
+      experience as a musician. Scoring films is my favorite form of musical
+      output, and I am lucky to have provided audio for several Maryland-based
+      filmmakers:
+      <br />
+      <ul>
+        <li>
+          <a
+            href="https://papertether.bandcamp.com/album/restlessness-score"
+            target="_blank"
+            >Restlessness</a
+          >
+          (2023, Dir. Jason Lobe)
+        </li>
+        <li>
+          <a
+            href="https://papertether.bandcamp.com/album/efemmera-score"
+            target="_blank"
+            >Efemmera</a
+          >
+          (2021, Dir. Amy Oden)
+        </li>
+        <li>
+          <a
+            href="https://papertether.bandcamp.com/track/landscaper-score"
+            target="_blank"
+            >Landscaper</a
+          >
+          (2016, Dir. Jason Lobe)
+        </li>
+      </ul>
+      I have also created several "music video" pieces to accompany various
+      tracks from my ambient project
+      <a href="https://papertether.bandcamp.com/" target="_blank"
+        >Paper Tether</a
+      >. All source material for these films comes from the
+      <a href="https://archive.org/details/prelinger?tab=about"
+        >Prelinger Archive</a
+      >.
+      <br />
+      <ul>
+        <li>
+          <a href="https://papertether.bandcamp.com/video" target="_blank"
+            >Paper Tether / Video</a
+          >
+        </li>
+      </ul>
+      <span
+        ><code>
+          <br />
+          <a onclick="scrollToTop();return false" href="#top"
+            ><strong>back to top</strong></a
+          >
+          <br /><br /> </code
+      ></span>
+      </div>
+    </div>
+  </body>
+</html>
