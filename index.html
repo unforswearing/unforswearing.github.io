@@ -6,8 +6,14 @@
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1.0"
     />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for unforswearing.com" href="index.atom" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS feed for unforswearing.com"
+      href="index.atom"
+    />
     <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <script defer src="./js/index.js"></script>
     <link rel="stylesheet" href="css/hint/hint.min.css" />
     <link rel="stylesheet" href="css/index.css" />
 
@@ -178,7 +184,7 @@
               padding: 10px;
             "
           >
-            <details>
+            <details id="hireme">
               <summary>
                 <span style="font-size: 20px; font-weight: bold; color: #1b61e4"
                   >Hire Me!</span
@@ -209,7 +215,10 @@
                 class="hint--bottom hint--large hint--no-arrow hint--no-shadow"
                 aria-label="Successfully established a document library to host operational, departmental, and IT files for internal consumption. This included working with department heads to develop documentation schemas, assess staff needs, and creating a workflow for providing future updates and assessments."
                 >knowledge management</a
-              >, or similar roles. Additionally, I am a <a href="portfolio/profile.html?programming-automation">self-taught programmer</a>
+              >, or similar roles. Additionally, I am a
+              <a href="portfolio/profile.html?programming-automation"
+                >self-taught programmer</a
+              >
               and excel at roles that include some web development, data
               analysis, or command line scripting. My experience is capped off
               with my time working in
@@ -221,8 +230,10 @@
               >,
               <a href="https://github.com/unforswearing" target="_blank">
                 programming / automation</a
-              >, <a href="/portfolio/profile.html?audio-engineering">audio engineering</a>, and video production.
-              <br /><br />
+              >,
+              <a href="/portfolio/profile.html?audio-engineering"
+                >audio engineering</a
+              >, and video production. <br /><br />
               I am actively seeking employment - my goal is to find a permanent
               position, however I am also open to
               <a href="#freelance">short-term freelance work</a>.<br /><br />
@@ -449,7 +460,8 @@
           >https://www.linkedin.com/in/alvin-charity/</a
         >
         <br /><br />
-        I also offer <em>à la carte</em> techincal writing services via GitHub Sponsors:
+        I also offer <em>à la carte</em> techincal writing services via GitHub
+        Sponsors:
         <a href="https://github.com/sponsors/unforswearing/" target="_blank"
           >github.com/sponsors/unforswearing/</a
         >.
@@ -583,9 +595,7 @@
       <br /><br />
 
       <script>
-        function scrollToTop() {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+        rememberIfDetailsWasDisclosed("hireme");
       </script>
     </main>
   </body>
