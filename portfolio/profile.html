@@ -10,60 +10,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script
-      defer
-      src="../js/alpine/dist/cdn.min.js"
-    ></script>
-    <style>
-      [x-cloak] {
-        display: none !important;
-      }
-
-      :root {
-        --unvisited-link-color: #1b61e4;
-      }
-
-      html {
-        background-color: #f0f0f0;
-        color: #2a2f33;
-      }
-
-      body {
-        width: 60%;
-        padding: 40px;
-        padding-right: 0px;
-        padding-left: 60px;
-        background-color: #f0f0f0;
-        color: #2a2f33;
-        font-family: "Computer Modern Sans", sans-serif;
-        font-size: 1.2em;
-      }
-
-      img {
-        width: 2em;
-        padding-top: 0px;
-        margin-right: 10px;
-        border-radius: 15px;
-        float: left;
-      }
-
-      hr {
-        border: none;
-        height: 1px;
-        background-color: #c9c9c9; /* Modern Browsers */
-      }
-
-    </style>
+    <script defer src="../js/alpine/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body
     x-data="{query: new URL(location.href).search}"
     @hashchange.window="query = new URL(location.href).search"
   >
- <a href="https://unforswearing.com"><img src="../img/me.png" /></a>
+    <a href="https://unforswearing.com"><img src="../img/me.png" /></a>
     <h1 style="padding-top: 0px">
-      <span
-        ><a href="https://unforswearing.com">Alvin Charity</a></span
-      >
+      <span><a href="https://unforswearing.com">Alvin Charity</a></span>
       <span>Alvin Charity</span>
     </h1>
     <hr />
