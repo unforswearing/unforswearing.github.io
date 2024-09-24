@@ -151,18 +151,8 @@
     </h1>
     <hr />
     <main>
-      <div x-show="page === ''">
-        <p>
-          <span
-            style="
-              padding: 4px;
-              padding-left: 4px;
-              background-color: #dedede;
-              border-radius: 5px;
-            "
-            ><a href="#portfolio"><strong>PORTFOLIO</strong></a></span
-          >
-        </p>
+      <!-- <div x-show="page === ''"> -->
+      <div>
         Hello, nice to see you! My name is Alvin, and I am a
         <a href="#portfolio">writer</a> with over twenty years of experience
         crafting well-researched, in-voice copy for software applications, the
@@ -174,8 +164,19 @@
       </div>
       <!-- <div x-show="page === '#portfolio'"> -->
       <div>
+        <br /><br />
         <details>
-          <summary><strong>PORTFOLIO</strong></summary>
+          <summary>
+            <span
+              style="
+                padding: 4px;
+                padding-left: 4px;
+                background-color: #dedede;
+                border-radius: 5px;
+              "
+              ><a href="#portfolio"><strong>PORTFOLIO</strong></a></span
+            >
+          </summary>
           <br /><br />
           <div style="font-size: 80%">
             <a href="portfolio/profile.html"><strong>HIRE ME!</strong></a>
@@ -379,23 +380,21 @@
           </div>
         </details>
       </div>
-
-      <div style="padding-top: 70px">
-        <hr />
-        <span style="font-size: 80%; padding-top: 0px">
-          <span x-show="page !== ''">
-            <a href="">HOME</a>
-            &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
-          </span>
-          <a href="https://linkedin.com/in/alvin-charity" target="_blank"
-            >LINKEDIN</a
-          >
-          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
-          <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
-        </span>
-      </div>
-      <br /><br />
-
     </main>
+    <div style="padding-top: 70px">
+      <hr />
+      <span style="font-size: 80%; padding-top: 0px">
+        <span x-show="page !== ''">
+          <a href="">HOME</a>
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+        </span>
+        <a href="https://linkedin.com/in/alvin-charity" target="_blank"
+          >LINKEDIN</a
+        >
+        &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
+      </span>
+    </div>
+    <br /><br />
   </body>
 </html>
