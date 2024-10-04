@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="../js/alpine/dist/cdn.min.js"></script>
+    <script defer src="../js/index.js"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body
+    x-data="{query: new URL(location.href).search}"
+    @hashchange.window="query = new URL(location.href).search"
+  >
+    <h1 style="padding-top: 0px">
+      <span><a href="https://unforswearing.com">Alvin Charity</a></span>
+    </h1>
+    <hr />
+    <main>
+      <a href="/">HOME</a>
+      <br /><br />
+      <h2>ABOUT</h2>
+      <div style="padding-bottom: 20px">
+        My love for writing began as an outlet for thoughts and feelings, but as I began to enter the workforce, I realized that written communication was something that I truly loved. Early on I tried to emulate <a href="https://en.wikipedia.org/wiki/Beat_Generation" target="_blank">Beat Generation</a> and 19/20th century Russian writers, eventually settling on my own style.
+
+        While developing my writing chops I also started playing music with friends, and my writing turned to lyrics that often sat at the intersection of poetry and quasi-political treatise.
+
+        Later, while working under mentorship of a rather fantastic manager, I began to write reports and instructional guides. This mostly began as a way to train my assistant manager so I could finally take a few days off of work, but we quickly realized that comprehensive training guides did not exist for most aspects of the organization. I felt lucky to help develop the process of documenting SOPs, hiring processes, and management training across the organization.
+
+        Eventually, I began to tinker with programming and the command-line, writing tiny <code>Bash</code> scripts to create <code>ics</code> files for training events, and moved on to using <code>JavaScript</code> (via <a href="https://developers.google.com/apps-script" target="_blank">Google Apps Script</a>) to create more robust business workflows. And those workflows needed documentation and I was certainly up for the task.
+
+        TO BE CONTINUED...
+        <
+        <span
+          ><code>
+            <a onclick="scrollToTop();return false" href="#top"
+              ><strong>back to top</strong></a
+            >
+            <br /><br /> </code
+        ></span>
+      </div>
+      <div style="padding-top: 70px">
+        <hr />
+        <span style="font-size: 80%; padding-top: 0px">
+          <a href="">HOME</a>
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          <a href="https://linkedin.com/in/alvin-charity" target="_blank"
+            >LINKEDIN</a
+          >
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
+        </span>
+      </div>
+      <br /><br />
+    </main>
+  </body>
+</html>
