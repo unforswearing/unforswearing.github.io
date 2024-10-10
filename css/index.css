@@ -39,7 +39,7 @@ a:hover,
 a:visited:hover {
   color: #b7410e;
   text-decoration: underline;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 a:visited {
