@@ -30,7 +30,8 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 const toggleDetails = () => {
-  let portfolio = document.getElementById("portfolio");
-  let state = portfolio.open;
-  state ? portfolio.open = false : portfolio.open = true;
+  // longwinded to test, shorten when complete
+  document.getElementById("portfolio").open ?
+    document.getElementById("portfolio").open = false :
+    document.getElementById("portfolio").open = true;
 }
