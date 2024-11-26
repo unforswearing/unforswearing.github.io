@@ -141,194 +141,200 @@
     }"
     @hashchange.window="page = location.hash"
   >
-    <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
-    <h1 style="padding-top: 0px">
-      <span x-show="page !== ''"
-        ><a href="https://unforswearing.com">Alvin Charity</a></span
-      >
-      <span x-show="page === ''">Alvin Charity</span>
-    </h1>
-    <hr />
-    <br />
+    <div style="position: sticky;top: 0;background-color: inherit;">
+      <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
+      <h1 style="padding-top: 0px">
+        <span x-show="page !== ''"
+          ><a href="https://unforswearing.com">Alvin Charity</a></span
+        >
+        <span x-show="page === ''">Alvin Charity</span>
+      </h1>
+      <hr />
+    </div>
     <main>
       <!-- <div x-show="page === ''"> -->
+      <br />
       <div>
-        Hello, my name is Alvin. I am a writer with over fourteen years of experience writing technical content, copywriting, developing training materials, managing content, and creating business automation. This site is the home of my professional portfolio. If you're here, that likely means I am in search of a new writing or content management opportunity. Thanks for stopping by!
+        Hello, my name is Alvin. I am a writer with over fourteen years of
+        experience writing technical content, copywriting, developing training
+        materials, managing content, and creating business automation. This site
+        is the home of my professional portfolio. If you're here, that likely
+        means I am in search of a new writing or content management opportunity.
+        Thanks for stopping by!
         <br /><br />
-        Head over to my <a href="about.html" target="_blank">about page</a> to learn a bit more about me, and be sure to visit my <a href="https://github.com/unforswearing" target="_blank">GitHub profile</a> to get a
-        sense of my technical skills. You may also <a href="https://drive.google.com/file/d/1VORYceeLE252stFc8dty_s7Q1_E9Ddo-/view?usp=sharing" target="_blank">view my resume here.</a>
+        Head over to my <a href="about.html" target="_blank">about page</a> to
+        learn a bit more about me, and be sure to visit my
+        <a href="https://github.com/unforswearing" target="_blank"
+          >GitHub profile</a
+        >
+        to get a sense of my technical skills. You may also
+        <a
+          href="https://drive.google.com/file/d/1VORYceeLE252stFc8dty_s7Q1_E9Ddo-/view?usp=sharing"
+          target="_blank"
+          >view my resume here.</a
+        >
         <br /><br />
-        Interested in a conversation? Send me a message! alvin@unforswearing.com.
+        Interested in a conversation? Send me a message!
+        alvin@unforswearing.com.
       </div>
       <!-- <div x-show="page === '#portfolio'"> -->
       <div>
         <br /><br />
         <details id="portfolio">
           <summary>
-            <span
-              style="
-                padding: 4px;
-                padding-left: 4px;
-                border-radius: 5px;
-              "
-              ><strong><a href="#" onclick="toggleDetails()">PORTFOLIO</a></strong></span
+            <span style="padding: 4px; padding-left: 4px; border-radius: 5px"
+              ><strong
+                ><a href="#" onclick="toggleDetails()">PORTFOLIO</a></strong
+              ></span
             >
           </summary>
           <!-- <div style="font-size: 80%">
             <a href="portfolio/profile.html"><strong>HIRE ME!</strong></a>
             <br /> -->
-            <h3
-              style="
-                background-color: #adbac7;
-                padding: 10px;
-                border-radius: 5px;
-              "
-            >
-              Technical Writing
-            </h3>
-            <p><strong>Blog Posts</strong></p>
-            <ul>
-              <li>
-                <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
-                  >Deno vs. Node</a
-                >
-                (<a
-                  href="https://stateful.com/blog/deno-vs-node-five-major-differences"
-                  target="_blank"
-                  >stateful.com</a
-                >)
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
-                  target="_blank"
-                  >Using Reviewable for Large Pull Requests</a
-                >
-                (<a
-                  href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
-                  target="_blank"
-                  >reviewable.io</a
-                >)
-              </li>
-            </ul>
-            <p><strong>Software Documentation</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/documentation/sample_repository_settings_reviewable.pdf"
-                  target="_blank"
-                  >Repository Settings - Reviewable User Manual</a
-                >
-              </li>
-              <li>
-                <a href="portfolio/gas_send_email/index.html" target="_blank"
-                  >Google Apps Script - sendEmail.js</a
-                >
-              </li>
-            </ul>
-            <p><strong>User Guides</strong></p>
-            <ul>
-              <li>
-                <a href="portfolio/actionkit/index.html" target="_blank"
-                  >Setting Up ActionKit</a
-                >
-              </li>
-            </ul>
-            <p><strong>Helpdesk</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/helpdesk/software_helpdesk_faq.pdf"
-                  target="_blank"
-                  >Helpdesk FAQ Sample</a
-                >
-              </li>
-            </ul>
-            <p><strong>Demo Application</strong></p>
-            <ul>
-              <li>
-                <a href="todo_markup/index.html" target="_blank"
-                  >Todo_Markup.js Demo Application</a
-                >
-                (<a
-                  href="https://github.com/unforswearing/todo_markup.js"
-                  target="_blank"
-                  >source / demo repository</a
-                >)
-              </li>
-            </ul>
-            <span
-              ><code>
-                <a onclick="scrollToTop();return false" href="#top"
-                  ><strong>back to top</strong></a
-                >
-                <br /><br /> </code
-            ></span>
-            <h3
-              style="
-                background-color: #adbac7;
-                padding: 10px;
-                border-radius: 5px;
-              "
-            >
-              Copywriting
-            </h3>
-            <p><strong>Social Media</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/social/education_motorcycle_courses.pdf"
-                  target="_blank"
-                  >Community College Motorcycle Riding Courses</a
-                >
-              </li>
-            </ul>
-            <p><strong>Product Copy</strong></p>
-            <ul>
-              <li>
-                <a href="portfolio/copper_app_faq/index.html" target="_blank"
-                  >Teen Banking App FAQ</a
-                >
-              </li>
-            </ul>
-            <p><strong>Article / Editorial</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/article/celebrate_apprenticeships_week.pdf"
-                  target="_blank"
-                  >Celebrate National Apprenticeships Week</a
-                >
-              </li>
-            </ul>
-            <p><strong>Newsletters</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/newsletters/kids_campus_courses.pdf"
-                  target="_blank"
-                  >Kids Summer Camp Courses</a
-                >
-              </li>
-            </ul>
-            <p><strong>Employee / Manager Training</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/training/hr_providing_effective_employee_feedback.pdf"
-                  target="_blank"
-                  >Providing Effective Employee Feedback</a
-                >
-              </li>
-            </ul>
-            <span
-              ><code>
-                <a onclick="scrollToTop();return false" href="#top"
-                  ><strong>back to top</strong></a
-                >
-                <br /><br /> </code
-            ></span>
-            <!-- ADD (2) EXAMPLES OF GAS PROJECTS
+          <h3
+            style="background-color: #adbac7; padding: 10px; border-radius: 5px"
+          >
+            Technical Writing
+          </h3>
+          <p><strong>Blog Posts</strong></p>
+          <ul>
+            <li>
+              <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
+                >Deno vs. Node</a
+              >
+              (<a
+                href="https://stateful.com/blog/deno-vs-node-five-major-differences"
+                target="_blank"
+                >stateful.com</a
+              >)
+            </li>
+            <li>
+              <a
+                href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
+                target="_blank"
+                >Using Reviewable for Large Pull Requests</a
+              >
+              (<a
+                href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
+                target="_blank"
+                >reviewable.io</a
+              >)
+            </li>
+          </ul>
+          <p><strong>Software Documentation</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/documentation/sample_repository_settings_reviewable.pdf"
+                target="_blank"
+                >Repository Settings - Reviewable User Manual</a
+              >
+            </li>
+            <li>
+              <a href="portfolio/gas_send_email/index.html" target="_blank"
+                >Google Apps Script - sendEmail.js</a
+              >
+            </li>
+          </ul>
+          <p><strong>User Guides</strong></p>
+          <ul>
+            <li>
+              <a href="portfolio/actionkit/index.html" target="_blank"
+                >Setting Up ActionKit</a
+              >
+            </li>
+          </ul>
+          <p><strong>Helpdesk</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/helpdesk/software_helpdesk_faq.pdf"
+                target="_blank"
+                >Helpdesk FAQ Sample</a
+              >
+            </li>
+          </ul>
+          <p><strong>Demo Application</strong></p>
+          <ul>
+            <li>
+              <a href="todo_markup/index.html" target="_blank"
+                >Todo_Markup.js Demo Application</a
+              >
+              (<a
+                href="https://github.com/unforswearing/todo_markup.js"
+                target="_blank"
+                >source / demo repository</a
+              >)
+            </li>
+          </ul>
+          <span
+            ><code>
+              <a onclick="scrollToTop();return false" href="#top"
+                ><strong>back to top</strong></a
+              >
+              <br /><br /> </code
+          ></span>
+          <h3
+            style="background-color: #adbac7; padding: 10px; border-radius: 5px"
+          >
+            Copywriting
+          </h3>
+          <p><strong>Social Media</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/social/education_motorcycle_courses.pdf"
+                target="_blank"
+                >Community College Motorcycle Riding Courses</a
+              >
+            </li>
+          </ul>
+          <p><strong>Product Copy</strong></p>
+          <ul>
+            <li>
+              <a href="portfolio/copper_app_faq/index.html" target="_blank"
+                >Teen Banking App FAQ</a
+              >
+            </li>
+          </ul>
+          <p><strong>Article / Editorial</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/article/celebrate_apprenticeships_week.pdf"
+                target="_blank"
+                >Celebrate National Apprenticeships Week</a
+              >
+            </li>
+          </ul>
+          <p><strong>Newsletters</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/newsletters/kids_campus_courses.pdf"
+                target="_blank"
+                >Kids Summer Camp Courses</a
+              >
+            </li>
+          </ul>
+          <p><strong>Employee / Manager Training</strong></p>
+          <ul>
+            <li>
+              <a
+                href="portfolio/training/hr_providing_effective_employee_feedback.pdf"
+                target="_blank"
+                >Providing Effective Employee Feedback</a
+              >
+            </li>
+          </ul>
+          <span
+            ><code>
+              <a onclick="scrollToTop();return false" href="#top"
+                ><strong>back to top</strong></a
+              >
+              <br /><br /> </code
+          ></span>
+          <!-- ADD (2) EXAMPLES OF GAS PROJECTS
             <h3
               style="
                 background-color: #adbac7;
@@ -360,8 +366,7 @@
             </ul>
             -->
 
-
-            <!--
+          <!--
             <h3
               style="
                 background-color: #adbac7;
