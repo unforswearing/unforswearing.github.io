@@ -29,9 +29,19 @@ const template = {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+/*
 const toggleDetails = () => {
   // longwinded to test, shorten when complete
   document.getElementById("portfolio").open ?
     document.getElementById("portfolio").open = false :
     document.getElementById("portfolio").open = true;
 }
+*/
+
+const toggleDetails = (elementId) => {
+  // longwinded to test, shorten when complete
+  document.getElementById(elementId).open ?
+    document.getElementById(elementId).open = false :
+    document.getElementById(elementId).open = true;
+}
+

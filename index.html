@@ -184,7 +184,7 @@
           <summary>
             <span style="padding: 4px; padding-left: 4px; border-radius: 5px"
               ><strong
-                ><a href="#" onclick="toggleDetails()">PORTFOLIO</a></strong
+                ><a href="#" onclick="toggleDetails('portfolio')">PORTFOLIO</a></strong
               ></span
             >
           </summary>
@@ -194,23 +194,23 @@
           <h3
             style="background-color: #adbac7; padding: 10px; border-radius: 5px"
           >
-            Technical Writing
-          </h3>
-          <p><strong>Blog Posts</strong></p>
-          <ul>
-            <li>
-              <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
-                >Deno vs. Node</a
-              >
-              (<a
-                href="https://stateful.com/blog/deno-vs-node-five-major-differences"
-                target="_blank"
-                >stateful.com</a
-              >)
-            </li>
-            <li>
-              <a
-                href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
+          Technical Writing
+        </h3>
+        <p><strong>Blog Posts</strong></p>
+        <ul style="padding-bottom:0px;">
+          <li>
+            <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
+            >Deno vs. Node</a
+            >
+            (<a
+            href="https://stateful.com/blog/deno-vs-node-five-major-differences"
+            target="_blank"
+            >stateful.com</a
+            >)
+          </li>
+          <li>
+            <a
+            href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
                 target="_blank"
                 >Using Reviewable for Large Pull Requests</a
               >
@@ -218,9 +218,54 @@
                 href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
                 target="_blank"
                 >reviewable.io</a
-              >)
-            </li>
-          </ul>
+                >)
+              </li>
+            </ul>
+              <details id="moreposts" style="padding-left:20px;"><summary><a href="#" onclick="toggleDetails('moreposts')">More Blog Posts</a></summary>
+                <ul>
+                  <li><a
+                    href="portfolio/blog/sample_12_useful_python_scripts.pdf"
+                    target="_blank"
+                    >12 Useful Python Scripts</a
+                    ></li>
+              <li><a
+                href="portfolio/blog/sample_announcing_the_reviewable_settings_directory.pdf"
+                target="_blank"
+                >Announcing the Reviewable.io Settings Directory</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_automated_tests_for_safari.pdf"
+                target="_blank"
+                >Automated Tests for Safari</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_building_better_runbooks.pdf"
+                target="_blank"
+                >Building Better Runbooks</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_guide_to_safari_dev_tools.pdf"
+                target="_blank"
+                >Guide to Safari Dev Tools</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_editors_regex_hooks_in_zsh.pdf"
+                target="_blank"
+                >Editors, RegEx, and Hooks in Zsh</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_identifying_vendored_files_using_custom_completion_conditions.pdf"
+                target="_blank"
+                >Reviewable.io - Identifying Vendored Files Using Custom Completion Conditions</a
+              ></li>
+              <li><a
+                href="portfolio/blog/sample_introduction_to_bun.pdf"
+                target="_blank"
+                >Introduction to Bun</a
+              ></li>
+              </ul>
+            </details>
+
           <p><strong>Software Documentation</strong></p>
           <ul>
             <li>
@@ -234,6 +279,10 @@
               <a href="portfolio/gas_send_email/index.html" target="_blank"
                 >Google Apps Script - sendEmail.js</a
               >
+            </li>
+            <li>
+              <a href="https://github.com/unforswearing/todo_markup.js" target="_blank"
+                >Todo_Markup.js</a>
             </li>
           </ul>
           <p><strong>User Guides</strong></p>
@@ -260,11 +309,6 @@
               <a href="todo_markup/index.html" target="_blank"
                 >Todo_Markup.js Demo Application</a
               >
-              (<a
-                href="https://github.com/unforswearing/todo_markup.js"
-                target="_blank"
-                >source / demo repository</a
-              >)
             </li>
           </ul>
           <span
