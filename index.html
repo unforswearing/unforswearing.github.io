@@ -150,20 +150,25 @@
         >
         <span x-show="page === ''">Alvin Charity</span>
       </h1>
+      <span style="font-size: 85%"
+        ><em>Writer / Content Manager / Information Specialist</em></span
+      >
       <hr />
     </div>
     <main>
       <!-- <div x-show="page === ''"> -->
       <br />
       <div>
-        Hello, my name is Alvin. I am a writer with over fourteen years of
-        experience creating technical content, designing documentation, writing
-        marketing copy, developing training materials, managing content, and
-        creating business automation. This site is the home of my professional
-        portfolio. If you're here, that likely means I am in search of a new
-        writing or content management opportunity. Thanks for stopping by!
-        <br /><br />
-        View my writing samples below. Also be sure to visit my
+        Hello, my name is Alvin. I have 14+ years of experience creating
+        technical content and documentation, copywriting, developing training
+        materials, content management, creating business automation, and
+        capturing and structuring knowledge for organizational needs.
+
+        <br /><br />This site is the home of my professional portfolio. If
+        you're here, that likely means I am in search of a new writing or
+        content management opportunity. Thanks for stopping by!
+
+        <br /><br />View my writing samples below. Also be sure to visit my
         <a href="https://github.com/unforswearing" target="_blank"
           >GitHub profile</a
         >
@@ -184,7 +189,9 @@
           <summary>
             <span style="padding: 4px; padding-left: 4px; border-radius: 5px"
               ><strong
-                ><a href="#" onclick="toggleDetails('portfolio')">PORTFOLIO</a></strong
+                ><a href="#" onclick="toggleDetails('portfolio')"
+                  >PORTFOLIO</a
+                ></strong
               ></span
             >
           </summary>
@@ -194,23 +201,23 @@
           <h3
             style="background-color: #adbac7; padding: 10px; border-radius: 5px"
           >
-          Technical Writing
-        </h3>
-        <p><strong>Blog Posts</strong></p>
-        <ul style="padding-bottom:0px;">
-          <li>
-            <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
-            >Deno vs. Node</a
-            >
-            (<a
-            href="https://stateful.com/blog/deno-vs-node-five-major-differences"
-            target="_blank"
-            >stateful.com</a
-            >)
-          </li>
-          <li>
-            <a
-            href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
+            Technical Writing
+          </h3>
+          <p><strong>Blog Posts</strong></p>
+          <ul style="padding-bottom: 0px">
+            <li>
+              <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
+                >Deno vs. Node</a
+              >
+              (<a
+                href="https://stateful.com/blog/deno-vs-node-five-major-differences"
+                target="_blank"
+                >stateful.com</a
+              >)
+            </li>
+            <li>
+              <a
+                href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
                 target="_blank"
                 >Using Reviewable for Large Pull Requests</a
               >
@@ -218,58 +225,78 @@
                 href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
                 target="_blank"
                 >reviewable.io</a
-                >)
+              >)
+            </li>
+          </ul>
+          <details id="moreposts" style="padding-left: 20px">
+            <summary>
+              <a href="#" onclick="toggleDetails('moreposts')"
+                >More Blog Posts</a
+              >
+            </summary>
+            <ul>
+              <li>
+                <a
+                  href="portfolio/blog/sample_12_useful_python_scripts.pdf"
+                  target="_blank"
+                  >12 Useful Python Scripts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_announcing_the_reviewable_settings_directory.pdf"
+                  target="_blank"
+                  >Announcing the Reviewable.io Settings Directory</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_automated_tests_for_safari.pdf"
+                  target="_blank"
+                  >Automated Tests for Safari</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_building_better_runbooks.pdf"
+                  target="_blank"
+                  >Building Better Runbooks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_guide_to_safari_dev_tools.pdf"
+                  target="_blank"
+                  >Guide to Safari Dev Tools</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_editors_regex_hooks_in_zsh.pdf"
+                  target="_blank"
+                  >Editors, RegEx, and Hooks in Zsh</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_identifying_vendored_files_using_custom_completion_conditions.pdf"
+                  target="_blank"
+                  >Reviewable.io - Identifying Vendored Files Using Custom
+                  Completion Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio/blog/sample_introduction_to_bun.pdf"
+                  target="_blank"
+                  >Introduction to Bun</a
+                >
+              </li>
+              <li>
+                <a href="blog/" target="_blank">Unforswearing.com/Blog</a>
               </li>
             </ul>
-              <details id="moreposts" style="padding-left:20px;"><summary><a href="#" onclick="toggleDetails('moreposts')">More Blog Posts</a></summary>
-                <ul>
-                  <li><a
-                    href="portfolio/blog/sample_12_useful_python_scripts.pdf"
-                    target="_blank"
-                    >12 Useful Python Scripts</a
-                    ></li>
-              <li><a
-                href="portfolio/blog/sample_announcing_the_reviewable_settings_directory.pdf"
-                target="_blank"
-                >Announcing the Reviewable.io Settings Directory</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_automated_tests_for_safari.pdf"
-                target="_blank"
-                >Automated Tests for Safari</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_building_better_runbooks.pdf"
-                target="_blank"
-                >Building Better Runbooks</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_guide_to_safari_dev_tools.pdf"
-                target="_blank"
-                >Guide to Safari Dev Tools</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_editors_regex_hooks_in_zsh.pdf"
-                target="_blank"
-                >Editors, RegEx, and Hooks in Zsh</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_identifying_vendored_files_using_custom_completion_conditions.pdf"
-                target="_blank"
-                >Reviewable.io - Identifying Vendored Files Using Custom Completion Conditions</a
-              ></li>
-              <li><a
-                href="portfolio/blog/sample_introduction_to_bun.pdf"
-                target="_blank"
-                >Introduction to Bun</a
-              ></li>
-              <li><a
-                href="blog/"
-                target="_blank"
-                >Unforswearing.com/Blog</a
-              ></li>
-              </ul>
-            </details>
+          </details>
 
           <p><strong>Software Documentation</strong></p>
           <ul>
@@ -286,8 +313,11 @@
               >
             </li>
             <li>
-              <a href="https://github.com/unforswearing/todo_markup.js" target="_blank"
-                >Todo_Markup.js</a>
+              <a
+                href="https://github.com/unforswearing/todo_markup.js"
+                target="_blank"
+                >Todo_Markup.js</a
+              >
             </li>
           </ul>
           <p><strong>User Guides</strong></p>
@@ -298,7 +328,9 @@
               >
             </li>
             <li>
-              <a href="portfolio/guide/software_time_off_request_form_how_to.pdf" target="_blank"
+              <a
+                href="portfolio/guide/software_time_off_request_form_how_to.pdf"
+                target="_blank"
                 >Time Off Request Form - How To Guide</a
               >
             </li>
@@ -422,9 +454,7 @@
           <p><strong>Arts / Entertainment</strong></p>
           <ul>
             <li>
-              <a
-                href="portfolio/arts/stylus_bats_and_mice.pdf"
-                target="_blank"
+              <a href="portfolio/arts/stylus_bats_and_mice.pdf" target="_blank"
                 >Music Review - Bats and Mice</a
               >
             </li>
