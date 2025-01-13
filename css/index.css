@@ -15,10 +15,10 @@ body {
   width: 60%;
   padding: 40px;
   padding-right: 0px;
-  padding-left: 60px;
+  padding-left: 120px;
   background-color: #f0f0f0;
   color: #2a2f33;
-  font-family: "Computer Modern Sans", sans-serif;
+  font-family: sans-serif;
   font-size: 1.2em;
 }
 
@@ -44,11 +44,6 @@ a:visited:hover {
 
 a:visited {
   color: var(--unvisited-link-color);
-}
-
-.pmp:hover::after {
-  content: " (PMP Certification #2076351, 2017-2023)";
-  transition: visibility 2s;
 }
 
 blockquote {

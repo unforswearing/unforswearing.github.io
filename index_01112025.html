@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <title>Alvin Charity</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS feed for unforswearing.com"
+      href="index.atom"
+    />
+    <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <script defer src="./js/index.js"></script>
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      :root {
+        --unvisited-link-color: #1b61e4;
+      }
+
+      html {
+        background-color: #f0f0f0;
+        color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 40px;
+        padding-right: 0px;
+        padding-left: 60px;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Sans", sans-serif;
+        font-size: 1.2em;
+      }
+
+      nav {
+        font-size: 100%;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        text-decoration: none;
+        padding: 0px;
+        color: var(--unvisited-link-color);
+        cursor: pointer;
+        /* text-shadow: 0px 0px 1px #3999d5; */
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* a:visited {
+        color: var(--unvisited-link-color);
+      } */
+
+      .pmp:hover::after {
+        content: " (PMP Certification #2076351, 2017-2023)";
+        transition: visibility 2s;
+      }
+
+      blockquote {
+        margin-left: 0px;
+        padding-left: 14px;
+        border-left: 4px solid #a9a9a9;
+      }
+
+      button {
+        font-weight: bold;
+        width: 120px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 0px;
+        background-color: #c9c9c9;
+      }
+
+      h1,
+      h2,
+      h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #c9c9c9; /* Modern Browsers */
+      }
+
+      img {
+        width: 2em;
+        padding-top: 0px;
+        margin-right: 10px;
+        border-radius: 15px;
+        float: left;
+      }
+
+      .divider {
+        color: #c9c9c9;
+      }
+
+      @media all and (max-width: 900px) {
+        /*
+        @media (orientation: portrait) {
+          html {
+            font-size: 1.5em;
+            width: 40%;
+            margin-right: 20px;
+          }
+        }
+        */
+        body {
+          padding-left: 20px;
+          /*padding-right: 20px;*/
+          width: 80%;
+        }
+        main {
+          size: 0.85em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="position: sticky; top: 0; background-color: inherit">
+      <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
+      <h1 style="padding-top: 0px">
+        <span x-show="page === ''">Alvin Charity</span>
+      </h1>
+      <span style="font-size: 85%"
+        ><em>Writer / Content Manager / Information Specialist</em></span
+      >
+      <hr />
+    </div>
+    <main>
+      <br />
+      <div>
+        Hello, my name is Alvin. I have 14+ years of experience creating
+        technical content and documentation, copywriting, developing training
+        materials, content management, creating business automation, and
+        capturing and structuring knowledge for organizational needs.
+    </main>
+    <div style="padding-top: 70px">
+      <hr />
+      <span style="font-size: 80%; padding-top: 0px">
+        <span x-show="page !== ''">
+          <a href="">HOME</a>
+          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+        </span>
+        <a href="https://linkedin.com/in/alvin-charity" target="_blank"
+          >LINKEDIN</a
+        >
+        &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
+      </span>
+    </div>
+    <br /><br />
+  </body>
+</html>
