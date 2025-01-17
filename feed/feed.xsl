@@ -6,6 +6,17 @@
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" href="../css/index.css" />
+    <style>
+      @media all and (max-width: 900px) {
+        body {
+          padding-left: 20px;
+          width: 80%;
+        }
+        main {
+          size: 0.85em;
+        }
+      }
+    </style>
   </head>
   <body style="padding-bottom:600px;">
     <h2><a href="https://unforswearing.com">unforswearing.com</a> / <a href="/feed/index.html">feed</a></h2>
