@@ -5,12 +5,32 @@
 <link>https://unforswearing.com/feed</link>
 <description>Emphera / Misc from the phone.</description>
 <item>
+<title>2025-01-17T10:48:11-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-17T10:48:11-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 10:48:11 EST</pubDate>
+<description>
+    <p>Fixing another error with tag formatting. </p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T10:46:24-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-17T10:46:24-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 10:46:24 EST</pubDate>
+<description>
+    <p>Previous post mentioned CDATA which actually didnt work. Updated to mention correct method. </p>
+
+</description>
+</item>
+<item>
 <title>2025-01-17T10:32:04-05:00</title>
 <link>https://unforswearing.com/feed</link>
 <guid>2025-01-17T10:32:04-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 10:32:04 EST</pubDate>
 <description>
-    <p>Ok figured out I could use CDATA to post html content. <a href="https://example.com">example.com</a></p>
+    <p>Ok figured out I could use xsel:copy-of and node() to post html content. <a href="https://example.com">example.com</a></p>
 </description>
 </item>
 <item>
