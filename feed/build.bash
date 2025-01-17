@@ -1,1 +1,1 @@
-xml tr --embed --maxdepth 4 feed.xsl feed.xml >| index.html && git add . && git commit -m "update feed" && git push
+xml tr --maxdepth 4 feed.xsl feed.xml >| index.html && git add . && git commit -m "update feed" && git push
