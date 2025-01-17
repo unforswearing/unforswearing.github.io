@@ -7,7 +7,10 @@
       <head>
         <link rel="stylesheet" href="../css/index.css" />
         <style>
-          @media all and (max-width: 900px) {
+          a {
+            text-decoration: underline;
+          }
+          @media all and (max-width: 1200px) {
           body {
           padding-left: 60px;
           font-size: 160%;
@@ -16,7 +19,8 @@
         </style>
       </head>
       <body style="padding-bottom:800px;">
-        <h2><a href="https://unforswearing.com">unforswearing.com</a> / <a href="/feed/index.html">
+        <h2><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a
+            style="text-decoration: none;" href="/feed/index.html">
   feed</a></h2>
         <hr />
         <em>
