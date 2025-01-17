@@ -40,7 +40,7 @@
               <a href="#{guid}" style="font-size: 85%; padding-left:5px;">[link]</a>
             </em>
             <br />
-            <xsl:value-of select="description" />
+            <xsl:copy-of select="description/node()" />
             <br />
             <span style="color: #a9a9a9">..</span>
             <br />
