@@ -18,5 +18,12 @@
 <pubDate>Thu, 16 Jan 2025 21:38:30 EST</pubDate>
 <description>Second round of tests</description>
 </item>
+<item>
+<title>2025-01-16T22:38:04-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-16</guid>
+<pubDate>Thu, 16 Jan 2025 22:38:04 EST</pubDate>
+<description>Now I'm using xsl to convert this thing to html</description>
+</item>
 </channel>
 </rss>
