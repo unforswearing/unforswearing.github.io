@@ -5,13 +5,7 @@
   <xsl:template match="/">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
     <link rel="stylesheet" href="../css/index.css" />
-    <style>
-      .bg {
-        background-color: #adbac7;
-      }
-    </style>
   </head>
   <body>
     <h2><a href="https://unforswearing.com">unforswearing.com</a>/feed</h2>
@@ -26,11 +20,11 @@
     <xsl:for-each select="/rss/channel/item">
       <div style="padding-bottom:10px; width: 60%;">
         <span class="{guid}" id="{guid}"><em><strong><xsl:value-of select="pubDate"/></strong></em></span>
-        <em><a _="on click toggle .bg on .{guid}" href="feed/index.html#{guid}" style="font-size: 85%; padding-left:5px;">link</a></em>
+        <em><a style="font-size: 85%; padding-left:5px;">link</a></em>
         <br/>
         <xsl:value-of select="description"/>
         <br/>
-        <span>...</span>
+        <span>—</span>
         <br/>
       </div>
     </xsl:for-each>
