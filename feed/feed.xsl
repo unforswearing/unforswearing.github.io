@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+                xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,8 +20,8 @@
         <em><strong><xsl:value-of select="pubDate"/></strong></em>
         <br/>
         <xsl:value-of select="description"/>
-        <br/>
         <span>...</span>
+        <br/>
       </div>
     </xsl:for-each>
   </body>
