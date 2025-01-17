@@ -5,6 +5,13 @@
 <link>https://unforswearing.com/feed</link>
 <description>Emphera / Misc from the phone.</description>
 <item>
+<title>2025-01-17T02:53:45-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-17T02:53:45-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 02:53:45 EST</pubDate>
+<description>Cool, I can sleep. Automation works through a-shell on phone to ssh a build script and push the feed and html to site. </description>
+</item>
+<item>
 <title>2025-01-17T02:51:48-05:00</title>
 <link>https://unforswearing.com/feed</link>
 <guid>2025-01-17T02:51:48-05:00</guid>
