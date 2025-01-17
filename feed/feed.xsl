@@ -21,7 +21,7 @@
     <xsl:for-each select="/rss/channel/item">
       <div style="padding-bottom:10px; width: 60%;">
         <span class="{guid}" id="{guid}"><em><strong><xsl:value-of select="pubDate"/></strong></em></span>
-        <em><a _="on click toggle .bg on #{guid} then wait 2s then remove .bg on #{guid}" href="https://unforswearing.com/feed/index.html#{guid}" style="font-size: 85%; padding-left:5px;">link</a></em>
+        <em><a _="on click toggle .bg on #{guid} then wait 2s then toggle .bg on #{guid}" href="https://unforswearing.com/feed/index.html#{guid}" style="font-size: 85%; padding-left:5px;">link</a></em>
         <br/>
         <xsl:value-of select="description"/>
         <br/>
