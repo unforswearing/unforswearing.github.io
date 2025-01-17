@@ -10,15 +10,18 @@
   </head>
   <body>
     <h2>Unforswearing.com/Feed</h2>
+    <br />
     This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file, and xsl templates to create this page. This is an experiment and may not be very interesting.
     <br/>
     <a href="https://unforswearing.com">Home</a>
-    <br/>
+    <hr/>
     <xsl:for-each select="/rss/channel/item">
-      <em><strong><xsl:value-of select="pubDate"/></strong></em>
-      <br/>
-      <xsl:value-of select="description"/>
-      <br/><br />
+      <div style="padding-bottom:10px;">
+        <em><strong><xsl:value-of select="pubDate"/></strong></em>
+        <br/>
+        <xsl:value-of select="description"/>
+        <br/>
+      </div>
     </xsl:for-each>
   </body>
   </html>
