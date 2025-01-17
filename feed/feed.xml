@@ -5,9 +5,16 @@
 <link>https://unforswearing.com/feed</link>
 <description>Emphera / Misc from the phone.</description>
 <item>
+<title>2025-01-17T02:05:33-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>EC70120E-D891-4339-9C85-A46A18F6681C</guid>
+<pubDate>Fri, 17 Jan 2025 02:05:33 EST</pubDate>
+<description>Retesting markdown: [my github is here](https://github.com/unforswearing)</description>
+</item>
+<item>
 <title>2025-01-17T00:02:33-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>BCC17C0C-5ACC-461E-85AE-D26AD426EF3D</guid>
+<guid>2025-01-17T00:02:33-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 00:02:33 EST</pubDate>
 <description><p>turn pubDate into a clickable anchor so I can link to individual posts</p>
 </description>
@@ -15,7 +22,7 @@
 <item>
 <title>2025-01-16T23:43:38-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>6E5E7A22-5918-4C91-B31D-FC5D542ED322</guid>
+<guid>2025-01-16T23:43:38-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:43:38 EST</pubDate>
 <description><p>Html doesn't work with the templates, maybe try to convert markdown after making html?</p>
 </description>
@@ -23,7 +30,7 @@
 <item>
 <title>2025-01-16T23:33:39-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>888F0CC6-9B67-478B-8C20-5DDE0A67A189</guid>
+<guid>2025-01-16T23:33:39-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:33:39 EST</pubDate>
 <description><p>Testing markdown to html. <a href="https://polyvinylrecords.com/artist/aloha">Aloha</a> is a good band. </p>
 </description>
@@ -31,35 +38,35 @@
 <item>
 <title>2025-01-16T23:06:24-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>603F2B0D-784B-40D6-B8DD-0BEA2EC2B704</guid>
+<guid>2025-01-16T23:06:24-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:06:24 EST</pubDate>
 <description>Last change, will reset this feed at some point. Need automation!</description>
 </item>
 <item>
 <title>2025-01-16T23:04:00-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>0E411352-3DDF-4E46-9A16-220A147F3A60</guid>
+<guid>2025-01-16T23:04:00-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:04:00 EST</pubDate>
 <description>Some final formatting changes</description>
 </item>
 <item>
 <title>2025-01-16T23:00:24-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>E9F4ABF2-E3DD-4DA0-9F89-261CA6347831</guid>
+<guid>2025-01-16T23:00:24-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:00:24 EST</pubDate>
 <description>Fixing formatting. Still need some automation to push the feed to site. </description>
 </item>
 <item>
 <title>2025-01-16T22:57:53-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>6BE70DB9-5E37-430B-AB0D-58FD77ECC5BD</guid>
+<guid>2025-01-16T22:57:53-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 22:57:53 EST</pubDate>
 <description>Resetting everything to make the feed reverse chronological order, as a feed should be. </description>
 </item>
 <item>
 <title>2025-01-16T20:42:41-05:00</title>
 <link>https://unforswearing.com/feed</link>
-<guid>8611E286-883F-42C8-A4C4-CEFE22EE7F1F</guid>
+<guid>2025-01-16</guid>
 <pubDate>Thu, 16 Jan 2025 20:42:41 EST</pubDate>
 <description>Test Post</description>
 </item>

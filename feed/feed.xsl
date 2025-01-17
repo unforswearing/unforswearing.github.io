@@ -12,12 +12,6 @@
           padding-left: 60px;
           font-size: 160%;
         }
-        .items {
-          width: 440%;
-        }
-        #items {
-          width: 4s40%;
-        }
       }
     </style>
   </head>
