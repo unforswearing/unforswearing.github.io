@@ -11,11 +11,10 @@
   <body>
     <h2>Unforswearing.com/Feed</h2>
     This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file, and xsl tempaltes to create this page. This is an experiment and may not be very interesting.
-    <br/>
+    <br/><br/>
     <a href="https://unforswearing.com">Home</a>
     <br/>
     <xsl:for-each select="/rss/channel/item">
-      <h3><xsl:value-of select="title"/></h3>
       <em><xsl:value-of select="pubDate"/></em>
       <br/>
       <xsl:value-of select="description"/>

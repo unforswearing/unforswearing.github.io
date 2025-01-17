@@ -1,0 +1,1 @@
+xml tr feed.xsl feed.xml >| index.html && git add . && git commit -m "update feed" && git push
