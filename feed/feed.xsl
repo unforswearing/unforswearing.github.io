@@ -11,8 +11,6 @@
         body {
           padding-left: 20px;
           width: 80%;
-        }
-        main {
           size: 0.85em;
           font-size: 350%;
         }
