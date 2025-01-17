@@ -10,13 +10,13 @@
       @media all and (max-width: 900px) {
         body {
           padding-left: 20px;
-          font-size: 150%;
+          font-size: 160%;
         }
         .items {
-          width: 100%;
+          width: 140%;
         }
         #items {
-          width: 100%;
+          width: 140%;
         }
       }
     </style>
