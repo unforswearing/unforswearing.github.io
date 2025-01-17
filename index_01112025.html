@@ -13,6 +13,7 @@
       href="index.atom"
     /> -->
     <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
     <script defer src="./js/index.js"></script>
     <!-- <link rel="stylesheet" href="css/index.css" /> -->
     <style>
@@ -104,6 +105,10 @@
         color: #c9c9c9;
       }
 
+      .navbg {
+        background-color: #c9c9c9;
+      }
+
       @media all and (max-width: 900px) {
         /*
         @media (orientation: portrait) {
@@ -139,6 +144,7 @@
   </div>
   <nav style="text-align: center; font-size: 85%">
     <a
+      _="on click toggle .navbg on me then remove .navbg from #nav"
       id="home"
       href=""
       style="padding-left: 7px; padding-right: 7px; font-weight: bold"
@@ -146,21 +152,27 @@
     >
 
     <a
+      _="on click toggle .navbg on me" 
       id="portfolio"
+      class="nav"
       href="#portfolio"
       style="padding-left: 7px; padding-right: 7px; font-weight: bold"
       >Portfolio</a
     >
 
     <a
+      _="on click toggle .navbg on me"
       id="creative"
+      class="nav"
       href="#creative"
       style="padding-left: 7px; padding-right: 7px; font-weight: bold"
       >Creative</a
     >
 
     <a
+      _="on click toggle .navbg on me"
       id="programming"
+      class="nav"
       href="#programming"
       style="padding-left: 7px; padding-right: 7px; font-weight: bold"
       >Programming</a
