@@ -24,7 +24,7 @@
         <br/>
         <xsl:value-of select="description"/>
         <br/>
-        <span style="color:#8d8d8d">—</span>
+        <span style="color:#8d8d8d">..</span>
         <br/>
       </div>
     </xsl:for-each>
