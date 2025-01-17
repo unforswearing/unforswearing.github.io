@@ -12,7 +12,7 @@
           padding-left: 20px;
           width: 80%;
           size: 0.85em;
-          font-size: 350%;
+          font-size: 150%;
         }
       }
     </style>
