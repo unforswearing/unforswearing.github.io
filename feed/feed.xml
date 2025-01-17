@@ -25,5 +25,12 @@
 <pubDate>Thu, 16 Jan 2025 22:38:04 EST</pubDate>
 <description>Now I'm using xsl to convert this thing to html</description>
 </item>
+<item>
+<title>2025-01-16T22:43:17-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-16</guid>
+<pubDate>Thu, 16 Jan 2025 22:43:17 EST</pubDate>
+<description>Third round of testing. Is this fully automated yet?</description>
+</item>
 </channel>
 </rss>
