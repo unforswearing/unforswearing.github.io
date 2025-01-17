@@ -5,6 +5,13 @@
 <link>https://unforswearing.com/feed</link>
 <description>Emphera / Misc from the phone.</description>
 <item>
+<title>2025-01-17T02:14:53-05:00</title>
+<link>https://unforswearing.com/feed</link>
+<guid>2025-01-17T02:14:53-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 02:14:53 EST</pubDate>
+<description>Change guid back to ISO date cause it makes more sense for links. Done for tonight, need to work on getting links and light formatting to work. </description>
+</item>
+<item>
 <title>2025-01-17T02:05:33-05:00</title>
 <link>https://unforswearing.com/feed</link>
 <guid>EC70120E-D891-4339-9C85-A46A18F6681C</guid>
