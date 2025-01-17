@@ -13,10 +13,10 @@
           font-size: 160%;
         }
         .items {
-          width: 140%;
+          width: 440%;
         }
         #items {
-          width: 140%;
+          width: 4s40%;
         }
       }
     </style>
