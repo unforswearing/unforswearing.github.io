@@ -5,8 +5,18 @@
 <link>https://unforswearing.com/feed</link>
 <description>Emphera / Misc from the phone.</description>
 <item>
+<title>2025-01-17T15:36:37-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T15:36:37-05:00</link>
+<guid>2025-01-17T15:36:37-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 15:36:37 EST</pubDate>
+<description>
+    <p>Now using real direct links to individual posts fir the feed, rather than just linking to the entire feed page. </p>
+
+</description>
+</item>
+<item>
 <title>2025-01-17T12:49:47-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-17T12:49:47-05:00</link>
 <guid>2025-01-17T12:49:47-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 12:49:47 EST</pubDate>
 <description>
@@ -16,7 +26,7 @@
 </item>
 <item>
 <title>2025-01-17T12:05:37-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-17T12:05:37-05:00</link>
 <guid>2025-01-17T12:05:37-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 12:05:37 EST</pubDate>
 <description>
@@ -26,7 +36,7 @@
 </item>
 <item>
 <title>2025-01-17T10:52:08-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-17T10:52:08-05:00</link>
 <guid>2025-01-17T10:52:08-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 10:52:08 EST</pubDate>
 <description>
@@ -36,7 +46,7 @@
 </item>
 <item>
 <title>2025-01-17T10:32:04-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-17T10:32:04-05:00</link>
 <guid>2025-01-17T10:32:04-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 10:32:04 EST</pubDate>
 <description>
@@ -45,7 +55,7 @@
 </item>
 <item>
 <title>2025-01-17T02:53:45-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-17T02:53:45-05:00</link>
 <guid>2025-01-17T02:53:45-05:00</guid>
 <pubDate>Fri, 17 Jan 2025 02:53:45 EST</pubDate>
 <description><p>Cool, I can sleep. Automation works through a-shell on phone to ssh a build script and push the feed and html to site. </p>
@@ -53,7 +63,7 @@
 </item>
 <item>
 <title>2025-01-16T23:33:39-05:00</title>
-<link>https://unforswearing.com/feed</link>
+<link>https://unforswearing.com/feed/#2025-01-16T23:33:39-05:00</link>
 <guid>2025-01-16T23:33:39-05:00</guid>
 <pubDate>Thu, 16 Jan 2025 23:33:39 EST</pubDate>
 <description><p>Testing markdown to html. <a href="https://polyvinylrecords.com/artist/aloha">Aloha</a> is a good band. </p>
