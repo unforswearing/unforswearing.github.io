@@ -7,6 +7,11 @@
   <head>
     <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
     <link rel="stylesheet" href="../css/index.css" />
+    <style>
+      .bg {
+        background-color: #adbac7;
+      }
+    </style>
   </head>
   <body>
     <h2><a href="https://unforswearing.com">unforswearing.com</a>/feed</h2>
