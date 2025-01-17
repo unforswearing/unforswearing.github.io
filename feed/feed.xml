@@ -12,7 +12,6 @@
 <description>
   <![CDATA[
     <p>Ok figured out I could use CDATA to post html content. <a href="https://example.com">example.com</a></p>
-
   ]]>
 </description>
 </item>
