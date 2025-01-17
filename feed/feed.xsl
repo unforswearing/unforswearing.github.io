@@ -32,14 +32,10 @@
         <hr />
         <br />
         <xsl:for-each select="/rss/channel/item">
-          <div id="items" style="padding-bottom:10px; width: 60%;">
-            <span class="{guid}" id="{guid}">
-              <em>
-                <strong>
-                  <xsl:value-of select="pubDate" />
-                </strong>
-              </em>
-            </span>
+          <div class="items" style="padding-bottom:10px; width: 60%;">
+            <h3 class="{guid}" id="{guid}" style="font-style: italic;">
+              <xsl:value-of select="pubDate" />
+            </h3>
             <em>
               <a href="#{guid}" style="font-size: 85%; padding-left:5px;">[link]</a>
             </em>
