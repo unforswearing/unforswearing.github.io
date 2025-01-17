@@ -17,6 +17,9 @@
         .items {
           width: 100%;
         }
+        #items {
+          width: 100%;
+        }
       }
     </style>
   </head>
