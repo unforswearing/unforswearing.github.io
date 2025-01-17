@@ -17,7 +17,7 @@
     <hr/>
     <br/>
     <xsl:for-each select="/rss/channel/item">
-      <div style="padding-bottom:10px;">
+      <div style="padding-bottom:10px; width: 50%;">
         <em><strong><xsl:value-of select="pubDate"/></strong></em>
         <br/>
         <xsl:value-of select="description"/>
