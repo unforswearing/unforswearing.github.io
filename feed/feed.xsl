@@ -10,7 +10,7 @@
   <body>
     <h2><a href="https://unforswearing.com">unforswearing.com</a>/feed</h2>
     <hr/>
-    This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a <a href="https://unforswearing.com/feed/build.sh">bash script</a> to run xsl templates to generate this html page and push files to the server.
+    This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a <a href="https://unforswearing.com/feed/build.bash">bash script</a> to run xsl templates to generate this html page and push files to the server.
     <br/>
     This is an experiment and may not be very interesting.
     <br/>
