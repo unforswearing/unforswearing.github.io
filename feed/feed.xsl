@@ -23,7 +23,7 @@
     <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary>
       This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a bash script to (1) run an xsl template that generates this html page, and (2) push files to the server.
       <br/>
-      This is an experiment and may not be very interesting.
+      This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
     </details>
     <hr/>
     <br/>
