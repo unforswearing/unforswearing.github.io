@@ -19,8 +19,8 @@
     <br/>
     <xsl:for-each select="/rss/channel/item">
       <div style="padding-bottom:10px; width: 60%;">
-        <span id="{pubDate}"><em><strong><xsl:value-of select="pubDate"/></strong></em></span>
-        <a href="https://unforswearing.com/feed/index.html#{pubDate}">link</a>
+        <span id="{pubDate}"><em><strong><xsl:value-of select="guid"/></strong></em></span>
+        <a href="https://unforswearing.com/feed/index.html#{guid}" style="font-size: 85%;">link</a>
         <br/>
         <xsl:value-of select="description"/>
         <br/>
