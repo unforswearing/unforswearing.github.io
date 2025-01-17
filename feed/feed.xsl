@@ -14,7 +14,7 @@
         }
         main {
           size: 0.85em;
-          font-size: 1.2em;
+          font-size: 1.6em;
         }
       }
     </style>
