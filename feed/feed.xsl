@@ -14,9 +14,9 @@
     <br/>
     <details><summary>About</summary>
       This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a bash script to (1) run an xsl template that generates this html page, and (2) push files to the server.
+      <br/>
+      This is an experiment and may not be very interesting.
     </details>
-    <br/>
-    This is an experiment and may not be very interesting.
     <hr/>
     <br/>
     <xsl:for-each select="/rss/channel/item">
