@@ -7,7 +7,7 @@
   <head>
     <link rel="stylesheet" href="../css/index.css" />
   </head>
-  <body style="padding-bottom:100px;">
+  <body style="padding-bottom:2vh;">
     <h2><a href="https://unforswearing.com">unforswearing.com</a>/<a href="/feed/index.html">feed</a></h2>
     <hr/>
     This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a bash script to (1) run an xsl template that generates this html page, and (2) push files to the server.
