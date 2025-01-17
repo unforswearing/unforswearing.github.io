@@ -15,7 +15,7 @@
           }
         </style>
       </head>
-      <body style="padding-bottom:600px;">
+      <body style="padding-bottom:800px;">
         <h2><a href="https://unforswearing.com">unforswearing.com</a> / <a href="/feed/index.html">
   feed</a></h2>
         <hr />
