@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
-    <h2>Unforswearing.com/Feed</h2>
+    <h2><a href="https://unforswearing.com">unforswearing.com</a>/feed</h2>
     <hr/>
     This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file, and xsl templates to create this page. This is an experiment and may not be very interesting.
     <br/>
@@ -16,10 +16,11 @@
     <hr/>
     <br/>
     <xsl:for-each select="/rss/channel/item">
-      <div style="padding-bottom:10px; width: 50%;">
+      <div style="padding-bottom:10px; width: 60%;">
         <em><strong><xsl:value-of select="pubDate"/></strong></em>
         <br/>
         <xsl:value-of select="description"/>
+        <br/>
         <span>...</span>
         <br/>
       </div>
