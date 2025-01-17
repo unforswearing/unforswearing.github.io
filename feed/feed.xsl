@@ -10,7 +10,7 @@
   <body>
     <h2><a href="https://unforswearing.com">unforswearing.com</a>/feed</h2>
     <hr/>
-    This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a <a href="https://unforswearing.com/feed/build.bash">bash script</a> to run xsl templates to generate this html page and push files to the server.
+    This page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git repository. For now I am manually running a bash script to (1) run an xsl template that generates this html page, and (2) push files to the server.
     <br/>
     This is an experiment and may not be very interesting.
     <br/>
@@ -19,7 +19,8 @@
     <br/>
     <xsl:for-each select="/rss/channel/item">
       <div style="padding-bottom:10px; width: 60%;">
-        <em><strong><xsl:value-of select="pubDate"/></strong></em>
+        <span id="{pubDate}"><em><strong><xsl:value-of select="pubDate"/></strong></em></span>
+        <a href="https://unforswearing.com/feed/index.html#{pubDate}">link</a>
         <br/>
         <xsl:value-of select="description"/>
         <br/>
