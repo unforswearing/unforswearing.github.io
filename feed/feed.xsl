@@ -25,24 +25,31 @@
         <br />
         <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary> This
   page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git
-  repository. For now I am manually running a bash script to (1) run an xsl template that generates
-  this html page, and (2) push files to the server. <br /> This is an experiment and may not be very
+  repository. To push changes to the server I use the a-Shell app to run a bash script that (1) executes an xsl template that generates
+  this html page, and (2) git pushes files to the server. <br /> This is an experiment and may not be very
   interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for
   updates. </details>
         <hr />
-        <br />
         <xsl:for-each select="/rss/channel/item">
-          <div class="items" style="padding-bottom:10px; width: 60%;">
+          <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 70%;">
             <h3 class="{guid}" id="{guid}" style="font-style: italic;">
               <xsl:value-of select="pubDate" />
             </h3>
             <em>
-              <a href="#{guid}" style="font-size: 85%; padding-left:5px;">[link]</a>
+              <sub><a href="#{guid}" style="font-size: 85%;">link</a></sub>
             </em>
             <xsl:copy-of select="description/node()" />
-            <span style="color: #a9a9a9">..</span>
+            <xsl:if test="position()!=last()">
+              <em><strong><a href="#{following-sibling::item[1]/guid}"
+                style="font-size: 85%; padding-right: 7px">prev</a></strong></em>
+            </xsl:if>
+            <xsl:if test="position()>1">
+              <em><strong><a href="#{preceding-sibling::item[1]/guid}"
+                style="font-size: 85%; padding-left: 7px; padding-right: 7px">next</a></strong></em>
+            </xsl:if>
             <br />
           </div>
+          <xsl:variable name="prevGuid" value="{guid}" />
         </xsl:for-each>
       </body>
     </html>
