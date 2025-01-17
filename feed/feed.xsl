@@ -9,7 +9,7 @@
     <style>
       @media all and (max-width: 900px) {
         body {
-          padding-left: 20px;
+          padding-left: 60px;
           font-size: 160%;
         }
         .items {
