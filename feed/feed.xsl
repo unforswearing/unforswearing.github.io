@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../css/index.css"/>
         <link rel="stylesheet" href="feed.css"/>
       </head>
-      <body id="top" style="padding-bottom:800px;">
+      <body id="top" style="padding-bottom:1000px;">
         <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
           <span style="color: #b7410e; padding-left: 10px;">■</span>
         </h1>
@@ -25,7 +25,7 @@
         </details>
         <hr/>
         <xsl:for-each select="/rss/channel/item">
-          <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 70%;">
+          <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
             <h2 class="{guid}" id="{guid}" style="font-style: italic;">
               <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>
               <xsl:value-of select="pubDate"/>
@@ -58,7 +58,7 @@
               </em>
             </div>
           </div>
-          <hr style="width:75%; float: left; padding-bottom: 10x;"/>
+          <hr style="width:85%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
       </body>
