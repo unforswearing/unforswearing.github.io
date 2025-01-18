@@ -24,19 +24,16 @@
       <body style="padding-bottom:800px;">
         <h2><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a
             style="text-decoration: none;" href="/feed/">
-  feed</a></h2>
+  feed</a><span style="color: #b7410e; padding-left: 10px;">■</span></h2>
         <hr />
         <em>
           <xsl:value-of select="/rss/channel/description" />
         </em>
         <br />
-        <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary> This
-  page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git
-  repository. To push changes to the server I use the a-Shell iPhone app to run a bash script that (1)
-  executes an xsl template that generates this html page, and (2) git pushes the page to the server. <br />
-  This is an experiment and may not be very interesting. However, feel free to
-  <a href="feed.xml" target="_top">subscribe to this feed</a> for
-  updates. </details>
+        <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary>This page started as a way to create something interesting with RSS feeds. "Feed" is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate the HTML page you are viewing right now.
+        <br />
+        This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
+        </details>
         <hr />
         <xsl:for-each select="/rss/channel/item">
           <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 70%;">
