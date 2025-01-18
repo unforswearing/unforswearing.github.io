@@ -23,7 +23,7 @@
       </head>
       <body style="padding-bottom:800px;">
         <h2><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a
-            style="text-decoration: none;" href="/feed/">
+            style="text-decoration: none; color: #b7410e;" href="/feed/">
   feed</a><span style="color: #b7410e; padding-left: 10px;">■</span></h2>
         <hr />
         <em>
