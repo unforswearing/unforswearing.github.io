@@ -1,13 +1,20 @@
 #!/bin/bash
 
-SITE_ROOT="/Users/unforswearing/Library/Mobile Documents/com~apple~CloudDocs/Documents/Scripts/Projects/unforswearing.github.io/"
-BUILD_ROOT="${SITE_ROOT}/feed/"
-LOG_ROOT="${BUILD_ROOT}/log/"
-BK_ROOT="${BUILD_ROOT}/bk/"
+set -x
 
-# cd "${BUILD_ROOT}" || exit
+SITE_ROOT="/Users/unforswearing/Library/Mobile Documents/com~apple~CloudDocs/Documents/Scripts/Projects/unforswearing.github.io"
+BUILD_ROOT="${SITE_ROOT}/feed"
+LOG_ROOT="${BUILD_ROOT}/log"
+BK_ROOT="${BUILD_ROOT}/bk"
 
+cd "${BUILD_ROOT}" || exit
+
+# This build script keeps deleting the site index, not sure why.
+# First, back it up just in case.
 cp "${SITE_ROOT}/index.html" "${SITE_ROOT}/index.html.bk"
+
+# Then lock it to make sure nothing happens.
+chflags uchg "${SITE_ROOT}/index.html"
 
 cp "${BUILD_ROOT}/index.html" "${BK_ROOT}/index.html.bk"
 cp "${BUILD_ROOT}/feed.xml" "${BK_ROOT}/feed.xml.bk"
@@ -33,13 +40,16 @@ rm "${BUILD_ROOT}/index.html"
   -file "${LOG_ROOT}/tidy.log" \
   "${BUILD_ROOT}/index.html"
 
-mv "${SITE_ROOT}/index.html.bk" "${SITE_ROOT}/index.html"
+# Unloc the index at site root.
+chflags nouchg "${SITE_ROOT}/index.html"
 
-# git add "${BUILD_ROOT}"
+git add "${BUILD_ROOT}"
 
-# printf "%s" "Enter Commit Message: "
-# read -r commit_message
+printf "%s" "Enter Commit Message: "
+read -r commit_message
 
-# git commit -m "${commit_message}"
+git commit -m "${commit_message}"
 
-# git push
+git push
+
+set +x
