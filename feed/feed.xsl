@@ -30,7 +30,9 @@
           <xsl:value-of select="/rss/channel/description" />
         </em>
         <br />
-        <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary>This page started as a way to create something interesting with RSS feeds. "Feed" is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate the HTML page you are viewing right now.
+        <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great first attempt to create a mobile-based publishing workflow.
+        <br/>
+        Posts are created by running a shortcut on my phone. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate this HTML page.
         <br />
         This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
         </details>
