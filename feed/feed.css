@@ -1,0 +1,15 @@
+html {
+  font-size: 125%;
+}
+a {
+  text-decoration: underline;
+}
+h2 {
+  font-size: 34px;
+}
+@media all and (max-width: 1200px) {
+  body {
+    padding-left: 80px;
+    font-size: 180%;
+  }
+}
