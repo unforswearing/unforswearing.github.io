@@ -33,7 +33,7 @@
         <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary> This
   page is a feed of posts from my phone, using iOS shortcuts to generate an xml file synced to a git
   repository. To push changes to the server I use the a-Shell iPhone app to run a bash script that (1)
-  executes an xsl template that generates this html page, and (2) git pushes the page to the server. <br />
+  executes <a href="feed.xsl" target="_top">an xsl template</a> that generates this html page, and (2) git pushes the page to the server. <br />
   This is an experiment and may not be very interesting. However, feel free to
   <a href="feed.xml" target="_top">subscribe to this feed</a> for
   updates. </details>
