@@ -43,13 +43,13 @@ rm "${BUILD_ROOT}/index.html"
 # Unloc the index at site root.
 chflags nouchg "${SITE_ROOT}/index.html"
 
-git add "${BUILD_ROOT}"
+# git add "${BUILD_ROOT}"
 
-printf "%s" "Enter Commit Message: "
-read -r commit_message
+# printf "%s" "Enter Commit Message: "
+# read -r commit_message
 
-git commit -m "${commit_message}"
+# git commit -m "${commit_message}"
 
-git push
+# git push
 
-set +x
+# set +x

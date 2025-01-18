@@ -4,6 +4,14 @@ html {
 a {
   text-decoration: underline;
 }
+
+code {
+  color: #b7410e;
+  background-color: #d6d6d6;
+  padding: 2px;
+  border-radius: 5px;
+}
+
 h2 {
   font-size: 34px;
 }
