@@ -3,14 +3,32 @@
   <channel>
     <title>Unforswearing.com/Feed</title>
     <link>https://unforswearing.com/feed</link>
-    <description>Emphera / Misc from the phone.</description>
+    <description>Ephemera / Misc from the phone.</description>
+    <item>
+      <title>2025-01-18T17:43:40-05:00</title>
+      <link>https://unforswearing.com/feed/#2025-01-18T17:43:40-05:00</link>
+      <guid>2025-01-18T17:43:40-05:00</guid>
+      <pubDate>Sat, 18 Jan 2025 17:43:40 EST</pubDate>
+      <description>
+        <p>fake body</p>
+      </description>
+    </item>
+    <item>
+      <title>2025-01-17T21:17:44-05:00</title>
+      <link>https://unforswearing.com/feed/#2025-01-17T21:17:44-05:00</link>
+      <guid>2025-01-17T21:17:44-05:00</guid>
+      <pubDate>Fri, 17 Jan 2025 21:17:44 EST</pubDate>
+      <description>
+        <p><strong>emphasize</strong> some text. </p>
+      </description>
+    </item>
     <item>
       <title>2025-01-17T15:36:37-05:00</title>
       <link>https://unforswearing.com/feed/#2025-01-17T15:36:37-05:00</link>
       <guid>2025-01-17T15:36:37-05:00</guid>
       <pubDate>Fri, 17 Jan 2025 15:36:37 EST</pubDate>
       <description>
-        <p>Now using real direct links to individual posts fir the feed, rather than just linking to the entire feed page. </p>
+        <p>Now using real direct links to individual posts for the feed, rather than just linking to the entire feed page. </p>
       </description>
     </item>
     <item>
