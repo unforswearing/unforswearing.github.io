@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../css/index.css"/>
         <link rel="stylesheet" href="feed.css"/>
       </head>
-      <body style="padding-bottom:800px;">
+      <body id="top" style="padding-bottom:800px;">
         <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
           <span style="color: #b7410e; padding-left: 10px;">■</span>
         </h1>
@@ -47,13 +47,18 @@
               <xsl:if test="position()&gt;1">
                 <em>
                   <strong>
-                    <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 7px;">next</a>
+                    <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a>
                   </strong>
                 </em>
               </xsl:if>
+              <em>
+                <strong>
+                  <a href="#top" style="font-size: 85%; float: right;">top</a>
+                </strong>
+              </em>
             </div>
           </div>
-          <hr style="width:75%; float: left;"/>
+          <hr style="width:75%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
       </body>

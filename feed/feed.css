@@ -7,6 +7,12 @@ a {
 h2 {
   font-size: 34px;
 }
+
+.items:hover {
+  background-color:aliceblue;
+  transition: all 0.2s ease-in-out;
+}
+
 @media all and (max-width: 1200px) {
   body {
     padding-left: 80px;
