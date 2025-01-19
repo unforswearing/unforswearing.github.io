@@ -37,6 +37,30 @@
   <hr />
   <div class="items" style=
   "padding-bottom:10px; padding-top: 10px; width: 85%;">
+    <h2 class="2025-01-18T23:50:02-05:00" id="2025-01-18T23:50:02-05:00" style=
+    "font-style: italic;"><span style=
+    "color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>Sat,
+    18 Jan 2025 23:50:02 EST</h2><em><sub><a href="#2025-01-18T23:50:02-05:00"
+    style="font-size: 85%; padding-top: 0px;">link</a></sub></em>
+    <p xmlns="">A helpful guide for myself:</p>
+    <p xmlns="">Format text as <strong>bold</strong> and <em>italic</em>.</p>
+    <blockquote xmlns="">
+      <p>Use block quotes for things</p>
+    </blockquote>
+    <p xmlns="">Urls will auto-link: <a href=
+    "https://example.com">https://example.com</a></p>
+    <p xmlns="">Or use Markdown syntax <a href="https://example.com">for
+    example</a>.</p>
+    <p xmlns="">That's probably all I will need for this experiment.</p>
+    <div style="padding-top: 80px;">
+      <em><strong><a href="#2025-01-18T23:42:42-05:00" style=
+      "font-size: 85%; padding-right:10px;">prev</a></strong></em><em><strong><a href="#top"
+      style="font-size: 85%; float: right;">top</a></strong></em>
+    </div>
+  </div>
+  <hr style="width:85%; float: left; padding-bottom: 10x;" />
+  <div class="items" style=
+  "padding-bottom:10px; padding-top: 10px; width: 85%;">
     <h2 class="2025-01-18T23:42:42-05:00" id="2025-01-18T23:42:42-05:00" style=
     "font-style: italic;"><span style=
     "color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>Sat,
@@ -46,7 +70,9 @@
     testing</p>
     <div style="padding-top: 80px;">
       <em><strong><a href="#2025-01-18T23:34:59-05:00" style=
-      "font-size: 85%; padding-right:10px;">prev</a></strong></em><em><strong><a href="#top"
+      "font-size: 85%; padding-right:10px;">prev</a></strong></em><em><strong><a href="#2025-01-18T23:50:02-05:00"
+      style=
+      "font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a></strong></em><em><strong><a href="#top"
       style="font-size: 85%; float: right;">top</a></strong></em>
     </div>
   </div>
