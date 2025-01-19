@@ -16,7 +16,7 @@
         </em>
         <br/>
         <br/>
-        <details style="font-size:85%"><summary style="padding-bottom:10px;">About</summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great way to create a mobile-based publishing workflow.
+        <details style="font-size:85%"><summary style="padding-bottom:10px;"><strong>About</strong></summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great way to create a mobile-based publishing workflow.
         <br/><br/>
         Posts are created by running a shortcut on my phone. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate this HTML page.
         <br/><br/>
@@ -24,6 +24,7 @@
         <br/><br/>
         </details>
         <hr style="width:85%; float: left; padding-bottom: 10x;"/>
+        <br/>
         <xsl:for-each select="/rss/channel/item">
           <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
             <h2 class="{guid}" id="{guid}" style="font-style: italic;">
