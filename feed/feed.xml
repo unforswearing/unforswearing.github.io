@@ -5,6 +5,22 @@
     <link>https://unforswearing.com/feed</link>
     <description>Ephemera / Misc from the phone.</description>
     <item>
+      <title>2025-01-18T23:50:02-05:00</title>
+      <link>https://unforswearing.com/feed/#2025-01-18T23:50:02-05:00</link>
+      <guid>2025-01-18T23:50:02-05:00</guid>
+      <pubDate>Sat, 18 Jan 2025 23:50:02 EST</pubDate>
+      <description>
+        <p>A helpful guide for myself:</p>
+        <p>Format text as <strong>bold</strong> and <em>italic</em>. </p>
+        <blockquote>
+          <p>Use block quotes for things</p>
+        </blockquote>
+        <p>Urls will auto-link: <a href="https://example.com">https://example.com</a></p>
+        <p>Or use Markdown syntax <a href="https://example.com">for example</a>.</p>
+        <p>That's probably all I will need for this experiment. </p>
+      </description>
+    </item>
+    <item>
       <title>2025-01-18T23:42:42-05:00</title>
       <link>https://unforswearing.com/feed/#2025-01-18T23:42:42-05:00</link>
       <guid>2025-01-18T23:42:42-05:00</guid>
