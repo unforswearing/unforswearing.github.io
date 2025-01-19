@@ -11,7 +11,7 @@
         <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
           <span style="color: #b7410e; padding-left: 10px;">■</span>
         </h1>
-        <hr/>
+        <br/>
         <em>
           <xsl:value-of select="/rss/channel/description"/>
         </em>
@@ -23,7 +23,7 @@
         <br/><br/>
         This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
         </details>
-        <hr/>
+        <hr style="width:85%; float: left; padding-bottom: 10x;"/>
         <xsl:for-each select="/rss/channel/item">
           <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
             <h2 class="{guid}" id="{guid}" style="font-style: italic;">

@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
-<channel>
-<title>Unforswearing.com/Feed</title>
-<link>https://unforswearing.com/feed</link>
-<description>Ephemera / Misc from the phone.</description>
-<item>
-<title>2025-01-18T23:54:16-05:00</title>
-<link>https://unforswearing.com/feed/#2025-01-18T23:54:16-05:00</link>
-<guid>2025-01-18T23:54:16-05:00</guid>
-<pubDate>Sat, 18 Jan 2025 23:54:16 EST</pubDate>
-<description>
-   <p>I guess I'll be posting here sometimes, mostly randomly. I want to use this to practice concise writing, building a tiny publishing platform, keep up with programming skills, post random thoughts, briefly discuss art or music, and generally have a nice time. </p>
-<p>See <strong>About</strong> at the very top for details. </p>
-
-</description>
-</item>
-<item>
-<title>Post Formatting Reminder</title>
-<link>https://unforswearing.com/feed/#2025-01-18T23:50:02-05:00</link>
-<guid>2025-01-18T23:50:02-05:00</guid>
-<pubDate>Sat, 18 Jan 2025 23:50:02 EST</pubDate>
-<description>
-   <p>A helpful guide for myself:</p>
-<p>Format text as <strong>bold</strong> and <em>italic</em>. </p>
-<blockquote>
-<p>Use block quotes for things</p>
-</blockquote>
-<p>Urls will auto-link: <a href="https://example.com">https://example.com</a></p>
-<p>Or use Markdown syntax <a href="https://example.com">for example</a>.</p>
-<p>That's probably all I will need for this experiment. </p>
-
-</description>
-</item>
-</channel>
+  <channel>
+    <title>Unforswearing.com/Feed</title>
+    <link>https://unforswearing.com/feed</link>
+    <description>Ephemera / Misc from the phone.</description>
+    <item>
+      <title>2025-01-18T23:54:16-05:00</title>
+      <link>https://unforswearing.com/feed/#2025-01-18T23:54:16-05:00</link>
+      <guid>2025-01-18T23:54:16-05:00</guid>
+      <pubDate>Sat, 18 Jan 2025 23:54:16 EST</pubDate>
+      <description>
+        <p>I guess I'll be posting here sometimes, mostly randomly. I want to use this to practice concise writing, building a tiny publishing platform, keep up with programming skills, post random thoughts, briefly discuss art or music, and generally have a nice time. </p>
+        <p>See <strong>About</strong> at the very top for details. </p>
+      </description>
+    </item>
+    <item>
+      <title>Post Formatting Reminder</title>
+      <link>https://unforswearing.com/feed/#2025-01-18T23:50:02-05:00</link>
+      <guid>2025-01-18T23:50:02-05:00</guid>
+      <pubDate>Sat, 18 Jan 2025 23:50:02 EST</pubDate>
+      <description>
+        <p>A helpful guide for myself:</p>
+        <p>Format text as <strong>bold</strong> and <em>italic</em>. </p>
+        <blockquote>
+          <p>Use block quotes for things</p>
+        </blockquote>
+        <p>Urls will auto-link: <a href="https://example.com">https://example.com</a></p>
+        <p>Or use Markdown syntax <a href="https://example.com">for example</a>.</p>
+        <p>That's probably all I will need for this experiment. </p>
+      </description>
+    </item>
+  </channel>
 </rss>

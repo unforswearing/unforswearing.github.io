@@ -1,8 +1,13 @@
 html {
   font-size: 125%;
 }
+
 a {
   text-decoration: underline;
+}
+
+blockquote {
+  font-style: italic;
 }
 
 code {
