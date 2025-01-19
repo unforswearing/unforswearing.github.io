@@ -41,20 +41,26 @@
               <xsl:if test="position()!=last()">
                 <em>
                   <strong>
-                    <a href="#{following-sibling::item[1]/guid}" style="font-size: 85%; padding-right:10px;">prev</a>
+                    <a href="#{following-sibling::item[1]/guid}" style="font-size: 85%; padding-right:10px;">
+                      <button>prev</button>
+                    </a>
                   </strong>
                 </em>
               </xsl:if>
               <xsl:if test="position()&gt;1">
                 <em>
                   <strong>
-                    <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a>
+                    <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">
+                      <button>next</button>
+                    </a>
                   </strong>
                 </em>
               </xsl:if>
               <em>
                 <strong>
-                  <a href="#top" style="font-size: 85%; float: right;">top</a>
+                  <a href="#top" style="font-size: 85%; float: right;">
+                    <button>top</button>
+                  </a>
                 </strong>
               </em>
             </div>

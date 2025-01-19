@@ -1,9 +1,42 @@
+line 11 column 140 - Warning: inserting implicit <em>
+line 11 column 140 - Warning: inserting implicit <strong>
+line 11 column 140 - Warning: inserting implicit <a>
+line 11 column 144 - Warning: discarding unexpected </button>
+line 11 column 175 - Warning: missing </strong> before <a>
+line 11 column 171 - Warning: missing </em> before <a>
+line 11 column 183 - Warning: discarding unexpected <a>
+line 11 column 244 - Warning: inserting implicit <em>
+line 11 column 244 - Warning: inserting implicit <strong>
+line 11 column 244 - Warning: replacing unexpected button with </button>
+line 11 column 244 - Warning: missing </em> before </a>
+line 11 column 236 - Warning: missing </button>
+line 20 column 161 - Warning: inserting implicit <em>
+line 20 column 161 - Warning: inserting implicit <strong>
+line 20 column 161 - Warning: inserting implicit <a>
+line 20 column 165 - Warning: discarding unexpected </button>
+line 20 column 196 - Warning: missing </strong> before <a>
+line 20 column 192 - Warning: missing </em> before <a>
+line 20 column 204 - Warning: discarding unexpected <a>
+line 20 column 265 - Warning: inserting implicit <em>
+line 20 column 265 - Warning: inserting implicit <strong>
+line 20 column 265 - Warning: replacing unexpected button with </button>
+line 20 column 265 - Warning: missing </em> before </a>
+line 20 column 257 - Warning: missing </button>
 line 2 column 129 - Warning: inserting missing 'title' element
+line 11 column 175 - Warning: trimming empty <strong>
+line 11 column 171 - Warning: trimming empty <em>
+line 20 column 196 - Warning: trimming empty <strong>
+line 20 column 192 - Warning: trimming empty <em>
 line 2 column 1 - Warning: <html> proprietary attribute "xmlns:atom"
 line 2 column 1 - Warning: <html> proprietary attribute "xmlns:dc"
 Info: Doctype given is "-//W3C//DTD HTML 4.0 Transitional//EN"
 Info: Document content looks like HTML Proprietary
-Tidy found 3 warnings and 0 errors!
+Tidy found 31 warnings and 0 errors!
+
+One or more empty elements were present in the source document but
+dropped on output. If these elements are necessary or you don't want
+this behavior, then consider setting the option "drop-empty-elements"
+to no.
 
 About HTML Tidy: https://github.com/htacg/tidy-html5
 Bug reports and comments: https://github.com/htacg/tidy-html5/issues
