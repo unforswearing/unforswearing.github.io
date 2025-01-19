@@ -1,89 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
-  <channel>
-    <title>Unforswearing.com/Feed</title>
-    <link>https://unforswearing.com/feed</link>
-    <description>Ephemera / Misc from the phone.</description>
-    <item>
-      <title>2025-01-18T17:43:40-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-18T17:43:40-05:00</link>
-      <guid>2025-01-18T17:43:40-05:00</guid>
-      <pubDate>Sat, 18 Jan 2025 17:43:40 EST</pubDate>
-      <description>
-        <p>fake body</p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T21:17:44-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T21:17:44-05:00</link>
-      <guid>2025-01-17T21:17:44-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 21:17:44 EST</pubDate>
-      <description>
-        <p><strong>emphasize</strong> some text. </p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T15:36:37-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T15:36:37-05:00</link>
-      <guid>2025-01-17T15:36:37-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 15:36:37 EST</pubDate>
-      <description>
-        <p>Now using real direct links to individual posts for the feed, rather than just linking to the entire feed page. </p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T12:49:47-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T12:49:47-05:00</link>
-      <guid>2025-01-17T12:49:47-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 12:49:47 EST</pubDate>
-      <description>
-        <p>Maybe I will eventually write a <a href="https://unforswearing.com/blog">blog</a> post about how this is all put together. </p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T12:05:37-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T12:05:37-05:00</link>
-      <guid>2025-01-17T12:05:37-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 12:05:37 EST</pubDate>
-      <description>
-        <p>The phone script converts markdown to html so I don't have to do it in the build script. also the sentence is being dictated with voice.</p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T10:52:08-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T10:52:08-05:00</link>
-      <guid>2025-01-17T10:52:08-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 10:52:08 EST</pubDate>
-      <description>
-        <p>This also means I can use <strong>bold</strong> and <em>italic</em> formatting?</p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T10:32:04-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T10:32:04-05:00</link>
-      <guid>2025-01-17T10:32:04-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 10:32:04 EST</pubDate>
-      <description>
-        <p>Ok figured out I could use xsel:copy-of and node() to post html content. <a href="https://example.com">example.com</a></p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-17T02:53:45-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-17T02:53:45-05:00</link>
-      <guid>2025-01-17T02:53:45-05:00</guid>
-      <pubDate>Fri, 17 Jan 2025 02:53:45 EST</pubDate>
-      <description>
-        <p>Cool, I can sleep. Automation works through a-shell on phone to ssh a build script and push the feed and html to site. </p>
-      </description>
-    </item>
-    <item>
-      <title>2025-01-16T23:33:39-05:00</title>
-      <link>https://unforswearing.com/feed/#2025-01-16T23:33:39-05:00</link>
-      <guid>2025-01-16T23:33:39-05:00</guid>
-      <pubDate>Thu, 16 Jan 2025 23:33:39 EST</pubDate>
-      <description>
-        <p>Testing markdown to html. <a href="https://polyvinylrecords.com/artist/aloha">Aloha</a> is a good band. </p>
-      </description>
-    </item>
-  </channel>
+<channel>
+<title>Unforswearing.com/Feed</title>
+<link>https://unforswearing.com/feed</link>
+<description>Ephemera / Misc from the phone.</description>
+<item>
+<title>2025-01-18T23:34:59-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-18T23:34:59-05:00</link>
+<guid>2025-01-18T23:34:59-05:00</guid>
+<pubDate>Sat, 18 Jan 2025 23:34:59 EST</pubDate>
+<description>
+   <p>Attempting to push old changes</p>
+
+</description>
+</item>
+<item>
+<title>2025-01-18T17:43:40-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-18T17:43:40-05:00</link>
+<guid>2025-01-18T17:43:40-05:00</guid>
+<pubDate>Sat, 18 Jan 2025 17:43:40 EST</pubDate>
+<description>
+   <p>fake body</p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T21:17:44-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T21:17:44-05:00</link>
+<guid>2025-01-17T21:17:44-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 21:17:44 EST</pubDate>
+<description>
+   <p><strong>emphasize</strong> some text. </p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T15:36:37-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T15:36:37-05:00</link>
+<guid>2025-01-17T15:36:37-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 15:36:37 EST</pubDate>
+<description>
+    <p>Now using real direct links to individual posts for the feed, rather than just linking to the entire feed page. </p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T12:49:47-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T12:49:47-05:00</link>
+<guid>2025-01-17T12:49:47-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 12:49:47 EST</pubDate>
+<description>
+    <p>Maybe I will eventually write a <a href="https://unforswearing.com/blog">blog</a> post about how this is all put together. </p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T12:05:37-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T12:05:37-05:00</link>
+<guid>2025-01-17T12:05:37-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 12:05:37 EST</pubDate>
+<description>
+    <p>The phone script converts markdown to html so I don't have to do it in the build script. also the sentence is being dictated with voice.</p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T10:52:08-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T10:52:08-05:00</link>
+<guid>2025-01-17T10:52:08-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 10:52:08 EST</pubDate>
+<description>
+    <p>This also means I can use <strong>bold</strong> and <em>italic</em> formatting?</p>
+
+</description>
+</item>
+<item>
+<title>2025-01-17T10:32:04-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T10:32:04-05:00</link>
+<guid>2025-01-17T10:32:04-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 10:32:04 EST</pubDate>
+<description>
+    <p>Ok figured out I could use xsel:copy-of and node() to post html content. <a href="https://example.com">example.com</a></p>
+</description>
+</item>
+<item>
+<title>2025-01-17T02:53:45-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-17T02:53:45-05:00</link>
+<guid>2025-01-17T02:53:45-05:00</guid>
+<pubDate>Fri, 17 Jan 2025 02:53:45 EST</pubDate>
+<description><p>Cool, I can sleep. Automation works through a-shell on phone to ssh a build script and push the feed and html to site. </p>
+</description>
+</item>
+<item>
+<title>2025-01-16T23:33:39-05:00</title>
+<link>https://unforswearing.com/feed/#2025-01-16T23:33:39-05:00</link>
+<guid>2025-01-16T23:33:39-05:00</guid>
+<pubDate>Thu, 16 Jan 2025 23:33:39 EST</pubDate>
+<description><p>Testing markdown to html. <a href="https://polyvinylrecords.com/artist/aloha">Aloha</a> is a good band. </p>
+</description>
+</item>
+</channel>
 </rss>
