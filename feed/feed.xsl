@@ -11,7 +11,6 @@
         <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
           <span style="color: #b7410e; padding-left: 10px;">■</span>
         </h1>
-        <br/>
         <em>
           <xsl:value-of select="/rss/channel/description"/>
         </em>
@@ -22,6 +21,7 @@
         Posts are created by running a shortcut on my phone. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate this HTML page.
         <br/><br/>
         This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
+        <br/><br/>
         </details>
         <hr style="width:85%; float: left; padding-bottom: 10x;"/>
         <xsl:for-each select="/rss/channel/item">
