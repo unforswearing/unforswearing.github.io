@@ -1,8 +1,20 @@
 <style>
+  html {
+    width: 100%;
+  }
+  body {
+    padding: 10px;
+    font-size: x-large;
+  }
+  button {
+    margin-left: 40px;
+    scale: 150%;
+  }
   textarea,
   textarea:focus {
-  height: 600px;
-  width: 800px;
+  font-size:larger;
+  width: 90vw;
+  height: 60%;
   display: block;
   border: 1px solid rgb(126, 139, 160);
 }
@@ -15,9 +27,7 @@
     </form>
     <button id="callback" onclick="shorcutCallback()">Send Text to Shortcut</button>
     <br/><br/>
-    <textarea id="editor" contenteditable="true">
-      edit me
-    </textarea>
+    <textarea id="editor" contenteditable="true" placeholder="EDIT ME"></textarea>
   </div>
 </body>
 <script>
