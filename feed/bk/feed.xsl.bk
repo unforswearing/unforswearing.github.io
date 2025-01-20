@@ -35,7 +35,7 @@
               <em>
                 <sub>
                   <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="data:text/html,{post}" style="font-size: 85%; padding-top: 0px;">link</a>
+                  <a href="{guid}" style="font-size: 85%; padding-top: 0px;">link</a>
                 </sub>
               </em>
               <xsl:copy-of select="description/node()"/>
