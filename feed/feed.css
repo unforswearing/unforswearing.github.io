@@ -22,7 +22,7 @@ h2 {
 }
 
 .items:hover {
-  border-bottom: #000;
+  border: 2px solid #000;
 }
 
 @media all and (max-width: 1200px) {
