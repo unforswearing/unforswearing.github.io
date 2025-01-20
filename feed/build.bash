@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# SITE_ROOT="~cloud/Documents/Scripts/Projects/unforswearing.github.io"
+# BUILD_ROOT="${SITE_ROOT}/feed"
+
+# roots.bash -> "${BUILD_ROOT}/roots.bash"
 # shellcheck source=/dev/null
 source "roots.bash"
 
-# SITE_ROOT="~cloud/Documents/Scripts/Projects/unforswearing.github.io"
-# BUILD_ROOT="${SITE_ROOT}/feed"
 cd "${BUILD_ROOT}" || exit
 
 # This build script keeps deleting the site index, not sure why.
