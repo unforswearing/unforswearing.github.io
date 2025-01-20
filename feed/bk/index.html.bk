@@ -51,9 +51,8 @@
     <p xmlns="">See <strong>About</strong> at the very top for details.</p>
     <div style="padding-top: 80px;">
       <em><strong><a href="#2025-01-18T23:50:02-05:00" style=
-      "font-size: 85%; padding-right:10px;"><button><em><strong><a href=
-      "#2025-01-18T23:50:02-05:00" style=
-      "font-size: 85%; padding-right:10px;">prev</a></strong></em></button><button><em><strong>top</strong></em></button></a></strong></em>
+      "font-size: 85%; padding-right:10px;">prev</a></strong></em><em><strong><a href="#top"
+      style="font-size: 85%; float: right;">top</a></strong></em>
     </div>
   </div>
   <hr style="width:85%; float: left; padding-bottom: 10x;" />
@@ -76,9 +75,8 @@
     <p xmlns="">That's probably all I will need for this experiment.</p>
     <div style="padding-top: 80px;">
       <em><strong><a href="#2025-01-18T23:54:16-05:00" style=
-      "font-size: 85%; padding-left: 10px; padding-right: 10px;"><button><em><strong>
-      <a href="#2025-01-18T23:54:16-05:00" style=
-      "font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a></strong></em></button><button><em><strong>top</strong></em></button></a></strong></em>
+      "font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a></strong></em><em><strong><a href="#top"
+      style="font-size: 85%; float: right;">top</a></strong></em>
     </div>
   </div>
   <hr style="width:85%; float: left; padding-bottom: 10x;" />
