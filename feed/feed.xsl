@@ -23,7 +23,7 @@
         This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
         <br/><br/>
         </details>
-        <hr style="width:85%; float: left; padding-bottom: 10x;"/>
+        <!-- <hr style="width:85%; float: left; padding-bottom: 10x;"/> -->
         <br/>
         <xsl:for-each select="/rss/channel/item">
           <xsl:variable name="post">
@@ -64,7 +64,7 @@
             </div>
           </xsl:variable>
           <xsl:copy-of select="$post"/>
-          <hr style="width:85%; float: left; padding-bottom: 10x;"/>
+          <!-- <hr style="width:85%; float: left; padding-bottom: 10x;"/> -->
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
       </body>
