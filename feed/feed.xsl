@@ -63,6 +63,11 @@
             </div>
           </xsl:variable>
           <xsl:copy-of select="$post"/>
+          <xsl:result-document href="{guid}.html" method="html">
+            <xsl:copy>
+              <xsl:apply-templates/>
+            </xsl:copy>
+          </xsl:result-document>
           <hr style="width:85%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
