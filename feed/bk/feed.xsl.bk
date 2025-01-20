@@ -65,6 +65,7 @@
           <xsl:copy-of select="$post"/>
           <hr style="width:85%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
+          <a href="data:text/html,{$post}">Permanent</a>
         </xsl:for-each>
       </body>
     </html>
