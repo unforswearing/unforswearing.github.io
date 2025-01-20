@@ -26,39 +26,43 @@
         <hr style="width:85%; float: left; padding-bottom: 10x;"/>
         <br/>
         <xsl:for-each select="/rss/channel/item">
-          <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
-            <h2 class="{guid}" id="{guid}" style="font-style: italic;">
-              <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>
-              <xsl:value-of select="pubDate"/>
-            </h2>
-            <em>
-              <sub>
-                <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a>
-              </sub>
-            </em>
-            <xsl:copy-of select="description/node()"/>
-            <div style="padding-top: 80px;">
-              <xsl:if test="position()!=last()">
-                <em>
-                  <strong>
-                    <a href="#{following-sibling::item[1]/guid}" style="font-size: 85%; padding-right:10px;">prev</a>
-                  </strong>
-                </em>
-              </xsl:if>
-              <xsl:if test="position()&gt;1">
-                <em>
-                  <strong>
-                    <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a>
-                  </strong>
-                </em>
-              </xsl:if>
+          <xsl:variable name="post">
+            <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
+              <h2 class="{guid}" id="{guid}" style="font-style: italic;">
+                <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>
+                <xsl:value-of select="pubDate"/>
+              </h2>
               <em>
-                <strong>
-                  <a href="#top" style="font-size: 85%; float: right;">top</a>
-                </strong>
+                <sub>
+                  <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
+                  <a href="data:text/html,{post}" style="font-size: 85%; padding-top: 0px;">link</a>
+                </sub>
               </em>
+              <xsl:copy-of select="description/node()"/>
+              <div style="padding-top: 80px;">
+                <xsl:if test="position()!=last()">
+                  <em>
+                    <strong>
+                      <a href="#{following-sibling::item[1]/guid}" style="font-size: 85%; padding-right:10px;">prev</a>
+                    </strong>
+                  </em>
+                </xsl:if>
+                <xsl:if test="position()&gt;1">
+                  <em>
+                    <strong>
+                      <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a>
+                    </strong>
+                  </em>
+                </xsl:if>
+                <em>
+                  <strong>
+                    <a href="#top" style="font-size: 85%; float: right;">top</a>
+                  </strong>
+                </em>
+              </div>
             </div>
-          </div>
+          </xsl:variable>
+          <xsl:copy-of select="$post"/>
           <hr style="width:85%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
