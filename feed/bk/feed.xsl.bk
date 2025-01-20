@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -63,11 +63,6 @@
             </div>
           </xsl:variable>
           <xsl:copy-of select="$post"/>
-          <xsl:result-document href="{guid}.html" method="html">
-            <xsl:copy>
-              <xsl:apply-templates/>
-            </xsl:copy>
-          </xsl:result-document>
           <hr style="width:85%; float: left; padding-bottom: 10x;"/>
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
