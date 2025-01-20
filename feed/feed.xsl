@@ -26,6 +26,7 @@
         <hr style="width:85%; float: left; padding-bottom: 10x;"/>
         <br/>
         <xsl:for-each select="/rss/channel/item">
+          <xsl:variable name="post"/>
           <xsl:variable name="post">
             <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
               <h2 class="{guid}" id="{guid}" style="font-style: italic;">
@@ -35,7 +36,7 @@
               <em>
                 <sub>
                   <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="data:text/html,{$post}" style="font-size: 85%; padding-top: 0px;">link</a>
+                  <a href="data:text/html,{post}" style="font-size: 85%; padding-top: 0px;">link</a>
                 </sub>
               </em>
               <xsl:copy-of select="description/node()"/>
