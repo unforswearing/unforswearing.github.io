@@ -4,50 +4,53 @@
   }
   body {
     padding: 10px;
-    font-size: x-large;
-  }
-  button {
-    text-align: left;
-    margin-bottom: 15px;
-    font-size: x-large;
-    font-weight: bold;
-    width: 30vw;
-    height: 40px;
+    font-size: 500%;
   }
   input {
-    width: 30vw;
-    height: 40px;
-    font-size: x-large;
+    width: 90vw;
+    font-size: 100%;
   }
   textarea,
   textarea:focus {
+  font-family:'Courier New', Courier, monospace;
   font-size:larger;
   width: 90vw;
-  height: 60%;
+  height: 100%;
   display: block;
   border: 1px solid rgb(126, 139, 160);
+  border-radius: 15px;
 }
 </style>
 <body>
   <div id="wrapper">
+    <span style="font-size: 50%;">Send Text to a iOS Shortcut</span>
     <form>
-      <label for="shortcutName"><strong>Shortcut Name:</strong></label><br>
-      <input type="text" id="shortcutName" name="shortcutName"><br>
+      <label for="shortcut-name"><strong>Shortcut Name:</strong></label><br>
+      <input type="text" id="shortcutName" name="shortcut-name"/><br>
+      <input type="submit" value="Send To Shortcut" id="callback" onclick="shorcutCallback()">
     </form>
-    <button id="callback" onclick="shorcutCallback()">Send Text to Shortcut</button>
-    <br/>
+    <!-- <button id="callback" onclick="shorcutCallback()">Send Text to Shortcut</button> -->
     <textarea id="editor" contenteditable="true" placeholder="EDIT ME"></textarea>
   </div>
 </body>
 <script>
   const shorcutCallback = () => {
-    let shortcut = document.getElementById("shortcutName").value;
-    console.log(shortcut)
-    if (!shortcut) window.alert("enter shortcut name");
-    let text = document.getElementById("editor").value;
-    console.log(text)
-    let url = `shortcuts://run-shortcut?name=${shortcut}&input=${text}`;
+    let shortcut = document.getElementById("shortcutName");
+    console.log(shortcut.value)
+    if (!shortcut.value) {
+      window.alert("enter shortcut name");
+      return;
+    }
+    let text = document.getElementById("editor");
+    console.log(text.value)
+    if (!text.value) {
+      window.alert(`enter some text to send to shortcut '${shortcut}'`);
+      return;
+    }
+    let url = `shortcuts://run-shortcut?name=${shortcut.value}&input=${text.value}`;
     console.log(url)
     window.location.href = encodeURI(url);
   }
+  shortcut.value = shortcut.value
+  text.value = text.value
 </script>

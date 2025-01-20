@@ -40,16 +40,12 @@ rm "${BUILD_ROOT}/index.html"
   -file "${LOG_ROOT}/tidy.log" \
   "${BUILD_ROOT}/index.html"
 
-# Unloc the index at site root.
-chflags nouchg "${SITE_ROOT}/index.html"
-
 git add "${BUILD_ROOT}"
 
-# printf "%s" "Enter Commit Message: "
-# read -r commit_message
-
-git commit -m "${commit_message}"
+UPDATED_AT=$(/usr/local/bin/gdate +"%Y-%m-%dT%H:%M:%S%:z")
+git commit -m "Auto Commit: Feed Updated at ${UPDATED_AT}"
 
 git push
 
-# set +x
+# Unloc the index at site root.
+chflags nouchg "${SITE_ROOT}/index.html"
