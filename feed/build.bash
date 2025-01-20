@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 SITE_ROOT="/Users/unforswearing/Library/Mobile Documents/com~apple~CloudDocs/Documents/Scripts/Projects/unforswearing.github.io"
 BUILD_ROOT="${SITE_ROOT}/feed"
@@ -45,11 +45,11 @@ chflags nouchg "${SITE_ROOT}/index.html"
 
 git add "${BUILD_ROOT}"
 
-printf "%s" "Enter Commit Message: "
-read -r commit_message
+# printf "%s" "Enter Commit Message: "
+# read -r commit_message
 
 git commit -m "${commit_message}"
 
 git push
 
-set +x
+# set +x

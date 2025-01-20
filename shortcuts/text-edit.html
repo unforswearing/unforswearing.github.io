@@ -7,8 +7,17 @@
     font-size: x-large;
   }
   button {
-    margin-left: 40px;
-    scale: 150%;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: x-large;
+    font-weight: bold;
+    width: 30vw;
+    height: 40px;
+  }
+  input {
+    width: 30vw;
+    height: 40px;
+    font-size: x-large;
   }
   textarea,
   textarea:focus {
@@ -22,11 +31,11 @@
 <body>
   <div id="wrapper">
     <form>
-      <label for="shortcutName">Shortcut Name:</label><br>
+      <label for="shortcutName"><strong>Shortcut Name:</strong></label><br>
       <input type="text" id="shortcutName" name="shortcutName"><br>
     </form>
     <button id="callback" onclick="shorcutCallback()">Send Text to Shortcut</button>
-    <br/><br/>
+    <br/>
     <textarea id="editor" contenteditable="true" placeholder="EDIT ME"></textarea>
   </div>
 </body>
