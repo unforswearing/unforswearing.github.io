@@ -23,22 +23,23 @@
         This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
         <br/><br/>
         </details>
-        <hr style="width:85%; float: left; padding-bottom: 10x;"/>
+        <!-- <hr style="width:85%; float: left; padding-bottom: 10x;"/> -->
         <br/>
         <xsl:for-each select="/rss/channel/item">
           <xsl:variable name="post">
-            <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
+            <div class="items">
               <h2 class="{guid}" id="{guid}" style="font-style: italic;">
-                <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>
+                <span style="color: #b7410e; padding-right: 10px; font-size: 125%">■</span>
                 <xsl:value-of select="pubDate"/>
               </h2>
-              <em>
-                <sub>
-                  <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="#{guid}" style="font-size: 90%; position:absolute">link</a>
-                </sub>
-              </em>
-              <br/>
+              <span style="margin-top: -20px;">
+                <em>
+                  <sub>
+                    <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
+                    <a href="#{guid}" style="font-size: 85%; line-height: 10px;">link</a>
+                  </sub>
+                </em>
+              </span>
               <xsl:copy-of select="description/node()"/>
               <div style="padding-top: 80px;">
                 <xsl:if test="position()!=last()">
@@ -64,7 +65,7 @@
             </div>
           </xsl:variable>
           <xsl:copy-of select="$post"/>
-          <hr style="width:85%; float: left; padding-bottom: 10x;"/>
+          <!-- <hr style="width:85%; float: left; padding-bottom: 10x;"/> -->
           <xsl:variable name="prevGuid" value="{guid}"/>
         </xsl:for-each>
       </body>

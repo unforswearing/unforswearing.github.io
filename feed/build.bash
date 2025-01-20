@@ -1,9 +1,7 @@
 #!/bin/bash
 
-SITE_ROOT="/Users/unforswearing/Library/Mobile Documents/com~apple~CloudDocs/Documents/Scripts/Projects/unforswearing.github.io"
-BUILD_ROOT="${SITE_ROOT}/feed"
-LOG_ROOT="${BUILD_ROOT}/log"
-BK_ROOT="${BUILD_ROOT}/bk"
+# shellcheck source=/dev/null
+source "roots.bash"
 
 cd "${BUILD_ROOT}" || exit
 
@@ -47,12 +45,9 @@ rm "${BUILD_ROOT}/index.html"
   -file "${LOG_ROOT}/tidy.log" \
   "${BUILD_ROOT}/index.html"
 
-git add "${BUILD_ROOT}"
+echo "[feed]: build completed"
 
-UPDATED_AT=$(/usr/local/bin/gdate +"%Y-%m-%dT%H:%M:%S%:z")
-git commit -m "Auto Commit: Feed Updated at ${UPDATED_AT}"
-
-git push
-
-# Unlock the index at site root. Do not unlock the backup index.
-chflags nouchg "${SITE_ROOT}/index.html"
+if [[ "$1" == "push" ]]; then
+  bash "${BUILD_ROOT}/push.bash"
+  echo "[feed]: feed pushed to sever"
+fi

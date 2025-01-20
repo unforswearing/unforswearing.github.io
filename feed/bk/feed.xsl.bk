@@ -35,9 +35,10 @@
               <em>
                 <sub>
                   <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a>
+                  <a href="#{guid}" style="font-size: 90%; position:absolute">link</a>
                 </sub>
               </em>
+              <br/>
               <xsl:copy-of select="description/node()"/>
               <div style="padding-top: 80px;">
                 <xsl:if test="position()!=last()">
