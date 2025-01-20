@@ -21,7 +21,7 @@
   border-radius: 15px;
 }
 </style>
-<body>
+<body onload="bodyLoad()">
   <div id="wrapper">
     <span style="font-size: 50%;">Send Text to a iOS Shortcut</span>
     <form>
@@ -34,14 +34,37 @@
   </div>
 </body>
 <script>
-  const shorcutCallback = () => {
+  const bodyLoad = () => {
     let shortcut = document.getElementById("shortcutName");
+    let text = document.getElementById("editor");
+
+    // getUrlParams() and usage source:
+    // (I know there is now a better way to do this...)
+    // https://stackoverflow.com/a/12269474
+    // https://stackoverflow.com/a/7825382
+    function getUrlParams() {
+      var paramMap = {};
+      if (location.search.length == 0) {
+        return paramMap;
+      }
+      var parts = location.search.substring(1).split("&");
+      for (var i = 0; i < parts.length; i ++) {
+        var component = parts[i].split("=");
+        paramMap [decodeURIComponent(component[0])] = decodeURIComponent(component[1]);
+      }
+      return paramMap;
+    }
+
+    let params = getUrlParams();
+    shortcut.value = params.shortcutName || ""
+    text.value = params.input || ""
+  }
+  const shorcutCallback = () => {
     console.log(shortcut.value)
     if (!shortcut.value) {
       window.alert("enter shortcut name");
       return;
     }
-    let text = document.getElementById("editor");
     console.log(text.value)
     if (!text.value) {
       window.alert(`enter some text to send to shortcut '${shortcut}'`);
