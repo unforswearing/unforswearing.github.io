@@ -1,0 +1,34 @@
+<style>
+  textarea,
+  textarea:focus {
+  height: 600px;
+  width: 800px;
+  display: block;
+  border: 1px solid rgb(126, 139, 160);
+}
+</style>
+<body>
+  <div id="wrapper">
+    <form>
+      <label for="shortcutName">Shortcut Name:</label><br>
+      <input type="text" id="shortcutName" name="shortcutName"><br>
+    </form>
+    <button id="callback" onclick="shorcutCallback()">Send Text to Shortcut</button>
+    <br/><br/>
+    <textarea id="editor" contenteditable="true">
+      edit me
+    </textarea>
+  </div>
+</body>
+<script>
+  const shorcutCallback = () => {
+    let shortcut = document.getElementById("shortcutName").value;
+    console.log(shortcut)
+    if (!shortcut) window.alert("enter shortcut name");
+    let text = document.getElementById("editor").value;
+    console.log(text)
+    let url = `shortcuts://run-shortcut?name=${shortcut}&input=${text}`;
+    console.log(url)
+    window.location.href = encodeURI(url);
+  }
+</script>
