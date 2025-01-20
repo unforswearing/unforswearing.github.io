@@ -20,8 +20,11 @@ cp "${BUILD_ROOT}/index.html" "${BK_ROOT}/index.html.bk"
 cp "${BUILD_ROOT}/feed.xml" "${BK_ROOT}/feed.xml.bk"
 cp "${BUILD_ROOT}/feed.xsl" "${BK_ROOT}/feed.xsl.bk"
 
-TMP_FEED_XML="/tmp/feed.$(hexdump -n 4 -v -e '/1 "%02X"' /dev/urandom).xml"
-TMP_FEED_XSL="/tmp/feed.$(hexdump -n 4 -v -e '/1 "%02X"' /dev/urandom).xsl"
+RAND_TMP=$(hexdump -n 4 -v -e '/1 "%02X"' /dev/urandom)
+DATE_TMP=$(/usr/local/bin/gdate --iso)
+
+TMP_FEED_XML="/tmp/feed.${RAND_TMP}-${DATE_TMP}.xml"
+TMP_FEED_XSL="/tmp/feed.${RAND_TMP}-${DATE_TMP}.xsl"
 
 /usr/local/bin/xml fo --dropdtd "${BUILD_ROOT}/feed.xml" > "${TMP_FEED_XML}"
 /usr/local/bin/xml fo --dropdtd "${BUILD_ROOT}/feed.xsl" > "${TMP_FEED_XSL}"
