@@ -21,13 +21,9 @@ h2 {
   font-size: 34px;
 }
 
-/*
 .items:hover {
-  background-color:aliceblue;
-  padding: 10px;
-  transition: all 0.2s ease-in-out;
+  border-bottom: #d6d6d6;
 }
-*/
 
 @media all and (max-width: 1200px) {
   body {
