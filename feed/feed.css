@@ -21,6 +21,11 @@ h2 {
   font-size: 34px;
 }
 
+img {
+  all: revert;
+  width: 50%;
+}
+
 .items {
   width: 85%;
   padding: 14px;

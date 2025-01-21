@@ -4,14 +4,9 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <link rel="stylesheet" href="../css/index.css" />
-        <link rel="stylesheet" href="feed.css" />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="Feed"
-          href="feed.xml"
-        />
+        <link rel="stylesheet" href="../css/index.css"/>
+        <link rel="stylesheet" href="feed.css"/>
+        <link rel="alternate" type="application/rss+xml" title="Feed" href="feed.xml"/>
       </head>
       <body id="top" style="padding-bottom:1000px;">
         <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
