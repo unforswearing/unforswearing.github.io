@@ -18,27 +18,29 @@
         <br/>
         <details style="font-size:85%"><summary style="padding-bottom:10px;"><strong>About</strong></summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great way to create a mobile-based publishing workflow.
         <br/>
-        Posts are created by running a shortcut on my phone. The shortcut asks for a post body, creates the <code>rss</code> / <code>xml</code> content from a template, and saves the file to a <code>git</code> repository. From there, the RSS file is processed using a <code>xsl</code> template to generate this HTML page.
+        Posts are created by running a shortcut on my phone. The shortcut asks for a post body, and generates the  <code>rss</code> / <code>xml</code> feed file from a template stored on my phone. The generated feed file is copied to a <code>git</code> repository, alongside an <code>xsl</code> stylesheet, which creates the <code>html</code> / <code>css</code> styled-page you are reading right now.
         <br/>
-        This is an experiment and may not be very interesting. However, feel free to <a href="feed.xml" target="_top">subscribe to this feed</a> for updates.
+        This is an experiment and the content may not be very interesting. However, feel free to add the url of this page to your feed reader if you would like to receive updates.
         <br/>
         </details>
         <!-- <hr style="width:85%; float: left; padding-bottom: 10x;"/> -->
         <xsl:for-each select="/rss/channel/item">
           <xsl:variable name="post">
-            <div class="items" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
-              <h2 class="{guid}" id="{guid}" style="font-style: italic;">
-                <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%">■</span>
+            <div class="items h-entry" style="padding-bottom:10px; padding-top: 10px; width: 85%;">
+              <h2 class="{guid} p-name" id="{guid}" style="font-style: italic;">
+                <span style="color: #b7410e; padding-right: 10px; padding-top: 0px; font-size: 125%" class="dt-published">■</span>
                 <xsl:value-of select="pubDate"/>
               </h2>
               <em>
                 <sub>
                   <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="#{guid}" style="font-size: 90%; position:absolute">link</a>
+                  <a href="#{guid}" class="u-url" style="font-size: 90%; position:absolute">link</a>
                 </sub>
               </em>
               <br/>
-              <xsl:copy-of select="description/node()"/>
+              <div class="e-content">
+                <xsl:copy-of select="description/node()"/>
+              </div>
               <div style="padding-top: 80px;">
                 <xsl:if test="position()!=last()">
                   <em>

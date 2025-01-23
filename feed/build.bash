@@ -48,20 +48,24 @@ rm "${BUILD_ROOT}/feed.xsl"
 cp "${TMP_FEED_XML}" "${BUILD_ROOT}/feed.xml"
 cp "${TMP_FEED_XSL}" "${BUILD_ROOT}/feed.xsl"
 
+# NOTE: The `xsl` file is a stylesheet for the feed `xml`. I do not need to
+#       run any sort of build step to generate html for this to work.
+#       The previous `index.html` page is now a redirect to `feed.xml`
 # Delete the `feed/index.html` page and rebuild the `html` using `xml tr`.
-rm "${BUILD_ROOT}/index.html"
-/usr/local/bin/xml tr "${BUILD_ROOT}/feed.xsl" "${BUILD_ROOT}/feed.xml" > "${BUILD_ROOT}/index.html"
-
+# rm "${BUILD_ROOT}/index.html"
+# /usr/local/bin/xml tr "${BUILD_ROOT}/feed.xsl" "${BUILD_ROOT}/feed.xml" > "${BUILD_ROOT}/index.html"
+#
+# NOTE: This `tidy` command is no longer needed - see note above.
 # Process the genrated `index.html` file using `html-tidy`: https://www.html-tidy.org/.
 # LOG_ROOT="${BUILD_ROOT}/log"
-/usr/local/bin/tidy \
-  -indent \
-  -modify \
-  --wrap 80 \
-  --tidy-mark no \
-  --doctype strict \
-  -file "${LOG_ROOT}/tidy.log" \
-  "${BUILD_ROOT}/index.html"
+# /usr/local/bin/tidy \
+#   -indent \
+#   -modify \
+#   --wrap 80 \
+#   --tidy-mark no \
+#   --doctype strict \
+#   -file "${LOG_ROOT}/tidy.log" \
+#   "${BUILD_ROOT}/index.html"
 
 # Notify on success.
 echo "[feed]: build completed"
