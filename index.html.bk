@@ -143,14 +143,14 @@
     @hashchange.window="page = location.hash"
   >
     <div style="position: sticky; top: 0; background-color: inherit">
-      <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
+      <a href="https://unforswearing.com" class="h-card u-url"><img src="./img/me.png" /></a>
       <h1 style="padding-top: 0px">
         <span x-show="page !== ''"
-          ><a href="https://unforswearing.com">Alvin Charity</a></span
+          ><a href="https://unforswearing.com" class="h-card u-url">Alvin Charity</a></span
         >
-        <span x-show="page === ''">Alvin Charity</span>
+        <span x-show="page === ''" class="h-card">Alvin Charity</span>
       </h1>
-      <span style="font-size: 85%"
+      <span style="font-size: 85%" class="p-job-title"
         ><em>Writer / Content Manager / Information Specialist</em></span
       >
       <hr />
