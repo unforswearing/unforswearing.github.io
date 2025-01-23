@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="activity.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/unforswearing/unforswearing.github.io/commits/master</id>
+  <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commits/master"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/unforswearing/unforswearing.github.io/commits/master.atom"/>
+  <title>Recent Commits to unforswearing.github.io:master</title>
+  <updated>2025-01-23T03:19:44Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/2725b431d8efdab74f080271d39ba32e1153a0ff</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/2725b431d8efdab74f080271d39ba32e1153a0ff"/>
+    <title>
+        Attempting to use microformats, update index feed.
+    </title>
+    <updated>2025-01-23T03:19:44Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Attempting to use microformats, update index feed.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/e75ece5b37ae8013e5e0e2d01d8ec36fff189063</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/e75ece5b37ae8013e5e0e2d01d8ec36fff189063"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-22T22:18:58-05:00
+    </title>
+    <updated>2025-01-23T03:18:58Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-22T22:18:58-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/c4e11e07fc52282e632ec86ff22fffca3058008c</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/c4e11e07fc52282e632ec86ff22fffca3058008c"/>
+    <title>
+        feed: build step no longer needed! just post and push
+    </title>
+    <updated>2025-01-22T22:52:09Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;feed: build step no longer needed! just post and push&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/b530dd204492a48a1f4c83274201565504d12cc7</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/b530dd204492a48a1f4c83274201565504d12cc7"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-21T18:10:50-05:00
+    </title>
+    <updated>2025-01-21T23:10:50Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-21T18:10:50-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/cd8a9f03dd8fcb3f02a6c92fa323f2b0cd45bc28</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/cd8a9f03dd8fcb3f02a6c92fa323f2b0cd45bc28"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-21T18:10:20-05:00
+    </title>
+    <updated>2025-01-21T23:10:20Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-21T18:10:20-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/c29c32013ebc00745e9a5ba3c348f0ab62e734c1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/c29c32013ebc00745e9a5ba3c348f0ab62e734c1"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-21T17:10:25-05:00
+    </title>
+    <updated>2025-01-21T22:10:25Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-21T17:10:25-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/2226bc796184e9542c5e6f60f024f1e6de4f1617</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/2226bc796184e9542c5e6f60f024f1e6de4f1617"/>
+    <title>
+        Additional comments in build scripts.
+    </title>
+    <updated>2025-01-20T18:20:06Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Additional comments in build scripts.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/4de614054e92a9870da7e7567a2dd1d95e793eb0</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/4de614054e92a9870da7e7567a2dd1d95e793eb0"/>
+    <title>
+        Comments in build script.
+    </title>
+    <updated>2025-01-20T18:15:05Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Comments in build script.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/b579710c7a5dc55d230895aa467c92d8d1464b22</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/b579710c7a5dc55d230895aa467c92d8d1464b22"/>
+    <title>
+        Remove unused / unlinked page.
+    </title>
+    <updated>2025-01-20T17:59:49Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Remove unused / unlinked page.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d971a2575b0783e4c808b9600842ae78fe961e36</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/d971a2575b0783e4c808b9600842ae78fe961e36"/>
+    <title>
+        organize
+    </title>
+    <updated>2025-01-20T17:57:01Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;organize&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1990d3498bfed6e024948384f6bd59bd38a6a4ed</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1990d3498bfed6e024948384f6bd59bd38a6a4ed"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T12:48:54-05:00
+    </title>
+    <updated>2025-01-20T17:48:54Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T12:48:54-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/e49a70ec4d8d4eb41c639ea6309e448c56877b6d</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/e49a70ec4d8d4eb41c639ea6309e448c56877b6d"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T12:47:04-05:00
+    </title>
+    <updated>2025-01-20T17:47:04Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T12:47:04-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/218e9149d5c32e0663b54a66f63cd240c7247bb0</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/218e9149d5c32e0663b54a66f63cd240c7247bb0"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:52:47-05:00
+    </title>
+    <updated>2025-01-20T16:52:47Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:52:47-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/4952bea988c60b255175fbc9f263603182b215b1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/4952bea988c60b255175fbc9f263603182b215b1"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:51:54-05:00
+    </title>
+    <updated>2025-01-20T16:51:54Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:51:54-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d13bf0de3c296aad4969ddc7a3802dd97e714a61</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/d13bf0de3c296aad4969ddc7a3802dd97e714a61"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:51:31-05:00
+    </title>
+    <updated>2025-01-20T16:51:31Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:51:31-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1e9d09991ddd11346ea7b5a24e3bfde14b90cc9d</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1e9d09991ddd11346ea7b5a24e3bfde14b90cc9d"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:46:44-05:00
+    </title>
+    <updated>2025-01-20T16:46:44Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:46:44-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/d4847dd53c01434b74090dda9f10c8fc8ea10dab</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/d4847dd53c01434b74090dda9f10c8fc8ea10dab"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:46:14-05:00
+    </title>
+    <updated>2025-01-20T16:46:15Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:46:14-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/be640e23d188bd5cc20631c1bdb77edc5b0e32ff</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/be640e23d188bd5cc20631c1bdb77edc5b0e32ff"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:45:03-05:00
+    </title>
+    <updated>2025-01-20T16:45:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:45:03-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1a935e6131235c56d098abe54f846381714115d6</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1a935e6131235c56d098abe54f846381714115d6"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:41:56-05:00
+    </title>
+    <updated>2025-01-20T16:41:56Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:41:56-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/5a5421d0c87033fd247821d6a4681541e01c38e1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/5a5421d0c87033fd247821d6a4681541e01c38e1"/>
+    <title>
+        Auto Commit: Feed Updated at 2025-01-20T11:41:32-05:00
+    </title>
+    <updated>2025-01-20T16:41:32Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:41:32-05:00&lt;/pre&gt;
+    </content>
+  </entry>
+</feed>
