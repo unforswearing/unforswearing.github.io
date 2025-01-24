@@ -13,7 +13,8 @@
       </head>
       <body>
         <xsl:value-of select="atom:feed/atom:title"/><br/>
-        <em>Updated: <xsl:value-of select="atom:feed/atom:updated" /></em>
+        <span style="font-size:75%;"><em>Updated: <xsl:value-of select="atom:feed/atom:updated" /></em></span>
+        <br/>
         <xsl:apply-templates select="atom:feed/atom:entry" />
       </body>
     </html>
@@ -22,12 +23,9 @@
   <xsl:template match="atom:entry">
     <ul>
     <li>
-        <xsl:value-of select="atom:title" /><span style="font-size:75%; color: #9f0f8f;"><em>
-            <xsl:value-of select="atom:updated" /></em></span>
+        <span style="font-size:75%; color: #9f0f8f;"><em><xsl:value-of select="atom:updated" /></em>: </span>
+        <xsl:value-of select="atom:content" disable-output-escaping="yes" />
       </li>
     </ul>
-    <!-- <div>
-      <xsl:value-of select="atom:summary" disable-output-escaping="yes" />
-    </div> -->
   </xsl:template>
 </xsl:stylesheet>

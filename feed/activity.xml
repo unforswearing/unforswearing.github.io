@@ -5,7 +5,81 @@
   <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commits/master"/>
   <link type="application/atom+xml" rel="self" href="https://github.com/unforswearing/unforswearing.github.io/commits/master.atom"/>
   <title>Recent Commits to unforswearing.github.io:master</title>
-  <updated>2025-01-23T03:19:44Z</updated>
+  <updated>2025-01-23T23:47:03Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/1502380ba2500f5fe8aaf7924f8c68eb4ee926a1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1502380ba2500f5fe8aaf7924f8c68eb4ee926a1"/>
+    <title>
+        add siteindex.bash, fix some vars
+    </title>
+    <updated>2025-01-23T23:47:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;add siteindex.bash, fix some vars&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fa855d6e2e77eca43c3f0d64c0a985c4cb8ab642</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/fa855d6e2e77eca43c3f0d64c0a985c4cb8ab642"/>
+    <title>
+        A few things:
+    </title>
+    <updated>2025-01-23T23:44:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;A few things:
+
+1. The main site index page was definitely being removed by an
+`xmlstarlet` command. Luckily, I don&amp;#39;t have to build anything
+using this tool, so remember to stop using it.
+
+2. Added a way to download the last pushed version of the index
+via `curl`, in case this happens again.
+
+3. Fixed the variable in both `activity.bash` and the index script
+which I now realize needs to be renamed.&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/5a31f0f5661d245052c0b75a5d2edf1fa1de90a2</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/5a31f0f5661d245052c0b75a5d2edf1fa1de90a2"/>
+    <title>
+        rm non-functional script
+    </title>
+    <updated>2025-01-23T23:41:35Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;rm non-functional script&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/8ef6ba578465c9f52c8c7a23b8103d1a6d0ba1fe</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/8ef6ba578465c9f52c8c7a23b8103d1a6d0ba1fe"/>
+    <title>
+        add activity feed
+    </title>
+    <updated>2025-01-23T23:41:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;add activity feed&lt;/pre&gt;
+    </content>
+  </entry>
   <entry>
     <id>tag:github.com,2008:Grit::Commit/2725b431d8efdab74f080271d39ba32e1153a0ff</id>
     <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/2725b431d8efdab74f080271d39ba32e1153a0ff"/>
@@ -260,70 +334,6 @@
     </author>
     <content type="html">
       &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:46:44-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/d4847dd53c01434b74090dda9f10c8fc8ea10dab</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/d4847dd53c01434b74090dda9f10c8fc8ea10dab"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:46:14-05:00
-    </title>
-    <updated>2025-01-20T16:46:15Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:46:14-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/be640e23d188bd5cc20631c1bdb77edc5b0e32ff</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/be640e23d188bd5cc20631c1bdb77edc5b0e32ff"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:45:03-05:00
-    </title>
-    <updated>2025-01-20T16:45:03Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:45:03-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/1a935e6131235c56d098abe54f846381714115d6</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1a935e6131235c56d098abe54f846381714115d6"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:41:56-05:00
-    </title>
-    <updated>2025-01-20T16:41:56Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:41:56-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/5a5421d0c87033fd247821d6a4681541e01c38e1</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/5a5421d0c87033fd247821d6a4681541e01c38e1"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:41:32-05:00
-    </title>
-    <updated>2025-01-20T16:41:32Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:41:32-05:00&lt;/pre&gt;
     </content>
   </entry>
 </feed>
