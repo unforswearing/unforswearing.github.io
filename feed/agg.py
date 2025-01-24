@@ -3,6 +3,8 @@
 
 # source: https://leancrew.com/all-this/2015/12/homemade-rss-aggregator-followup/
 # modified by unforswearing (me) to remove utf8 encoding and use python3+.
+# this script will eventually be used to build an aggregated feed, rather than
+# the html file that is currently output to unforswearing.com/feed/daily.html.
 
 import feedparser as fp
 import time
@@ -17,15 +19,17 @@ subscriptions = [
   'https://www.smithsonianmag.com/rss/arts-culture/',
   'https://www.smithsonianmag.com/rss/articles/',
   'https://hedgehogreview.com/web-features/feed',
-  'https://old.reddit.com/r/FIlm.rss',
+  'https://old.reddit.com/r/Film.rss',
   'https://old.reddit.com/r/CriticalTheory.rss',
   'https://old.reddit.com/r/consciousness.rss'
 ]
+
 # Date and time setup. I want only posts from "today,"
 # where the day lasts until 2 AM.
 utc = pytz.utc
 homeTZ = pytz.timezone('US/Eastern')
 dt = datetime.now(homeTZ)
+
 if dt.hour < 2:
   dt = dt - timedelta(hours=24)
 start = dt.replace(hour=0, minute=0, second=0, microsecond=0)
@@ -33,6 +37,7 @@ start = start.astimezone(utc)
 
 # Collect all of today's posts and put them in a list of tuples.
 posts = []
+
 for s in subscriptions:
   f = fp.parse(s)
   try:
@@ -63,7 +68,9 @@ listTemplate = '''<li>
   <p class="title"><a href="{3}">{2}</a></p>
   <p class="info">{1}<br />{0}</p>
   <p>{4}</p>\n</li>'''
+
 litems = []
+
 for p in posts:
   q = [ x for x in p[1:] ]
   timestamp = p[0].astimezone(homeTZ)
@@ -145,7 +152,7 @@ img {{
 <ul class="rss">
 {}
 </ul>
-<br/></br>
+<br/>
 <em>Generated using the <a href="https://leancrew.com/all-this/2015/12/homemade-rss-aggregator-followup/">homemade rss aggregator</a>.</em>
 </body>
 </html>
