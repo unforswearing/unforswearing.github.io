@@ -5,7 +5,55 @@
   <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commits/master"/>
   <link type="application/atom+xml" rel="self" href="https://github.com/unforswearing/unforswearing.github.io/commits/master.atom"/>
   <title>Recent Commits to unforswearing.github.io:master</title>
-  <updated>2025-01-23T23:47:03Z</updated>
+  <updated>2025-01-24T14:46:03Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/99d7c5fb38abf8a9c1c6343dffc7e8cea5c43fb9</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/99d7c5fb38abf8a9c1c6343dffc7e8cea5c43fb9"/>
+    <title>
+        I do business automation, if you didn&#39;t know
+    </title>
+    <updated>2025-01-24T14:46:03Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;I do business automation, if you didn&amp;#39;t know&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/228fcc8eaf60651d02523b9ff05b625a17738312</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/228fcc8eaf60651d02523b9ff05b625a17738312"/>
+    <title>
+        Add var preamble to bash scripts, add aggregator
+    </title>
+    <updated>2025-01-24T04:07:36Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add var preamble to bash scripts, add aggregator&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/4440372bc29695f527fedea17cf40142e0a89169</id>
+    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/4440372bc29695f527fedea17cf40142e0a89169"/>
+    <title>
+        Updating activity.xml styles, probably some other stuff
+    </title>
+    <updated>2025-01-24T02:59:30Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
+    <author>
+      <name>unforswearing</name>
+      <uri>https://github.com/unforswearing</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Updating activity.xml styles, probably some other stuff&lt;/pre&gt;
+    </content>
+  </entry>
   <entry>
     <id>tag:github.com,2008:Grit::Commit/1502380ba2500f5fe8aaf7924f8c68eb4ee926a1</id>
     <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1502380ba2500f5fe8aaf7924f8c68eb4ee926a1"/>
@@ -286,54 +334,6 @@ which I now realize needs to be renamed.&lt;/pre&gt;
     </author>
     <content type="html">
       &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:52:47-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/4952bea988c60b255175fbc9f263603182b215b1</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/4952bea988c60b255175fbc9f263603182b215b1"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:51:54-05:00
-    </title>
-    <updated>2025-01-20T16:51:54Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:51:54-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/d13bf0de3c296aad4969ddc7a3802dd97e714a61</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/d13bf0de3c296aad4969ddc7a3802dd97e714a61"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:51:31-05:00
-    </title>
-    <updated>2025-01-20T16:51:31Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:51:31-05:00&lt;/pre&gt;
-    </content>
-  </entry>
-  <entry>
-    <id>tag:github.com,2008:Grit::Commit/1e9d09991ddd11346ea7b5a24e3bfde14b90cc9d</id>
-    <link type="text/html" rel="alternate" href="https://github.com/unforswearing/unforswearing.github.io/commit/1e9d09991ddd11346ea7b5a24e3bfde14b90cc9d"/>
-    <title>
-        Auto Commit: Feed Updated at 2025-01-20T11:46:44-05:00
-    </title>
-    <updated>2025-01-20T16:46:44Z</updated>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/3523070?s=30&amp;v=4"/>
-    <author>
-      <name>unforswearing</name>
-      <uri>https://github.com/unforswearing</uri>
-    </author>
-    <content type="html">
-      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Auto Commit: Feed Updated at 2025-01-20T11:46:44-05:00&lt;/pre&gt;
     </content>
   </entry>
 </feed>
