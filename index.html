@@ -2,7 +2,7 @@
   <head>
     <title>Alvin Charity</title>
     <meta charset="UTF-8" />
-    <meta
+    <!-- <meta
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1.0"
     />
@@ -11,11 +11,11 @@
       type="application/rss+xml"
       title="RSS feed for unforswearing.com"
       href="index.atom"
-    />
+    /> -->
     <script defer src="./js/alpine/dist/cdn.min.js"></script>
     <script defer src="./js/index.js"></script>
-    <link rel="stylesheet" href="css/index.css" />
-
+    <!-- <script src="https://unpkg.com/hyperscript.org@0.9.13"></script> -->
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
     <style>
       [x-cloak] {
         display: none !important;
@@ -34,11 +34,11 @@
         width: 60%;
         padding: 40px;
         padding-right: 0px;
-        padding-left: 60px;
+        padding-left: 20%;
         background-color: #f0f0f0;
         color: #2a2f33;
         font-family: "Computer Modern Sans", sans-serif;
-        font-size: 1.2em;
+        font-size: 32px;
       }
 
       nav {
@@ -59,15 +59,6 @@
       a:visited:hover {
         color: #b7410e;
         transition: all 0.2s ease-in-out;
-      }
-
-      /* a:visited {
-        color: var(--unvisited-link-color);
-      } */
-
-      .pmp:hover::after {
-        content: " (PMP Certification #2076351, 2017-2023)";
-        transition: visibility 2s;
       }
 
       blockquote {
@@ -110,8 +101,17 @@
         float: left;
       }
 
+      table {
+        font-size: inherit;
+        padding: 0px;
+      }
+
       .divider {
         color: #c9c9c9;
+      }
+
+      .navbg {
+        background-color: #c9c9c9;
       }
 
       @media all and (max-width: 900px) {
@@ -130,440 +130,405 @@
           width: 80%;
         }
         main {
-          size: 0.85em;
         }
       }
     </style>
   </head>
 
-  <body
-    x-data="{
-      page: location.hash,
-    }"
-    @hashchange.window="page = location.hash"
+  <body x-cloak x-data="{ page: location.hash, }" @hashchange.window="page =
+  location.hash" " >
+  <div
+    style="
+      text-align: center;
+      padding-bottom: 10px;
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+    "
   >
-    <div style="position: sticky; top: 0; background-color: inherit">
-      <a href="https://unforswearing.com"><img src="./img/me.png" /></a>
-      <h1 style="padding-top: 0px">
-        <span x-show="page !== ''"
-          ><a href="https://unforswearing.com">Alvin Charity</a></span
-        >
-        <span x-show="page === ''">Alvin Charity</span>
-      </h1>
-      <span style="font-size: 85%"
-        ><em>Writer / Content Manager / Information Specialist</em></span
-      >
-      <hr />
-    </div>
-    <main>
-      <!-- <div x-show="page === ''"> -->
+    <h1>
+      <span>Alvin Charity</span>
+    </h1>
+    <span style="font-size: 65%"
+      ><em>Writer / Technologist / Musician / Artist</em></span
+    >
+    <!-- <hr /> -->
+  </div>
+  <nav style="text-align: center; font-size: 65%">
+    <a
+      id="home"
+      href=""
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >Home</a
+    >
+
+    <a
+      id="portfolio"
+      class="nav"
+      href="#portfolio"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >Portfolio</a
+    >
+
+    <a
+      id="creative"
+      class="nav"
+      href="#creative"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >Creative</a
+    >
+
+    <a
+      id="programming"
+      class="nav"
+      href="#programming"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >Programming</a
+    >
+  </nav>
+  <br />
+  <main>
+    <div x-show="page === ''" style="font-size: 85%; text-align: center">
+      My name is Alvin. I write, create little computer programs, automate
+      things, make music, score films, and create video art. This website serves
+      my portfolio / body of work.
       <br />
-      <div>
-        Hello, my name is Alvin. I have 14+ years of experience creating
-        technical content and documentation, copywriting, developing training
-        materials, content management, creating business automation, and
-        capturing and structuring knowledge for organizational needs.
-
-        <br /><br />This site is the home of my professional portfolio. If
-        you're here, that likely means I am in search of new opportunities.
-        Thanks for stopping by!
-
-        <br /><br />View my writing samples below. Samples of my business
-        automation work are available upon request. Also be sure to visit my
-        <a href="https://github.com/unforswearing" target="_blank"
-          >GitHub profile</a
-        >
-        to get a sense of my technical skills. Please
-        <a
-          href="https://drive.google.com/file/d/1VORYceeLE252stFc8dty_s7Q1_E9Ddo-/view?usp=sharing"
-          target="_blank"
-          >view my abridged resume here.</a
-        >
-        <br /><br />
-        Interested in a conversation? Send me a message!
-        alvin@unforswearing.com.
-      </div>
-      <!-- <div x-show="page === '#portfolio'"> -->
-      <div>
-        <br /><br />
-        <details id="portfolio">
-          <summary>
-            <span style="padding: 4px; padding-left: 4px; border-radius: 5px"
-              ><strong
-                ><a href="#" onclick="toggleDetails('portfolio')"
-                  >PORTFOLIO</a
-                ></strong
-              ></span
-            >
-          </summary>
-          <!-- <div style="font-size: 80%">
-            <a href="portfolio/profile.html"><strong>HIRE ME!</strong></a>
-            <br /> -->
-          <h3
-            style="background-color: #adbac7; padding: 10px; border-radius: 5px"
-          >
-            Technical Writing
-          </h3>
-          <p><strong>Blog Posts</strong></p>
-          <ul style="padding-bottom: 0px">
-            <li>
-              <a href="portfolio/blog/sample_deno_vs_node.pdf" target="_blank"
-                >Deno vs. Node</a
-              >
-              (<a
-                href="https://stateful.com/blog/deno-vs-node-five-major-differences"
-                target="_blank"
-                >stateful.com</a
-              >)
-            </li>
-            <li>
-              <a
-                href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
-                target="_blank"
-                >Using Reviewable for Large Pull Requests</a
-              >
-              (<a
-                href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
-                target="_blank"
-                >reviewable.io</a
-              >)
-            </li>
-          </ul>
-          <details id="moreposts" style="padding-left: 20px">
-            <summary>
-              <a href="#" onclick="toggleDetails('moreposts')"
-                >More Blog Posts</a
-              >
-            </summary>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/blog/sample_12_useful_python_scripts.pdf"
-                  target="_blank"
-                  >12 Useful Python Scripts</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_announcing_the_reviewable_settings_directory.pdf"
-                  target="_blank"
-                  >Announcing the Reviewable.io Settings Directory</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_automated_tests_for_safari.pdf"
-                  target="_blank"
-                  >Automated Tests for Safari</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_building_better_runbooks.pdf"
-                  target="_blank"
-                  >Building Better Runbooks</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_guide_to_safari_dev_tools.pdf"
-                  target="_blank"
-                  >Guide to Safari Dev Tools</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_editors_regex_hooks_in_zsh.pdf"
-                  target="_blank"
-                  >Editors, RegEx, and Hooks in Zsh</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_identifying_vendored_files_using_custom_completion_conditions.pdf"
-                  target="_blank"
-                  >Reviewable.io - Identifying Vendored Files Using Custom
-                  Completion Conditions</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio/blog/sample_introduction_to_bun.pdf"
-                  target="_blank"
-                  >Introduction to Bun</a
-                >
-              </li>
-              <li>
-                <a href="blog/" target="_blank">Unforswearing.com/Blog</a>
-              </li>
-            </ul>
-          </details>
-
-          <p><strong>Software Documentation</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/documentation/sample_repository_settings_reviewable.pdf"
-                target="_blank"
-                >Repository Settings - Reviewable User Manual</a
-              >
-            </li>
-            <li>
-              <a href="portfolio/gas_send_email/index.html" target="_blank"
-                >Google Apps Script - sendEmail.js</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://github.com/unforswearing/todo_markup.js"
-                target="_blank"
-                >Todo_Markup.js</a
-              >
-            </li>
-          </ul>
-          <p><strong>User Guides</strong></p>
-          <ul>
-            <li>
-              <a href="portfolio/actionkit/index.html" target="_blank"
-                >Setting Up ActionKit</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio/guide/software_time_off_request_form_how_to.pdf"
-                target="_blank"
-                >Time Off Request Form - How To Guide</a
-              >
-            </li>
-          </ul>
-          <p><strong>Helpdesk</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/helpdesk/software_helpdesk_faq.pdf"
-                target="_blank"
-                >Helpdesk FAQ Sample</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio/helpdesk/it_solving_it_incidents.pdf"
-                target="_blank"
-                >Solving IT Incidents in a Retail Environment (FAQ)</a
-              >
-            </li>
-          </ul>
-          <p><strong>Demo Application</strong></p>
-          <ul>
-            <li>
-              <a href="todo_markup/index.html" target="_blank"
-                >Todo_Markup.js Demo Application</a
-              >
-            </li>
-          </ul>
-          <p><strong>Process Design / Business Automation</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/flowchart/time_off_request_script.pdf"
-                target="_blank"
-                >Time Off Request Form - Submission Overview Flowchart</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio/flowchart/time_off_request_overview.pdf"
-                target="_blank"
-                >Time Off Request Form - Updating Requests Flowchart</a
-              >
-            </li>
-          </ul>
-          <span
-            ><code>
-              <a onclick="scrollToTop();return false" href="#top"
-                ><strong>back to top</strong></a
-              >
-              <br /><br /> </code
-          ></span>
-          <h3
-            style="background-color: #adbac7; padding: 10px; border-radius: 5px"
-          >
-            Copywriting
-          </h3>
-          <p><strong>Social Media</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/social/education_motorcycle_courses.pdf"
-                target="_blank"
-                >Community College Motorcycle Riding Courses</a
-              >
-            </li>
-          </ul>
-          <p><strong>Product Copy</strong></p>
-          <ul>
-            <li>
-              <a href="portfolio/copper_app_faq/index.html" target="_blank"
-                >Teen Banking App FAQ</a
-              >
-            </li>
-          </ul>
-          <p><strong>Article / Editorial</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/article/celebrate_apprenticeships_week.pdf"
-                target="_blank"
-                >Celebrate National Apprenticeships Week</a
-              >
-            </li>
-          </ul>
-          <p><strong>Newsletters</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/newsletters/kids_campus_courses.pdf"
-                target="_blank"
-                >Kids Summer Camp Courses</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio/newsletters/newsletter_member_profile.pdf"
-                target="_blank"
-                >Member Profile for a Leadership Development Organization</a
-              >
-            </li>
-          </ul>
-          <p><strong>Employee / Manager Training</strong></p>
-          <ul>
-            <li>
-              <a
-                href="portfolio/training/hr_providing_effective_employee_feedback.pdf"
-                target="_blank"
-                >Providing Effective Employee Feedback</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio/training/hr_attendance_policy_scenarios.pdf"
-                target="_blank"
-                >Employee Personas for Attendance Policy Scenarios</a
-              >
-            </li>
-          </ul>
-          <p><strong>Arts / Entertainment</strong></p>
-          <ul>
-            <li>
-              <a href="portfolio/arts/stylus_bats_and_mice.pdf" target="_blank"
-                >Music Review - Bats and Mice</a
-              >
-            </li>
-          </ul>
-          <span
-            ><code>
-              <a onclick="scrollToTop();return false" href="#top"
-                ><strong>back to top</strong></a
-              >
-              <br /><br /> </code
-          ></span>
-          <!-- ADD (2) EXAMPLES OF GAS PROJECTS
-            <h3
-              style="
-                background-color: #adbac7;
-                padding: 10px;
-                border-radius: 5px;
-              "
-            >
-              Business Workflows
-            </h3>
-            <p><strong>Approval Workflow</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="{{}}"
-                  target="_blank"
-                  >{{}}</a
-                >
-              </li>
-            </ul>
-            <p><strong>Inventory Transfer Workflow</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="{{}}"
-                  target="_blank"
-                  >{{}}</a
-                >
-              </li>
-            </ul>
-            -->
-
-          <!--
-            <h3
-              style="
-                background-color: #adbac7;
-                padding: 10px;
-                border-radius: 5px;
-              "
-            >
-              Arts / Entertainment / Literary
-            </h3>
-            <p><strong>Music Reviews</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/arts/stylus_liars_academy.pdf"
-                  target="_blank"
-                  >Liars Academy - No News Is Good News</a
-                >
-                (stylus.com)
-              </li>
-            </ul>
-
-            <p><strong>Fiction / Poetry</strong></p>
-            <ul>
-              <li>
-                <a
-                  href="portfolio/literary/poetry_the_past_is_itself.pdf"
-                  target="_blank"
-                  >The Past Is Itself</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://evergreenreview.com/read/allowing-pass/"
-                  target="_blank"
-                  >Allowing Pass</a
-                >
-              </li>
-            </ul>
-            <span
-              ><code>
-                <a onclick="scrollToTop();return false" href="#top"
-                  ><strong>back to top</strong></a
-                >
-                <br /><br /> </code
-            ></span>
-          </div>
-          -->
-        </details>
-      </div>
-    </main>
-    <div style="padding-top: 70px">
-      <hr />
-      <span style="font-size: 80%; padding-top: 0px">
-        <span x-show="page !== ''">
-          <a href="">HOME</a>
-          &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
-        </span>
-        <a href="https://linkedin.com/in/alvin-charity" target="_blank"
-          >LINKEDIN</a
-        >
-        &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/unforswearing" target="_blank">GITHUB</a>
-      </span>
     </div>
-    <br /><br />
-  </body>
+    <div x-show="page === '#portfolio'" style="font-size: 24px">
+      <div style="padding-bottom: 20px; font-size: 24px">
+        The portfolio below contains recent copywriting and technical writing
+        work. Please contact me for additional samples, or to participate in a
+        paid skills assessments.
+        <br /><br />
+      </div>
+      <div>
+        <table>
+          <tr style="padding-bottom: 20px">
+            <td style="vertical-align: top">
+              <h3
+                style="
+                  background-color: #adbac7;
+                  padding: 8px;
+                  border-radius: 5px;
+                  writing-mode: vertical-lr;
+                  text-orientation: mixed;
+                  float: left;
+                  height: inherit;
+                "
+              >
+                Technical Writing
+              </h3>
+            </td>
+            <td>
+              <p><strong>Blog Posts</strong></p>
+              <ul style="padding-bottom: 0px">
+                <li>
+                  <a
+                    href="portfolio/blog/sample_deno_vs_node.pdf"
+                    target="_blank"
+                    >Deno vs. Node</a
+                  >
+                  (<a
+                    href="https://stateful.com/blog/deno-vs-node-five-major-differences"
+                    target="_blank"
+                    >stateful.com</a
+                  >)
+                </li>
+                <li>
+                  <a
+                    href="portfolio/blog/sample_using_reviewable_for_large_pull_requests.pdf"
+                    target="_blank"
+                    >Using Reviewable for Large Pull Requests</a
+                  >
+                  (<a
+                    href="https://www.reviewable.io/blog/using-reviewable-for-large-pull-requests/"
+                    target="_blank"
+                    >reviewable.io</a
+                  >)
+                </li>
+              </ul>
+              <details id="moreposts" style="padding-left: 20px">
+                <summary>
+                  <a href="#portfolio" onclick="toggleDetails('moreposts')"
+                    >More Blog Posts</a
+                  >
+                </summary>
+                <ul>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_12_useful_python_scripts.pdf"
+                      target="_blank"
+                      >12 Useful Python Scripts</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_announcing_the_reviewable_settings_directory.pdf"
+                      target="_blank"
+                      >Announcing the Reviewable.io Settings Directory</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_automated_tests_for_safari.pdf"
+                      target="_blank"
+                      >Automated Tests for Safari</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_building_better_runbooks.pdf"
+                      target="_blank"
+                      >Building Better Runbooks</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_guide_to_safari_dev_tools.pdf"
+                      target="_blank"
+                      >Guide to Safari Dev Tools</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_editors_regex_hooks_in_zsh.pdf"
+                      target="_blank"
+                      >Editors, RegEx, and Hooks in Zsh</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_identifying_vendored_files_using_custom_completion_conditions.pdf"
+                      target="_blank"
+                      >Reviewable.io - Identifying Vendored Files Using Custom
+                      Completion Conditions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="portfolio/blog/sample_introduction_to_bun.pdf"
+                      target="_blank"
+                      >Introduction to Bun</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog/" target="_blank">Unforswearing.com/Blog</a>
+                  </li>
+                </ul>
+              </details>
+
+              <p><strong>Software Documentation</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/documentation/sample_repository_settings_reviewable.pdf"
+                    target="_blank"
+                    >Repository Settings - Reviewable User Manual</a
+                  >
+                </li>
+                <li>
+                  <a href="portfolio/gas_send_email/index.html" target="_blank"
+                    >Google Apps Script - sendEmail.js</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/unforswearing/todo_markup.js"
+                    target="_blank"
+                    >Todo_Markup.js</a
+                  >
+                </li>
+              </ul>
+              <p><strong>User Guides</strong></p>
+              <ul>
+                <li>
+                  <a href="portfolio/actionkit/index.html" target="_blank"
+                    >Setting Up ActionKit</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="portfolio/guide/software_time_off_request_form_how_to.pdf"
+                    target="_blank"
+                    >Time Off Request Form - How To Guide</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Helpdesk</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/helpdesk/software_helpdesk_faq.pdf"
+                    target="_blank"
+                    >Helpdesk FAQ Sample</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="portfolio/helpdesk/it_solving_it_incidents.pdf"
+                    target="_blank"
+                    >Solving IT Incidents in a Retail Environment (FAQ)</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Demo Application</strong></p>
+              <ul>
+                <li>
+                  <a href="todo_markup/index.html" target="_blank"
+                    >Todo_Markup.js Demo Application</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Process Design / Business Automation</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/flowchart/time_off_request_script.pdf"
+                    target="_blank"
+                    >Time Off Request Form - Submission Overview Flowchart</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="portfolio/flowchart/time_off_request_overview.pdf"
+                    target="_blank"
+                    >Time Off Request Form - Updating Requests Flowchart</a
+                  >
+                </li>
+              </ul>
+              <span
+                ><code>
+                  <a onclick="scrollToTop();return false" href="#top"
+                    ><strong>back to top</strong></a
+                  >
+                  <br /><br /> </code
+              ></span>
+            </td>
+          </tr>
+        </table>
+        <hr style="width: 60%" />
+        <br />
+        <table>
+          <tr>
+            <td style="vertical-align: top">
+              <h3
+                style="
+                  background-color: #adbac7;
+                  padding: 8px;
+                  border-radius: 5px;
+                  writing-mode: vertical-lr;
+                  text-orientation: mixed;
+                  float: left;
+                  height: inherit;
+                "
+              >
+                Copywriting
+              </h3>
+            </td>
+            <td>
+              <p><strong>Social Media</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/social/education_motorcycle_courses.pdf"
+                    target="_blank"
+                    >Community College Motorcycle Riding Courses</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Product Copy</strong></p>
+              <ul>
+                <li>
+                  <a href="portfolio/copper_app_faq/index.html" target="_blank"
+                    >Teen Banking App FAQ</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Article / Editorial</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/article/celebrate_apprenticeships_week.pdf"
+                    target="_blank"
+                    >Celebrate National Apprenticeships Week</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Newsletters</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/newsletters/kids_campus_courses.pdf"
+                    target="_blank"
+                    >Kids Summer Camp Courses</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="portfolio/newsletters/newsletter_member_profile.pdf"
+                    target="_blank"
+                    >Member Profile for a Leadership Development Organization</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Employee / Manager Training</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/training/hr_providing_effective_employee_feedback.pdf"
+                    target="_blank"
+                    >Providing Effective Employee Feedback</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="portfolio/training/hr_attendance_policy_scenarios.pdf"
+                    target="_blank"
+                    >Employee Personas for Attendance Policy Scenarios</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Arts / Entertainment</strong></p>
+              <ul>
+                <li>
+                  <a
+                    href="portfolio/arts/stylus_bats_and_mice.pdf"
+                    target="_blank"
+                    >Music Review - Bats and Mice</a
+                  >
+                </li>
+              </ul>
+              <span
+                ><code>
+                  <a onclick="scrollToTop();return false" href="#top"
+                    ><strong>back to top</strong></a
+                  >
+                  <br /><br /> </code
+              ></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div x-show="page === '#creative'" style="font-size: 85%">TBD</div>
+    <div x-show="page === '#programming'" style="font-size: 85%">TBD</div>
+  </main>
+  <br />
+  <hr />
+  <footer style="text-align: center; font-size: 65%; padding: 10px;">
+    <a
+      href="linkedin"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >LinkedIn</a
+    >
+    <span style="padding-left: 7px; padding-right: 7px; font-weight: lighter"
+      >|</span
+    >
+    <a
+      href="github"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >GitHub</a
+    >
+  </footer>
 </html>
