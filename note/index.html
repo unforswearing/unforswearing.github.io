@@ -2,8 +2,10 @@
 
   <head>
     <title>Note</title>
-    <link rel="stylesheet" href="main.css" />
-    <script type="application/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="../note/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    <script type="application/javascript" src="../note/app.js"></script>
+    <script type="application/javascript" src="../note/app.new.js"></script>
   </head>
 
   <body onload="execOnLoad();">
@@ -11,7 +13,6 @@
       <button onclick="loadNewFile()">new</button>
       <button id="savebutton" onclick="saveToLocalStorage()">save</button>
       <button onclick="deleteCurrentFile()">delete</button>
-      <button id="markdownbutton" onclick="markdownContent()">markdown</button>
       <button class="showmult" id="showmult" onclick="clearLocalStorage()">
         delete all
       </button>
@@ -29,7 +30,7 @@
         </span>
         <div style="float: left; margin-left: 5px;">
           'note' is a tiny localStorage-based notepad |
-          <a href="https://github.com/unforswearing/note">github</a> | 
+          <a href="https://github.com/unforswearing/note">github</a> |
           <a href="https://unforswearing.com">home</a>
         </div>
       </details>
