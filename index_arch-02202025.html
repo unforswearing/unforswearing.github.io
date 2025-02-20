@@ -1,0 +1,191 @@
+<html>
+  <head>
+    <title>Alvin Charity</title>
+    <meta charset="UTF-8" />
+    <!-- <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS feed for unforswearing.com"
+      href="index.atom"
+    /> -->
+    <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <script defer src="./js/index.js"></script>
+    <!-- <script src="https://unpkg.com/hyperscript.org@0.9.13"></script> -->
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      :root {
+        --unvisited-link-color: #1b61e4;
+      }
+
+      html {
+        background-color: #f0f0f0;
+        color: #2a2f33;
+      }
+
+      body {
+        width: 60%;
+        padding: 40px;
+        padding-right: 0px;
+        padding-left: 20%;
+        background-color: #f0f0f0;
+        color: #2a2f33;
+        font-family: "Computer Modern Sans", sans-serif;
+        font-size: 32px;
+      }
+
+      nav {
+        font-size: 100%;
+      }
+
+      a {
+        /*  padding-left:18px;*/
+        text-decoration: none;
+        padding: 0px;
+        color: var(--unvisited-link-color);
+        cursor: pointer;
+        /* text-shadow: 0px 0px 1px #3999d5; */
+        transition: all 0.2s ease-in-out;
+      }
+
+      a:hover,
+      a:visited:hover {
+        color: #b7410e;
+        transition: all 0.2s ease-in-out;
+      }
+
+      blockquote {
+        margin-left: 0px;
+        padding-left: 14px;
+        border-left: 4px solid #a9a9a9;
+      }
+
+      button {
+        font-weight: bold;
+        width: 120px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 0px;
+        background-color: #c9c9c9;
+      }
+
+      h1,
+      h2,
+      h3 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #c9c9c9; /* Modern Browsers */
+      }
+
+      img {
+        width: 2em;
+        padding-top: 0px;
+        margin-right: 10px;
+        border-radius: 15px;
+        float: left;
+      }
+
+      table {
+        font-size: inherit;
+        padding: 0px;
+      }
+
+      .divider {
+        color: #c9c9c9;
+      }
+
+      .navbg {
+        background-color: #c9c9c9;
+      }
+
+      @media all and (max-width: 900px) {
+        /*
+        @media (orientation: portrait) {
+          html {
+            font-size: 1.5em;
+            width: 40%;
+            margin-right: 20px;
+          }
+        }
+        */
+        body {
+          padding-left: 20px;
+          /*padding-right: 20px;*/
+          width: 80%;
+        }
+        main {
+        }
+      }
+    </style>
+  </head>
+
+  <body x-cloak x-data="{ page: location.hash, }" @hashchange.window="page =
+  location.hash" " >
+  <div
+    style="
+      text-align: center;
+      padding-bottom: 10px;
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+    "
+  >
+    <h1>
+      <span>Alvin Charity</span>
+    </h1>
+    <span style="font-size: 65%"
+      ><em>Writer / Technologist / Musician / Artist</em></span
+    >
+    <!-- <hr /> -->
+  </div>
+  <nav style="text-align: center; font-size: 65%"></nav>
+  <hr />
+  <br />
+  <main>
+    <div x-show="page === ''" style="font-size: 75%; text-align: center">
+      My name is Alvin. I write copy, technical documentation (and a lot of
+      other things), create little computer programs and automations, make
+      music, score films, and create video art.
+      <br /><br />
+      This website serves as my portfolio / body of work, but is currently being
+      redesigned. For more information about my writing and technical work, or
+      to contact me, please visit LinkedIn.
+      <br />
+    </div>
+  </main>
+  <br />
+  <hr />
+  <footer style="text-align: center; font-size: 65%; padding: 10px">
+    <a
+      href="https://linkedin.com/in/alvin-charity"
+      target="_top"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >LinkedIn</a
+    >
+    <span style="padding-left: 7px; padding-right: 7px; font-weight: lighter"
+      >|</span
+    >
+    <a
+      href="https://github.com/unforswearing"
+      target="_top"
+      style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+      >GitHub</a
+    >
+  </footer>
+</html>
