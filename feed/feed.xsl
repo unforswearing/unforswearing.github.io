@@ -9,14 +9,14 @@
         <link rel="alternate" type="application/rss+xml" title="Feed" href="feed.xml"/>
       </head>
       <body id="top" style="padding-bottom:1000px;">
-        <h1><a style="text-decoration: none;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
+        <h1><a style="text-decoration: none; margin-bottom: 10px;" href="https://unforswearing.com">unforswearing.com</a> / <a style="text-decoration: none; color: #b7410e;" href="/feed/">feed</a>
           <span style="color: #b7410e; padding-left: 10px;">■</span>
         </h1>
         <em>
           <xsl:value-of select="/rss/channel/description"/>
         </em>
         <br/>
-        <details style="font-size:85%"><summary style="padding-bottom:10px;"><strong>About</strong></summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great way to create a mobile-based publishing workflow.
+        <details><summary style="padding-bottom:10px;"><strong>About</strong></summary><strong style="color: #b7410e;">Feed</strong> is a page that collects very short thoughts or links that can be quickly added to the site from my phone via iOS Shortcuts. This page started as a way to create something interesting with RSS feeds, and this seemed like a great way to create a mobile-based publishing workflow.
         <br/>
         Posts are created by running a shortcut on my phone. The shortcut asks for a post body, and generates the  <code>rss</code> / <code>xml</code> feed file from a template stored on my phone. The generated feed file is copied to a <code>git</code> repository, alongside an <code>xsl</code> stylesheet, which creates the <code>html</code> / <code>css</code> styled-page you are reading right now.
         <br/>
@@ -33,8 +33,8 @@
               </h2>
               <em>
                 <sub>
-                  <!-- <a href="#{guid}" style="font-size: 85%; padding-top: 0px;">link</a> -->
-                  <a href="#{guid}" class="u-url" style="font-size: 90%; position:absolute">link</a>
+                  <!-- <a href="#{guid}" style="padding-top: 0px;">link</a> -->
+                  <a href="#{guid}" class="u-url" style="position:absolute">link</a>
                 </sub>
               </em>
               <br/>
@@ -45,20 +45,20 @@
                 <xsl:if test="position()!=last()">
                   <em>
                     <strong>
-                      <a href="#{following-sibling::item[1]/guid}" style="font-size: 85%; padding-right:10px;">prev</a>
+                      <a href="#{following-sibling::item[1]/guid}" style="padding-right:10px;">prev</a>
                     </strong>
                   </em>
                 </xsl:if>
                 <xsl:if test="position()&gt;1">
                   <em>
                     <strong>
-                      <a href="#{preceding-sibling::item[1]/guid}" style="font-size: 85%; padding-left: 10px; padding-right: 10px;">next</a>
+                      <a href="#{preceding-sibling::item[1]/guid}" style="padding-left: 10px; padding-right: 10px;">next</a>
                     </strong>
                   </em>
                 </xsl:if>
                 <em>
                   <strong>
-                    <a href="#top" style="font-size: 85%; float: right;">top</a>
+                    <a href="#top" style="float: right;">top</a>
                   </strong>
                 </em>
               </div>
