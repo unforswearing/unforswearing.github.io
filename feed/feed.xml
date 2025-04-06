@@ -6,6 +6,18 @@
 <link>https://unforswearing.com/feed</link>
 <description>Ephemera / Misc from the phone.</description>
 <item>
+<title>2025-03-29T12:09:06-04:00</title>
+<link>https://unforswearing.com/feed/#2025-03-29T12:09:06-04:00</link>
+<guid>2025-03-29T12:09:06-04:00</guid>
+<pubDate>Sat, 29 Mar 2025 12:09:06 EDT</pubDate>
+<description>
+   <p>Recently updated a few old shell script projects that both fell into disuse over the past few years. </p>
+<p>Aliaser: A self-editing alias management tool, primarily for MacOS. <a href="Https://github.com/unforswearing/aliaser">Https://github.com/unforswearing/aliaser</a></p>
+<p>Lnks: Triage your Google Chrome or Safari urls from the terminal on MacOS. <a href="Https://github.com/unforswearing/lnks">Https://github.com/unforswearing/lnks</a></p>
+
+</description>
+</item>
+<item>
 <title>2025-02-08T12:56:21-05:00</title>
 <link>https://unforswearing.com/feed/#2025-02-08T12:56:21-05:00</link>
 <guid>2025-02-08T12:56:21-05:00</guid>
