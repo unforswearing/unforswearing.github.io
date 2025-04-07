@@ -44,6 +44,22 @@ pre {
 	overflow: auto;
 }
 
+.center-nav {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.left-nav {
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.right-nav {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
 .active-nav {
   color: #b7410e;
   text-shadow: 0px 0px 15px #b7410e55;
