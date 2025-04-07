@@ -48,3 +48,31 @@ pre {
     font-size: 32px;
   }
 }
+
+#portfolio {
+  padding-left: inherit;
+  transition:padding-left 0.2s width;
+}
+
+#audiovisual {
+  padding-left: inherit;
+  transition:padding-left 0.3s width;
+}
+
+#programming {
+  padding-left: inherit;
+  transition:padding-left 0.55s width;
+}
+
+@keyframes move {
+  0%,
+  25% {
+    transform: translateX(0%);
+    left: 0%;
+  }
+  75%,
+  100% {
+    transform: translateX(-100%);
+    left: 100%;
+  }
+}

@@ -3,10 +3,11 @@
     <title>Alvin Charity</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <script defer src="./js/alpine/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
+    <!-- <script defer src="./js/alpine/dist/cdn.min.js"></script> -->
     <!-- <script defer src="./js/index.js"></script> -->
   </head>
-  <main style="font-size: 24px">
+  <main style="font-size: 24px" _="set cookies['transition'] to {value: 'true', maxAge: 1800}"">
     <nav style="margin-bottom: 20px">
       <!-- <a
         id="home"
@@ -14,17 +15,19 @@
         ><em>Home</em></a
       >-->
       <a
+        _="on load wait 0.55s then transition my opacity to 1"
         id="portfolio"
         class="nav"
         href="portfolio.html"
-        style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+        style="padding-left: 7px; padding-right: 7px; font-weight: bold; opacity: 0;"
         >Portfolio</a
       >
       <a
+        _="on load wait 0.55s then transition my opacity to 1"
         id="audiovisual"
         class="nav"
         href="audiovisual.html"
-        style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+        style="padding-left: 7px; padding-right: 7px; font-weight: bold; opacity: 0;"
         >Audio / Visual</a
       >
       <!--
@@ -37,26 +40,32 @@
       >
       -->
       <a
+        _="on load wait 0.75s then transition my opacity to 1"
         id="programming"
         class="nav"
         href="programming.html"
-        style="padding-left: 7px; padding-right: 7px; font-weight: bold"
+        style="padding-left: 7px; padding-right: 7px; font-weight: bold; opacity: 0;"
         >Programming</a
       >
     </nav>
     <img
+      id="me-img"
       src="img/me.png"
+      _="on load wait 0.55s then transition my opacity to 1"
       style="
         width: 80px;
         border-radius: 10px;
         margin-top: 20px;
         padding-bottom: 0px;
+        opacity: 0;
       "
     />
-    <h1 style="margin-bottom: 0px; margin-top: 10px">Alvin Charity</h1>
-    <em>Writer / Programmer / Musician / Artist</em>
+    <h1 style="margin-bottom: 0px; margin-top: 10px; opacity: 0;" _="on load wait 0.6s then transition my opacity to 1">Alvin Charity</h1>
+    <div style="opacity: 0;" _="on load wait 0.8s then transition my opacity to 1">
+      <em>Writer / Programmer / Musician / Artist</em>
+    </div>
     <br /><br />
-    <div>
+    <div style="opacity: 0;" _="on load wait 0.6s then transition my opacity to 1">
       My name is Alvin. I write copy and technical documentation (and a lot of
       other things), create little computer programs and automations, make
       music, score films, and create video art.
@@ -66,7 +75,7 @@
       LinkedIn.
       <br />
     </div>
-    <footer style="margin-top: 60px">
+    <footer style="margin-top: 60px; opacity: 0;" _="on load wait 0.75s then transition my opacity to 1">
       <a
         id="github"
         href="https://github.com/unforswearing"
