@@ -45,6 +45,14 @@ pre {
 	overflow: auto;
 }
 
+hr {
+  border-top: 1px dashed #b3b2b2;
+}
+
+summary {
+  background-color: #EBF9FF;
+}
+
 .center-nav {
   padding-left: 10px;
   padding-right: 10px;
