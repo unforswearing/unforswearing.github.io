@@ -23,6 +23,8 @@ a {
 
 a:hover {
 	text-decoration: none;
+  color: #b7410e;
+  transition: color 0.3s ease-in-out;
 }
 
 pre, code {
