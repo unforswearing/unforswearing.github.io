@@ -53,6 +53,8 @@ hr {
 
 summary {
   background-color: #EBF9FF;
+  border-radius: 10px;
+  padding-left: 5px;
 }
 
 .center-nav {
