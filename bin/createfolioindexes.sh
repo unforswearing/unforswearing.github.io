@@ -1,4 +1,6 @@
 #!/bin/bash
+# Inside the folio directory, run `bash ../bin/createfolioindexes.sh`
+#
 # 1) First, create a main index from the current folder, excluding
 #    folders where necessary and only showing specific files.
 #
@@ -22,7 +24,7 @@ rg --files \
     --exclude=copper_app_faq \
     --exclude=gas_send_email | \
 
-    while read directory; do
+    while read -r directory; do
       cd "$directory" || return
       rg --files \
         --glob '!scripts*' \
