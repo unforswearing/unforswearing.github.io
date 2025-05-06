@@ -3,6 +3,7 @@
     <title>Alvin Charity</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <script defer src="./js/include.js"></script>
   </head>
   <main style="font-size: 24px">
     <!-- -->
@@ -15,17 +16,7 @@
       <a id="programming" class="nav center-nav active-nav">Programming</a>
       <a id="home" href="." class="nav right-nav">Home</a>
     </nav>
-    <!-- <img
-      src="img/me.png"
-      style="
-        width: 80px;
-        border-radius: 10px;
-        margin-top: 20px;
-        padding-bottom: 0px;
-      "
-    /> -->
-    <h2 style="margin-bottom: 0px; margin-top: 10px">Alvin Charity</h2>
-    <em style="font-size: 80%">Writer / Programmer / Musician / Artist</em>
+    <include src="masthead.html"></include>
     <br /><br />
     <div>
       I am a self-taught <code>JavaScript</code>, <code>TypeScript</code>, and
@@ -108,20 +99,6 @@
         </blockquote>
       </li>
     </div>
-    <footer style="margin-top: 60px">
-      <hr />
-      <a
-        id="github"
-        class="nav left-nav"
-        href="https://github.com/unforswearing"
-        >GitHub</a
-      >
-      <a
-        id="linkedin"
-        class="nav right-nav"
-        href="https://linkedin.com/in/alvin-charity"
-        >LinkedIn</a
-      >
-    </footer>
+    <include src="footer.html"></include>
   </main>
 </html>
