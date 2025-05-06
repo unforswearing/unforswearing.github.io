@@ -1,5 +1,5 @@
 // footer.js
-document.currentScript.outerHTML = `
+document.getElementById('footer').innerHTML = `
   <footer style="margin-top: 60px; opacity: 0;" _="on load wait 0.75s then transition my opacity to 1">
     <hr />
     <a
