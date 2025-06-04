@@ -4,6 +4,12 @@
 # 1) First, create a main index from the current folder, excluding
 #    folders where necessary and only showing specific files.
 #
+
+if [[ $(basename "$(pwd)") != "folio" ]]; then
+  echo "run this script from the folio directory"
+  exit 1
+fi
+
 rg --files \
   --glob '!scripts*' \
     --glob '!data*' \
@@ -13,7 +19,7 @@ rg --files \
     tree --fromfile \
     --noreport \
     -T "unforswearing.com/folio" \
-    -P '*index.html|*.pdf' \
+    -P '*.pdf' \
     -H ./ >| folio.html
 
 # 2) Next, find all sub directories and create an index map for each,
@@ -34,7 +40,7 @@ rg --files \
         --glob '!img*' | \
         tree --fromfile --noreport \
           -T "unforswearing.com/folio/$directory" \
-          -P '*index.html|*.pdf' \
+          -P '*.pdf' \
           -H ./ >| index.html
      cd ..
     done
