@@ -75,7 +75,7 @@ summary {
 
 .active-nav {
   color: #b7410e;
-  text-shadow: 0px 0px 15px #b7410e55;
+  background-color: #b7410e55;
 }
 
 @media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
