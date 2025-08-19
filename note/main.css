@@ -63,13 +63,6 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
-div.content {
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 0px solid transparent;
-  border-left: 0px solid transparent;
-}
-
 input,
 input:focus,
 .bottom,
