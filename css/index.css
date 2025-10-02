@@ -77,8 +77,11 @@ summary {
   color: #b7410e;
 }
 
-@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
-  body {
+@media print {
+  html {
+    color: black;
+  }
+   body {
     font-size: 32px;
   }
 }
