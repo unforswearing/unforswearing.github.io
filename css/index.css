@@ -77,6 +77,30 @@ summary {
   color: #b7410e;
 }
 
+.version_summary {
+  background-color: inherit;
+  list-style: none;
+  font-weight: bold;
+}
+
+.version_summary::-webkit-details-marker {
+  display: none;
+}
+
+.version_summary:hover {
+	text-decoration: none;
+  color: #b7410e;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.version {
+  width: 840px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
 @media print {
   html {
     color: black;
