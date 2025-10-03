@@ -4,24 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <script defer src="./js/hyperscript/hyperscript.min.js"></script>
-    <script defer src="./js/include.js"></script>
   </head>
   <main style="font-size: 24px">
     <nav></nav>
     <img
-      id="me-img"
       src="img/me.png"
       _="on load wait 0.55s then transition my opacity to 1"
-      style="
-        width: 80px;
-        border-radius: 10px;
-        margin-top: 20px;
-        padding-bottom: 0px;
-        opacity: 0;
-      "
     />
     <h1
-      style="margin-bottom: 0px; margin-top: 10px; opacity: 0"
+      style="opacity: 0"
       _="on load wait 0.45s then transition my opacity to 1"
     >
       Alvin Charity
@@ -30,7 +21,7 @@
       style="opacity: 0"
       _="on load wait 0.6s then transition my opacity to 1"
     >
-      <span style="background-color: #ebf9ff"
+      <span class="infobg"
         ><em>Writer / Technologist / Musician / Artist</em></span
       >
     </div>
@@ -54,23 +45,16 @@
       >.
     </div>
     <footer
-      style="margin-top: 60px; opacity: 0"
+      style="opacity: 0"
       _="on load wait 0.8s then transition my opacity to 1"
     >
       <hr />
       <div class="version">
         <details>
-          <summary
-            class="version_summary"
-            style="float: left; text-decoration: underline"
-          >
-            Contact
-          </summary>
-          <span style="float: left; margin-left: 5px; font-size: 70%">
-            &nbsp;
-          </span>
-          <div style="float: left; margin-left: 5px">
-            >>>&nbsp;&nbsp;<span style="background-color: #ebf9ff"
+          <summary class="version_summary">Contact</summary>
+          <span class="version_span"> &nbsp; </span>
+          <div class="version_div">
+            >>>&nbsp;&nbsp;<span class="infobg"
               ><em>alvin.charity@proton.me</em></span
             >
           </div>
