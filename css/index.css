@@ -104,6 +104,7 @@ summary {
 @media print {
   html {
     color: black;
+    break-after: auto;
   }
    body {
     font-size: 32px;
