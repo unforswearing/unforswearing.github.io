@@ -74,7 +74,7 @@ hr {
   border-top: 1px dashed #b3b2b2;
 }
 
-summary {
+.ltblue-bg, summary {
   background-color: #ebf9ff;
   border-radius: 10px;
   padding-left: 5px;
