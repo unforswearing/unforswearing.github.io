@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /
-Allow: whitelist/*
-Sitemap: https://unforswearing.com/sitemap.xml
