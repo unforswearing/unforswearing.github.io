@@ -1,8 +1,7 @@
 main {
   color: #333;
   font:
-    400 16px/1.5 "PT Serif",
-    serif;
+    400 16px/1.5 sans-serif;
   max-width: 768px;
   margin: 1rem auto;
   padding: 1rem 2rem;
@@ -39,8 +38,8 @@ img {
 }
 
 a {
-  color: inherit;
-  /* font-weight: 700; */
+  color: #48bef1;
+  font-weight: 700;
 }
 
 a:hover {
