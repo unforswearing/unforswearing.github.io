@@ -10,7 +10,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: "Inter", sans-serif;
+  font-family: sans-serif;
   font-weight: 700;
 }
 
@@ -52,7 +52,7 @@ a:hover {
 pre,
 code {
   background: #ebf9ff;
-  font-family: "Source Code Pro", monospace;
+  font-family: monospace;
   line-height: 1.8;
 }
 
