@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSPT Reading Timed Practice</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d2433;--mute:#68707f;--line:#dcdad2;--acc:#2f5bd8;--accbg:#e8eefc;--ok:#1f8a4c;--bad:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181f;--card:#1e222b;--ink:#eceef3;--mute:#9aa2b1;--line:#333949;--acc:#7a9bff;--accbg:#242c45;--ok:#4cc582;--bad:#ff7a6b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181f;--card:#1e222b;--ink:#eceef3;--mute:#9aa2b1;--line:#333949;--acc:#7a9bff;--accbg:#242c45;--ok:#4cc582;--bad:#ff7a6b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.5rem;margin:0 0 4px}
+.sub{color:var(--mute);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input[type=number],textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:110px;font-size:.9rem}
+.row{display:flex;gap:12px}.row>div{flex:1}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:12px 16px}
+.go{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:700;width:100%;margin-top:16px;font-size:1.1rem}
+.small{font-size:.85rem;color:var(--mute)}
+.top{display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.timer{font-size:1.6rem;font-variant-numeric:tabular-nums}
+.timer.low{color:var(--bad)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin:8px 0 18px}
+.bar>i{display:block;height:100%;width:100%;background:var(--acc);transition:width .25s linear}
+.bar>i.low{background:var(--bad)}
+.pass{background:var(--accbg);border-radius:10px;padding:14px;margin-bottom:14px;font-size:1rem;display:none}
+.q{font-size:1.3rem;font-weight:600;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;margin-bottom:10px;padding:14px;font-size:1.05rem}
+.opt:hover{border-color:var(--acc);background:var(--accbg)}
+.opt b{display:inline-block;width:1.6em;color:var(--acc)}
+.score{font-size:2.4rem;font-weight:800}
+.rev{border-top:1px solid var(--line);padding:12px 0}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<main>
+<h1>HSPT Reading Timed Practice</h1>
+<p class="sub">One question at a time. When the timer hits zero, the question locks and moves on.</p>
+
+<section id="setup" class="card">
+  <div class="row">
+    <div><label for="secs">Seconds per question</label><input id="secs" type="number" min="5" max="300" value="60"></div>
+    <div><label for="count">Number of questions</label><input id="count" type="number" min="1" max="100" value="18"></div>
+  </div>
+  <label><input id="shuf" type="checkbox"> Shuffle questions</label>
+  <details style="margin-top:12px">
+    <summary>Use my own questions (optional)</summary>
+    <p class="small">One per line: question | A | B | C | D | correct letter | passage (optional). Leave blank to use the built-in set.</p>
+    <textarea id="custom" placeholder="Who ran home? | Sam | Jo | Al | Bo | A | Sam ran home after school."></textarea>
+  </details>
+  <button class="go" id="start">Start practice</button>
+</section>
+
+<section id="quiz" class="card hide">
+  <div class="top"><span id="prog"></span><span class="timer" id="time"></span></div>
+  <div class="bar"><i id="fill"></i></div>
+  <div class="pass" id="pass"></div>
+  <div class="q" id="qtext"></div>
+  <div id="opts"></div>
+</section>
+
+<section id="result" class="card hide">
+  <div class="score" id="score"></div>
+  <p id="detail" class="sub"></p>
+  <button class="go" id="again">Practice again</button>
+  <div id="review"></div>
+</section>
+</main>
+
+<script>
+const BANK=[
+["What is the main idea of the passage?","Bees build hives near flowers","Honeybees use a dance to share where food is","Worker bees are the largest bees","Bees can only fly in one direction","B","Honeybees communicate through a series of movements called the waggle dance. When a worker bee finds a good patch of flowers, she returns to the hive and moves in a figure-eight pattern. The angle of her dance shows the direction of the flowers, and the length of her waggle shows how far away they are. Other bees watch closely and then fly out to find the food."],
+["According to the passage, what does the length of the waggle show?","The direction of the flowers","How far away the flowers are","How many bees should go","The time of day","B","Honeybees communicate through a series of movements called the waggle dance. When a worker bee finds a good patch of flowers, she returns to the hive and moves in a figure-eight pattern. The angle of her dance shows the direction of the flowers, and the length of her waggle shows how far away they are. Other bees watch closely and then fly out to find the food."],
+["What do the other bees do after watching the dance?","Start their own dance","Leave the hive for good","Fly out to find the food","Return to the figure-eight","C","Honeybees communicate through a series of movements called the waggle dance. When a worker bee finds a good patch of flowers, she returns to the hive and moves in a figure-eight pattern. The angle of her dance shows the direction of the flowers, and the length of her waggle shows how far away they are. Other bees watch closely and then fly out to find the food."],
+["Which best describes a lighthouse keeper’s job?","Building ships","Keeping the light working for ships","Predicting storms","Fishing at night","B","For centuries, lighthouses guided ships safely past rocky coasts. Keepers climbed the tower each evening to light the lamp and polished the lens so the beam would shine as far as possible. In stormy weather, they stayed awake all night to keep the light burning. Today most lighthouses are automated, and the lamps turn on without anyone present."],
+["The word “automated” most nearly means","abandoned","run by machines","very old","painted","B","For centuries, lighthouses guided ships safely past rocky coasts. Keepers climbed the tower each evening to light the lamp and polished the lens so the beam would shine as far as possible. In stormy weather, they stayed awake all night to keep the light burning. Today most lighthouses are automated, and the lamps turn on without anyone present."],
+["Why did keepers polish the lens?","So the beam would shine far","So the tower looked new","To stop rust","So ships could see it by day","A","For centuries, lighthouses guided ships safely past rocky coasts. Keepers climbed the tower each evening to light the lamp and polished the lens so the beam would shine as far as possible. In stormy weather, they stayed awake all night to keep the light burning. Today most lighthouses are automated, and the lamps turn on without anyone present."],
+["How did Maya feel at the beginning?","Bored","Nervous","Angry","Proud","B","Maya had practiced the piano piece for three weeks, but her hands shook as she walked onto the stage. She took a slow breath and sat down. The first notes came out softly, then grew steadier. By the end, she was smiling. The audience clapped, and she realized the nervous feeling had faded long before the last note."],
+["What can be inferred about Maya’s practice?","It was a waste of time","It helped her perform well","She stopped early","She practiced only once","B","Maya had practiced the piano piece for three weeks, but her hands shook as she walked onto the stage. She took a slow breath and sat down. The first notes came out softly, then grew steadier. By the end, she was smiling. The audience clapped, and she realized the nervous feeling had faded long before the last note."],
+["Which best describes how her feeling changed?","Calm to panicked","Nervous to confident","Proud to embarrassed","Sad to excited","B","Maya had practiced the piano piece for three weeks, but her hands shook as she walked onto the stage. She took a slow breath and sat down. The first notes came out softly, then grew steadier. By the end, she was smiling. The audience clapped, and she realized the nervous feeling had faded long before the last note."],
+["According to the passage, what do camel humps hold?","Water","Fat","Food pellets","Sand","B","Camels can go many days without drinking water. Their humps do not store water, as many people believe. Instead, the humps hold fat that the camel’s body can use for energy when food is hard to find. Camels also lose very little water through sweat, and they can drink more than thirty gallons in one visit to an oasis."],
+["Which common belief does the passage correct?","Camels live in deserts","Camels drink at oases","Humps store water","Camels sweat very little","C","Camels can go many days without drinking water. Their humps do not store water, as many people believe. Instead, the humps hold fat that the camel’s body can use for energy when food is hard to find. Camels also lose very little water through sweat, and they can drink more than thirty gallons in one visit to an oasis."],
+["Which is the best title for the passage?","Desert Travel","How Camels Survive Without Much Water","The Oases of Africa","Fat and Energy in People","B","Camels can go many days without drinking water. Their humps do not store water, as many people believe. Instead, the humps hold fat that the camel’s body can use for energy when food is hard to find. Camels also lose very little water through sweat, and they can drink more than thirty gallons in one visit to an oasis."],
+["Why were books expensive before the printing press?","Paper was rare","Copying by hand took months","Few people could write","Books were taxed","B","Before the printing press was invented in the 1400s, books were copied by hand. This took months and made books very expensive, so few people owned them. Johannes Gutenberg’s press allowed many copies to be made quickly. As books became cheaper, more people learned to read, and new ideas spread across Europe faster than ever."],
+["What was a result of cheaper books?","Fewer people read","More people learned to read","Hand copying increased","Printing stopped","B","Before the printing press was invented in the 1400s, books were copied by hand. This took months and made books very expensive, so few people owned them. Johannes Gutenberg’s press allowed many copies to be made quickly. As books became cheaper, more people learned to read, and new ideas spread across Europe faster than ever."],
+["Which conclusion does the passage support?","Gutenberg wrote many books","The press helped ideas spread","Books became free","Only Europe used books","B","Before the printing press was invented in the 1400s, books were copied by hand. This took months and made books very expensive, so few people owned them. Johannes Gutenberg’s press allowed many copies to be made quickly. As books became cheaper, more people learned to read, and new ideas spread across Europe faster than ever."],
+["What did the students do with the vegetables?","Sold them at a fair","Ate them in the cafeteria","Donated them to a food pantry","Used them as compost","C","Last spring, the students at Greenfield Middle School turned an empty lot beside the gym into a garden. They planted tomatoes, beans, and sunflowers, and each class took turns watering. In the fall, the students picked the vegetables and donated them to a local food pantry. Several teachers said the project taught students about science and about helping others."],
+["Which detail shows teamwork?","They planted tomatoes","Each class took turns watering","The lot was empty","Sunflowers grew tall","B","Last spring, the students at Greenfield Middle School turned an empty lot beside the gym into a garden. They planted tomatoes, beans, and sunflowers, and each class took turns watering. In the fall, the students picked the vegetables and donated them to a local food pantry. Several teachers said the project taught students about science and about helping others."],
+["What did the teachers believe about the project?","It cost too much","It was too hard","It taught science and helping others","It should be moved","C","Last spring, the students at Greenfield Middle School turned an empty lot beside the gym into a garden. They planted tomatoes, beans, and sunflowers, and each class took turns watering. In the fall, the students picked the vegetables and donated them to a local food pantry. Several teachers said the project taught students about science and about helping others."]
+];
+const $=id=>document.getElementById(id);
+let qs=[],i=0,left=0,total=42,tick=null,answers=[];
+
+function parseCustom(t){
+  return t.split("\n").map(l=>l.split("|").map(s=>s.trim())).filter(p=>p.length>=6&&/^[A-D]$/i.test(p[5])).map(p=>[p[0],p[1],p[2],p[3],p[4],p[5].toUpperCase(),p[6]||""]);
+}
+function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
+
+$("start").onclick=()=>{
+  total=Math.max(5,parseInt($("secs").value)||42);
+  let pool=parseCustom($("custom").value);
+  if(!pool.length)pool=BANK.slice();
+  if($("shuf").checked)shuffle(pool);
+  qs=pool.slice(0,Math.max(1,parseInt($("count").value)||pool.length));
+  i=0;answers=[];
+  $("setup").classList.add("hide");$("result").classList.add("hide");$("quiz").classList.remove("hide");
+  show();
+};
+$("again").onclick=()=>{$("result").classList.add("hide");$("setup").classList.remove("hide")};
+
+function show(){
+  const q=qs[i];left=total;
+  $("prog").textContent="Question "+(i+1)+" of "+qs.length;
+  $("qtext").textContent=q[0];$("pass").textContent=q[6]||"";$("pass").style.display=q[6]?"block":"none";
+  $("opts").innerHTML="";
+  ["A","B","C","D"].forEach((L,k)=>{
+    const b=document.createElement("button");b.className="opt";
+    b.innerHTML="<b>"+L+"</b>";b.appendChild(document.createTextNode(q[k+1]));
+    b.onclick=()=>finish(L);$("opts").appendChild(b);
+  });
+  paint();clearInterval(tick);
+  const end=Date.now()+total*1000;
+  tick=setInterval(()=>{
+    left=Math.max(0,(end-Date.now())/1000);paint();
+    if(left<=0)finish(null);
+  },100);
+}
+function paint(){
+  const s=Math.ceil(left);
+  $("time").textContent=s+"s";
+  $("time").className="timer"+(s<=10?" low":"");
+  $("fill").style.width=(left/total*100)+"%";
+  $("fill").className=s<=10?"low":"";
+}
+function finish(L){
+  clearInterval(tick);
+  answers.push(L);
+  i++;
+  if(i<qs.length)show();else results();
+}
+function results(){
+  $("quiz").classList.add("hide");$("result").classList.remove("hide");
+  let c=0,t=0,rv="";
+  qs.forEach((q,k)=>{
+    const a=answers[k];if(a===q[5])c++;if(a===null)t++;
+    if(a!==q[5]){
+      const idx=s=>"ABCD".indexOf(s)+1;
+      rv+='<div class="rev"><div><b>'+(k+1)+'.</b> '+esc(q[0])+'</div>'
+        +'<div class="bad">Your answer: '+(a?a+") "+esc(q[idx(a)]):"Time ran out")+'</div>'
+        +'<div class="ok">Correct: '+q[5]+") "+esc(q[idx(q[5])])+'</div></div>';
+    }
+  });
+  $("score").textContent=c+" / "+qs.length;
+  $("detail").textContent=Math.round(c/qs.length*100)+"% correct"+(t?" · "+t+" timed out":"");
+  $("review").innerHTML=rv?"<h3>Review missed questions</h3>"+rv:"<p class='ok'><b>Perfect score!</b></p>";
+}
+function esc(s){return String(s).replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]))}
+</script>
+</body>
+</html>
